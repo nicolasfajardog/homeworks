@@ -1,0 +1,1426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meeting People – A1 Beginner English Worksheet</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Baloo+2:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a2e;
+    --paper: #fffef7;
+    --A: #e63946;
+    --A-light: #fde8ea;
+    --B: #2a9d8f;
+    --B-light: #d6f5f2;
+    --C: #e07b00;
+    --C-light: #fff0d6;
+    --D: #5c4fcf;
+    --D-light: #ebe8ff;
+    --E: #c77dff;
+    --E-light: #f5e6ff;
+    --rule: #d4cfc0;
+    --note-bg: #f7f3e8;
+
+    /* Feedback Colors */
+    --correct: #2a9d8f;
+    --incorrect: #e63946;
+    --open-ans: #457b9d;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: #e8e4d9;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 32px 16px 60px;
+  }
+
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    background: var(--paper);
+    border-radius: 4px;
+    box-shadow: 0 4px 40px rgba(0,0,0,0.18);
+    overflow: hidden;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--ink);
+    color: #fff;
+    padding: 40px 48px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent, transparent 18px,
+      rgba(255,255,255,0.03) 18px, rgba(255,255,255,0.03) 36px
+    );
+  }
+  .header-badge {
+    display: inline-block;
+    background: #fff;
+    color: var(--ink);
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+  }
+  header h1 {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1.05;
+    margin-bottom: 8px;
+  }
+  header h1 span { color: #f4d03f; }
+  header p {
+    font-size: 15px;
+    opacity: 0.7;
+    font-weight: 600;
+  }
+
+  /* ── SECTION NAV ── */
+  .section-nav {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 2px solid var(--rule);
+  }
+  .section-nav a {
+    flex: 1;
+    min-width: 100px;
+    padding: 14px 6px 12px;
+    text-align: center;
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 4px solid transparent;
+    margin-bottom: -2px;
+    transition: all 0.15s;
+    color: #777;
+    letter-spacing: 0.3px;
+  }
+  .section-nav a:hover { color: var(--ink); }
+  .section-nav a.a { border-color: var(--A); color: var(--A); }
+  .section-nav a.b { border-color: var(--B); color: var(--B); }
+  .section-nav a.c { border-color: var(--C); color: var(--C); }
+  .section-nav a.d { border-color: var(--D); color: var(--D); }
+  .section-nav a.e { border-color: var(--E); color: var(--E); }
+  .section-nav a.f { border-color: #888; color: #555; }
+
+  /* ── CONTENT ── */
+  .content { padding: 0 44px 44px; }
+
+  /* ── LOGISTICS BOX ── */
+  .logistics-box {
+    background: #e3f2fd;
+    border-left: 5px solid #1e88e5;
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-top: 32px;
+  }
+  .logistics-box h3 {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-bottom: 10px;
+    color: #1e88e5;
+  }
+  .logistics-box p {
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 600;
+  }
+
+  /* ── SECTION HEADER ── */
+  .section-block { margin-top: 44px; }
+  .section-heading {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+  .section-tag {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    padding: 3px 12px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    white-space: nowrap;
+  }
+  .tag-a { background: var(--A); color: #fff; }
+  .tag-b { background: var(--B); color: #fff; }
+  .tag-c { background: var(--C); color: #fff; }
+  .tag-d { background: var(--D); color: #fff; }
+  .tag-e { background: var(--E); color: #fff; }
+  .tag-f { background: #444; color: #fff; }
+  .section-heading h2 {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+  }
+
+  /* ── GRAMMAR BOX ── */
+  .grammar-box {
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 22px;
+    border-left: 5px solid;
+  }
+  .grammar-box.a { background: var(--A-light); border-color: var(--A); }
+  .grammar-box.b { background: var(--B-light); border-color: var(--B); }
+  .grammar-box.c { background: var(--C-light); border-color: var(--C); }
+  .grammar-box.d { background: var(--D-light); border-color: var(--D); }
+  .grammar-box.e { background: var(--E-light); border-color: var(--E); }
+  .grammar-box.f { background: #f0ede4; border-color: #888; }
+  .grammar-box h3 {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 10px;
+    opacity: 0.6;
+  }
+  .grammar-box p {
+    font-size: 14px;
+    line-height: 1.7;
+    font-weight: 600;
+  }
+  .grammar-box strong { font-weight: 900; }
+
+  /* word bank chips */
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  .chip {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 20px;
+    background: rgba(0,0,0,0.07);
+  }
+
+  /* ── EXERCISE BLOCK & INSTRUCTIONS ── */
+  .exercise { margin-bottom: 26px; }
+  .exercise-title {
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .title-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .title-main {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .ex-num {
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 900;
+    color: #fff;
+    flex-shrink: 0;
+    margin-top: -2px;
+  }
+  .num-a { background: var(--A); }
+  .num-b { background: var(--B); }
+  .num-c { background: var(--C); }
+  .num-d { background: var(--D); }
+  .num-e { background: var(--E); }
+  .num-f { background: #555; }
+
+  .btn-trans {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0 4px;
+    transition: transform 0.2s;
+  }
+  .btn-trans:hover { transform: scale(1.1); }
+  .es-trans {
+    display: none;
+    font-size: 13px;
+    color: #457b9d;
+    font-weight: 600;
+    background: rgba(69,123,157,0.08);
+    padding: 4px 10px;
+    border-radius: 6px;
+    border-left: 3px solid #457b9d;
+  }
+
+  /* Numbered question rows */
+  .q-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .q-list li {
+    font-size: 15px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    line-height: 1.5;
+    flex-wrap: wrap;
+  }
+  .q-num {
+    font-weight: 900;
+    opacity: 0.4;
+    min-width: 20px;
+    font-size: 13px;
+  }
+  .emoji-clue {
+    font-size: 24px;
+    vertical-align: middle;
+    margin-right: 6px;
+  }
+
+  /* Choice boxes for options */
+  .choice-box {
+    display: inline-flex;
+    align-items: center;
+    background: #f7f3e8;
+    border: 1.5px solid var(--rule);
+    border-radius: 6px;
+    padding: 3px 10px;
+    font-size: 12px;
+    font-weight: 800;
+    color: #555;
+    letter-spacing: 0.5px;
+    margin-left: 6px;
+  }
+
+  /* INTERACTIVE BLANKS WITH GRADING STATES */
+  .blank {
+    border: none;
+    border-bottom: 2px solid #aaa;
+    background: transparent;
+    min-width: 130px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #2b2b2b;
+    padding: 0 4px;
+    outline: none;
+    text-align: center;
+    transition: all 0.2s;
+  }
+  .blank:focus {
+    border-bottom-color: var(--ink);
+    background: rgba(0,0,0,0.02);
+  }
+  .blank-sm  { min-width: 85px; }
+  .blank-md  { min-width: 170px; }
+  .blank-lg  { min-width: 260px; flex-grow: 0; }
+  .blank-xl  { min-width: 380px; flex-grow: 1; text-align: left; padding: 0 8px; }
+
+  /* Grading class styles */
+  .is-correct {
+    border-bottom: 2px solid var(--correct) !important;
+    color: var(--correct) !important;
+    background-color: rgba(42,157,143,0.06) !important;
+  }
+  .is-incorrect {
+    border-bottom: 2px solid var(--incorrect) !important;
+    color: var(--incorrect) !important;
+    background-color: rgba(230,57,70,0.06) !important;
+  }
+  .is-open {
+    border-bottom: 2px solid var(--open-ans) !important;
+    color: var(--open-ans) !important;
+    background-color: rgba(69,123,157,0.06) !important;
+  }
+
+  /* Match exercise grid */
+  .match-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 2px solid var(--rule);
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .match-grid .col-header {
+    background: var(--ink);
+    color: #fff;
+    padding: 8px 16px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 800;
+  }
+  .match-grid .col-header:first-child { border-right: 2px solid #444; }
+  .match-row { display: contents; }
+  .match-row .left, .match-row .right {
+    padding: 10px 16px;
+    border-top: 1.5px solid var(--rule);
+  }
+  .match-row .left { border-right: 2px solid var(--rule); }
+  .match-row:nth-child(odd) .left,
+  .match-row:nth-child(odd) .right { background: #fafafa; }
+
+  /* Table exercise */
+  table.ex-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  table.ex-table th {
+    background: var(--ink);
+    color: #fff;
+    padding: 9px 14px;
+    text-align: left;
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+  }
+  table.ex-table td {
+    padding: 8px 14px;
+    border-bottom: 1.5px solid var(--rule);
+    vertical-align: middle;
+  }
+  table.ex-table tr:nth-child(even) td { background: #fafafa; }
+  .table-input {
+    width: 100%;
+    border: none;
+    border-bottom: 1.5px dashed #bbb;
+    background: transparent;
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 4px 0;
+    outline: none;
+    transition: all 0.2s;
+  }
+  .table-input:focus {
+    border-bottom-style: solid;
+    border-bottom-color: var(--ink);
+  }
+
+  /* ── CONTROL ACTIONS BAR ── */
+  .action-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 36px;
+  }
+  .score-display {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--ink);
+    display: none;
+    background: #f0ede4;
+    padding: 6px 20px;
+    border-radius: 30px;
+    border: 2px solid var(--rule);
+  }
+  .button-group { display: flex; gap: 16px; }
+  .btn-action {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 12px 32px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    transition: all 0.2s;
+  }
+  .btn-check { background: #2a9d8f; color: white; }
+  .btn-check:hover { background: #228074; transform: translateY(-1px); }
+  .btn-reset { background: #e7e5e0; color: var(--ink); }
+  .btn-reset:hover { background: #dcd9d2; transform: translateY(-1px); }
+  .btn-action:active { transform: translateY(1px); }
+
+  /* ── DIVIDER ── */
+  .section-divider {
+    height: 2px;
+    background: repeating-linear-gradient(
+      90deg, var(--rule) 0, var(--rule) 8px,
+      transparent 8px, transparent 16px
+    );
+    margin: 44px 0 0;
+  }
+
+  /* ── ANSWER KEY ── */
+  .answer-key-wrapper {
+    margin-top: 48px;
+    border-top: 3px solid var(--ink);
+    padding-top: 20px;
+  }
+  .btn-toggle-key {
+    background: var(--ink);
+    color: #fff;
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  .btn-toggle-key:hover { background: #2e2e4e; transform: translateY(-1px); }
+  .answer-key-content { display: none; margin-top: 24px; }
+  .answer-key h2 {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .answer-key h2::after {
+    content: '(Teacher Copy)';
+    font-size: 12px;
+    background: var(--ink);
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    font-weight: 700;
+  }
+  .key-section { margin-bottom: 20px; }
+  .key-section h3 {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    opacity: 0.5;
+  }
+  .key-list {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 2;
+    column-count: 2;
+    column-gap: 32px;
+  }
+  .key-list span { font-weight: 900; }
+
+  /* points badge */
+  .pts-badge {
+    display: inline-block;
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-left: 6px;
+    background: rgba(0,0,0,0.08);
+    color: var(--ink);
+  }
+
+  /* dialogue box */
+  .dialogue-box {
+    background: #f7f3e8;
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.9;
+    border: 1.5px dashed var(--rule);
+  }
+  .dialogue-box .speaker {
+    font-weight: 900;
+    font-size: 13px;
+    margin-right: 6px;
+  }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; }
+    .section-nav { display: none; }
+    .action-bar { display: none; }
+    .blank { border-bottom-color: #000; }
+    .answer-key-wrapper { display: none !important; }
+    .btn-trans { display: none !important; }
+  }
+
+  @media (max-width: 600px) {
+    .content { padding: 0 20px 36px; }
+    header { padding: 28px 20px 22px; }
+    header h1 { font-size: 30px; }
+    .match-grid { grid-template-columns: 1fr; }
+    .match-grid .col-header:first-child { border-right: none; border-bottom: 2px solid #444; }
+    .match-row .left { border-right: none; }
+    .match-row .right { border-top: 1.5px dashed var(--rule); }
+    .key-list { column-count: 1; }
+    .q-list li { flex-direction: column; align-items: flex-start; gap: 4px; margin-bottom: 8px; }
+    .blank-lg, .blank-xl { width: 100%; min-width: 100%; }
+    .button-group { flex-direction: column; align-items: stretch; width: 100%; }
+    .btn-action { text-align: center; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="header-badge">ESL Worksheet · A1 Beginner</div>
+    <h1><span>Meeting</span> People</h1>
+    <p>Introducing Yourself · Nationality · Personal Info · Introductions · Appearance</p>
+  </header>
+
+  <nav class="section-nav">
+    <a href="#section-a" class="a">A · Who Are You?</a>
+    <a href="#section-b" class="b">B · Where Are You From?</a>
+    <a href="#section-c" class="c">C · Personal Info</a>
+    <a href="#section-d" class="d">D · Introducing Others</a>
+    <a href="#section-e" class="e">E · Appearance</a>
+    <a href="#section-f" class="f">★ Final Challenge</a>
+  </nav>
+
+  <div class="content">
+
+    <!-- ═══════════════════════ LOGISTICS INSTRUCTIONS ═══════════════════════ -->
+    <div class="logistics-box">
+      <h3>📋 Instructions & Logistics</h3>
+      <p>Welcome! If you need help understanding a task, click the <strong>🌐</strong> button next to the instructions to see the Spanish translation.</p>
+      <p style="margin-top:8px">When you finish, the system will auto-grade most questions. However, for exercises marked as <em>(Teacher evaluated)</em>, please <strong>take a screenshot</strong> of your answers and send it to your teacher.</p>
+      <hr style="border: none; border-top: 1px dashed #90caf9; margin: 12px 0;">
+      <p><em>¡Bienvenido/a! Si necesitas ayuda para entender una tarea, haz clic en el botón <strong>🌐</strong> junto a las instrucciones para ver la traducción al español.</em></p>
+      <p style="margin-top:8px"><em>Cuando termines, el sistema calificará automáticamente la mayoría de las preguntas. Sin embargo, para los ejercicios marcados como *(Teacher evaluated)*, por favor <strong>toma una captura de pantalla</strong> de tus respuestas y envíasela a tu profesor/a.</em></p>
+    </div>
+
+    <!-- ═══════════════════════ SECTION A ═══════════════════════ -->
+    <div class="section-block" id="section-a">
+      <div class="section-heading">
+        <span class="section-tag tag-a">A</span>
+        <h2>Introducing Yourself – Who Are You?</h2>
+      </div>
+
+      <div class="grammar-box a">
+        <h3>📌 Grammar Reference – The Verb TO BE</h3>
+        <p><strong>I am</strong> (I'm) · <strong>You are</strong> (You're) · <strong>He/She is</strong> (He's / She's)</p>
+        <p style="margin-top:8px">✏️ <strong>I am María. I am a student. I am 20 years old.</strong></p>
+        <p style="margin-top:8px">Use <strong>Who is…?</strong> to ask about a person's name or job.</p>
+        <p style="margin-top:4px">✏️ <strong>Who is she? → She is my teacher.</strong></p>
+        <div class="chips">
+          <span class="chip">teacher</span>
+          <span class="chip">student</span>
+          <span class="chip">doctor</span>
+          <span class="chip">engineer</span>
+          <span class="chip">nurse</span>
+          <span class="chip">chef</span>
+          <span class="chip">lawyer</span>
+          <span class="chip">pilot</span>
+        </div>
+      </div>
+
+      <!-- A1 -->
+      <div class="exercise">
+        <div class="exercise-title">
+          <span class="ex-num num-a">1</span>
+          <div class="title-content">
+            <div class="title-main">
+              Choose the correct verb. Write <em>am</em>, <em>is</em>, or <em>are</em>. 
+              <span class="pts-badge">1 pt each · 5 pts</span>
+              <button class="btn-trans" onclick="toggleT('t-a1')" title="Traducir">🌐</button>
+            </div>
+            <div id="t-a1" class="es-trans">Elige el verbo correcto. Escribe am, is o are.</div>
+          </div>
+        </div>
+        <ol class="q-list">
+          <li><span class="q-num">1.</span> My name <input type="text" data-ans="is" class="blank blank-sm"> Carlos. <span class="choice-box">am &nbsp;|&nbsp; is &nbsp;|&nbsp; are</span></li>
+          <li><span class="q-num">2.</span> I <input type="text" data-ans="am" class="blank blank-sm"> a student. <span class="choice-box">am &nbsp;|&nbsp; is &nbsp;|&nbsp; are</span></li>
+          <li><span class="q-num">3.</span> She <input type="text" data-ans="is" class="blank blank-sm"> a doctor. <span class="choice-box">am &nbsp;|&nbsp; is &nbsp;|&nbsp; are</span></li>
+          <li><span class="q-num">4.</span> They <input type="text" data-ans="are" class="blank blank-sm"> teachers. <span class="choice-box">am &nbsp;|&nbsp; is &nbsp;|&nbsp; are</span></li>
+          <li><span class="q-num">5.</span> He <input type="text" data-ans="is" class="blank blank-sm"> a pilot. <span class="choice-box">am &nbsp;|&nbsp; is &nbsp;|&nbsp; are</span></li>
+        </ol>
+      </div>
+
+      <!-- A2 -->
+      <div class="exercise">
+        <div class="exercise-title">
+          <span class="ex-num num-a">2</span>
+          <div class="title-content">
+            <div class="title-main">
+              Match the question with the correct answer. Write the letter.
+              <span class="pts-badge">1 pt each · 4 pts</span>
+              <button class="btn-trans" onclick="toggleT('t-a2')" title="Traducir">🌐</button>
+            </div>
+            <div id="t-a2" class="es-trans">Empareja la pregunta con la respuesta correcta. Escribe la letra.</div>
+          </div>
+        </div>
+        <ol class="q-list" style="margin-bottom:12px;">
+          <li>Question 1 → <input type="text" data-ans="c" class="blank blank-sm" style="min-width:45px"></li>
+          <li>Question 2 → <input type="text" data-ans="a" class="blank blank-sm" style="min-width:45px"></li>
+          <li>Question 3 → <input type="text" data-ans="d" class="blank blank-sm" style="min-width:45px"></li>
+          <li>Question 4 → <input type="text" data-ans="b" class="blank blank-sm" style="min-width:45px"></li>
+        </ol>
+        <div class="match-grid">
+          <div class="col-header">Question</div>
+          <div class="col-header">Answer</div>
+          <div class="match-row"><div class="left">1. Who is she?</div><div class="right">a. He is Juan.</div></div>
+          <div class="match-row"><div class="left">2. Who is he?</div><div class="right">b. They are nurses.</div></div>
+          <div class="match-row"><div class="left">3. What is your name?</div><div class="right">c. She is Dr. López.</div></div>
+          <div class="match-row"><div class="left">4. Who are they?</div><div class="right">d. My name is Sofía.</div></div>
+        </div>
+      </div>
+
+      <!-- A3 -->
+      <div class="exercise">
+        <div class="exercise-title">
+          <span class="ex-num num-a">3</span>
+          <div class="title-content">
+            <div class="title-main">
+              Complete the dialogue. Use the words in the box.
+              <span class="pts-badge">1 pt each · 5 pts</span>
+              <button class="btn-trans" onclick="toggleT('t-a3')" title="Traducir">🌐</button>
+            </div>
+            <div id="t-a3" class="es-trans">Completa el diálogo. Usa las palabras del recuadro.</div>
+          </div>
+        </div>
+        <div class="chips" style="margin-bottom:14px;">
+          <span class="chip">am · Nice · name · is · a</span>
+        </div>
+        <div class="dialogue-box">
+          <span class="speaker">Ana:</span> Hello! My <input type="text" data-ans="name" class="blank blank-sm"> is Ana.<br>
+          <span class="speaker">Luis:</span> Hi Ana! I <input type="text" data-ans="am" class="blank blank-sm"> Luis. Nice to meet you!<br>
+          <span class="speaker">Ana:</span> <input type="text" data-ans="Nice" class="blank blank-sm"> to meet you too! Are you a student?<br>
+          <span class="speaker">Luis:</span> Yes, I am <input type="text" data-ans="a" class="blank blank-sm"> student. And who <input type="text" data-ans="is" class="blank blank-sm"> he?<br>
+          <span class="speaker">Ana:</span> He is my brother.
+        </div>
+      </div>
+
+      <!-- A4 -->
+      <div class="exercise">
+        <div class="exercise-title">
+          <span class="ex-num num-a">4</span>
+          <div class="title-content">
+            <div class="title-main">
+              Write about yourself! Complete the sentences. <em style="font-weight:400; opacity:0.7;">(Teacher evaluated)</em>
+              <span class="pts-badge">2 pts each · 6 pts</span>
+              <button class="btn-trans" onclick="toggleT('t-a4')" title="Traducir">🌐</button>
+            </div>
+            <div id="t-a4" class="es-trans">¡Escribe sobre ti! Completa las oraciones con tu información. Recuerda mandar pantallazo.</div>
+          </div>
+        </div>
+        <ol class="q-list">
+          <li><span class="q-num">1.</span> My name is <input type="text" data-ans="OPEN" class="blank blank-lg">.</li>
+          <li><span class="q-num">2.</span> I am a <input type="text" data-ans="OPEN" class="blank blank-lg">. (job or student)</li>
+          <li><span class="q-num">3.</span> I am <input type="text" data-ans="OPEN" class="blank blank-sm"> years old.</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- ═══════════════════════ SECTION B ═══════════════════════ -->
+    <div class="section-block" id="section-b">
+      <div class="section-heading">
+        <span class="section-tag tag-b">B</span>
+        <h2>Talking About Nationality – Where Are You From?</h2>
+      </div>
+
+      <div class="grammar-box b">
+        <h3>📌 Grammar Reference – WHERE + FROM</h3>
+        <p>Use <strong>Where are you from?</strong> to ask about someone's country.</p>
+        <p style="margin-top:6px">✏️ <strong>Where are you from? → I am from Colombia.</strong></p>
+        <p style="margin-top:6px">✏️ <strong>Where is she from? → She is from Spain.</strong></p>
+        <p style="margin-top:8px">Nationality = country + ending:</p>
+        <div class="chips">
+          <span class="chip">Canada → Canadian</span>
+          <span class="chip">China → Chinese</span>
+          <span class="chip">UK → British</span>
+          <span class="chip">Germany → German</span>
+          <span class="chip">Egypt → Egyptian</span>
+          <span class="chip">Peru → Peruvian</span>
+        </div>
+      </div>
+
+      <!-- B1 -->
+      <div class="exercise">
+        <div class="exercise-title">
+          <span class="ex-num num-b">1</span>
+          <div class="title-content">
+            <div class="title-main">
+              Write the nationality for each country. Use the box above!
+              <span class="pts-badge">1 pt each · 6 pts</span>
+              <button class="btn-trans" onclick="toggleT('t-b1')" title="Traducir">🌐</button>
+            </div>
+            <div id="t-b1" class="es-trans">Escribe la nacionalidad para cada país. ¡Usa el recuadro de arriba!</div>
+          </div>
+        </div>
+        <ol class="q-list">
+          <li><span class="q-num">1.</span> Canada → He is <input type="text" data-ans="Canadian" class="blank blank-sm">.</li>
+          <li><span class="q-num">2.</span> China → She is <input type="text" data-ans="Chinese" class="blank blank-sm">.</li>
+          <li><span class="q-num">3.</span> UK → He is <input type="text" data-ans="British" class="blank blank-sm">.</li>
+          <li><span class="q-num">4.</span> Germany → She is <input type="text" data-ans="German" class="blank blank-sm">.</li>
+          <li><span class="q-num">5.</span> Egypt → He is <input type="text" data-ans="Egyptian" class="blank blank-sm">.</li>
+          <li><span class="q-num">6.</span> Peru → She is <input type="text" data-ans="Peruvian" class="blank blank-sm">.</li>
+        </ol>
+      </div>
+
+      <!-- B2 -->
+      <div class="exercise">
+        <div class="exercise-title">
+          <span class="ex-num num-b">2</span>
+          <div class="title-content">
+            <div class="title-main">
+              Write the correct question for each answer.
+              <span class="pts-badge">2 pts each · 6 pts</span>
+              <button class="btn-trans" onclick="toggleT('t-b2')" title="Traducir">🌐</button>
+            </div>
+            <div id="t-b2" class="es-trans">Escribe la pregunta correcta para cada respuesta.</div>
+          </div>
+        </div>
+        <ol class="q-list">
+          <li><span class="q-num">1.</span> We are from Italy. → <input type="text" data-ans="Where are you from" class="blank blank-lg">?</li>
+          <li><span class="q-num">2.</span> They are from China. → <input type="text" data-ans="Where are they from" class="blank blank-lg">?</li>
+          <li><span class="q-num">3.</span> He is from Canada. → <input type="text" data-ans="Where is he from" class="blank blank-lg">?</li>
+        </ol>
+      </div>
+
+      <!-- B3 -->
+      <div class="exercise">
+        <div class="exercise-title">
+          <span class="ex-num num-b">3</span>
+          <div class="title-content">
+            <div class="title-main">
+              Match the sentence with the correct nationality word.
+              <span class="pts-badge">1 pt each · 4 pts</span>
+              <button class="btn-trans" onclick="toggleT('t-b3')" title="Traducir">🌐</button>
+            </div>
+            <div id="t-b3" class="es-trans">Empareja la oración con la nacionalidad correcta.</div>
+          </div>
+        </div>
+        <ol class="q-list" style="margin-bottom:12px;">
+          <li>Sentence 1 → <input type="text" data-ans="b" class="blank blank-sm" style="min-width:45px"></li>
+          <li>Sentence 2 → <input type="text" data-ans="d" class="blank blank-sm" style="min-width:45px"></li>
+          <li>Sentence 3 → <input type="text" data-ans="a" class="blank blank-sm" style="min-width:45px"></li>
+          <li>Sentence 4 → <input type="text" data-ans="c" class="blank blank-sm" style="min-width:45px"></li>
+        </ol>
+        <div class="match-grid">
+          <div class="col-header">Sentence</div>
+          <div class="col-header">Nationality</div>
+          <div class="match-row"><div class="left">1. He is from Australia.</div><div class="right">a. Turkish</div></div>
+          <div class="match-row"><div class="left">2. She is from Portugal.</div><div class="right">b. Australian</div></div>
+          <div class="match-row"><div class="left">3. They are from Turkey.</div><div class="right">c. Mexican</div></div>
+          <div class="match-row"><div class="left">4. I am from Mexico.</div><div class="right">d. Portuguese</div></div>
+        </div>
+      </div>
+
+      <!-- B4 -->
+      <div class="exercise">
+        <div class="exercise-title">
+          <span class="ex-num num-b">4</span>
+          <div class="title-content">
+            <div class="title-main">
+              Answer the questions about yourself and a friend. <em style="font-weight:400; opacity:0.7;">(Teacher evaluated)</em>
+              <span class="pts-badge">2 pts each · 4 pts</span>
+              <button class="btn-trans" onclick="toggleT('t-b4')" title="Traducir">🌐</button>
+            </div>
+            <div id="t-b4" class="es-trans">Responde las preguntas sobre ti y sobre un amigo/a. Manda pantallazo.</div>
+          </div>
+        </div>
+        <ol class="q-list">
+          <li><span class="q-num">1.</span> Where are you from? → I am from <input type="text" data-ans="OPEN" class="blank blank-md">. I am <input type="text" data-ans="OPEN" class="blank blank-md">.</li>
+          <li><span class="q-num">2.</span> Where is your best friend from? → <input type="text" data-ans="OPEN" class="blank blank-xl"></li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- ═══════════════════════ SECTION C ═══════════════════════ -->
+    <div class="section-block" id="section-c">
+      <div class="section-heading">
+        <span class="section-tag tag-c">C</span>
+        <h2>Giving Personal Information</h2>
+      </div>
+
+      <div class="grammar-box c">
+        <h3>📌 Grammar Reference – WHAT IS…?</h3>
+        <p>Use <strong>What is…?</strong> to ask for specific personal data.</p>
+        <p style="margin-top:6px">✏️ <strong>What is your phone number? → It is 310-555-1234.</strong></p>
+        <p style="margin-top:6px">✏️ <strong>What is your e-mail address? → It is maria@gmail.com.</strong></p>
+        <p style="margin-top:6px">✏️ <strong>What is your address? → I live at Calle 10 # 5-20, Bogotá.</strong></p>
+        <p style="margin-top:8px">Use <strong>How do you spell that?</strong> to ask someone to spell a word letter by letter.</p>
+        <p style="margin-top:4px">✏️ <strong>How do you spell your last name? → G-A-R-C-I-A.</strong></p>
+      </div>
+
+      <!-- C1 -->
+      <div class="exercise">
+        <div class="exercise-title">
+          <span class="ex-num num-c">1</span>
+          <div class="title-content">
+            <div class="title-main">
+              Write <em>What</em> or <em>How</em> to complete the question.
+              <span class="pts-badge">1 pt each · 5 pts</span>
+              <button class="btn-trans" onclick="toggleT('t-c1')" title="Traducir">🌐</button>
+            </div>
+            <div id="t-c1" class="es-trans">Escribe <em>What</em> o <em>How</em> para completar la pregunta.</div>
+          </div>
+        </div>
+        <ol class="q-list">
+          <li><span class="q-num">1.</span> <input type="text" data-ans="What" class="blank blank-sm"> is your name? <span class="choice-box">What &nbsp;|&nbsp; How</span></li>
+          <li><span class="q-num">2.</span> <input type="text" data-ans="What" class="blank blank-sm"> is your phone number? <span class="choice-box">What &nbsp;|&nbsp; How</span></li>
+          <li><span class="q-num">3.</span> <input type="text" data-ans="How" class="blank blank-sm"> do you spell that? <span class="choice-box">What &nbsp;|&nbsp; How</span></li>
+          <li><span class="q-num">4.</span> <input type="text" data-ans="What" class="blank blank-sm"> is your e-mail address? <span class="choice-box">What &nbsp;|&nbsp; How</span></li>
+          <li><span class="q-num">5.</span> <input type="text" data-ans="What" class="blank blank-sm"> is your home address? <span class="choice-box">What &nbsp;|&nbsp; How</span></li>
+        </ol>
+      </div>
+
+      <!-- C2 -->
+      <div class="exercise">
+        <div class="exercise-title">
+          <span class="ex-num num-c">2</span>
+          <div class="title-content">
+            <div class="title-main">
+              A school assistant is asking a new student questions. Complete the dialogue.
+              <span class="pts-badge">2 pts each · 8 pts</span>
+              <button class="btn-trans" onclick="toggleT('t-c2')" title="Traducir">🌐</button>
+            </div>
+            <div id="t-c2" class="es-trans">Un asistente escolar le hace preguntas a un estudiante nuevo. Completa el diálogo.</div>
+          </div>
+        </div>
+        <div class="dialogue-box">
+          <span class="speaker">Assistant:</span> Good morning! What is your first name?<br>
+          <span class="speaker">Student:</span> My name <input type="text" data-ans="is" class="blank blank-sm"> Laura.<br>
+          <span class="speaker">Assistant:</span> How do you <input type="text" data-ans="spell" class="blank blank-sm"> that?<br>
+          <span class="speaker">Student:</span> L-A-U-R-A.<br>
+          <span class="speaker">Assistant:</span> What is your phone <input type="text" data-ans="number" class="blank blank-sm">?<br>
+          <span class="speaker">Student:</span> It is 300-456-7890.<br>
+          <span class="speaker">Assistant:</span> And what is your e-mail <input type="text" data-ans="address" class="blank blank-sm">?<br>
+          <span class="speaker">Student:</span> laura23@gmail.com.
+        </div>
+      </div>
+
+      <!-- C3 -->
+      <div class="exercise">
+        <div class="exercise-title">
+          <span class="ex-num num-c">3</span>
+          <div class="title-content">
+            <div class="title-main">
+              Write the correct question for each answer.
+              <span class="pts-badge">2 pts each · 6 pts</span>
+              <button class="btn-trans" onclick="toggleT('t-c3')" title="Traducir">🌐</button>
+            </div>
+            <div id="t-c3" class="es-trans">Escribe la pregunta correcta para cada respuesta.</div>
+          </div>
+        </div>
+        <ol class="q-list">
+          <li><span class="q-num">1.</span> My phone number is 315-222-0001. → <input type="text" data-ans="What is your phone number" class="blank blank-lg">?</li>
+          <li><span class="q-num">2.</span> I live at Carrera 7 # 32-10, Bogotá. → <input type="text" data-ans="What is your address" class="blank blank-lg">?</li>
+          <li><span class="q-num">3.</span> It's M-A-R-T-I-N-E-Z. → <input type="text" data-ans="How do you spell that" class="blank blank-lg">?</li>
+        </ol>
+      </div>
+
+      <!-- C4 -->
+      <div class="exercise">
+        <div class="exercise-title">
+          <span class="ex-num num-c">4</span>
+          <div class="title-content">
+            <div class="title-main">
+              Fill in YOUR information below. <em style="font-weight:400; opacity:0.7;">(Teacher evaluated)</em>
+              <span class="pts-badge">2 pts each · 6 pts</span>
+              <button class="btn-trans" onclick="toggleT('t-c4')" title="Traducir">🌐</button>
+            </div>
+            <div id="t-c4" class="es-trans">Llena la tabla con TU información real o inventada. Manda pantallazo.</div>
+          </div>
+        </div>
+        <table class="ex-table">
+          <thead><tr><th>Question</th><th>Your Answer</th></tr></thead>
+          <tbody>
+            <tr><td>What is your full name?</td><td><input class="table-input blank" type="text" data-ans="OPEN"></td></tr>
+            <tr><td>What is your phone number?</td><td><input class="table-input blank" type="text" data-ans="OPEN"></td></tr>
+            <tr><td>What is your e-mail address?</td><td><input class="table-input blank" type="text" data-ans="OPEN"></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- ═══════════════════════ SECTION D ═══════════════════════ -->
+    <div class="section-block" id="section-d">
+      <div class="section-heading">
+        <span class="section-tag tag-d">D</span>
+        <h2>Introducing Myself and Other People</h2>
+      </div>
+
+      <div class="grammar-box d">
+        <h3>📌 Grammar Reference – Introductions + Possessives</h3>
+        <p>Use these expressions to introduce people:</p>
+        <div class="chips" style="margin-bottom:10px">
+          <span class="chip">I'd like you to meet…</span>
+          <span class="chip">This is…</span>
+          <span class="chip">He is / She is…</span>
+        </div>
+        <p>✏️ <strong>I'd like you to meet my friend, Ana. She is a nurse.</strong></p>
+        <p style="margin-top:8px"><strong>Possessive adjectives</strong> show who something belongs to:</p>
+        <table style="margin-top:8px;font-size:13px;font-weight:700;width:100%;border-collapse:collapse">
+          <tr style="background:rgba(92,79,207,0.1)">
+            <td style="padding:5px 10px"><strong>I</strong> → my</td>
+            <td style="padding:5px 10px"><strong>You</strong> → your</td>
+            <td style="padding:5px 10px"><strong>He</strong> → his</td>
+          </tr>
+          <tr>
+            <td style="padding:5px 10px"><strong>She</strong> → her</td>
+            <td style="padding:5px 10px"><strong>We</strong> → our</td>
+            <td style="padding:5px 10px"><strong>They</strong> → their</td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- D1 -->
+      <div class="exercise">
+        <div class="exercise-title">
+          <span class="ex-num num-d">1</span>
+          <div class="title-content">
+            <div class="title-main">
+              Choose the correct possessive adjective.
+              <span class="pts-badge">1 pt each · 6 pts</span>
+              <button class="btn-trans" onclick="toggleT('t-d1')" title="Traducir">🌐</button>
+            </div>
+            <div id="t-d1" class="es-trans">Elige el adjetivo posesivo correcto basándote en la primera oración.</div>
+          </div>
+        </div>
+        <ol class="q-list">
+          <li><span class="q-num">1.</span> I am a student. <input type="text" data-ans="My" class="blank blank-sm"> school is very big. <span class="choice-box">My &nbsp;|&nbsp; Her &nbsp;|&nbsp; His</span></li>
+          <li><span class="q-num">2.</span> She is a doctor. <input type="text" data-ans="Her" class="blank blank-sm"> name is Sarah. <span class="choice-box">Her &nbsp;|&nbsp; His &nbsp;|&nbsp; Their</span></li>
+          <li><span class="q-num">3.</span> He is a chef. <input type="text" data-ans="His" class="blank blank-sm"> food is delicious. <span class="choice-box">Our &nbsp;|&nbsp; My &nbsp;|&nbsp; His</span></li>
+          <li><span class="q-num">4.</span> We are brothers. <input type="text" data-ans="Our" class="blank blank-sm"> parents are from Peru. <span class="choice-box">His &nbsp;|&nbsp; Our &nbsp;|&nbsp; Her</span></li>
+          <li><span class="q-num">5.</span> You are a teacher. <input type="text" data-ans="Your" class="blank blank-sm"> students are smart. <span class="choice-box">Your &nbsp;|&nbsp; Their &nbsp;|&nbsp; His</span></li>
+          <li><span class="q-num">6.</span> They are pilots. <input type="text" data-ans="Their" class="blank blank-sm"> airplanes are fast. <span class="choice-box">Your &nbsp;|&nbsp; My &nbsp;|&nbsp; Their</span></li>
+        </ol>
+      </div>
+
+      <!-- D2 -->
+      <div class="exercise">
+        <div class="exercise-title">
+          <span class="ex-num num-d">2</span>
+          <div class="title-content">
+            <div class="title-main">
+              Complete the introduction. <span class="choice-box">This is &nbsp;|&nbsp; She is &nbsp;|&nbsp; His &nbsp;|&nbsp; I'd like you to meet</span>
+              <span class="pts-badge">2 pts each · 8 pts</span>
+              <button class="btn-trans" onclick="toggleT('t-d2')" title="Traducir">🌐</button>
+            </div>
+            <div id="t-d2" class="es-trans">Completa la presentación usando las opciones de la cajita de arriba.</div>
+          </div>
+        </div>
+        <div class="dialogue-box">
+          <span class="speaker">Pablo:</span> Maria, <input type="text" data-ans="I'd like you to meet|This is" class="blank blank-md"> my friend, David.<br>
+          <span class="speaker">Maria:</span> Hello, David!<br>
+          <span class="speaker">David:</span> Nice to meet you!<br>
+          <span class="speaker">Pablo:</span> David is a doctor. <input type="text" data-ans="His" class="blank blank-sm"> favorite sport is tennis.<br>
+          <span class="speaker">Maria:</span> Nice! And who is that woman?<br>
+          <span class="speaker">Pablo:</span> <input type="text" data-ans="This is|I'd like you to meet" class="blank blank-sm"> my sister, Laura. <input type="text" data-ans="She is" class="blank blank-sm"> a nurse.
+        </div>
+      </div>
+
+      <!-- D3 -->
+      <div class="exercise">
+        <div class="exercise-title">
+          <span class="ex-num num-d">3</span>
+          <div class="title-content">
+            <div class="title-main">
+              Write a sentence to introduce each person using <em>This is / I'd like you to meet</em>. <em style="font-weight:400; opacity:0.7;">(Teacher evaluated)</em>
+              <span class="pts-badge">3 pts each · 6 pts</span>
+              <button class="btn-trans" onclick="toggleT('t-d3')" title="Traducir">🌐</button>
+            </div>
+            <div id="t-d3" class="es-trans">Escribe una oración para presentar a cada persona usando las frases de arriba. Manda pantallazo.</div>
+          </div>
+        </div>
+        <ol class="q-list">
+          <li><span class="q-num">1.</span> A friend (name + job): <input type="text" data-ans="OPEN" class="blank blank-xl"></li>
+          <li><span class="q-num">2.</span> A family member (name + nationality): <input type="text" data-ans="OPEN" class="blank blank-xl"></li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- ═══════════════════════ SECTION E ═══════════════════════ -->
+    <div class="section-block" id="section-e">
+      <div class="section-heading">
+        <span class="section-tag tag-e">E</span>
+        <h2>Describing Physical Appearance</h2>
+      </div>
+
+      <div class="grammar-box e">
+        <h3>📌 Grammar Reference – HAVE / HAS for Appearance</h3>
+        <p>Use <strong>have / has</strong> to describe features:</p>
+        <p style="margin-top:6px">✏️ <strong>She has long black hair. · He has blue eyes.</strong></p>
+        <p style="margin-top:6px">✏️ <strong>I have short brown curly hair.</strong></p>
+        <table style="margin-top:10px;font-size:13px;font-weight:700;width:100%;border-collapse:collapse;border-radius:6px;overflow:hidden">
+          <tr style="background:rgba(199,125,255,0.15)">
+            <td style="padding:6px 12px"><strong>Hair color:</strong></td>
+            <td style="padding:6px 12px">black · brown · blonde · red · grey · white</td>
+          </tr>
+          <tr>
+            <td style="padding:6px 12px"><strong>Hair length:</strong></td>
+            <td style="padding:6px 12px">short · long</td>
+          </tr>
+          <tr style="background:rgba(199,125,255,0.15)">
+            <td style="padding:6px 12px"><strong>Hair texture:</strong></td>
+            <td style="padding:6px 12px">straight · wavy · curly</td>
+          </tr>
+          <tr>
+            <td style="padding:6px 12px"><strong>Eye color:</strong></td>
+            <td style="padding:6px 12px">brown · blue · green · hazel · dark</td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- E1 -->
+      <div class="exercise">
+        <div class="exercise-title">
+          <span class="ex-num num-e">1</span>
+          <div class="title-content">
+            <div class="title-main">
+              Write <em>have</em> or <em>has</em>.
+              <span class="pts-badge">1 pt each · 5 pts</span>
+              <button class="btn-trans" onclick="toggleT('t-e1')" title="Traducir">🌐</button>
+            </div>
+            <div id="t-e1" class="es-trans">Escribe <em>have</em> o <em>has</em>.</div>
+          </div>
+        </div>
+        <ol class="q-list">
+          <li><span class="q-num">1.</span> She <input type="text" data-ans="has" class="blank blank-sm"> long brown hair. <span class="choice-box">have &nbsp;|&nbsp; has</span></li>
+          <li><span class="q-num">2.</span> I <input type="text" data-ans="have" class="blank blank-sm"> short black hair. <span class="choice-box">have &nbsp;|&nbsp; has</span></li>
+          <li><span class="q-num">3.</span> He <input type="text" data-ans="has" class="blank blank-sm"> blue eyes. <span class="choice-box">have &nbsp;|&nbsp; has</span></li>
+          <li><span class="q-num">4.</span> They <input type="text" data-ans="have" class="blank blank-sm"> curly hair. <span class="choice-box">have &nbsp;|&nbsp; has</span></li>
+          <li><span class="q-num">5.</span> My sister <input type="text" data-ans="has" class="blank blank-sm"> wavy red hair. <span class="choice-box">have &nbsp;|&nbsp; has</span></li>
+        </ol>
+      </div>
+
+      <!-- E2 -->
+      <div class="exercise">
+        <div class="exercise-title">
+          <span class="ex-num num-e">2</span>
+          <div class="title-content">
+            <div class="title-main">
+              Look at the emoji clue. Choose the correct word to complete the description.
+              <span class="pts-badge">1 pt each · 5 pts</span>
+              <button class="btn-trans" onclick="toggleT('t-e2')" title="Traducir">🌐</button>
+            </div>
+            <div id="t-e2" class="es-trans">Mira el emoji de pista. Elige la palabra correcta de la cajita.</div>
+          </div>
+        </div>
+        <ol class="q-list">
+          <li><span class="q-num">1.</span> <span class="emoji-clue">👩‍🦱</span> Her hair is <input type="text" data-ans="curly" class="blank blank-sm">. <span class="choice-box">straight &nbsp;|&nbsp; wavy &nbsp;|&nbsp; curly</span></li>
+          <li><span class="q-num">2.</span> <span class="emoji-clue">👱‍♀️</span> Her hair is <input type="text" data-ans="blonde" class="blank blank-sm">. <span class="choice-box">black &nbsp;|&nbsp; blonde &nbsp;|&nbsp; red</span></li>
+          <li><span class="q-num">3.</span> <span class="emoji-clue">👦</span> His hair is <input type="text" data-ans="short" class="blank blank-sm">. <span class="choice-box">short &nbsp;|&nbsp; long</span></li>
+          <li><span class="q-num">4.</span> <span class="emoji-clue">🔵🔵</span> His eyes are <input type="text" data-ans="blue" class="blank blank-sm">. <span class="choice-box">green &nbsp;|&nbsp; blue &nbsp;|&nbsp; brown</span></li>
+          <li><span class="q-num">5.</span> <span class="emoji-clue">👩🏻</span> Her hair is <input type="text" data-ans="straight" class="blank blank-sm">. <span class="choice-box">straight &nbsp;|&nbsp; wavy &nbsp;|&nbsp; curly</span></li>
+        </ol>
+      </div>
+
+      <!-- E3 -->
+      <div class="exercise">
+        <div class="exercise-title">
+          <span class="ex-num num-e">3</span>
+          <div class="title-content">
+            <div class="title-main">
+              Read and complete the description. Use words from the box. <br>
+              <span style="font-weight:600; opacity:0.8; margin-top:4px;">💡 <em>Friendly reminder: Be careful with the adjective order!</em></span>
+              <span class="pts-badge">2 pts each · 8 pts</span>
+              <button class="btn-trans" onclick="toggleT('t-e3')" title="Traducir">🌐</button>
+            </div>
+            <div id="t-e3" class="es-trans">Lee y completa la descripción cuidando el orden de los adjetivos (largo, textura, color). 💡 <em>Recordatorio: ¡Ten cuidado con el orden de los adjetivos!</em></div>
+          </div>
+        </div>
+        <div class="chips" style="margin-bottom:14px">
+          <span class="chip">has · straight · brown · short</span>
+        </div>
+        <p style="font-size:14px;font-weight:700;margin-bottom:12px;line-height:1.8">
+          This is my friend Pedro. He <input type="text" data-ans="has" class="blank blank-sm"> <input type="text" data-ans="short" class="blank blank-sm">, <input type="text" data-ans="straight" class="blank blank-sm">, <input type="text" data-ans="brown" class="blank blank-sm"> hair. He also has dark brown eyes. He is very friendly!
+        </p>
+      </div>
+
+      <!-- E4 -->
+      <div class="exercise">
+        <div class="exercise-title">
+          <span class="ex-num num-e">4</span>
+          <div class="title-content">
+            <div class="title-main">
+              Describe a person you know. Write 3 sentences. <em style="font-weight:400; opacity:0.7;">(Teacher evaluated)</em>
+              <span class="pts-badge">3 pts each · 9 pts</span>
+              <button class="btn-trans" onclick="toggleT('t-e4')" title="Traducir">🌐</button>
+            </div>
+            <div id="t-e4" class="es-trans">Describe a alguien que conoces en 3 oraciones cortas. Manda pantallazo.</div>
+          </div>
+        </div>
+        <ol class="q-list">
+          <li><span class="q-num">1.</span> Who? → <input type="text" data-ans="OPEN" class="blank blank-xl"> (name + relationship)</li>
+          <li><span class="q-num">2.</span> Hair → <input type="text" data-ans="OPEN" class="blank blank-xl"></li>
+          <li><span class="q-num">3.</span> Eyes → <input type="text" data-ans="OPEN" class="blank blank-xl"></li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- ═══════════════════════ SECTION F – FINAL CHALLENGE ═══════════════════════ -->
+    <div class="section-block" id="section-f">
+      <div class="section-heading">
+        <span class="section-tag tag-f">★</span>
+        <h2>Final Challenge – My New Friend</h2>
+      </div>
+
+      <div class="grammar-box f">
+        <h3>🌟 Putting It All Together!</h3>
+        <p>Use EVERYTHING you practiced in Sections A–E to complete this final activity.</p>
+        <p style="margin-top:8px">You will write about an imaginary new friend. Think about:</p>
+        <div class="chips" style="margin-top:8px">
+          <span class="chip">name & job</span>
+          <span class="chip">nationality</span>
+          <span class="chip">personal info</span>
+          <span class="chip">introduction phrase</span>
+          <span class="chip">appearance</span>
+        </div>
+      </div>
+
+      <!-- F1 -->
+      <div class="exercise">
+        <div class="exercise-title">
+          <span class="ex-num num-f">1</span>
+          <div class="title-content">
+            <div class="title-main">
+              Complete the profile of your new friend. Use full sentences.
+              <span class="pts-badge">2 pts each · 10 pts</span>
+              <button class="btn-trans" onclick="toggleT('t-f1')" title="Traducir">🌐</button>
+            </div>
+            <div id="t-f1" class="es-trans">Inventa un perfil para un nuevo amigo. Escribe oraciones completas.</div>
+          </div>
+        </div>
+        <table class="ex-table">
+          <thead><tr><th>Category</th><th>Write your sentence here</th></tr></thead>
+          <tbody>
+            <tr><td>👤 Name &amp; job</td><td><input class="table-input blank" type="text" data-ans="OPEN" placeholder="e.g. Her name is Ana. She is a doctor."></td></tr>
+            <tr><td>🌍 Nationality</td><td><input class="table-input blank" type="text" data-ans="OPEN" placeholder="e.g. She is from Spain. She is Spanish."></td></tr>
+            <tr><td>📞 Phone number</td><td><input class="table-input blank" type="text" data-ans="OPEN" placeholder="e.g. Her phone number is…"></td></tr>
+            <tr><td>👀 Eye color</td><td><input class="table-input blank" type="text" data-ans="OPEN" placeholder="e.g. She has green eyes."></td></tr>
+            <tr><td>💇 Hair</td><td><input class="table-input blank" type="text" data-ans="OPEN" placeholder="e.g. She has short, curly, brown hair."></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- F2 -->
+      <div class="exercise">
+        <div class="exercise-title">
+          <span class="ex-num num-f">2</span>
+          <div class="title-content">
+            <div class="title-main">
+              Now introduce your friend to the class! Write a short paragraph (4–6 sentences). <em style="font-weight:400; opacity:0.7;">(Teacher evaluated)</em>
+              <span class="pts-badge">10 pts</span>
+              <button class="btn-trans" onclick="toggleT('t-f2')" title="Traducir">🌐</button>
+            </div>
+            <div id="t-f2" class="es-trans">¡Presenta a tu amigo/a a la clase! Escribe un párrafo corto juntando la información de arriba. Manda pantallazo.</div>
+          </div>
+        </div>
+        <p style="font-size:13px;font-weight:700;opacity:0.6;margin-bottom:12px">Start with: <em>"I'd like you to meet my new friend…"</em></p>
+        <textarea
+          data-ans="OPEN"
+          rows="6"
+          placeholder="Write your paragraph here..."
+          style="width:100%;border:2px dashed #ccc;border-radius:8px;padding:14px;font-family:'Nunito',sans-serif;font-size:15px;font-weight:600;color:#2b2b2b;outline:none;resize:vertical;background:#fafafa;transition:border-color 0.2s;"
+          onfocus="this.style.borderColor='#1a1a2e'"
+          onblur="this.style.borderColor='#ccc'"
+        ></textarea>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════ ACTION BAR ═══════════════════════ -->
+    <div class="action-bar">
+      <div class="score-display" id="gradeScoreBox">Score: 0</div>
+      <div class="button-group">
+        <button class="btn-action btn-check" onclick="checkStudentAnswers()">✔️ Check Answers</button>
+        <button class="btn-action btn-reset" onclick="resetWorksheet()">🔄 Clear Sheet</button>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════ ANSWER KEY ═══════════════════════ -->
+    <div class="answer-key-wrapper">
+      <button class="btn-toggle-key" id="toggleKeyBtn" onclick="toggleAnswerKey()">
+        👁️ Show Answer Key
+      </button>
+
+      <div class="answer-key-content" id="answerKeyContent">
+        <div class="answer-key">
+          <h2>Answer Key</h2>
+
+          <div class="key-section">
+            <h3>Section A – Introducing Yourself</h3>
+            <div class="key-list">
+              <div>A1: 1.<span>is</span> · 2.<span>am</span> · 3.<span>is</span> · 4.<span>are</span> · 5.<span>is</span></div>
+              <div>A2: 1→<span>c</span> · 2→<span>a</span> · 3→<span>d</span> · 4→<span>b</span></div>
+              <div>A3: name · am · Nice · a · is</div>
+              <div>A4: Open answers – check verb to be usage (I am…).</div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>Section B – Nationality</h3>
+            <div class="key-list">
+              <div>B1: 1.<span>Canadian</span> · 2.<span>Chinese</span> · 3.<span>British</span> · 4.<span>German</span> · 5.<span>Egyptian</span> · 6.<span>Peruvian</span></div>
+              <div>B2: 1. <span>Where are you from?</span> · 2. <span>Where are they from?</span> · 3. <span>Where is he from?</span></div>
+              <div>B3: 1→<span>b</span> · 2→<span>d</span> · 3→<span>a</span> · 4→<span>c</span></div>
+              <div>B4: Open / personal answers. Check "I am from… / I am [nationality]."</div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>Section C – Personal Information</h3>
+            <div class="key-list">
+              <div>C1: 1.<span>What</span> · 2.<span>What</span> · 3.<span>How</span> · 4.<span>What</span> · 5.<span>What</span></div>
+              <div>C2: is · spell · number · address</div>
+              <div>C3: 1.<span>What is your phone number?</span> · 2.<span>What is your address?</span> · 3.<span>How do you spell that?</span></div>
+              <div>C4: Open / personal answers. Check "What is your…? → It is…"</div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>Section D – Introducing Others</h3>
+            <div class="key-list">
+              <div>D1: 1.<span>My</span> · 2.<span>Her</span> · 3.<span>His</span> · 4.<span>Our</span> · 5.<span>Your</span> · 6.<span>Their</span></div>
+              <div>D2: I'd like you to meet / This is · His · This is / I'd like you to meet · She is</div>
+              <div>D3: Open answers. Check "This is / I'd like you to meet + name + He/She is + job/nationality."</div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>Section E – Physical Appearance</h3>
+            <div class="key-list">
+              <div>E1: 1.<span>has</span> · 2.<span>have</span> · 3.<span>has</span> · 4.<span>have</span> · 5.<span>has</span></div>
+              <div>E2: 1.<span>curly</span> · 2.<span>blonde</span> · 3.<span>short</span> · 4.<span>blue</span> · 5.<span>straight</span></div>
+              <div>E3: has · short · straight · brown</div>
+              <div>E4: Open answers. Check "He/She has + [length] + [texture] + [color] hair / eyes."</div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>★ Final Challenge</h3>
+            <div class="key-list">
+              <div>F1 & F2: Teacher-evaluated open writing. Check: name + is, from + nationality, has eyes, has hair, I'd like you to meet… use of possessive adjectives, punctuation.</div>
+            </div>
+          </div>
+
+          <p style="font-size:12px;font-weight:600;opacity:0.5;margin-top:14px;padding-top:10px;border-top:1px dashed var(--rule);">
+            *The auto-grader checks strict objective answers (which ignore extra spaces or capital letters). Open writing / personal responses are highlighted in blue for quick teacher evaluation.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  // Toggle Spanish Translations
+  function toggleT(id) {
+    const el = document.getElementById(id);
+    if (el.style.display === "block") {
+      el.style.display = "none";
+    } else {
+      el.style.display = "block";
+    }
+  }
+
+  // Answer Checking Logic
+  function checkStudentAnswers() {
+    let score = 0;
+    let autoTotal = 0;
+
+    const inputs = document.querySelectorAll('input[data-ans]');
+    inputs.forEach(input => {
+      let studentAns = input.value.trim().toLowerCase().replace(/[.?!]$/, "").replace(/\s+/g, " ");
+      // Modify target to split by pipe (|) for interchangeable answers
+      let rawTarget = input.getAttribute('data-ans').toLowerCase().replace(/[.?!]$/, "");
+      let targetAnsArray = rawTarget.split('|').map(s => s.replace(/\s+/g, " ").trim());
+
+      input.classList.remove('is-correct', 'is-incorrect', 'is-open');
+
+      if (targetAnsArray.includes("open")) {
+        if (studentAns !== "") {
+          input.classList.add('is-open');
+        }
+      } else {
+        autoTotal++;
+        if (targetAnsArray.includes(studentAns)) {
+          input.classList.add('is-correct');
+          score++;
+        } else {
+          input.classList.add('is-incorrect');
+        }
+      }
+    });
+
+    // Handle textareas (open text)
+    document.querySelectorAll('textarea[data-ans]').forEach(ta => {
+      ta.style.borderColor = ta.value.trim() !== "" ? "#457b9d" : "#ccc";
+    });
+
+    const scoreBox = document.getElementById('gradeScoreBox');
+    scoreBox.innerText = "Auto-graded Score: " + score + " / " + autoTotal;
+    scoreBox.style.display = "block";
+  }
+
+  function resetWorksheet() {
+    if (confirm("Are you sure you want to clear all your answers? / ¿Seguro que quieres borrar tus respuestas?")) {
+      document.querySelectorAll('input').forEach(input => {
+        input.value = "";
+        input.classList.remove('is-correct', 'is-incorrect', 'is-open');
+      });
+      document.querySelectorAll('textarea').forEach(ta => {
+        ta.value = "";
+        ta.style.borderColor = "#ccc";
+      });
+      document.getElementById('gradeScoreBox').style.display = "none";
+    }
+  }
+
+  function toggleAnswerKey() {
+    const content = document.getElementById("answerKeyContent");
+    const btn = document.getElementById("toggleKeyBtn");
+    if (content.style.display === "block") {
+      content.style.display = "none";
+      btn.innerHTML = "👁️ Show Answer Key";
+    } else {
+      content.style.display = "block";
+      btn.innerHTML = "🙈 Hide Answer Key";
+    }
+  }
+</script>
+</body>
+</html>

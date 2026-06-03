@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HOW Questions – A1 Beginner English Worksheet</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Baloo+2:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a2e;
+    --paper: #fffef7;
+    --A: #e63946;
+    --A-light: #fde8ea;
+    --B: #2a9d8f;
+    --B-light: #d6f5f2;
+    --C: #e07b00;
+    --C-light: #fff0d6;
+    --D: #5c4fcf;
+    --D-light: #ebe8ff;
+    --rule: #d4cfc0;
+    --note-bg: #f7f3e8;
+    
+    /* Feedback Colors */
+    --correct: #2a9d8f;
+    --incorrect: #e63946;
+    --open-ans: #457b9d;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: #e8e4d9;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 32px 16px 60px;
+  }
+
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    background: var(--paper);
+    border-radius: 4px;
+    box-shadow: 0 4px 40px rgba(0,0,0,0.18);
+    overflow: hidden;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--ink);
+    color: #fff;
+    padding: 40px 48px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent, transparent 18px,
+      rgba(255,255,255,0.03) 18px, rgba(255,255,255,0.03) 36px
+    );
+  }
+  .header-badge {
+    display: inline-block;
+    background: #fff;
+    color: var(--ink);
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+  }
+  header h1 {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1.05;
+    margin-bottom: 8px;
+  }
+  header h1 span { color: #f4d03f; }
+  header p {
+    font-size: 15px;
+    opacity: 0.7;
+    font-weight: 600;
+  }
+
+  /* ── SECTION NAV ── */
+  .section-nav {
+    display: flex;
+    border-bottom: 2px solid var(--rule);
+  }
+  .section-nav a {
+    flex: 1;
+    padding: 14px 8px 12px;
+    text-align: center;
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 4px solid transparent;
+    margin-bottom: -2px;
+    transition: all 0.15s;
+    color: #777;
+    letter-spacing: 0.3px;
+  }
+  .section-nav a:hover { color: var(--ink); }
+  .section-nav a.a { border-color: var(--A); color: var(--A); }
+  .section-nav a.b { border-color: var(--B); color: var(--B); }
+  .section-nav a.c { border-color: var(--C); color: var(--C); }
+  .section-nav a.d { border-color: var(--D); color: var(--D); }
+
+  /* ── CONTENT ── */
+  .content { padding: 0 44px 44px; }
+
+  /* ── SECTION HEADER ── */
+  .section-block { margin-top: 44px; }
+  .section-heading {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+  .section-tag {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    padding: 3px 12px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    white-space: nowrap;
+  }
+  .tag-a { background: var(--A); color: #fff; }
+  .tag-b { background: var(--B); color: #fff; }
+  .tag-c { background: var(--C); color: #fff; }
+  .tag-d { background: var(--D); color: #fff; }
+  .section-heading h2 {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+  }
+
+  /* ── GRAMMAR BOX ── */
+  .grammar-box {
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 22px;
+    border-left: 5px solid;
+  }
+  .grammar-box.a { background: var(--A-light); border-color: var(--A); }
+  .grammar-box.b { background: var(--B-light); border-color: var(--B); }
+  .grammar-box.c { background: var(--C-light); border-color: var(--C); }
+  .grammar-box.d { background: var(--D-light); border-color: var(--D); }
+  .grammar-box h3 {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 10px;
+    opacity: 0.6;
+  }
+  .grammar-box p {
+    font-size: 14px;
+    line-height: 1.7;
+    font-weight: 600;
+  }
+  .grammar-box strong { font-weight: 900; }
+
+  /* word bank / reference chips */
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  .chip {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 20px;
+    background: rgba(0,0,0,0.07);
+  }
+
+  /* ── EXERCISE BLOCK ── */
+  .exercise {
+    margin-bottom: 26px;
+  }
+  .exercise-title {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .ex-num {
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 900;
+    color: #fff;
+    flex-shrink: 0;
+  }
+  .num-a { background: var(--A); }
+  .num-b { background: var(--B); }
+  .num-c { background: var(--C); }
+  .num-d { background: var(--D); }
+
+  /* Numbered question rows */
+  .q-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .q-list li {
+    font-size: 15px;
+    font-weight: 600;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    line-height: 1.5;
+  }
+  .q-num {
+    font-weight: 900;
+    opacity: 0.4;
+    min-width: 20px;
+    font-size: 13px;
+  }
+  
+  /* INTERACTIVE BLANKS WITH GRADING STATES */
+  .blank {
+    border: none;
+    border-bottom: 2px solid #aaa;
+    background: transparent;
+    min-width: 130px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #2b2b2b;
+    padding: 0 4px;
+    outline: none;
+    text-align: center;
+    transition: all 0.2s;
+  }
+  .blank:focus {
+    border-bottom-color: var(--ink);
+    background: rgba(0,0,0,0.02);
+  }
+  .blank-sm { min-width: 85px; }
+  .blank-lg { min-width: 260px; flex-grow: 0; }
+  .blank-xl { min-width: 440px; flex-grow: 1; text-align: left; padding: 0 8px; }
+
+  /* Grading class styles applied by JavaScript */
+  .is-correct {
+    border-bottom: 2px solid var(--correct) !important;
+    color: var(--correct) !important;
+    background-color: rgba(42, 157, 143, 0.06) !important;
+  }
+  .is-incorrect {
+    border-bottom: 2px solid var(--incorrect) !important;
+    color: var(--incorrect) !important;
+    background-color: rgba(230, 57, 70, 0.06) !important;
+  }
+  .is-open {
+    border-bottom: 2px solid var(--open-ans) !important;
+    color: var(--open-ans) !important;
+    background-color: rgba(69, 123, 157, 0.06) !important;
+  }
+
+  /* Match exercise grid mapping */
+  .match-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 2px solid var(--rule);
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .match-grid .col-header {
+    background: var(--ink);
+    color: #fff;
+    padding: 8px 16px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 800;
+  }
+  .match-grid .col-header:first-child { border-right: 2px solid #444; }
+  .match-row { display: contents; }
+  .match-row .left, .match-row .right {
+    padding: 10px 16px;
+    border-top: 1.5px solid var(--rule);
+  }
+  .match-row .left { border-right: 2px solid var(--rule); }
+  .match-row:nth-child(odd) .left,
+  .match-row:nth-child(odd) .right { background: #fafafa; }
+
+  /* Table exercise formatting */
+  table.ex-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  table.ex-table th {
+    background: var(--ink);
+    color: #fff;
+    padding: 9px 14px;
+    text-align: left;
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+  }
+  table.ex-table td {
+    padding: 8px 14px;
+    border-bottom: 1.5px solid var(--rule);
+    vertical-align: middle;
+  }
+  table.ex-table tr:nth-child(even) td { background: #fafafa; }
+  
+  /* Table layout specific text field styling */
+  .table-input {
+    width: 100%;
+    border: none;
+    border-bottom: 1.5px dashed #bbb;
+    background: transparent;
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 4px 0;
+    outline: none;
+    transition: all 0.2s;
+  }
+  .table-input:focus {
+    border-bottom-style: solid;
+    border-bottom-color: var(--ink);
+  }
+
+  /* ── CONTROL ACTIONS BAR ── */
+  .action-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 36px;
+  }
+  .score-display {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--ink);
+    display: none;
+    background: #f0ede4;
+    padding: 6px 20px;
+    border-radius: 30px;
+    border: 2px solid var(--rule);
+  }
+  .button-group {
+    display: flex;
+    gap: 16px;
+  }
+  .btn-action {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 12px 32px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    transition: all 0.2s;
+  }
+  .btn-check {
+    background: #2a9d8f;
+    color: white;
+  }
+  .btn-check:hover { background: #228074; transform: translateY(-1px); }
+  .btn-reset {
+    background: #e7e5e0;
+    color: var(--ink);
+  }
+  .btn-reset:hover { background: #dcd9d2; transform: translateY(-1px); }
+  .btn-action:active { transform: translateY(1px); }
+
+  /* ── DIVIDER ── */
+  .section-divider {
+    height: 2px;
+    background: repeating-linear-gradient(
+      90deg,
+      var(--rule) 0, var(--rule) 8px,
+      transparent 8px, transparent 16px
+    );
+    margin: 44px 0 0;
+  }
+
+  /* ── ANSWER KEY ── */
+  .answer-key-wrapper {
+    margin-top: 48px;
+    border-top: 3px solid var(--ink);
+    padding-top: 20px;
+  }
+  
+  .btn-toggle-key {
+    background: var(--ink);
+    color: #fff;
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  .btn-toggle-key:hover {
+    background: #2e2e4e;
+    transform: translateY(-1px);
+  }
+
+  .answer-key-content {
+    display: none; 
+    margin-top: 24px;
+  }
+  
+  .answer-key h2 {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .answer-key h2::after {
+    content: '(Teacher Copy)';
+    font-size: 12px;
+    background: var(--ink);
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    font-weight: 700;
+  }
+  .key-section {
+    margin-bottom: 20px;
+  }
+  .key-section h3 {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    opacity: 0.5;
+  }
+  .key-list {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 2;
+    column-count: 2;
+    column-gap: 32px;
+  }
+  .key-list span { font-weight: 900; }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; }
+    .section-nav { display: none; }
+    .action-bar { display: none; }
+    .blank { border-bottom-color: #000; }
+    .answer-key-wrapper { display: none !important; }
+  }
+
+  @media (max-width: 600px) {
+    .content { padding: 0 20px 36px; }
+    header { padding: 28px 20px 22px; }
+    header h1 { font-size: 30px; }
+    .match-grid { grid-template-columns: 1fr; }
+    .match-grid .col-header:first-child { border-right: none; border-bottom: 2px solid #444; }
+    .match-row .left { border-right: none; }
+    .match-row .right { border-top: 1.5px dashed var(--rule); }
+    .key-list { column-count: 1; }
+    .q-list li { flex-direction: column; align-items: flex-start; gap: 4px; margin-bottom: 8px; }
+    .blank-lg, .blank-xl { width: 100%; min-width: 100%; }
+    .button-group { flex-direction: column; align-items: stretch; width: 100%; }
+    .btn-action { text-align: center; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="header-badge">ESL Worksheet · A1 Beginner</div>
+    <h1>Questions with <span>HOW</span></h1>
+    <p>How often? · How much/many? · How long does it take? · How long/tall/old?</p>
+  </header>
+
+  <nav class="section-nav">
+    <a href="#section-a" class="a">A · How often?</a>
+    <a href="#section-b" class="b">B · How much/many?</a>
+    <a href="#section-c" class="c">C · How long does it take?</a>
+    <a href="#section-d" class="d">D · How long/tall/old?</a>
+  </nav>
+
+  <div class="content">
+
+    <div class="section-block" id="section-a">
+      <div class="section-heading">
+        <span class="section-tag tag-a">A</span>
+        <h2>How often?</h2>
+      </div>
+
+      <div class="grammar-box a">
+        <h3>📌 Grammar Reference</h3>
+        <p>We use <strong>How often?</strong> to ask about frequency.</p>
+        <p style="margin-top:8px"><strong>Adverbs of frequency</strong> go <em>before</em> the main verb (but <em>after</em> "be"):</p>
+        <div class="chips">
+          <span class="chip">always (100%)</span>
+          <span class="chip">usually (~80%)</span>
+          <span class="chip">sometimes (~50%)</span>
+          <span class="chip">rarely (~10%)</span>
+          <span class="chip">never (0%)</span>
+        </div>
+        <p style="margin-top:10px">✏️ <strong>She always drinks coffee. · I never eat fish.</strong></p>
+        <p style="margin-top:8px"><strong>Expressions of frequency</strong> go at the <em>end</em> of the sentence:</p>
+        <div class="chips">
+          <span class="chip">once a day</span>
+          <span class="chip">twice a week</span>
+          <span class="chip">three times a month</span>
+          <span class="chip">every year</span>
+          <span class="chip">weekly</span>
+          <span class="chip">monthly</span>
+          <span class="chip">quarterly</span>
+        </div>
+        <p style="margin-top:10px">✏️ <strong>I go to the gym twice a week. · We have a meeting quarterly.</strong></p>
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title"><span class="ex-num num-a">1</span> Choose the correct word to complete each sentence.</div>
+        <ol class="q-list">
+          <li><span class="q-num">1.</span> I <input type="text" data-ans="always" class="blank blank-sm"> eat breakfast. I eat it every morning! &nbsp;<em style="opacity:.5;font-size:13px">(always / never)</em></li>
+          <li><span class="q-num">2.</span> She <input type="text" data-ans="rarely" class="blank blank-sm"> goes to the cinema. Maybe once a year. &nbsp;<em style="opacity:.5;font-size:13px">(usually / rarely)</em></li>
+          <li><span class="q-num">3.</span> They <input type="text" data-ans="never" class="blank blank-sm"> eat vegetables. They don't like them at all. &nbsp;<em style="opacity:.5;font-size:13px">(never / sometimes)</em></li>
+          <li><span class="q-num">4.</span> He <input type="text" data-ans="sometimes" class="blank blank-sm"> walks to school. About half the time. &nbsp;<em style="opacity:.5;font-size:13px">(sometimes / always)</em></li>
+          <li><span class="q-num">5.</span> We <input type="text" data-ans="always" class="blank blank-sm"> have English class. We have it every day. &nbsp;<em style="opacity:.5;font-size:13px">(rarely / always)</em></li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title"><span class="ex-num num-a">2</span> Put the adverb in the correct position. Rewrite the sentence.</div>
+        <ol class="q-list">
+          <li><span class="q-num">1.</span> <em>Maria / is / late. (never)</em> → <input type="text" data-ans="Maria is never late" class="blank blank-xl"></li>
+          <li><span class="q-num">2.</span> <em>I / drink / tea in the morning. (usually)</em> → <input type="text" data-ans="I usually drink tea in the morning" class="blank blank-xl"></li>
+          <li><span class="q-num">3.</span> <em>They / go / to the park on Sundays. (sometimes)</em> → <input type="text" data-ans="They sometimes go to the park on Sundays" class="blank blank-xl"></li>
+          <li><span class="q-num">4.</span> <em>He / forgets / his keys. (always)</em> → <input type="text" data-ans="He always forgets his keys" class="blank blank-xl"></li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title"><span class="ex-num num-a">3</span> Match the question to the correct answer. Write the letter (a, b, c, or d) in the matching blank below:</div>
+        <ol class="q-list" style="margin-bottom: 12px;">
+          <li>Question 1 answers with: <input type="text" data-ans="c" class="blank blank-sm" style="min-width:45px"></li>
+          <li>Question 2 answers with: <input type="text" data-ans="a" class="blank blank-sm" style="min-width:45px"></li>
+          <li>Question 3 answers with: <input type="text" data-ans="b" class="blank blank-sm" style="min-width:45px"></li>
+          <li>Question 4 answers with: <input type="text" data-ans="d" class="blank blank-sm" style="min-width:45px"></li>
+        </ol>
+        <div class="match-grid">
+          <div class="col-header">Question</div>
+          <div class="col-header">Answer</div>
+          <div class="match-row"><div class="left">1. How often do you brush your teeth?</div><div class="right">a. Once a year, in December.</div></div>
+          <div class="match-row"><div class="left">2. How often does your family go on holiday?</div><div class="right">b. Every day, at 7 AM.</div></div>
+          <div class="match-row"><div class="left">3. How often do you go to the cinema?</div><div class="right">c. Twice a day – morning and night.</div></div>
+          <div class="match-row"><div class="left">4. How often do you speak English?</div><div class="right">d. Every day in class.</div></div>
+        </div>
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title"><span class="ex-num num-a">4</span> Write a true sentence about yourself using each word. <em style="font-weight:400; opacity:0.7;">(Teacher evaluated)</em></div>
+        <ol class="q-list">
+          <li><span class="q-num">1.</span> <strong>always:</strong> <input type="text" data-ans="OPEN" class="blank blank-xl"></li>
+          <li><span class="q-num">2.</span> <strong>never:</strong> <input type="text" data-ans="OPEN" class="blank blank-xl"></li>
+          <li><span class="q-num">3.</span> <strong>once a week:</strong> <input type="text" data-ans="OPEN" class="blank blank-xl"></li>
+          <li><span class="q-num">4.</span> <strong>quarterly:</strong> <input type="text" data-ans="OPEN" class="blank blank-xl"></li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <div class="section-block" id="section-b">
+      <div class="section-heading">
+        <span class="section-tag tag-b">B</span>
+        <h2>How much / How many?</h2>
+      </div>
+
+      <div class="grammar-box b">
+        <h3>📌 Grammar Reference</h3>
+        <p><strong>How many?</strong> → countable nouns (you can count them: 1 apple, 2 apples…)</p>
+        <p><strong>How much?</strong> → uncountable nouns (you can't count them: water, rice, money…)</p>
+        <p style="margin-top:8px">Use <strong>there is</strong> (singular/uncountable) and <strong>there are</strong> (plural countable).</p>
+        <p style="margin-top:8px">Make uncountable nouns countable with expressions:</p>
+        <div class="chips">
+          <span class="chip">a bottle of water</span>
+          <span class="chip">a box of cereal</span>
+          <span class="chip">a cup of tea</span>
+          <span class="chip">a glass of juice</span>
+          <span class="chip">a bag of rice</span>
+          <span class="chip">a slice of bread</span>
+          <span class="chip">a piece of cake</span>
+        </div>
+        <p style="margin-top:10px"><strong>Quantifiers:</strong></p>
+        <div class="chips">
+          <span class="chip">a little (uncountable – small amount)</span>
+          <span class="chip">a few (countable – small number)</span>
+          <span class="chip">a lot of (both)</span>
+        </div>
+        <p style="margin-top:10px">✏️ <strong>There is a little milk. · There are a few eggs. · There is a lot of rice.</strong></p>
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title"><span class="ex-num num-b">1</span> Write <strong>How much</strong> or <strong>How many</strong>.</div>
+        <ol class="q-list">
+          <li><span class="q-num">1.</span> <input type="text" data-ans="How many" class="blank blank-sm"> apples are in the bag?</li>
+          <li><span class="q-num">2.</span> <input type="text" data-ans="How much" class="blank blank-sm"> sugar do you want in your coffee?</li>
+          <li><span class="q-num">3.</span> <input type="text" data-ans="How many" class="blank blank-sm"> students are in the class?</li>
+          <li><span class="q-num">4.</span> <input type="text" data-ans="How much" class="blank blank-sm"> water is in the bottle?</li>
+          <li><span class="q-num">5.</span> <input type="text" data-ans="How much" class="blank blank-sm"> money does she have?</li>
+          <li><span class="q-num">6.</span> <input type="text" data-ans="How many" class="blank blank-sm"> chairs are in the room?</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title"><span class="ex-num num-b">2</span> Complete with the correct missing words from the bold phrase choices: <em>There is</em> or <em>There are</em>.</div>
+        <ol class="q-list">
+          <li><span class="q-num">1.</span> <input type="text" data-ans="There is" class="blank blank-md"> a lot of milk in the fridge. <em style="opacity:.5;font-size:13px">(There is / There are)</em></li>
+          <li><span class="q-num">2.</span> <input type="text" data-ans="There are" class="blank blank-md"> three boxes on the table. <em style="opacity:.5;font-size:13px">(There is / There are)</em></li>
+          <li><span class="q-num">3.</span> <input type="text" data-ans="There is" class="blank blank-md"> a little sugar in the bowl. <em style="opacity:.5;font-size:13px">(There is / There are)</em></li>
+          <li><span class="q-num">4.</span> <input type="text" data-ans="There are" class="blank blank-md"> a few students in the library. <em style="opacity:.5;font-size:13px">(There is / There are)</em></li>
+          <li><span class="q-num">5.</span> <input type="text" data-ans="There is" class="blank blank-md"> a bottle of juice in the kitchen. <em style="opacity:.5;font-size:13px">(There is / There are)</em></li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title"><span class="ex-num num-b">3</span> Sort the words. Write them in the correct column. <em style="font-weight:400; opacity:0.7;">(Any box order accepted)</em></div>
+        <p style="font-size:13px;font-weight:700;opacity:0.6;margin-bottom:12px">
+          bread · egg · rice · orange · coffee · chair · water · tomato · money · cookie
+        </p>
+        <table class="ex-table">
+          <thead>
+            <tr>
+              <th>✅ Countable (How many?)</th>
+              <th>🔵 Uncountable (How much?)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="text" data-group="countable" class="table-input blank"></td>
+              <td><input type="text" data-group="uncountable" class="table-input blank"></td>
+            </tr>
+            <tr>
+              <td><input type="text" data-group="countable" class="table-input blank"></td>
+              <td><input type="text" data-group="uncountable" class="table-input blank"></td>
+            </tr>
+            <tr>
+              <td><input type="text" data-group="countable" class="table-input blank"></td>
+              <td><input type="text" data-group="uncountable" class="table-input blank"></td>
+            </tr>
+            <tr>
+              <td><input type="text" data-group="countable" class="table-input blank"></td>
+              <td><input type="text" data-group="uncountable" class="table-input blank"></td>
+            </tr>
+            <tr>
+              <td><input type="text" data-group="countable" class="table-input blank"></td>
+              <td><input type="text" data-group="uncountable" class="table-input blank"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title"><span class="ex-num num-b">4</span> Complete with <em>a little</em>, <em>a few</em>, or <em>a lot of</em>.</div>
+        <ol class="q-list">
+          <li><span class="q-num">1.</span> I have <input type="text" data-ans="a few" class="blank blank-sm"> friends – only two or three.</li>
+          <li><span class="q-num">2.</span> She drinks <input type="text" data-ans="a lot of" class="blank blank-sm"> water – more than 2 litres a day!</li>
+          <li><span class="q-num">3.</span> There is <input type="text" data-ans="a little" class="blank blank-sm"> milk left. Maybe one sip.</li>
+          <li><span class="q-num">4.</span> He has <input type="text" data-ans="a lot of" class="blank blank-sm"> books on his shelf. It's completely full!</li>
+          <li><span class="q-num">5.</span> We need <input type="text" data-ans="a little" class="blank blank-sm"> time. Just five minutes, please.</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title"><span class="ex-num num-b">5</span> Rewrite using a container/measure expression. <em style="font-weight:400; opacity:0.7;">(Teacher evaluated)</em></div>
+        <p style="font-size:13px;font-weight:700;opacity:0.6;margin-bottom:12px">
+          Use: &nbsp;<em>a bottle of · a box of · a cup of · a glass of · a bag of · a slice of · a piece of</em>
+        </p>
+        <ol class="q-list">
+          <li><span class="q-num">1.</span> water → <input type="text" data-ans="OPEN" class="blank"></li>
+          <li><span class="q-num">2.</span> cake → <input type="text" data-ans="OPEN" class="blank"></li>
+          <li><span class="q-num">3.</span> tea → <input type="text" data-ans="OPEN" class="blank"></li>
+          <li><span class="q-num">4.</span> cereal → <input type="text" data-ans="OPEN" class="blank"></li>
+          <li><span class="q-num">5.</span> rice → <input type="text" data-ans="OPEN" class="blank"></li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <div class="section-block" id="section-c">
+      <div class="section-heading">
+        <span class="section-tag tag-c">C</span>
+        <h2>How long does it take?</h2>
+      </div>
+
+      <div class="grammar-box c">
+        <h3>📌 Grammar Reference</h3>
+        <p>We use <strong>How long does it take?</strong> to ask about travel time or the time needed for an activity.</p>
+        <p style="margin-top:8px">
+          <strong>Q:</strong> How long does it take to drive to Santa Marta?<br>
+          <strong>A:</strong> It takes <em>10 hours</em> to drive to Santa Marta.
+        </p>
+        <p style="margin-top:8px">
+          <strong>Q:</strong> How long does it take to walk to school?<br>
+          <strong>A:</strong> It takes <em>20 minutes</em> to walk to school.
+        </p>
+        <div class="chips" style="margin-top:10px">
+          <span class="chip">to fly</span><span class="chip">to drive</span><span class="chip">to walk</span>
+          <span class="chip">to take the bus</span><span class="chip">to cook</span><span class="chip">to read</span>
+        </div>
+        <div class="chips" style="margin-top:8px">
+          <span class="chip">X minutes</span><span class="chip">X hours</span><span class="chip">X days</span><span class="chip">X weeks</span>
+        </div>
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title"><span class="ex-num num-c">1</span> Write the answer using the information given.</div>
+        <p style="font-size:13px;font-weight:700;opacity:0.6;margin-bottom:12px">Use: <em>It takes ___ to ___.</em></p>
+        <ol class="q-list">
+          <li><span class="q-num">1.</span> (drive / Bogotá to Medellín / 8 hours) → <input type="text" data-ans="It takes 8 hours to drive from Bogotá to Medellín" class="blank blank-xl"></li>
+          <li><span class="q-num">2.</span> (fly / Colombia to Spain / 10 hours) → <input type="text" data-ans="It takes 10 hours to fly from Colombia to Spain" class="blank blank-xl"></li>
+          <li><span class="q-num">3.</span> (walk / to school / 15 minutes) → <input type="text" data-ans="It takes 15 minutes to walk to school" class="blank blank-xl"></li>
+          <li><span class="q-num">4.</span> (cook / pasta / 20 minutes) → <input type="text" data-ans="It takes 20 minutes to cook pasta" class="blank blank-xl"></li>
+          <li><span class="q-num">5.</span> (take the bus / to the city centre / 45 minutes) → <input type="text" data-ans="It takes 45 minutes to take the bus to the city centre" class="blank blank-xl"></li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title"><span class="ex-num num-c">2</span> Write the question for each answer.</div>
+        <ol class="q-list">
+          <li><span class="q-num">1.</span> It takes 2 hours to drive to the beach.<br>
+          <input type="text" data-ans="How long does it take to drive to the beach" class="blank blank-xl">?</li>
+          <li><span class="q-num">2.</span> It takes 30 minutes to walk to the supermarket.<br>
+          <input type="text" data-ans="How long does it take to walk to the supermarket" class="blank blank-xl">?</li>
+          <li><span class="q-num">3.</span> It takes 12 hours to fly to Japan.<br>
+          <input type="text" data-ans="How long does it take to fly to Japan" class="blank blank-xl">?</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title"><span class="ex-num num-c">3</span> Answer these questions about your own life. <em style="font-weight:400; opacity:0.7;">(Teacher evaluated)</em></div>
+        <ol class="q-list">
+          <li><span class="q-num">1.</span> How long does it take to get to school from your home?<br>
+          <input type="text" data-ans="OPEN" class="blank blank-xl"></li>
+          <li><span class="q-num">2.</span> How long does it take to cook your favourite meal?<br>
+          <input type="text" data-ans="OPEN" class="blank blank-xl"></li>
+          <li><span class="q-num">3.</span> How long does it take to fly from your city to Bogotá?<br>
+          <input type="text" data-ans="OPEN" class="blank blank-xl"></li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <div class="section-block" id="section-d">
+      <div class="section-heading">
+        <span class="section-tag tag-d">D</span>
+        <h2>How long? · How tall? · How old?</h2>
+      </div>
+
+      <div class="grammar-box d">
+        <h3>📌 Grammar Reference</h3>
+        <p>We use <strong>How + adjective?</strong> to ask about measurements. The answer ends with the same measuring word (the adjective).</p>
+        <table style="margin-top:10px;font-size:14px;font-weight:600;width:100%;border-collapse:collapse">
+          <tr style="background:rgba(92,79,207,0.12)">
+            <td style="padding:6px 12px;border-radius:4px 0 0 4px"><strong>Question</strong></td>
+            <td style="padding:6px 12px"><strong>Answer pattern</strong></td>
+            <td style="padding:6px 12px;border-radius:0 4px 4px 0"><strong>Example</strong></td>
+          </tr>
+          <tr><td style="padding:6px 12px">How <strong>old</strong> is he?</td><td style="padding:6px 12px">He is ___ years <strong>old</strong>.</td><td style="padding:6px 12px">He is 10 years old.</td></tr>
+          <tr style="background:rgba(92,79,207,0.07)"><td style="padding:6px 12px">How <strong>tall</strong> is she?</td><td style="padding:6px 12px">She is ___ cm / m <strong>tall</strong>.</td><td style="padding:6px 12px">She is 165 cm tall.</td></tr>
+          <tr><td style="padding:6px 12px">How <strong>long</strong> is it?</td><td style="padding:6px 12px">It is ___ metres <strong>long</strong>.</td><td style="padding:6px 12px">It is 200 m long.</td></tr>
+          <tr style="background:rgba(92,79,207,0.07)"><td style="padding:6px 12px">How <strong>heavy</strong> is it?</td><td style="padding:6px 12px">It is ___ kg <strong>heavy</strong>.</td><td style="padding:6px 12px">It is 5 kg heavy.</td></tr>
+          <tr><td style="padding:6px 12px">How <strong>deep</strong> is it?</td><td style="padding:6px 12px">It is ___ metres <strong>deep</strong>.</td><td style="padding:6px 12px">It is 100 m deep.</td></tr>
+          <tr style="background:rgba(92,79,207,0.07)"><td style="padding:6px 12px">How <strong>wide</strong> is it?</td><td style="padding:6px 12px">It is ___ metres <strong>wide</strong>.</td><td style="padding:6px 12px">It is 3 m wide.</td></tr>
+        </table>
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title"><span class="ex-num num-d">1</span> Write the correct question word: <em>old, tall, long, heavy, deep,</em> or <em>wide</em>.</div>
+        <ol class="q-list">
+          <li><span class="q-num">1.</span> "She is 170 cm tall." → How <input type="text" data-ans="tall" class="blank blank-sm"> is she?</li>
+          <li><span class="q-num">2.</span> "The river is 4 metres deep." → How <input type="text" data-ans="deep" class="blank blank-sm"> is the river?</li>
+          <li><span class="q-num">3.</span> "The cat is 4 kg heavy." → How <input type="text" data-ans="heavy" class="blank blank-sm"> is the cat?</li>
+          <li><span class="q-num">4.</span> "My grandfather is 78 years old." → How <input type="text" data-ans="old" class="blank blank-sm"> is your grandfather?</li>
+          <li><span class="q-num">5.</span> "The bridge is 500 metres long." → How <input type="text" data-ans="long" class="blank blank-sm"> is the bridge?</li>
+          <li><span class="q-num">6.</span> "The door is 90 cm wide." → How <input type="text" data-ans="wide" class="blank blank-sm"> is the door?</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title"><span class="ex-num num-d">2</span> Complete the answer. Don't forget the measuring word at the end!</div>
+        <ol class="q-list">
+          <li><span class="q-num">1.</span> How old is the Eiffel Tower? → It is about 135 years <input type="text" data-ans="old" class="blank blank-sm">.</li>
+          <li><span class="q-num">2.</span> How tall is the Eiffel Tower? → It is 330 metres <input type="text" data-ans="tall" class="blank blank-sm">.</li>
+          <li><span class="q-num">3.</span> How long is the Amazon River? → It is about 6,400 km <input type="text" data-ans="long" class="blank blank-sm">.</li>
+          <li><span class="q-num">4.</span> How old are you? → I am <input type="text" data-ans="OPEN" class="blank blank-sm" style="min-width: 50px;"> years <input type="text" data-ans="old" class="blank blank-sm">.</li>
+          <li><span class="q-num">5.</span> How tall is your best friend? → He / She is <input type="text" data-ans="OPEN" class="blank blank-sm" style="min-width: 50px;"> cm <input type="text" data-ans="tall" class="blank blank-sm">.</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title"><span class="ex-num num-d">3</span> Write a <em>How…?</em> question for each sentence.</div>
+        <ol class="q-list">
+          <li><span class="q-num">1.</span> The dog is 3 years old.<br>
+          <input type="text" data-ans="How old is the dog" class="blank blank-lg">?</li>
+          <li><span class="q-num">2.</span> The swimming pool is 2 metres deep.<br>
+          <input type="text" data-ans="How deep is the swimming pool" class="blank blank-lg">?</li>
+          <li><span class="q-num">3.</span> The baby is 7 kg heavy.<br>
+          <input type="text" data-ans="How heavy is the baby" class="blank blank-lg">?</li>
+          <li><span class="q-num">4.</span> The teacher is 1.80 m tall.<br>
+          <input type="text" data-ans="How tall is the teacher" class="blank blank-lg">?</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="action-bar">
+      <div class="score-display" id="gradeScoreBox">Score: 0 / 40</div>
+      <div class="button-group">
+        <button class="btn-action btn-check" onclick="checkStudentAnswers()">✔️ Check Answers</button>
+        <button class="btn-action btn-reset" onclick="resetWorksheet()">🔄 Clear Sheet</button>
+      </div>
+    </div>
+
+    <div class="answer-key-wrapper">
+      <button class="btn-toggle-key" id="toggleKeyBtn" onclick="toggleAnswerKey()">
+        👁️ Show Answer Key
+      </button>
+
+      <div class="answer-key-content" id="answerKeyContent">
+        <div class="answer-key">
+          <h2>Answer Key</h2>
+
+          <div class="key-section">
+            <h3>Section A</h3>
+            <div class="key-list">
+              <div>A1: 1. <span>always</span> · 2. <span>rarely</span> · 3. <span>never</span> · 4. <span>sometimes</span> · 5. <span>always</span></div>
+              <div>A2: 1. Maria is never late. · 2. I usually drink tea in the morning. · 3. They sometimes go to the park on Sundays. · 4. He always forgets his keys.</div>
+              <div>A3: 1–c · 2–a · 3–b · 4–d</div>
+              <div>A4: Open answers (accept any grammatically correct sentences).</div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>Section B</h3>
+            <div class="key-list">
+              <div>B1: 1. <span>How many</span> · 2. <span>How much</span> · 3. <span>How many</span> · 4. <span>How much</span> · 5. <span>How much</span> · 6. <span>How many</span></div>
+              <div>B2: 1. <span>There is</span> · 2. <span>There are</span> · 3. <span>There is</span> · 4. <span>There are</span> · 5. <span>There is</span></div>
+              <div>B3: Countable: egg, orange, chair, tomato, cookie · Uncountable: bread, rice, coffee, water, money</div>
+              <div>B4: 1. <span>a few</span> · 2. <span>a lot of</span> · 3. <span>a little</span> · 4. <span>a lot of</span> · 5. <span>a little</span></div>
+              <div>B5: Open answers / Teacher evaluated containers (e.g., a bottle of water, a piece of cake, a cup of tea, a box of cereal, a bag of rice).</div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>Section C</h3>
+            <div class="key-list">
+              <div>C1: 1. It takes 8 hours to drive from Bogotá to Medellín. · 2. It takes 10 hours to fly from Colombia to Spain. · 3. It takes 15 minutes to walk to school. · 4. It takes 20 minutes to cook pasta. · 5. It takes 45 minutes to take the bus to the city centre.</div>
+              <div>C2: 1. How long does it take to drive to the beach? · 2. How long does it take to walk to the supermarket? · 3. How long does it take to fly to Japan?</div>
+              <div>C3: Open/personal answers.</div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>Section D</h3>
+            <div class="key-list">
+              <div>D1: 1. <span>tall</span> · 2. <span>deep</span> · 3. <span>heavy</span> · 4. <span>old</span> · 5. <span>long</span> · 6. <span>wide</span></div>
+              <div>D2: 1. <span>old</span> · 2. <span>tall</span> · 3. <span>long</span> · 4–5: personal answers (measuring word must match: <em>old / tall</em>)</div>
+              <div>D3: 1. How old is the dog? · 2. How deep is the swimming pool? · 3. How heavy is the baby? · 4. How tall is the teacher?</div>
+            </div>
+          </div>
+          
+          <p style="font-size: 12px; font-weight: 600; opacity: 0.5; margin-top: 14px; padding-top: 10px; border-top: 1px dashed var(--rule);">*Note: Auto-grader monitors the 40 strict objective criteria points. The 15 remaining open-sentence parameters are reviewed manually by the instructor (Total score scale: 55 points).</p>
+        </div>
+      </div>
+    </div>
+
+  </div></div><script>
+  const validCountables = ["egg", "orange", "chair", "tomato", "cookie"];
+  const validUncountables = ["bread", "rice", "coffee", "water", "money"];
+
+  function checkStudentAnswers() {
+    let score = 0;
+    
+    // 1. Evaluate standard strict data-ans input arrays
+    const standardBlanks = document.querySelectorAll('input[data-ans]');
+    standardBlanks.forEach(input => {
+      let studentAns = input.value.trim().toLowerCase();
+      // Remove trailing periods, question marks, or duplicated spacing structures
+      studentAns = studentAns.replace(/[\.\?]$/, "").replace(/\s+/g, " ").trim();
+      
+      let targetAns = input.getAttribute('data-ans').toLowerCase().replace(/[\.\?]$/, "").replace(/\s+/g, " ").trim();
+
+      input.classList.remove('is-correct', 'is-incorrect', 'is-open');
+
+      if (targetAns === "open") {
+        if (studentAns !== "") {
+          input.classList.add('is-open');
+        }
+      } else {
+        if (studentAns === targetAns) {
+          input.classList.add('is-correct');
+          score++;
+        } else {
+          input.classList.add('is-incorrect');
+        }
+      }
+    });
+
+    // 2. Evaluate dynamic word array structures for Category Sorting table (B3)
+    let enteredCountables = [];
+    let enteredUncountables = [];
+
+    const tableInputs = document.querySelectorAll('input[data-group]');
+    tableInputs.forEach(input => {
+      let value = input.value.trim().toLowerCase();
+      let group = input.getAttribute('data-group');
+      
+      input.classList.remove('is-correct', 'is-incorrect');
+      if (value === "") {
+        input.classList.add('is-incorrect');
+        return;
+      }
+
+      if (group === "countable") {
+        if (validCountables.includes(value) && !enteredCountables.includes(value)) {
+          input.classList.add('is-correct');
+          enteredCountables.push(value);
+          score++;
+        } else {
+          input.classList.add('is-incorrect');
+        }
+      } else if (group === "uncountable") {
+        if (validUncountables.includes(value) && !enteredUncountables.includes(value)) {
+          input.classList.add('is-correct');
+          enteredUncountables.push(value);
+          score++;
+        } else {
+          input.classList.add('is-incorrect');
+        }
+      }
+    });
+
+    // 3. Render floating dynamic score text block
+    const scoreBox = document.getElementById('gradeScoreBox');
+    scoreBox.innerText = "Score: " + score + " / 40";
+    scoreBox.style.display = "block";
+  }
+
+  function resetWorksheet() {
+    if(confirm("Are you sure you want to clear all your answers?")) {
+      const allInputs = document.querySelectorAll('input');
+      allInputs.forEach(input => {
+        input.value = "";
+        input.classList.remove('is-correct', 'is-incorrect', 'is-open');
+      });
+      document.getElementById('gradeScoreBox').style.display = "none";
+    }
+  }
+
+  function toggleAnswerKey() {
+    var content = document.getElementById("answerKeyContent");
+    var btn = document.getElementById("toggleKeyBtn");
+    
+    if (content.style.display === "block") {
+      content.style.display = "none";
+      btn.innerHTML = "👁️ Show Answer Key";
+    } else {
+      content.style.display = "block";
+      btn.innerHTML = "🙈 Hide Answer Key";
+    }
+  }
+</script>
+</body>
+</html>
