@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Travel Plans – A1 Beginner English Worksheet</title>
+<title>Travel Plans â€“ A1 Beginner English Worksheet</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Baloo+2:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -489,9 +489,9 @@
 <div class="page">
 
   <header>
-    <div class="header-badge">ESL Worksheet · A1 Beginner</div>
+    <div class="header-badge">ESL Worksheet Â· A1 Beginner</div>
     <h1><span>Travel</span> Plans</h1>
-    <p>Future with Will · Prepositions · Airport Vocabulary</p>
+    <p>Future with Will Â· Prepositions Â· Airport Vocabulary</p>
   </header>
 
   <div class="content">
@@ -502,21 +502,21 @@
       <p>Welcome! If you need help understanding a task, click the <strong>??</strong> button next to the instructions to see the Spanish translation.</p>
       <p style="margin-top:8px">When you finish, the system will auto-grade most questions. However, for exercises marked as <em>(Teacher evaluated)</em>, please <strong>take a screenshot</strong> of your answers and send it to your teacher.</p>
       <hr style="border: none; border-top: 1px dashed #90caf9; margin: 12px 0;">
-      <p><em>¡Bienvenido/a! Si necesitas ayuda para entender una tarea, haz clic en el botón <strong>??</strong> junto a las instrucciones para ver la traducción al español.</em></p>
-      <p style="margin-top:8px"><em>Cuando termines, el sistema calificará automáticamente la mayoría de las preguntas. Sin embargo, para los ejercicios marcados como *(Teacher evaluated)*, por favor <strong>toma una captura de pantalla</strong> de tus respuestas y envíasela a tu profesor/a.</em></p>
+      <p><em>Â¡Bienvenido/a! Si necesitas ayuda para entender una tarea, haz clic en el botÃ³n <strong>??</strong> junto a las instrucciones para ver la traducciÃ³n al espaÃ±ol.</em></p>
+      <p style="margin-top:8px"><em>Cuando termines, el sistema calificarÃ¡ automÃ¡ticamente la mayorÃ­a de las preguntas. Sin embargo, para los ejercicios marcados como *(Teacher evaluated)*, por favor <strong>toma una captura de pantalla</strong> de tus respuestas y envÃ­asela a tu profesor/a.</em></p>
     </div>
 
     <!-- ----------------------- GRAMMAR & VOCAB BOXES ----------------------- -->
     
     <div class="grammar-box blue">
-      <h3>?? Grammar Reference – Future with WILL & Prepositions</h3>
+      <h3>?? Grammar Reference â€“ Future with WILL & Prepositions</h3>
       <p>Use <strong>will</strong> + <em>verb</em> for future plans and schedules. The negative is <strong>won't</strong> (will not).</p>
-      <p style="margin-top:6px">?? <strong>I will fly to Miami. · The flight will depart at 6:00.</strong></p>
+      <p style="margin-top:6px">?? <strong>I will fly to Miami. Â· The flight will depart at 6:00.</strong></p>
       <p style="margin-top:6px">?? <strong>Will it be on time? ? Yes, it will. / No, it won't.</strong></p>
       
       <p style="margin-top:14px; padding-top:10px; border-top: 1px dashed rgba(0,0,0,0.1)"><strong>?? Travel Prepositions:</strong></p>
       <ul style="margin-left: 20px; font-size: 14px; font-weight: 600; line-height: 1.7;">
-        <li><strong>FROM:</strong> Origin (Where does it start?) ? <em>The flight is from Bogotá.</em></li>
+        <li><strong>FROM:</strong> Origin (Where does it start?) ? <em>The flight is from BogotÃ¡.</em></li>
         <li><strong>TO:</strong> Destination (Where does it go?) ? <em>I will fly to Madrid.</em></li>
         <li><strong>WITH:</strong> Companions, luggage, or airlines ? <em>I travel with my family / with Avianca / with 2 bags.</em></li>
         <li><strong>AT:</strong> Specific locations or times ? <em>Board the plane at Gate 12. / It lands at 9:00.</em></li>
@@ -524,10 +524,10 @@
     </div>
 
     <div class="grammar-box purple">
-      <h3>?? Vocabulary – The Airport</h3>
+      <h3>?? Vocabulary â€“ The Airport</h3>
       <p><strong>Verbs:</strong> board (subirse), fly, land (aterrizar), take off (despegar), depart (salir), arrive (llegar).</p>
       <p><strong>Nouns:</strong> flight, arrivals (llegadas), departures (salidas), gate (puerta de embarque).</p>
-      <p><strong>Luggage:</strong> baggage / bags (equipaje), suitcase (maleta de ruedas), carry-on (maleta de mano pequeña), purse (bolso), backpack (mochila).</p>
+      <p><strong>Luggage:</strong> baggage / bags (equipaje), suitcase (maleta de ruedas), carry-on (maleta de mano pequeÃ±a), purse (bolso), backpack (mochila).</p>
       <p><strong>Status:</strong> on time (a tiempo), delayed (retrasado), cancelled (cancelado).</p>
     </div>
 
@@ -538,7 +538,7 @@
         <div class="title-content">
           <div class="title-main">
             Complete the sentences with the correct airport vocabulary.
-            <span class="pts-badge">1 pt each · 5 pts</span>
+            <span class="pts-badge">1 pt each Â· 5 pts</span>
             <button class="btn-trans" onclick="toggleT('t-ex1')" title="Traducir">??</button>
           </div>
           <div id="t-ex1" class="es-trans">Completa las oraciones con el vocabulario correcto del aeropuerto. Usa las palabras de la cajita.</div>
@@ -557,7 +557,7 @@
 
     <!-- ----------------------- THE FLIGHT BOARD ----------------------- -->
     <div class="airport-board">
-      <div class="board-header">?? El Dorado Int. Airport (BOG) – Real-Time Status ??</div>
+      <div class="board-header">?? El Dorado Int. Airport (BOG) â€“ Real-Time Status ??</div>
       <table class="board-table">
         <thead>
           <tr>
@@ -621,7 +621,7 @@
         <div class="title-content">
           <div class="title-main">
             Look at the Flight Board. Complete the sentences with <em>from, to, at,</em> or <em>with</em>.
-            <span class="pts-badge">1 pt each · 6 pts</span>
+            <span class="pts-badge">1 pt each Â· 6 pts</span>
             <button class="btn-trans" onclick="toggleT('t-ex2')" title="Traducir">??</button>
           </div>
           <div id="t-ex2" class="es-trans">Mira el tablero de vuelos arriba. Completa las oraciones con las preposiciones <em>from, to, at</em> o <em>with</em>.</div>
@@ -644,10 +644,10 @@
         <div class="title-content">
           <div class="title-main">
             Look at the Flight Board. Answer the Yes/No questions.
-            <span class="pts-badge">2 pts each · 8 pts</span>
+            <span class="pts-badge">2 pts each Â· 8 pts</span>
             <button class="btn-trans" onclick="toggleT('t-ex3')" title="Traducir">??</button>
           </div>
-          <div id="t-ex3" class="es-trans">Mira el tablero de vuelos. Responde las preguntas de Sí o No. (Usa respuestas cortas como <em>Yes, it will</em> o <em>No, it won't</em>).</div>
+          <div id="t-ex3" class="es-trans">Mira el tablero de vuelos. Responde las preguntas de SÃ­ o No. (Usa respuestas cortas como <em>Yes, it will</em> o <em>No, it won't</em>).</div>
         </div>
       </div>
       <ol class="q-list">
@@ -665,10 +665,10 @@
         <div class="title-content">
           <div class="title-main">
             The sentences have incorrect information. Choose the correct word to fix them.
-            <span class="pts-badge">1 pt each · 4 pts</span>
+            <span class="pts-badge">1 pt each Â· 4 pts</span>
             <button class="btn-trans" onclick="toggleT('t-ex4')" title="Traducir">??</button>
           </div>
-          <div id="t-ex4" class="es-trans">Las oraciones tienen información incorrecta basada en el tablero. Elige la palabra correcta de la cajita para arreglarlas.</div>
+          <div id="t-ex4" class="es-trans">Las oraciones tienen informaciÃ³n incorrecta basada en el tablero. Elige la palabra correcta de la cajita para arreglarlas.</div>
         </div>
       </div>
       <ol class="q-list">
@@ -686,10 +686,10 @@
         <div class="title-content">
           <div class="title-main">
             Write the correct question for each answer. ?? <em>Remember to include the preposition!</em>
-            <span class="pts-badge">2 pts each · 6 pts</span>
+            <span class="pts-badge">2 pts each Â· 6 pts</span>
             <button class="btn-trans" onclick="toggleT('t-ex5')" title="Traducir">??</button>
           </div>
-          <div id="t-ex5" class="es-trans">Escribe la pregunta correcta para cada respuesta usando <em>Where</em>, <em>Who</em> o <em>What time</em>. ?? <em>¡Recuerda incluir la preposición al final de la pregunta cuando sea necesario!</em></div>
+          <div id="t-ex5" class="es-trans">Escribe la pregunta correcta para cada respuesta usando <em>Where</em>, <em>Who</em> o <em>What time</em>. ?? <em>Â¡Recuerda incluir la preposiciÃ³n al final de la pregunta cuando sea necesario!</em></div>
         </div>
       </div>
       <ol class="q-list">
@@ -705,11 +705,11 @@
         <span class="ex-num">6</span>
         <div class="title-content">
           <div class="title-main">
-            Final Challenge – Your Next Trip! <em style="font-weight:400; opacity:0.7;">(Teacher evaluated)</em>
+            Final Challenge â€“ Your Next Trip! <em style="font-weight:400; opacity:0.7;">(Teacher evaluated)</em>
             <span class="pts-badge">10 pts</span>
             <button class="btn-trans" onclick="toggleT('t-ex6')" title="Traducir">??</button>
           </div>
-          <div id="t-ex6" class="es-trans">Reto Final: Imagina tu próximo viaje. Escribe un párrafo de 3 a 5 oraciones. Responde: ¿A dónde volarás? ¿Con quién viajarás? ¿A qué hora despegará tu vuelo? ¿Qué equipaje llevarás? ¡Manda pantallazo!</div>
+          <div id="t-ex6" class="es-trans">Reto Final: Imagina tu prÃ³ximo viaje. Escribe un pÃ¡rrafo de 3 a 5 oraciones. Responde: Â¿A dÃ³nde volarÃ¡s? Â¿Con quiÃ©n viajarÃ¡s? Â¿A quÃ© hora despegarÃ¡ tu vuelo? Â¿QuÃ© equipaje llevarÃ¡s? Â¡Manda pantallazo!</div>
         </div>
       </div>
       <p style="font-size:13px;font-weight:700;opacity:0.6;margin-bottom:12px">Answer these questions in a short paragraph:<br> <em>Where will you fly to? Who will you travel with? What time will your flight take off? What bags will you take?</em></p>
@@ -861,7 +861,7 @@
   }
 
   function resetWorksheet() {
-    if (confirm("Are you sure you want to clear all your answers? / ¿Seguro que quieres borrar tus respuestas?")) {
+    if (confirm("Are you sure you want to clear all your answers? / Â¿Seguro que quieres borrar tus respuestas?")) {
       document.querySelectorAll('input').forEach(input => {
         input.value = "";
         input.classList.remove('is-correct', 'is-incorrect', 'is-open');
