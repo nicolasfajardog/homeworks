@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travel Plans – A1 Beginner English Worksheet</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Baloo+2:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a2e;
+    --paper: #fffef7;
+    --A: #e63946;
+    --A-light: #fde8ea;
+    --B: #2a9d8f;
+    --B-light: #d6f5f2;
+    --C: #e07b00;
+    --C-light: #fff0d6;
+    --D: #5c4fcf;
+    --D-light: #ebe8ff;
+    --E: #c77dff;
+    --E-light: #f5e6ff;
+    --rule: #d4cfc0;
+    --note-bg: #f7f3e8;
+
+    /* Feedback Colors */
+    --correct: #2a9d8f;
+    --incorrect: #e63946;
+    --open-ans: #457b9d;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: #e8e4d9;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 32px 16px 60px;
+  }
+
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    background: var(--paper);
+    border-radius: 4px;
+    box-shadow: 0 4px 40px rgba(0,0,0,0.18);
+    overflow: hidden;
+  }
+
+  /* -- HEADER -- */
+  header {
+    background: var(--ink);
+    color: #fff;
+    padding: 40px 48px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent, transparent 18px,
+      rgba(255,255,255,0.03) 18px, rgba(255,255,255,0.03) 36px
+    );
+  }
+  .header-badge {
+    display: inline-block;
+    background: #fff;
+    color: var(--ink);
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+  }
+  header h1 {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1.05;
+    margin-bottom: 8px;
+  }
+  header h1 span { color: #4ade80; }
+  header p {
+    font-size: 15px;
+    opacity: 0.7;
+    font-weight: 600;
+  }
+
+  /* -- CONTENT -- */
+  .content { padding: 0 44px 44px; margin-top: 20px;}
+
+  /* -- LOGISTICS BOX -- */
+  .logistics-box {
+    background: #e3f2fd;
+    border-left: 5px solid #1e88e5;
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 32px;
+  }
+  .logistics-box h3 {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-bottom: 10px;
+    color: #1e88e5;
+  }
+  .logistics-box p {
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 600;
+  }
+
+  /* -- GRAMMAR BOX -- */
+  .grammar-box {
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 22px;
+    border-left: 5px solid;
+  }
+  .grammar-box.blue { background: var(--B-light); border-color: var(--B); }
+  .grammar-box.purple { background: var(--E-light); border-color: var(--E); }
+  .grammar-box h3 {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 10px;
+    opacity: 0.6;
+  }
+  .grammar-box p {
+    font-size: 14px;
+    line-height: 1.7;
+    font-weight: 600;
+  }
+  .grammar-box strong { font-weight: 900; }
+
+  /* word bank chips */
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  .chip {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 20px;
+    background: rgba(0,0,0,0.07);
+  }
+
+  /* -- AIRPORT FLIGHT BOARD -- */
+  .airport-board {
+    background: #0f172a;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 30px;
+    border: 4px solid #334155;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.5), 0 8px 20px rgba(0,0,0,0.15);
+    font-family: 'Courier New', Courier, monospace;
+  }
+  .board-header {
+    text-align: center;
+    color: #cbd5e1;
+    font-family: 'Baloo 2', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 16px;
+    border-bottom: 2px dashed #334155;
+    padding-bottom: 12px;
+  }
+  .board-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #fbbf24;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .board-table th {
+    color: #94a3b8;
+    text-align: left;
+    padding: 8px 4px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #334155;
+  }
+  .board-table td {
+    padding: 10px 4px;
+    border-bottom: 1px solid #1e293b;
+    vertical-align: middle;
+  }
+  .c-dep { color: #38bdf8; } /* Departure styling */
+  .c-arr { color: #c084fc; } /* Arrival styling */
+  
+  .s-ontime { color: #4ade80; }
+  .s-delayed { color: #fb923c; animation: blink 2s infinite; }
+  .s-cancelled { color: #f87171; text-decoration: line-through; }
+  .s-boarding { color: #facc15; animation: blink 1.5s infinite; }
+
+  @keyframes blink { 50% { opacity: 0.4; } }
+
+  /* -- EXERCISE BLOCK & INSTRUCTIONS -- */
+  .exercise { margin-bottom: 36px; }
+  .exercise-title {
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    border-bottom: 2px solid var(--rule);
+    padding-bottom: 8px;
+  }
+  .title-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .title-main {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .ex-num {
+    width: 26px; height: 26px;
+    background: var(--ink);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 900;
+    color: #fff;
+    flex-shrink: 0;
+    margin-top: -2px;
+  }
+
+  .btn-trans {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0 4px;
+    transition: transform 0.2s;
+  }
+  .btn-trans:hover { transform: scale(1.1); }
+  .es-trans {
+    display: none;
+    font-size: 13px;
+    color: #457b9d;
+    font-weight: 600;
+    background: rgba(69,123,157,0.08);
+    padding: 6px 12px;
+    border-radius: 6px;
+    border-left: 3px solid #457b9d;
+    margin-top: 6px;
+  }
+
+  /* Numbered question rows */
+  .q-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .q-list li {
+    font-size: 15px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    line-height: 1.6;
+    flex-wrap: wrap;
+  }
+  .q-num {
+    font-weight: 900;
+    opacity: 0.4;
+    min-width: 20px;
+    font-size: 13px;
+  }
+
+  /* Choice boxes for options */
+  .choice-box {
+    display: inline-flex;
+    align-items: center;
+    background: #f7f3e8;
+    border: 1.5px solid var(--rule);
+    border-radius: 6px;
+    padding: 3px 10px;
+    font-size: 12px;
+    font-weight: 800;
+    color: #555;
+    letter-spacing: 0.5px;
+    margin-left: 6px;
+  }
+
+  /* INTERACTIVE BLANKS WITH GRADING STATES */
+  .blank {
+    border: none;
+    border-bottom: 2px solid #aaa;
+    background: transparent;
+    min-width: 130px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #2b2b2b;
+    padding: 0 4px;
+    outline: none;
+    text-align: center;
+    transition: all 0.2s;
+  }
+  .blank:focus {
+    border-bottom-color: var(--ink);
+    background: rgba(0,0,0,0.02);
+  }
+  .blank-sm  { min-width: 70px; }
+  .blank-md  { min-width: 150px; }
+  .blank-lg  { min-width: 260px; flex-grow: 0; }
+  .blank-xl  { min-width: 380px; flex-grow: 1; text-align: left; padding: 0 8px; }
+
+  /* Grading class styles */
+  .is-correct {
+    border-bottom: 2px solid var(--correct) !important;
+    color: var(--correct) !important;
+    background-color: rgba(42,157,143,0.06) !important;
+  }
+  .is-incorrect {
+    border-bottom: 2px solid var(--incorrect) !important;
+    color: var(--incorrect) !important;
+    background-color: rgba(230,57,70,0.06) !important;
+  }
+  .is-open {
+    border-bottom: 2px solid var(--open-ans) !important;
+    color: var(--open-ans) !important;
+    background-color: rgba(69,123,157,0.06) !important;
+  }
+
+  /* -- CONTROL ACTIONS BAR -- */
+  .action-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 36px;
+  }
+  .score-display {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--ink);
+    display: none;
+    background: #f0ede4;
+    padding: 6px 20px;
+    border-radius: 30px;
+    border: 2px solid var(--rule);
+  }
+  .button-group { display: flex; gap: 16px; }
+  .btn-action {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 12px 32px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    transition: all 0.2s;
+  }
+  .btn-check { background: #2a9d8f; color: white; }
+  .btn-check:hover { background: #228074; transform: translateY(-1px); }
+  .btn-reset { background: #e7e5e0; color: var(--ink); }
+  .btn-reset:hover { background: #dcd9d2; transform: translateY(-1px); }
+  .btn-action:active { transform: translateY(1px); }
+
+  /* -- DIVIDER -- */
+  .section-divider {
+    height: 2px;
+    background: repeating-linear-gradient(
+      90deg, var(--rule) 0, var(--rule) 8px,
+      transparent 8px, transparent 16px
+    );
+    margin: 44px 0;
+  }
+
+  /* -- ANSWER KEY -- */
+  .answer-key-wrapper {
+    margin-top: 48px;
+    border-top: 3px solid var(--ink);
+    padding-top: 20px;
+  }
+  .btn-toggle-key {
+    background: var(--ink);
+    color: #fff;
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  .btn-toggle-key:hover { background: #2e2e4e; transform: translateY(-1px); }
+  .answer-key-content { display: none; margin-top: 24px; }
+  .answer-key h2 {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .answer-key h2::after {
+    content: '(Teacher Copy)';
+    font-size: 12px;
+    background: var(--ink);
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    font-weight: 700;
+  }
+  .key-section { margin-bottom: 20px; }
+  .key-section h3 {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    opacity: 0.5;
+  }
+  .key-list {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 2;
+    column-count: 2;
+    column-gap: 32px;
+  }
+  .key-list span { font-weight: 900; }
+
+  /* points badge */
+  .pts-badge {
+    display: inline-block;
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-left: 6px;
+    background: rgba(0,0,0,0.08);
+    color: var(--ink);
+  }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; }
+    .action-bar { display: none; }
+    .blank { border-bottom-color: #000; }
+    .answer-key-wrapper { display: none !important; }
+    .btn-trans { display: none !important; }
+  }
+
+  @media (max-width: 600px) {
+    .content { padding: 0 20px 36px; }
+    header { padding: 28px 20px 22px; }
+    header h1 { font-size: 34px; }
+    .key-list { column-count: 1; }
+    .q-list li { flex-direction: column; align-items: flex-start; gap: 4px; margin-bottom: 12px; }
+    .blank-lg, .blank-xl { width: 100%; min-width: 100%; }
+    .button-group { flex-direction: column; align-items: stretch; width: 100%; }
+    .btn-action { text-align: center; }
+    .board-table { font-size: 12px; }
+    .board-table th { font-size: 10px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="header-badge">ESL Worksheet · A1 Beginner</div>
+    <h1><span>Travel</span> Plans</h1>
+    <p>Future with Will · Prepositions · Airport Vocabulary</p>
+  </header>
+
+  <div class="content">
+
+    <!-- ----------------------- LOGISTICS INSTRUCTIONS ----------------------- -->
+    <div class="logistics-box">
+      <h3>?? Instructions & Logistics</h3>
+      <p>Welcome! If you need help understanding a task, click the <strong>??</strong> button next to the instructions to see the Spanish translation.</p>
+      <p style="margin-top:8px">When you finish, the system will auto-grade most questions. However, for exercises marked as <em>(Teacher evaluated)</em>, please <strong>take a screenshot</strong> of your answers and send it to your teacher.</p>
+      <hr style="border: none; border-top: 1px dashed #90caf9; margin: 12px 0;">
+      <p><em>¡Bienvenido/a! Si necesitas ayuda para entender una tarea, haz clic en el botón <strong>??</strong> junto a las instrucciones para ver la traducción al español.</em></p>
+      <p style="margin-top:8px"><em>Cuando termines, el sistema calificará automáticamente la mayoría de las preguntas. Sin embargo, para los ejercicios marcados como *(Teacher evaluated)*, por favor <strong>toma una captura de pantalla</strong> de tus respuestas y envíasela a tu profesor/a.</em></p>
+    </div>
+
+    <!-- ----------------------- GRAMMAR & VOCAB BOXES ----------------------- -->
+    
+    <div class="grammar-box blue">
+      <h3>?? Grammar Reference – Future with WILL & Prepositions</h3>
+      <p>Use <strong>will</strong> + <em>verb</em> for future plans and schedules. The negative is <strong>won't</strong> (will not).</p>
+      <p style="margin-top:6px">?? <strong>I will fly to Miami. · The flight will depart at 6:00.</strong></p>
+      <p style="margin-top:6px">?? <strong>Will it be on time? ? Yes, it will. / No, it won't.</strong></p>
+      
+      <p style="margin-top:14px; padding-top:10px; border-top: 1px dashed rgba(0,0,0,0.1)"><strong>?? Travel Prepositions:</strong></p>
+      <ul style="margin-left: 20px; font-size: 14px; font-weight: 600; line-height: 1.7;">
+        <li><strong>FROM:</strong> Origin (Where does it start?) ? <em>The flight is from Bogotá.</em></li>
+        <li><strong>TO:</strong> Destination (Where does it go?) ? <em>I will fly to Madrid.</em></li>
+        <li><strong>WITH:</strong> Companions, luggage, or airlines ? <em>I travel with my family / with Avianca / with 2 bags.</em></li>
+        <li><strong>AT:</strong> Specific locations or times ? <em>Board the plane at Gate 12. / It lands at 9:00.</em></li>
+      </ul>
+    </div>
+
+    <div class="grammar-box purple">
+      <h3>?? Vocabulary – The Airport</h3>
+      <p><strong>Verbs:</strong> board (subirse), fly, land (aterrizar), take off (despegar), depart (salir), arrive (llegar).</p>
+      <p><strong>Nouns:</strong> flight, arrivals (llegadas), departures (salidas), gate (puerta de embarque).</p>
+      <p><strong>Luggage:</strong> baggage / bags (equipaje), suitcase (maleta de ruedas), carry-on (maleta de mano pequeña), purse (bolso), backpack (mochila).</p>
+      <p><strong>Status:</strong> on time (a tiempo), delayed (retrasado), cancelled (cancelado).</p>
+    </div>
+
+    <!-- ----------------------- EXERCISE 1: VOCABULARY ----------------------- -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">1</span>
+        <div class="title-content">
+          <div class="title-main">
+            Complete the sentences with the correct airport vocabulary.
+            <span class="pts-badge">1 pt each · 5 pts</span>
+            <button class="btn-trans" onclick="toggleT('t-ex1')" title="Traducir">??</button>
+          </div>
+          <div id="t-ex1" class="es-trans">Completa las oraciones con el vocabulario correcto del aeropuerto. Usa las palabras de la cajita.</div>
+        </div>
+      </div>
+      <ol class="q-list">
+        <li><span class="q-num">1.</span> Before you fly, you put your clothes in a large <input type="text" data-ans="suitcase" class="blank blank-sm">. <span class="choice-box">purse &nbsp;|&nbsp; suitcase &nbsp;|&nbsp; gate</span></li>
+        <li><span class="q-num">2.</span> A small bag you take with you inside the plane is a <input type="text" data-ans="carry-on" class="blank blank-sm">. <span class="choice-box">carry-on &nbsp;|&nbsp; baggage &nbsp;|&nbsp; arrival</span></li>
+        <li><span class="q-num">3.</span> When a plane leaves the ground and goes up, it will <input type="text" data-ans="take off" class="blank blank-sm">. <span class="choice-box">land &nbsp;|&nbsp; take off &nbsp;|&nbsp; board</span></li>
+        <li><span class="q-num">4.</span> When the plane touches the ground at the end of the trip, it will <input type="text" data-ans="land" class="blank blank-sm">. <span class="choice-box">land &nbsp;|&nbsp; depart &nbsp;|&nbsp; fly</span></li>
+        <li><span class="q-num">5.</span> You wait for your airplane at the boarding <input type="text" data-ans="gate" class="blank blank-sm">. <span class="choice-box">flight &nbsp;|&nbsp; gate &nbsp;|&nbsp; backpack</span></li>
+      </ol>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- ----------------------- THE FLIGHT BOARD ----------------------- -->
+    <div class="airport-board">
+      <div class="board-header">?? El Dorado Int. Airport (BOG) – Real-Time Status ??</div>
+      <table class="board-table">
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Flight</th>
+            <th>Destination / Origin</th>
+            <th>Time</th>
+            <th>Gate</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="c-dep">DEPARTURE</td>
+            <td>AV204</td>
+            <td>TO Miami (MIA)</td>
+            <td>08:30</td>
+            <td>Gate 45</td>
+            <td class="s-ontime">ON TIME</td>
+          </tr>
+          <tr>
+            <td class="c-arr">ARRIVAL</td>
+            <td>LA501</td>
+            <td>FROM Lima (LIM)</td>
+            <td>09:15</td>
+            <td>Gate 12</td>
+            <td class="s-delayed">DELAYED</td>
+          </tr>
+          <tr>
+            <td class="c-dep">DEPARTURE</td>
+            <td>IB065</td>
+            <td>TO Madrid (MAD)</td>
+            <td>10:00</td>
+            <td>Gate 32</td>
+            <td class="s-boarding">BOARDING</td>
+          </tr>
+          <tr>
+            <td class="c-arr">ARRIVAL</td>
+            <td>CM400</td>
+            <td>FROM Panama (PTY)</td>
+            <td>11:45</td>
+            <td>Gate 08</td>
+            <td class="s-ontime">ON TIME</td>
+          </tr>
+          <tr>
+            <td class="c-dep">DEPARTURE</td>
+            <td>AV900</td>
+            <td>TO Cartagena (CTG)</td>
+            <td>12:30</td>
+            <td>Gate 55</td>
+            <td class="s-cancelled">CANCELLED</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ----------------------- EXERCISE 2: PREPOSITIONS ----------------------- -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">2</span>
+        <div class="title-content">
+          <div class="title-main">
+            Look at the Flight Board. Complete the sentences with <em>from, to, at,</em> or <em>with</em>.
+            <span class="pts-badge">1 pt each · 6 pts</span>
+            <button class="btn-trans" onclick="toggleT('t-ex2')" title="Traducir">??</button>
+          </div>
+          <div id="t-ex2" class="es-trans">Mira el tablero de vuelos arriba. Completa las oraciones con las preposiciones <em>from, to, at</em> o <em>with</em>.</div>
+        </div>
+      </div>
+      <ol class="q-list">
+        <li><span class="q-num">1.</span> Flight AV204 will depart <input type="text" data-ans="to" class="blank blank-sm"> Miami.</li>
+        <li><span class="q-num">2.</span> Flight LA501 is arriving <input type="text" data-ans="from" class="blank blank-sm"> Lima.</li>
+        <li><span class="q-num">3.</span> Passengers for Madrid, please board the plane <input type="text" data-ans="at" class="blank blank-sm"> Gate 32.</li>
+        <li><span class="q-num">4.</span> Flight CM400 will land <input type="text" data-ans="at" class="blank blank-sm"> 11:45.</li>
+        <li><span class="q-num">5.</span> Flight AV900 <input type="text" data-ans="to" class="blank blank-sm"> Cartagena is cancelled.</li>
+        <li><span class="q-num">6.</span> My brother is flying <input type="text" data-ans="with" class="blank blank-sm"> Iberia Airlines today.</li>
+      </ol>
+    </div>
+
+    <!-- ----------------------- EXERCISE 3: YES/NO QUESTIONS ----------------------- -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">3</span>
+        <div class="title-content">
+          <div class="title-main">
+            Look at the Flight Board. Answer the Yes/No questions.
+            <span class="pts-badge">2 pts each · 8 pts</span>
+            <button class="btn-trans" onclick="toggleT('t-ex3')" title="Traducir">??</button>
+          </div>
+          <div id="t-ex3" class="es-trans">Mira el tablero de vuelos. Responde las preguntas de Sí o No. (Usa respuestas cortas como <em>Yes, it will</em> o <em>No, it won't</em>).</div>
+        </div>
+      </div>
+      <ol class="q-list">
+        <li><span class="q-num">1.</span> Will flight AV204 depart on time? ? <input type="text" data-ans="Yes, it will" class="blank blank-md">.</li>
+        <li><span class="q-num">2.</span> Will the flight from Lima arrive at Gate 45? ? <input type="text" data-ans="No, it won't" class="blank blank-md">.</li>
+        <li><span class="q-num">3.</span> Will flight CM400 land at 11:45? ? <input type="text" data-ans="Yes, it will" class="blank blank-md">.</li>
+        <li><span class="q-num">4.</span> Will the flight to Cartagena take off today? ? <input type="text" data-ans="No, it won't" class="blank blank-md">.</li>
+      </ol>
+    </div>
+
+    <!-- ----------------------- EXERCISE 4: CORRECT THE INFO ----------------------- -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">4</span>
+        <div class="title-content">
+          <div class="title-main">
+            The sentences have incorrect information. Choose the correct word to fix them.
+            <span class="pts-badge">1 pt each · 4 pts</span>
+            <button class="btn-trans" onclick="toggleT('t-ex4')" title="Traducir">??</button>
+          </div>
+          <div id="t-ex4" class="es-trans">Las oraciones tienen información incorrecta basada en el tablero. Elige la palabra correcta de la cajita para arreglarlas.</div>
+        </div>
+      </div>
+      <ol class="q-list">
+        <li><span class="q-num">1.</span> Flight LA501 from Lima is <span style="text-decoration:line-through; color:var(--incorrect)">on time</span>. ? No, it is <input type="text" data-ans="delayed" class="blank blank-sm">. <span class="choice-box">boarding &nbsp;|&nbsp; delayed &nbsp;|&nbsp; cancelled</span></li>
+        <li><span class="q-num">2.</span> Flight IB065 is boarding at Gate <span style="text-decoration:line-through; color:var(--incorrect)">12</span>. ? No, it is at Gate <input type="text" data-ans="32" class="blank blank-sm">. <span class="choice-box">45 &nbsp;|&nbsp; 08 &nbsp;|&nbsp; 32</span></li>
+        <li><span class="q-num">3.</span> Flight CM400 will <span style="text-decoration:line-through; color:var(--incorrect)">depart</span> at 11:45. ? No, it is an arrival. It will <input type="text" data-ans="land" class="blank blank-sm">. <span class="choice-box">land &nbsp;|&nbsp; take off &nbsp;|&nbsp; fly</span></li>
+        <li><span class="q-num">4.</span> Flight AV900 is flying <span style="text-decoration:line-through; color:var(--incorrect)">from</span> Cartagena. ? No, it is a departure. It is flying <input type="text" data-ans="to" class="blank blank-sm"> Cartagena. <span class="choice-box">to &nbsp;|&nbsp; at &nbsp;|&nbsp; with</span></li>
+      </ol>
+    </div>
+
+    <!-- ----------------------- EXERCISE 5: WRITE THE QUESTION ----------------------- -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">5</span>
+        <div class="title-content">
+          <div class="title-main">
+            Write the correct question for each answer. ?? <em>Remember to include the preposition!</em>
+            <span class="pts-badge">2 pts each · 6 pts</span>
+            <button class="btn-trans" onclick="toggleT('t-ex5')" title="Traducir">??</button>
+          </div>
+          <div id="t-ex5" class="es-trans">Escribe la pregunta correcta para cada respuesta usando <em>Where</em>, <em>Who</em> o <em>What time</em>. ?? <em>¡Recuerda incluir la preposición al final de la pregunta cuando sea necesario!</em></div>
+        </div>
+      </div>
+      <ol class="q-list">
+        <li><span class="q-num">1.</span> We will fly to Miami. ? <input type="text" data-ans="Where will you fly to|Where will you fly" class="blank blank-lg">?</li>
+        <li><span class="q-num">2.</span> I will travel with my sister. ? <input type="text" data-ans="Who will you travel with" class="blank blank-lg">?</li>
+        <li><span class="q-num">3.</span> The plane will depart at 08:30. ? <input type="text" data-ans="What time will the plane depart|What time will it depart" class="blank blank-lg">?</li>
+      </ol>
+    </div>
+
+    <!-- ----------------------- EXERCISE 6: FINAL CHALLENGE ----------------------- -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">6</span>
+        <div class="title-content">
+          <div class="title-main">
+            Final Challenge – Your Next Trip! <em style="font-weight:400; opacity:0.7;">(Teacher evaluated)</em>
+            <span class="pts-badge">10 pts</span>
+            <button class="btn-trans" onclick="toggleT('t-ex6')" title="Traducir">??</button>
+          </div>
+          <div id="t-ex6" class="es-trans">Reto Final: Imagina tu próximo viaje. Escribe un párrafo de 3 a 5 oraciones. Responde: ¿A dónde volarás? ¿Con quién viajarás? ¿A qué hora despegará tu vuelo? ¿Qué equipaje llevarás? ¡Manda pantallazo!</div>
+        </div>
+      </div>
+      <p style="font-size:13px;font-weight:700;opacity:0.6;margin-bottom:12px">Answer these questions in a short paragraph:<br> <em>Where will you fly to? Who will you travel with? What time will your flight take off? What bags will you take?</em></p>
+      <textarea
+        data-ans="OPEN"
+        rows="5"
+        placeholder="Write your paragraph here. Example: Next month, I will fly to..."
+        style="width:100%;border:2px dashed #ccc;border-radius:8px;padding:14px;font-family:'Nunito',sans-serif;font-size:15px;font-weight:600;color:#2b2b2b;outline:none;resize:vertical;background:#fafafa;transition:border-color 0.2s;"
+        onfocus="this.style.borderColor='#1a1a2e'"
+        onblur="this.style.borderColor='#ccc'"
+      ></textarea>
+    </div>
+
+    <!-- ----------------------- ACTION BAR ----------------------- -->
+    <div class="action-bar">
+      <div class="score-display" id="gradeScoreBox">Score: 0</div>
+      <div class="button-group">
+        <button class="btn-action btn-check" onclick="checkStudentAnswers()">?? Check Answers</button>
+        <button class="btn-action btn-reset" onclick="resetWorksheet()">?? Clear Sheet</button>
+      </div>
+    </div>
+
+    <!-- ----------------------- ANSWER KEY ----------------------- -->
+    <div class="answer-key-wrapper">
+      <button class="btn-toggle-key" id="toggleKeyBtn" onclick="toggleAnswerKey()">
+        ??? Show Answer Key
+      </button>
+
+      <div class="answer-key-content" id="answerKeyContent">
+        <div class="answer-key">
+          <h2>Answer Key</h2>
+
+          <div class="key-section">
+            <h3>1. Vocabulary</h3>
+            <div class="key-list">
+              <div>1. <span>suitcase</span></div>
+              <div>2. <span>carry-on</span></div>
+              <div>3. <span>take off</span></div>
+              <div>4. <span>land</span></div>
+              <div>5. <span>gate</span></div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>2. Prepositions (From, To, At, With)</h3>
+            <div class="key-list">
+              <div>1. depart <span>to</span> Miami</div>
+              <div>2. arriving <span>from</span> Lima</div>
+              <div>3. <span>at</span> Gate 32</div>
+              <div>4. land <span>at</span> 11:45</div>
+              <div>5. <span>to</span> Cartagena</div>
+              <div>6. <span>with</span> Iberia Airlines</div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>3. Yes/No Questions</h3>
+            <div class="key-list">
+              <div>1. <span>Yes, it will</span></div>
+              <div>2. <span>No, it won't</span></div>
+              <div>3. <span>Yes, it will</span></div>
+              <div>4. <span>No, it won't</span></div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>4. Correct the Info</h3>
+            <div class="key-list">
+              <div>1. It is <span>delayed</span></div>
+              <div>2. Gate <span>32</span></div>
+              <div>3. It will <span>land</span></div>
+              <div>4. Flying <span>to</span> Cartagena</div>
+            </div>
+          </div>
+          
+          <div class="key-section">
+            <h3>5. Write the Question</h3>
+            <div class="key-list" style="column-count: 1;">
+              <div>1. <span>Where will you fly to?</span> (accepts 'Where will you fly?')</div>
+              <div>2. <span>Who will you travel with?</span></div>
+              <div>3. <span>What time will the plane depart?</span> (accepts 'What time will it depart?')</div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>6. Final Challenge</h3>
+            <div class="key-list">
+              <div>Teacher-evaluated open writing. Check for correct use of *will*, prepositions (*to, with, at*), and luggage vocabulary.</div>
+            </div>
+          </div>
+
+          <p style="font-size:12px;font-weight:600;opacity:0.5;margin-top:14px;padding-top:10px;border-top:1px dashed var(--rule);">
+            *The auto-grader checks strict objective answers (which ignore extra spaces or capital letters). Open writing / personal responses are highlighted in blue for quick teacher evaluation.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  // Toggle Spanish Translations
+  function toggleT(id) {
+    const el = document.getElementById(id);
+    if (el.style.display === "block") {
+      el.style.display = "none";
+    } else {
+      el.style.display = "block";
+    }
+  }
+
+  // Answer Checking Logic
+  function checkStudentAnswers() {
+    let score = 0;
+    let autoTotal = 0;
+
+    const inputs = document.querySelectorAll('input[data-ans]');
+    inputs.forEach(input => {
+      let studentAns = input.value.trim().toLowerCase().replace(/[.?!]$/, "").replace(/\s+/g, " ");
+      let rawTarget = input.getAttribute('data-ans').toLowerCase().replace(/[.?!]$/, "");
+      let targetAnsArray = rawTarget.split('|').map(s => s.replace(/\s+/g, " ").trim());
+
+      input.classList.remove('is-correct', 'is-incorrect', 'is-open');
+
+      if (targetAnsArray.includes("open")) {
+        if (studentAns !== "") {
+          input.classList.add('is-open');
+        }
+      } else {
+        autoTotal++;
+        if (targetAnsArray.includes(studentAns)) {
+          input.classList.add('is-correct');
+          score++;
+        } else {
+          input.classList.add('is-incorrect');
+        }
+      }
+    });
+
+    // Handle textareas (open text)
+    document.querySelectorAll('textarea[data-ans]').forEach(ta => {
+      ta.style.borderColor = ta.value.trim() !== "" ? "#457b9d" : "#ccc";
+    });
+
+    const scoreBox = document.getElementById('gradeScoreBox');
+    scoreBox.innerText = "Auto-graded Score: " + score + " / " + autoTotal;
+    scoreBox.style.display = "block";
+  }
+
+  function resetWorksheet() {
+    if (confirm("Are you sure you want to clear all your answers? / ¿Seguro que quieres borrar tus respuestas?")) {
+      document.querySelectorAll('input').forEach(input => {
+        input.value = "";
+        input.classList.remove('is-correct', 'is-incorrect', 'is-open');
+      });
+      document.querySelectorAll('textarea').forEach(ta => {
+        ta.value = "";
+        ta.style.borderColor = "#ccc";
+      });
+      document.getElementById('gradeScoreBox').style.display = "none";
+    }
+  }
+
+  function toggleAnswerKey() {
+    const content = document.getElementById("answerKeyContent");
+    const btn = document.getElementById("toggleKeyBtn");
+    if (content.style.display === "block") {
+      content.style.display = "none";
+      btn.innerHTML = "??? Show Answer Key";
+    } else {
+      content.style.display = "block";
+      btn.innerHTML = "?? Hide Answer Key";
+    }
+  }
+</script>
+</body>
+</html>
