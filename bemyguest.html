@@ -559,12 +559,8 @@
             <td>Use <strong>ANY</strong><br><em>I don't have <strong>any</strong> coffee.</em></td>
           </tr>
           <tr>
-            <td>(?) Questions<br><span style="font-size:11px; font-weight:600; color:#666;">(General)</span></td>
-            <td>Use <strong>ANY</strong><br><em>Do you have <strong>any</strong> sugar?</em></td>
-          </tr>
-          <tr>
-            <td>(?) Questions<br><span style="font-size:11px; font-weight:600; color:#666;">(Offers / Requests)</span></td>
-            <td>Use <strong>SOME</strong><br><em>Would you like <strong>some</strong> tea?</em></td>
+            <td>(?) Questions</td>
+            <td>Use <strong>SOME</strong> or <strong>ANY</strong><br><em>Do you have <strong>any/some</strong> sugar?</em><br><em>Would you like <strong>some/any</strong> tea?</em></td>
           </tr>
         </table>
       </div>
@@ -586,7 +582,7 @@
       </div>
       <ol class="q-list">
         <li><span class="q-num">1.</span> &#127827; I would like <input type="text" data-ans="some" class="blank blank-sm"> strawberries.</li>
-        <li><span class="q-num">2.</span> &#129373; Do you want <input type="text" data-ans="a" class="blank blank-sm"> kiwi?</li>
+        <li><span class="q-num">2.</span> &#129373; Do you want <input type="text" data-ans="a|some" class="blank blank-sm"> kiwi?</li>
         <li><span class="q-num">3.</span> &#127818; Can I have <input type="text" data-ans="an" class="blank blank-sm"> orange, please?</li>
         <li><span class="q-num">4.</span> &#127815; We have <input type="text" data-ans="some" class="blank blank-sm"> grapes for breakfast.</li>
         <li><span class="q-num">5.</span> &#127821; She wants <input type="text" data-ans="a" class="blank blank-sm"> pineapple.</li>
@@ -603,21 +599,21 @@
             <span class="pts-badge">1 pt each &middot; 5 pts</span>
             <button class="btn-trans" onclick="toggleT('t-ex2')" title="Traducir">&#127104;</button>
           </div>
-          <div id="t-ex2" class="es-trans">Completa las oraciones usando <em>some</em> o <em>any</em> según las reglas de la tabla.</div>
+          <div id="t-ex2" class="es-trans">Completa las oraciones usando <em>some</em> o <em>any</em> seg&uacute;n las reglas de la tabla.</div>
         </div>
       </div>
       <ol class="q-list">
         <li><span class="q-num">1.</span> I am sorry, I don't have <input type="text" data-ans="any" class="blank blank-sm"> cookies.</li>
-        <li><span class="q-num">2.</span> Would you like <input type="text" data-ans="some" class="blank blank-sm"> coffee with your breakfast?</li>
-        <li><span class="q-num">3.</span> Do you have <input type="text" data-ans="any" class="blank blank-sm"> rice for dinner?</li>
+        <li><span class="q-num">2.</span> Would you like <input type="text" data-ans="some|any" class="blank blank-sm"> coffee with your breakfast?</li>
+        <li><span class="q-num">3.</span> Do you have <input type="text" data-ans="any|some" class="blank blank-sm"> rice for dinner?</li>
         <li><span class="q-num">4.</span> We have <input type="text" data-ans="some" class="blank blank-sm"> cake in the kitchen.</li>
-        <li><span class="q-num">5.</span> Are there <input type="text" data-ans="any" class="blank blank-sm"> beans left?</li>
+        <li><span class="q-num">5.</span> Are there <input type="text" data-ans="any|some" class="blank blank-sm"> beans left?</li>
       </ol>
     </div>
 
     <div class="section-divider"></div>
 
-    <!-- THE FRIDGE EXERCISE -->
+    <!-- THE FRIDGE VISUAL -->
     <div class="fridge-container">
       <div class="fridge-header">My Refrigerator</div>
       
@@ -655,17 +651,41 @@
       </ol>
     </div>
 
-    <!-- EXERCISE 4: CONTAINERS -->
+    <!-- EXERCISE 4: FRIDGE SENTENCE BUILDING -->
     <div class="exercise">
       <div class="exercise-title">
         <span class="ex-num">4</span>
         <div class="title-content">
           <div class="title-main">
-            Complete the phrases with the correct container or measure.
-            <span class="pts-badge">1 pt each &middot; 5 pts</span>
+            Look at the refrigerator. Write complete sentences using the clues.
+            <span class="pts-badge">2 pts each &middot; 8 pts</span>
             <button class="btn-trans" onclick="toggleT('t-ex4')" title="Traducir">&#127104;</button>
           </div>
-          <div id="t-ex4" class="es-trans">Completa las frases con el recipiente o medida correcta de la cajita.</div>
+          <div id="t-ex4" class="es-trans">Mira el refrigerador. Escribe oraciones completas usando las pistas. Usa <em>I have some...</em>, <em>I don't have any...</em> o <em>Do you have any...?</em></div>
+        </div>
+      </div>
+      <p style="font-size:13px;font-weight:700;opacity:0.6;margin-bottom:12px">Use: <em>I have some... / I don't have any... / Do you have any...?</em></p>
+      <ol class="q-list">
+        <li><span class="q-num">1.</span> (+) / apples &rarr; <input type="text" data-ans="I have some apples" class="blank blank-lg">.</li>
+        <li><span class="q-num">2.</span> (-) / yogurt &rarr; <input type="text" data-ans="I don't have any yogurt|I do not have any yogurt" class="blank blank-lg">.</li>
+        <li><span class="q-num">3.</span> (?) / eggs &rarr; <input type="text" data-ans="Do you have any eggs|Do you have some eggs" class="blank blank-lg">?</li>
+        <li><span class="q-num">4.</span> (+) / cheese &rarr; <input type="text" data-ans="I have some cheese" class="blank blank-lg">.</li>
+      </ol>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- EXERCISE 5: CONTAINERS -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">5</span>
+        <div class="title-content">
+          <div class="title-main">
+            Complete the phrases with the correct container or measure.
+            <span class="pts-badge">1 pt each &middot; 5 pts</span>
+            <button class="btn-trans" onclick="toggleT('t-ex5')" title="Traducir">&#127104;</button>
+          </div>
+          <div id="t-ex5" class="es-trans">Completa las frases con el recipiente o medida correcta de la cajita.</div>
         </div>
       </div>
       <ol class="q-list">
@@ -677,19 +697,22 @@
       </ol>
     </div>
 
-    <!-- EXERCISE 5: DIALOGUE COMPLETION -->
+    <!-- EXERCISE 6: DIALOGUE COMPLETION -->
     <div class="exercise">
       <div class="exercise-title">
-        <span class="ex-num">5</span>
+        <span class="ex-num">6</span>
         <div class="title-content">
           <div class="title-main">
             Complete the conversation offering a drink.
             <span class="pts-badge">1 pt each &middot; 6 pts</span>
-            <button class="btn-trans" onclick="toggleT('t-ex5')" title="Traducir">&#127104;</button>
+            <button class="btn-trans" onclick="toggleT('t-ex6')" title="Traducir">&#127104;</button>
           </div>
-          <div id="t-ex5" class="es-trans">Completa la conversaci&oacute;n ofreciendo una bebida al invitado.</div>
+          <div id="t-ex6" class="es-trans">Completa la conversaci&oacute;n ofreciendo una bebida al invitado usando las palabras de la cajita.</div>
         </div>
       </div>
+      
+      <p style="margin-bottom: 12px;"><span class="choice-box">any &nbsp;|&nbsp; here you are &nbsp;|&nbsp; please &nbsp;|&nbsp; some &nbsp;|&nbsp; welcome &nbsp;|&nbsp; would</span></p>
+
       <ul class="q-list" style="background:#f9f9f9; padding:20px; border-radius:8px; border:1px solid #ddd;">
         <li><strong>Host:</strong> <input type="text" data-ans="Would" class="blank blank-sm"> you like <input type="text" data-ans="some" class="blank blank-sm"> tea?</li>
         <li><strong>Guest:</strong> Yes, <input type="text" data-ans="please" class="blank blank-sm">. Do you have <input type="text" data-ans="any" class="blank blank-sm"> sugar?</li>
@@ -699,17 +722,54 @@
       </ul>
     </div>
 
-    <!-- EXERCISE 6: FINAL CHALLENGE -->
+    <!-- EXERCISE 7: MULTIPLE CHOICE -->
     <div class="exercise">
       <div class="exercise-title">
-        <span class="ex-num">6</span>
+        <span class="ex-num">7</span>
+        <div class="title-content">
+          <div class="title-main">
+            Multiple Choice. Type A, B, or C in the box.
+            <span class="pts-badge">1 pt each &middot; 5 pts</span>
+            <button class="btn-trans" onclick="toggleT('t-ex7')" title="Traducir">&#127104;</button>
+          </div>
+          <div id="t-ex7" class="es-trans">Selecci&oacute;n m&uacute;ltiple. Escribe A, B o C en la cajita seg&uacute;n la respuesta correcta.</div>
+        </div>
+      </div>
+      <ol class="q-list" style="gap:22px;">
+        <li>
+          <span class="q-num">1.</span> <input type="text" data-ans="b" class="blank blank-sm" style="min-width:40px; text-transform:uppercase;" maxlength="1"> ____ you like a cup of coffee?<br>
+          <span style="font-size:14px; margin-left:30px; color:#555;"><strong>A)</strong> Do &nbsp;&nbsp; <strong>B)</strong> Would &nbsp;&nbsp; <strong>C)</strong> Are</span>
+        </li>
+        <li>
+          <span class="q-num">2.</span> <input type="text" data-ans="c" class="blank blank-sm" style="min-width:40px; text-transform:uppercase;" maxlength="1"> I'm sorry, we don't have ____ bread.<br>
+          <span style="font-size:14px; margin-left:30px; color:#555;"><strong>A)</strong> some &nbsp;&nbsp; <strong>B)</strong> a &nbsp;&nbsp; <strong>C)</strong> any</span>
+        </li>
+        <li>
+          <span class="q-num">3.</span> <input type="text" data-ans="a" class="blank blank-sm" style="min-width:40px; text-transform:uppercase;" maxlength="1"> She wants ____ piece of cake.<br>
+          <span style="font-size:14px; margin-left:30px; color:#555;"><strong>A)</strong> a &nbsp;&nbsp; <strong>B)</strong> an &nbsp;&nbsp; <strong>C)</strong> any</span>
+        </li>
+        <li>
+          <span class="q-num">4.</span> <input type="text" data-ans="c" class="blank blank-sm" style="min-width:40px; text-transform:uppercase;" maxlength="1"> Can I have a ____ of water, please?<br>
+          <span style="font-size:14px; margin-left:30px; color:#555;"><strong>A)</strong> slice &nbsp;&nbsp; <strong>B)</strong> piece &nbsp;&nbsp; <strong>C)</strong> glass</span>
+        </li>
+        <li>
+          <span class="q-num">5.</span> <input type="text" data-ans="b" class="blank blank-sm" style="min-width:40px; text-transform:uppercase;" maxlength="1"> I would like ____ orange juice.<br>
+          <span style="font-size:14px; margin-left:30px; color:#555;"><strong>A)</strong> an &nbsp;&nbsp; <strong>B)</strong> some &nbsp;&nbsp; <strong>C)</strong> a</span>
+        </li>
+      </ol>
+    </div>
+
+    <!-- EXERCISE 8: FINAL CHALLENGE -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">8</span>
         <div class="title-content">
           <div class="title-main">
             Final Challenge &ndash; Offer Food to Your Guest! <em style="font-weight:400; opacity:0.7;">(Teacher evaluated)</em>
             <span class="pts-badge">10 pts</span>
-            <button class="btn-trans" onclick="toggleT('t-ex6')" title="Traducir">&#127104;</button>
+            <button class="btn-trans" onclick="toggleT('t-ex8')" title="Traducir">&#127104;</button>
           </div>
-          <div id="t-ex6" class="es-trans">Reto Final: Un amigo visita tu casa. Escribe un di&aacute;logo corto. Ofr&eacute;cele algo de comer y beber usando "Would you like...?", "Do you have any...?", y responde amablemente. &iexcl;Manda pantallazo a tu profesor!</div>
+          <div id="t-ex8" class="es-trans">Reto Final: Un amigo visita tu casa. Escribe un di&aacute;logo corto. Ofr&eacute;cele algo de comer y beber usando "Would you like...?", "Do you have any...?", y responde amablemente. &iexcl;Manda pantallazo a tu profesor!</div>
         </div>
       </div>
       <p style="font-size:13px;font-weight:700;opacity:0.6;margin-bottom:12px">A friend is visiting your house. Write a short dialogue (4 lines).<br> <em>Offer them food and a drink. Use "Would you like...?", "Do you have any...?", "I'd like...", and polite expressions (please, thank you).</em></p>
@@ -746,7 +806,7 @@
             <h3>1. Fruit Emojis</h3>
             <div class="key-list">
               <div>1. <span>some</span></div>
-              <div>2. <span>a</span></div>
+              <div>2. <span>a</span> / <span>some</span></div>
               <div>3. <span>an</span></div>
               <div>4. <span>some</span></div>
               <div>5. <span>a</span></div>
@@ -757,15 +817,15 @@
             <h3>2. Some vs Any</h3>
             <div class="key-list">
               <div>1. <span>any</span></div>
-              <div>2. <span>some</span></div>
-              <div>3. <span>any</span></div>
+              <div>2. <span>some</span> / <span>any</span></div>
+              <div>3. <span>any</span> / <span>some</span></div>
               <div>4. <span>some</span></div>
-              <div>5. <span>any</span></div>
+              <div>5. <span>any</span> / <span>some</span></div>
             </div>
           </div>
 
           <div class="key-section">
-            <h3>3. Fridge Questions</h3>
+            <h3>3. Yes/No Fridge Questions</h3>
             <div class="key-list">
               <div>1. <span>Yes, I do</span></div>
               <div>2. <span>No, I don't</span></div>
@@ -775,7 +835,17 @@
           </div>
 
           <div class="key-section">
-            <h3>4. Containers</h3>
+            <h3>4. Fridge Sentences</h3>
+            <div class="key-list" style="column-count: 1;">
+              <div>1. <span>I have some apples</span></div>
+              <div>2. <span>I don't have any yogurt</span></div>
+              <div>3. <span>Do you have any eggs?</span> (or 'some eggs')</div>
+              <div>4. <span>I have some cheese</span></div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>5. Containers</h3>
             <div class="key-list">
               <div>1. <span>cup</span></div>
               <div>2. <span>slice</span></div>
@@ -786,7 +856,7 @@
           </div>
           
           <div class="key-section">
-            <h3>5. Dialogue Completion</h3>
+            <h3>6. Dialogue Completion</h3>
             <div class="key-list" style="column-count: 1;">
               <div><span>Would</span> you like <span>some</span> tea?</div>
               <div>Yes, <span>please</span>. Do you have <span>any</span> sugar?</div>
@@ -796,8 +866,19 @@
           </div>
 
           <div class="key-section">
-            <h3>6. Final Challenge</h3>
+            <h3>7. Multiple Choice</h3>
             <div class="key-list">
+              <div>1. <span>B</span></div>
+              <div>2. <span>C</span></div>
+              <div>3. <span>A</span></div>
+              <div>4. <span>C</span></div>
+              <div>5. <span>B</span></div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>8. Final Challenge</h3>
+            <div class="key-list" style="column-count: 1;">
               <div>Teacher-evaluated open writing. Check for correct use of *Would you like / Do you have*, quantifiers (*some/any*), and polite vocabulary.</div>
             </div>
           </div>
@@ -831,7 +912,7 @@
       // Normalize student answer (remove punctuation, extra spaces, to lowercase)
       let studentAns = input.value.trim().toLowerCase().replace(/[.?!]$/, "").replace(/\s+/g, " ");
       
-      // Expand contraction 'd to would for flexibility if needed, though this exercise mostly uses discrete words.
+      // Expand contraction 'd to would for flexibility if needed
       if (studentAns === "i'd like") studentAns = "i would like";
       if (studentAns === "i'd") studentAns = "i would";
 
