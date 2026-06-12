@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Economic Shifts &ndash; B2.3 Upper Intermediate English</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Baloo+2:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a2e;
+    --paper: #fffef7;
+    --A: #e63946;
+    --A-light: #fde8ea;
+    --B: #2a9d8f;
+    --B-light: #d6f5f2;
+    --C: #e07b00;
+    --C-light: #fff0d6;
+    --D: #5c4fcf;
+    --D-light: #ebe8ff;
+    --E: #c77dff;
+    --E-light: #f5e6ff;
+    --rule: #d4cfc0;
+
+    /* Feedback Colors */
+    --correct: #2a9d8f;
+    --incorrect: #e63946;
+    --open-ans: #457b9d;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: #e8e4d9;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 32px 16px 60px;
+  }
+
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--paper);
+    border-radius: 4px;
+    box-shadow: 0 4px 40px rgba(0,0,0,0.18);
+    overflow: hidden;
+  }
+
+  /* LOGISTICS BOX */
+  .logistics-box {
+    background: #e3f2fd;
+    border-left: 5px solid #1e88e5;
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 32px;
+  }
+  .logistics-box h3 {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-bottom: 10px;
+    color: #1e88e5;
+  }
+  .logistics-box p {
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 600;
+  }
+
+  /* HEADER */
+  header {
+    background: var(--ink);
+    color: #fff;
+    padding: 40px 48px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent, transparent 18px,
+      rgba(255,255,255,0.03) 18px, rgba(255,255,255,0.03) 36px
+    );
+  }
+  .header-badge {
+    display: inline-block;
+    background: #fff;
+    color: var(--ink);
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+  }
+  header h1 {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1.05;
+    margin-bottom: 8px;
+  }
+  header h1 span { color: #f4a261; }
+  header p {
+    font-size: 15px;
+    opacity: 0.7;
+    font-weight: 600;
+  }
+
+  /* CONTENT */
+  .content { padding: 0 44px 44px; margin-top: 20px;}
+
+  /* SECTION DIVIDERS */
+  .section-header {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--ink);
+    margin: 40px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--rule);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-header span {
+    background: var(--ink);
+    color: white;
+    font-size: 14px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+  }
+
+  /* GRAMMAR & VOCAB BOXES */
+  .grammar-box {
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 22px;
+    border-left: 5px solid;
+  }
+  .grammar-box.purple { background: var(--E-light); border-color: var(--E); }
+  .grammar-box.blue { background: var(--B-light); border-color: var(--B); }
+  .grammar-box h3 {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 10px;
+    opacity: 0.6;
+  }
+  .grammar-box p {
+    font-size: 14px;
+    line-height: 1.7;
+    font-weight: 600;
+  }
+  .grammar-box strong { font-weight: 900; }
+
+  /* TABLES */
+  .g-table-wrapper {
+    background: white;
+    border: 2px solid var(--B);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 24px;
+  }
+  .g-table-wrapper.purple-table { border-color: var(--E); }
+  .g-table-header {
+    background: var(--B);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-family: 'Baloo 2', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+  .purple-table .g-table-header { background: var(--E); }
+  .g-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .g-table td { padding: 10px 14px; border-bottom: 1px solid #eee; font-weight: 600; vertical-align: top; line-height: 1.5; }
+  .g-table td:first-child { font-weight: 800; color: var(--B); width: 25%; border-right: 1px dashed #ccc; }
+  .purple-table td:first-child { color: var(--E); }
+  .g-table tr:last-child td { border-bottom: none; }
+
+  /* READING ARTICLE */
+  .article-box {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 24px 32px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  }
+  .article-title {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 4px;
+    color: var(--ink);
+  }
+  .article-meta {
+    font-size: 12px;
+    color: #666;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+    border-bottom: 2px solid var(--rule);
+    padding-bottom: 10px;
+  }
+  .article-body p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+  .article-body p:last-child { margin-bottom: 0; }
+
+  /* EXERCISE BLOCK & INSTRUCTIONS */
+  .exercise { margin-bottom: 36px; }
+  .exercise-title {
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    border-bottom: 2px solid var(--rule);
+    padding-bottom: 8px;
+  }
+  .title-content { display: flex; flex-direction: column; gap: 4px; }
+  .title-main { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
+  .ex-num {
+    width: 26px; height: 26px;
+    background: var(--ink);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 900;
+    color: #fff;
+    flex-shrink: 0;
+    margin-top: -2px;
+  }
+
+  .q-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+  .q-list li {
+    font-size: 15px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    line-height: 1.6;
+    flex-wrap: wrap;
+  }
+  .q-num { font-weight: 900; opacity: 0.4; min-width: 20px; font-size: 13px; }
+
+  .choice-box {
+    display: inline-flex;
+    align-items: center;
+    background: #f7f3e8;
+    border: 1.5px solid var(--rule);
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: 800;
+    color: #555;
+    letter-spacing: 0.5px;
+    word-spacing: 4px;
+    line-height: 1.8;
+  }
+
+  .blank {
+    border: none;
+    border-bottom: 2px solid #aaa;
+    background: transparent;
+    min-width: 100px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #2b2b2b;
+    padding: 0 4px;
+    outline: none;
+    text-align: center;
+    transition: all 0.2s;
+  }
+  .blank:focus {
+    border-bottom-color: var(--ink);
+    background: rgba(0,0,0,0.02);
+  }
+  .blank-sm  { min-width: 60px; }
+  .blank-md  { min-width: 140px; }
+  .blank-lg  { min-width: 220px; }
+  .blank-xl  { min-width: 380px; flex-grow: 1; text-align: left; padding: 0 8px; }
+
+  .is-correct {
+    border-bottom: 2px solid var(--correct) !important;
+    color: var(--correct) !important;
+    background-color: rgba(42,157,143,0.06) !important;
+  }
+  .is-incorrect {
+    border-bottom: 2px solid var(--incorrect) !important;
+    color: var(--incorrect) !important;
+    background-color: rgba(230,57,70,0.06) !important;
+  }
+  .is-open {
+    border-bottom: 2px solid var(--open-ans) !important;
+    color: var(--open-ans) !important;
+    background-color: rgba(69,123,157,0.06) !important;
+  }
+
+  /* CONTROL ACTIONS BAR */
+  .action-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 36px;
+  }
+  .score-display {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--ink);
+    display: none;
+    background: #f0ede4;
+    padding: 6px 20px;
+    border-radius: 30px;
+    border: 2px solid var(--rule);
+  }
+  .button-group { display: flex; gap: 16px; }
+  .btn-action {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 12px 32px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    transition: all 0.2s;
+  }
+  .btn-check { background: #2a9d8f; color: white; }
+  .btn-check:hover { background: #228074; transform: translateY(-1px); }
+  .btn-reset { background: #e7e5e0; color: var(--ink); }
+  .btn-reset:hover { background: #dcd9d2; transform: translateY(-1px); }
+  .btn-action:active { transform: translateY(1px); }
+
+  /* DIVIDER */
+  .section-divider {
+    height: 2px;
+    background: repeating-linear-gradient(
+      90deg, var(--rule) 0, var(--rule) 8px,
+      transparent 8px, transparent 16px
+    );
+    margin: 44px 0;
+  }
+
+  /* ANSWER KEY */
+  .answer-key-wrapper {
+    margin-top: 48px;
+    border-top: 3px solid var(--ink);
+    padding-top: 20px;
+  }
+  .btn-toggle-key {
+    background: var(--ink);
+    color: #fff;
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  .btn-toggle-key:hover { background: #2e2e4e; transform: translateY(-1px); }
+  .answer-key-content { display: none; margin-top: 24px; }
+  .answer-key h2 {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .answer-key h2::after {
+    content: '(Teacher Copy)';
+    font-size: 12px;
+    background: var(--ink);
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    font-weight: 700;
+  }
+  .key-section { margin-bottom: 20px; }
+  .key-section h3 {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    opacity: 0.5;
+  }
+  .key-list {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 2;
+    column-count: 2;
+    column-gap: 32px;
+  }
+  .key-list span { font-weight: 900; }
+
+  .pts-badge {
+    display: inline-block;
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-left: 6px;
+    background: rgba(0,0,0,0.08);
+    color: var(--ink);
+  }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; }
+    .action-bar { display: none; }
+    .blank { border-bottom-color: #000; }
+    .answer-key-wrapper { display: none !important; }
+  }
+
+  @media (max-width: 600px) {
+    .content { padding: 0 20px 36px; }
+    header { padding: 28px 20px 22px; }
+    header h1 { font-size: 34px; }
+    .key-list { column-count: 1; }
+    .q-list li { flex-direction: column; align-items: flex-start; gap: 4px; margin-bottom: 12px; }
+    .blank-lg, .blank-xl { width: 100%; min-width: 100%; }
+    .button-group { flex-direction: column; align-items: stretch; width: 100%; }
+    .btn-action { text-align: center; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="header-badge">ESL Worksheet &middot; B2.3 Upper Intermediate</div>
+    <h1>Economic <span>Shifts</span></h1>
+    <p>Macro-economics &middot; Present Perfect Simple vs. Progressive</p>
+  </header>
+
+  <div class="content">
+
+    <!-- LOGISTICS INSTRUCTIONS -->
+    <div class="logistics-box">
+      <h3>&#128203; Instructions &amp; Logistics</h3>
+      <p>Welcome to your B2.3 English Module. Read the contexts carefully, paying close attention to implicit time markers and outcomes (results vs. ongoing processes). </p>
+      <p style="margin-top:8px">When you finish, the system will auto-grade the objective questions. However, for the open-writing exercises marked as <em>(Teacher evaluated)</em>, you must <strong>take a screenshot</strong> of your answers and send it to your instructor for personalized feedback.</p>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- GRAMMAR & VOCABULARY REFERENCE             -->
+    <!-- ========================================== -->
+
+    <!-- VOCABULARY TABLE -->
+    <div class="g-table-wrapper purple-table">
+      <div class="g-table-header">&#128202; Macro-Economic Vocabulary</div>
+      <table class="g-table">
+        <tr>
+          <td>Government &amp; Fiscal</td>
+          <td>tax reforms, government policies, minimum wage, debt, deficit, expenditure, revenue, social welfare.</td>
+        </tr>
+        <tr>
+          <td>Market Indicators</td>
+          <td>GDP (Gross Domestic Product), GDP per capita, inflation rate, unemployment rate, interest rate, productivity, consumer confidence.</td>
+        </tr>
+        <tr>
+          <td>Global &amp; Sectors</td>
+          <td>trade balance, exports, imports, foreign investment, public sector, private sector, renewable energy.</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- GRAMMAR BOX -->
+    <div class="grammar-box purple">
+      <h3>&#128204; Present Perfect: Simple vs. Progressive</h3>
+      <p><strong>Present Perfect Simple (has/have + past participle):</strong></p>
+      <ul style="margin-left: 20px; font-size: 14px; font-weight: 600; line-height: 1.7;">
+        <li>Emphasizes <strong>completed actions</strong> and their current results.</li>
+        <li>Focuses on <strong>quantities</strong> (how much / how many).</li>
+        <li><em>Ex: The central bank has cut the interest rate twice this year.</em></li>
+      </ul>
+      <p style="margin-top:10px; border-top:1px dashed rgba(0,0,0,0.1); padding-top:10px;">
+        <strong>Present Perfect Progressive (has/have + been + verb-ing):</strong><br>
+        <ul style="margin-left: 20px; font-size: 14px; font-weight: 600; line-height: 1.7;">
+          <li>Emphasizes <strong>ongoing processes</strong>, duration, and unfinished actions.</li>
+          <li>Focuses on <strong>how long</strong> an activity has been happening.</li>
+          <li><em>Ex: Inflation has been rising steadily for the last six months.</em></li>
+        </ul>
+      </p>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- CONTROLLED EXERCISES                       -->
+    <!-- ========================================== -->
+    <div class="section-header">
+      <span>Part 1</span> Controlled Practice
+    </div>
+
+    <!-- EXERCISE 1: SIMPLE (Completed actions/results) -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">1</span>
+        <div class="title-content">
+          <div class="title-main">
+            Complete the sentences using the <strong>Present Perfect Simple</strong>.
+            <span class="pts-badge">1 pt each &middot; 4 pts</span>
+          </div>
+        </div>
+      </div>
+      <p style="font-size:13px; font-weight:700; opacity:0.6; margin-bottom:12px;">Focus: Quantities and completed actions. Pay attention to the (+), (-) and (?) symbols.</p>
+      <ol class="q-list">
+        <li><span class="q-num">1.</span> (+) The government <input type="text" data-ans="has implemented|'s implemented" class="blank blank-md"> (implement) three tax reforms this decade.</li>
+        <li><span class="q-num">2.</span> (-) Consumer confidence <input type="text" data-ans="has not recovered|hasn't recovered" class="blank blank-md"> (not/recover) since the crisis ended.</li>
+        <li><span class="q-num">3.</span> (?) <input type="text" data-ans="Has the trade balance improved" class="blank blank-xl"> (the trade balance / improve) this quarter?</li>
+        <li><span class="q-num">4.</span> (+) Foreign investment <input type="text" data-ans="has reached|'s reached" class="blank blank-md"> (reach) a historic high. &#128200;</li>
+      </ol>
+    </div>
+
+    <!-- EXERCISE 2: PROGRESSIVE (Ongoing processes) -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">2</span>
+        <div class="title-content">
+          <div class="title-main">
+            Complete the sentences using the <strong>Present Perfect Progressive</strong>.
+            <span class="pts-badge">1 pt each &middot; 4 pts</span>
+          </div>
+        </div>
+      </div>
+      <p style="font-size:13px; font-weight:700; opacity:0.6; margin-bottom:12px;">Focus: Duration and ongoing trends. Pay attention to the (+), (-) and (?) symbols.</p>
+      <ol class="q-list">
+        <li><span class="q-num">1.</span> (+) The unemployment rate <input type="text" data-ans="has been dropping|'s been dropping" class="blank blank-lg"> (drop) steadily for six months. &#128201;</li>
+        <li><span class="q-num">2.</span> (-) The public sector <input type="text" data-ans="has not been investing|hasn't been investing" class="blank blank-lg"> (not/invest) enough in infrastructure lately.</li>
+        <li><span class="q-num">3.</span> (?) How long <input type="text" data-ans="have they been negotiating" class="blank blank-lg"> (they/negotiate) the new minimum wage?</li>
+        <li><span class="q-num">4.</span> (+) We <input type="text" data-ans="have been importing|'ve been importing" class="blank blank-lg"> (import) heavy machinery all year to boost productivity.</li>
+      </ol>
+    </div>
+
+    <!-- EXERCISE 3: CHOOSE THE CORRECT FORM -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">3</span>
+        <div class="title-content">
+          <div class="title-main">
+            Context Clues: Choose the correct tense based on the implicit context.
+            <span class="pts-badge">1 pt each &middot; 5 pts</span>
+          </div>
+        </div>
+      </div>
+      <p style="font-size:13px; font-weight:700; opacity:0.6; margin-bottom:12px;">Type A for Simple or B for Progressive.</p>
+      <ol class="q-list">
+        <li>
+          <span class="q-num">1.</span> <input type="text" data-ans="a" class="blank blank-sm" style="text-transform:uppercase;" maxlength="1"> "Our GDP per capita ____ by 4% this year." (Focus on final result)<br>
+          <span style="font-size:14px; margin-left:30px; color:#555;"><strong>A)</strong> has grown &nbsp;&nbsp; <strong>B)</strong> has been growing</span>
+        </li>
+        <li>
+          <span class="q-num">2.</span> <input type="text" data-ans="b" class="blank blank-sm" style="text-transform:uppercase;" maxlength="1"> "The national debt is out of control. The government ____ money non-stop since 2022." (Focus on continuous action)<br>
+          <span style="font-size:14px; margin-left:30px; color:#555;"><strong>A)</strong> has borrowed &nbsp;&nbsp; <strong>B)</strong> has been borrowing</span>
+        </li>
+        <li>
+          <span class="q-num">3.</span> <input type="text" data-ans="a" class="blank blank-sm" style="text-transform:uppercase;" maxlength="1"> "The private sector ____ 5,000 new jobs thanks to the recent policies." (Focus on exact quantity)<br>
+          <span style="font-size:14px; margin-left:30px; color:#555;"><strong>A)</strong> has created &nbsp;&nbsp; <strong>B)</strong> has been creating</span>
+        </li>
+        <li>
+          <span class="q-num">4.</span> <input type="text" data-ans="b" class="blank blank-sm" style="text-transform:uppercase;" maxlength="1"> "Inflation is exhausting. Prices ____ all year." (Focus on duration/ongoing state)<br>
+          <span style="font-size:14px; margin-left:30px; color:#555;"><strong>A)</strong> have increased &nbsp;&nbsp; <strong>B)</strong> have been increasing</span>
+        </li>
+        <li>
+          <span class="q-num">5.</span> <input type="text" data-ans="b" class="blank blank-sm" style="text-transform:uppercase;" maxlength="1"> "They are exhausted because they ____ the social welfare budget for 12 hours."<br>
+          <span style="font-size:14px; margin-left:30px; color:#555;"><strong>A)</strong> have debated &nbsp;&nbsp; <strong>B)</strong> have been debating</span>
+        </li>
+      </ol>
+    </div>
+
+    <!-- EXERCISE 4: UNSCRAMBLE -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">4</span>
+        <div class="title-content">
+          <div class="title-main">
+            Unscramble the sentences using advanced vocabulary and grammar.
+            <span class="pts-badge">2 pts each &middot; 8 pts</span>
+          </div>
+        </div>
+      </div>
+      <ol class="q-list">
+        <li>
+          <span class="q-num">1.</span> (revenue / the / government / increasing / been / has / tax)<br>
+          &rarr; <input type="text" data-ans="The government has been increasing tax revenue|The tax revenue has been increasing government" class="blank blank-xl">.
+        </li>
+        <li>
+          <span class="q-num">2.</span> (deficit / they / have / the / not / reduced / yet)<br>
+          &rarr; <input type="text" data-ans="They have not reduced the deficit yet|They haven't reduced the deficit yet" class="blank blank-xl">.
+        </li>
+        <li>
+          <span class="q-num">3.</span> (sector / private / the / investing / energy / renewable / in / been / has)<br>
+          &rarr; <input type="text" data-ans="The private sector has been investing in renewable energy" class="blank blank-xl">.
+        </li>
+        <li>
+          <span class="q-num">4.</span> (how / policies / impacted / these / productivity / have / ?)<br>
+          &rarr; <input type="text" data-ans="How have these policies impacted productivity" class="blank blank-xl">?
+        </li>
+      </ol>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- LESS CONTROLLED EXERCISES                  -->
+    <!-- ========================================== -->
+    <div class="section-divider"></div>
+
+    <div class="section-header">
+      <span>Part 2</span> Applied Grammar
+    </div>
+
+    <!-- EXERCISE 5: FORMULATE THE QUESTION -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">5</span>
+        <div class="title-content">
+          <div class="title-main">
+            Formulate the question for the given answer.
+            <span class="pts-badge">2 pts each &middot; 8 pts</span>
+          </div>
+        </div>
+      </div>
+      <p style="font-size:13px; font-weight:700; opacity:0.6; margin-bottom:12px;">Decide whether to use <em>How long</em> (progressive) or <em>How many/much</em> (simple).</p>
+      <ol class="q-list">
+        <li>
+          <span class="q-num">1.</span> <strong>Answer:</strong> The trade balance has been improving <em>for three years</em>.<br>
+          <strong>Question:</strong> <input type="text" data-ans="How long has the trade balance been improving" class="blank blank-xl">?
+        </li>
+        <li>
+          <span class="q-num">2.</span> <strong>Answer:</strong> The government has passed <em>five</em> new policies.<br>
+          <strong>Question:</strong> <input type="text" data-ans="How many new policies has the government passed|How many policies has the government passed" class="blank blank-xl">?
+        </li>
+        <li>
+          <span class="q-num">3.</span> <strong>Answer:</strong> We have been importing technology <em>since 2015</em>.<br>
+          <strong>Question:</strong> <input type="text" data-ans="How long have we been importing technology|How long have you been importing technology" class="blank blank-xl">?
+        </li>
+        <li>
+          <span class="q-num">4.</span> <strong>Answer:</strong> They have cut government expenditure <em>by 10%</em>.<br>
+          <strong>Question:</strong> <input type="text" data-ans="How much have they cut government expenditure|By how much have they cut government expenditure" class="blank blank-xl">?
+        </li>
+      </ol>
+    </div>
+
+    <!-- EXERCISE 6: RESPOND TO THE PROMPT -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">6</span>
+        <div class="title-content">
+          <div class="title-main">
+            Look at the economic data. Write a full sentence combining the prompts.
+            <span class="pts-badge">2 pts each &middot; 8 pts</span>
+          </div>
+        </div>
+      </div>
+      <p style="font-size:13px; font-weight:700; opacity:0.6; margin-bottom:12px;">Use the correct tense (Simple vs Progressive) based on the implicit time/quantity clues.</p>
+      <ol class="q-list">
+        <li>
+          <span class="q-num">1.</span> &#128200; <em>(Inflation rate / rise / since January)</em><br>
+          &rarr; <input type="text" data-ans="The inflation rate has been rising since January" class="blank blank-xl">.
+        </li>
+        <li>
+          <span class="q-num">2.</span> &#128176; <em>(The public sector / spend / $2 billion / so far this year)</em><br>
+          &rarr; <input type="text" data-ans="The public sector has spent $2 billion so far this year|The public sector has spent two billion dollars so far this year" class="blank blank-xl">.
+        </li>
+        <li>
+          <span class="q-num">3.</span> &#128201; <em>(Foreign investment / fall / for the last two quarters)</em><br>
+          &rarr; <input type="text" data-ans="Foreign investment has been falling for the last two quarters" class="blank blank-xl">.
+        </li>
+        <li>
+          <span class="q-num">4.</span> &#127183; <em>(They / build / three new solar plants / this decade)</em><br>
+          &rarr; <input type="text" data-ans="They have built three new solar plants this decade|They've built three new solar plants this decade" class="blank blank-xl">.
+        </li>
+      </ol>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- READING COMPREHENSION                      -->
+    <!-- ========================================== -->
+    <div class="section-divider"></div>
+
+    <div class="section-header">
+      <span>Part 3</span> Reading &amp; Analysis
+    </div>
+
+    <!-- EXERCISE 7: READING -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">7</span>
+        <div class="title-content">
+          <div class="title-main">
+            Read the opinion column.
+          </div>
+        </div>
+      </div>
+      
+      <div class="article-box">
+        <div class="article-title">Green Power: The Shift in Colombia's Energy Matrix</div>
+        <div class="article-meta">Opinion Column &middot; Economic Times &middot; By L. Suarez</div>
+        <div class="article-body">
+          <p>Over the last four years, the Colombian government has been aggressively pushing for a transition toward renewable energies. This paradigm shift has not been easy. For decades, the national trade balance has heavily relied on fossil fuel exports, primarily oil and coal. Consequently, the recent policy changes have sparked intense debate between the public and private sectors regarding the country's macroeconomic stability.</p>
+          
+          <p>The numbers, however, tell a complex story. On one hand, the Ministry of Energy has approved over 40 new wind and solar projects in the northern coastal regions. Private sector alliances have invested billions, and productivity in clean tech has reached an all-time high. The government argues that this transition has been creating sustainable social welfare and lowering long-term debt. They claim that reducing our dependency on oil has shielded our GDP per capita from the volatile global markets.</p>
+
+          <p>Conversely, critics point out that the immediate drop in oil revenue has heavily impacted the fiscal deficit. Because the state has been subsidizing these new green initiatives while simultaneously losing traditional export revenue, the national debt has been creeping up. Furthermore, consumer confidence has dropped slightly as energy prices have fluctuated during this transitional period. Ultimately, while the nation has secured a greener future, the short-term economic shockwaves are still being felt.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXERCISE 8: MULTIPLE CHOICE (Reading) -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">8</span>
+        <div class="title-content">
+          <div class="title-main">
+            Reading Comprehension: Type A, B, C, or D in the boxes.
+            <span class="pts-badge">2 pts each &middot; 8 pts</span>
+          </div>
+        </div>
+      </div>
+      <ol class="q-list" style="gap:22px;">
+        <li>
+          <span class="q-num">1.</span> <input type="text" data-ans="c" class="blank blank-sm" style="min-width:40px; text-transform:uppercase;" maxlength="1"> According to the first paragraph, what has historically sustained Colombia's trade balance?<br>
+          <span style="font-size:14px; margin-left:30px; color:#555;"><strong>A)</strong> Renewable energy &nbsp;&nbsp; <strong>B)</strong> Agricultural imports &nbsp;&nbsp; <strong>C)</strong> Fossil fuel exports &nbsp;&nbsp; <strong>D)</strong> Private sector tech</span>
+        </li>
+        <li>
+          <span class="q-num">2.</span> <input type="text" data-ans="a" class="blank blank-sm" style="text-transform:uppercase;" maxlength="1"> Which of the following is a completed action (result) mentioned in the text?<br>
+          <span style="font-size:14px; margin-left:30px; color:#555;"><strong>A)</strong> The Ministry has approved over 40 projects.<br> <span style="margin-left:30px;"><strong>B)</strong> The government has been pushing for a transition.</span><br> <span style="margin-left:30px;"><strong>C)</strong> The national debt has been creeping up.</span><br> <span style="margin-left:30px;"><strong>D)</strong> The state has been subsidizing green initiatives.</span></span>
+        </li>
+        <li>
+          <span class="q-num">3.</span> <input type="text" data-ans="b" class="blank blank-sm" style="text-transform:uppercase;" maxlength="1"> Why has the fiscal deficit been negatively impacted recently?<br>
+          <span style="font-size:14px; margin-left:30px; color:#555;"><strong>A)</strong> Consumer confidence has remained too high.<br> <span style="margin-left:30px;"><strong>B)</strong> The country is losing traditional oil revenue while funding subsidies.</span><br> <span style="margin-left:30px;"><strong>C)</strong> The private sector refused to invest in wind projects.</span><br> <span style="margin-left:30px;"><strong>D)</strong> GDP per capita has grown too fast.</span></span>
+        </li>
+        <li>
+          <span class="q-num">4.</span> <input type="text" data-ans="d" class="blank blank-sm" style="text-transform:uppercase;" maxlength="1"> What is the overall tone of the author regarding this economic shift?<br>
+          <span style="font-size:14px; margin-left:30px; color:#555;"><strong>A)</strong> Entirely optimistic about immediate profits. &nbsp;&nbsp; <strong>B)</strong> Strictly against renewable energy. &nbsp;&nbsp; <br><span style="margin-left:30px;"><strong>C)</strong> Indifferent to the macroeconomic metrics.</span> &nbsp;&nbsp; <strong>D)</strong> Balanced, acknowledging both long-term benefits and short-term costs.</span>
+        </li>
+      </ol>
+    </div>
+
+    <!-- EXERCISE 9: VOCABULARY MATCHING -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">9</span>
+        <div class="title-content">
+          <div class="title-main">
+            Vocabulary Matching: Type the correct letter next to the definition.
+            <span class="pts-badge">1 pt each &middot; 5 pts</span>
+          </div>
+        </div>
+      </div>
+      <p style="font-size:13px; font-weight:700; opacity:0.6; margin-bottom:12px;"><strong>A)</strong> Inflation Rate &nbsp; <strong>B)</strong> Fiscal Deficit &nbsp; <strong>C)</strong> Trade Balance &nbsp; <strong>D)</strong> Minimum Wage &nbsp; <strong>E)</strong> GDP per capita</p>
+      <ol class="q-list">
+        <li><span class="q-num">1.</span> <input type="text" data-ans="e" class="blank blank-sm" style="text-transform:uppercase;" maxlength="1"> The total economic output divided by the number of people.</li>
+        <li><span class="q-num">2.</span> <input type="text" data-ans="c" class="blank blank-sm" style="text-transform:uppercase;" maxlength="1"> The difference in value between a country's imports and exports.</li>
+        <li><span class="q-num">3.</span> <input type="text" data-ans="b" class="blank blank-sm" style="text-transform:uppercase;" maxlength="1"> Occurs when a government's total expenditures exceed its revenue.</li>
+        <li><span class="q-num">4.</span> <input type="text" data-ans="d" class="blank blank-sm" style="text-transform:uppercase;" maxlength="1"> The lowest remuneration that employers can legally pay their workers.</li>
+        <li><span class="q-num">5.</span> <input type="text" data-ans="a" class="blank blank-sm" style="text-transform:uppercase;" maxlength="1"> The rate at which the general level of prices for goods and services is rising.</li>
+      </ol>
+    </div>
+
+    <!-- EXERCISE 10: FINAL CHALLENGE -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">10</span>
+        <div class="title-content">
+          <div class="title-main">
+            Final Challenge &ndash; Policy Analysis! <em style="font-weight:400; opacity:0.7;">(Teacher evaluated)</em>
+            <span class="pts-badge">15 pts</span>
+          </div>
+        </div>
+      </div>
+      <p style="font-size:13px;font-weight:700;opacity:0.6;margin-bottom:12px">
+        Choose a public or private policy in your country (e.g., minimum wage adjustments, tax reforms, healthcare privatization, or infrastructure investment).<br><br>
+        Write a robust paragraph (5-8 lines) analyzing its impact. You MUST use:<br>
+        - At least 3 macro-economic vocabulary words.<br>
+        - At least one sentence in the <strong>Present Perfect Simple</strong> (to describe a result).<br>
+        - At least one sentence in the <strong>Present Perfect Progressive</strong> (to describe an ongoing trend).
+      </p>
+      <textarea
+        data-ans="OPEN"
+        rows="8"
+        placeholder="Write your analysis here...&#10;Example: Over the past year, the debate regarding the minimum wage has been escalating. The government has implemented a 10% increase to combat the rising inflation rate..."
+        style="width:100%;border:2px dashed #ccc;border-radius:8px;padding:14px;font-family:'Nunito',sans-serif;font-size:15px;font-weight:600;color:#2b2b2b;outline:none;resize:vertical;background:#fafafa;transition:border-color 0.2s;"
+        onfocus="this.style.borderColor='#1a1a2e'"
+        onblur="this.style.borderColor='#ccc'"
+      ></textarea>
+      <p style="font-size:13px; font-weight:800; color:#e63946; margin-top:8px;">&#128248; Reminder: Take a screenshot of your paragraph to send to your teacher.</p>
+    </div>
+
+    <!-- ACTION BAR -->
+    <div class="action-bar">
+      <div class="score-display" id="gradeScoreBox">Score: 0</div>
+      <div class="button-group">
+        <button class="btn-action btn-check" onclick="checkStudentAnswers()">&#10004;&#65039; Check Answers</button>
+        <button class="btn-action btn-reset" onclick="resetWorksheet()">&#128260; Clear Sheet</button>
+      </div>
+    </div>
+
+    <!-- ANSWER KEY -->
+    <div class="answer-key-wrapper">
+      <button class="btn-toggle-key" id="toggleKeyBtn" onclick="toggleAnswerKey()">
+        &#128065;&#65039; Show Answer Key
+      </button>
+
+      <div class="answer-key-content" id="answerKeyContent">
+        <div class="answer-key">
+          <h2>Answer Key</h2>
+
+          <div class="key-section">
+            <h3>1. Present Perfect Simple</h3>
+            <div class="key-list" style="column-count: 1;">
+              <div>1. <span>has implemented</span> (or 's implemented)</div>
+              <div>2. <span>has not recovered</span> (or hasn't recovered)</div>
+              <div>3. <span>Has the trade balance improved</span></div>
+              <div>4. <span>has reached</span> (or 's reached)</div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>2. Present Perfect Progressive</h3>
+            <div class="key-list" style="column-count: 1;">
+              <div>1. <span>has been dropping</span> (or 's been dropping)</div>
+              <div>2. <span>has not been investing</span> (or hasn't been investing)</div>
+              <div>3. <span>have they been negotiating</span></div>
+              <div>4. <span>have been importing</span> (or 've been importing)</div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>3. Context Clues</h3>
+            <div class="key-list">
+              <div>1. <span>A</span> (has grown)</div>
+              <div>2. <span>B</span> (has been borrowing)</div>
+              <div>3. <span>A</span> (has created)</div>
+              <div>4. <span>B</span> (have been increasing)</div>
+              <div>5. <span>B</span> (have been debating)</div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>4. Unscramble</h3>
+            <div class="key-list" style="column-count: 1;">
+              <div>1. <span>The government has been increasing tax revenue</span> (or vice versa)</div>
+              <div>2. <span>They have not reduced the deficit yet</span> (or haven't)</div>
+              <div>3. <span>The private sector has been investing in renewable energy</span></div>
+              <div>4. <span>How have these policies impacted productivity?</span></div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>5. Formulate the Question</h3>
+            <div class="key-list" style="column-count: 1;">
+              <div>1. <span>How long has the trade balance been improving?</span></div>
+              <div>2. <span>How many new policies has the government passed?</span></div>
+              <div>3. <span>How long have we been importing technology?</span></div>
+              <div>4. <span>How much have they cut government expenditure?</span> (or By how much...)</div>
+            </div>
+          </div>
+          
+          <div class="key-section">
+            <h3>6. Respond to the Prompt</h3>
+            <div class="key-list" style="column-count: 1;">
+              <div>1. <span>The inflation rate has been rising since January.</span></div>
+              <div>2. <span>The public sector has spent $2 billion so far this year.</span></div>
+              <div>3. <span>Foreign investment has been falling for the last two quarters.</span></div>
+              <div>4. <span>They have built three new solar plants this decade.</span> (or They've)</div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>8. Reading Comprehension</h3>
+            <div class="key-list">
+              <div>1. <span>C</span> (Fossil fuel exports)</div>
+              <div>2. <span>A</span> (Ministry has approved)</div>
+              <div>3. <span>B</span> (Losing revenue / subsidies)</div>
+              <div>4. <span>D</span> (Balanced)</div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>9. Vocabulary Matching</h3>
+            <div class="key-list">
+              <div>1. <span>E</span> (GDP per capita)</div>
+              <div>2. <span>C</span> (Trade Balance)</div>
+              <div>3. <span>B</span> (Fiscal Deficit)</div>
+              <div>4. <span>D</span> (Minimum Wage)</div>
+              <div>5. <span>A</span> (Inflation Rate)</div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>10. Final Challenge</h3>
+            <div class="key-list" style="column-count: 1;">
+              <div>Teacher-evaluated open writing. Check for minimum 3 vocab words, at least one Simple tense (results), and one Progressive tense (ongoing).</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  function checkStudentAnswers() {
+    let score = 0;
+    let autoTotal = 0;
+
+    const inputs = document.querySelectorAll('input[data-ans]');
+    inputs.forEach(input => {
+      // Normalize student answer: lowercase, remove punctuation except internal apostrophes, single spaces
+      let studentAns = input.value.trim().toLowerCase().replace(/[.,?!]/g, "").replace(/\s+/g, " ");
+
+      let rawTarget = input.getAttribute('data-ans').toLowerCase().replace(/[.,?!]/g, "");
+      let targetAnsArray = rawTarget.split('|').map(s => s.replace(/\s+/g, " ").trim());
+
+      input.classList.remove('is-correct', 'is-incorrect', 'is-open');
+
+      if (targetAnsArray.includes("open")) {
+        if (studentAns !== "") {
+          input.classList.add('is-open');
+        }
+      } else {
+        autoTotal++;
+        if (targetAnsArray.includes(studentAns)) {
+          input.classList.add('is-correct');
+          score++;
+        } else {
+          input.classList.add('is-incorrect');
+        }
+      }
+    });
+
+    // Check textarea
+    document.querySelectorAll('textarea[data-ans]').forEach(ta => {
+      ta.style.borderColor = ta.value.trim() !== "" ? "#457b9d" : "#ccc";
+    });
+
+    const scoreBox = document.getElementById('gradeScoreBox');
+    scoreBox.innerText = "Auto-graded Score: " + score + " / " + autoTotal;
+    scoreBox.style.display = "block";
+  }
+
+  function resetWorksheet() {
+    if (confirm("Are you sure you want to clear all your answers?")) {
+      document.querySelectorAll('input').forEach(input => {
+        input.value = "";
+        input.classList.remove('is-correct', 'is-incorrect', 'is-open');
+      });
+      document.querySelectorAll('textarea').forEach(ta => {
+        ta.value = "";
+        ta.style.borderColor = "#ccc";
+      });
+      document.getElementById('gradeScoreBox').style.display = "none";
+    }
+  }
+
+  function toggleAnswerKey() {
+    const content = document.getElementById("answerKeyContent");
+    const btn = document.getElementById("toggleKeyBtn");
+    if (content.style.display === "block") {
+      content.style.display = "none";
+      btn.innerHTML = "&#128065;&#65039; Show Answer Key";
+    } else {
+      content.style.display = "block";
+      btn.innerHTML = "&#128584; Hide Answer Key";
+    }
+  }
+</script>
+</body>
+</html>
