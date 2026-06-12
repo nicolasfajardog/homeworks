@@ -534,10 +534,11 @@
         <li>Change <strong>f/fe &rarr; ves</strong>: half &rarr; hal<strong>ves</strong> / loaf &rarr; loa<strong>ves</strong></li>
       </ul>
       <p style="margin-top:10px; border-top:1px dashed rgba(0,0,0,0.1); padding-top:10px;">
-        <strong>2. Preferences:</strong><br>
+        <strong>2. Preferences &amp; Offers:</strong><br>
         <em>"I prefer chicken <strong>rather than</strong> beef."</em><br>
         <em>"Do you like broccoli?"</em> &rarr; <em>"Yes, I do" / "No, I don't."</em><br>
-        <em>"Do you like ribs?"</em> &rarr; <em>"Yes, I like <strong>them</strong>" / "No, I don't like <strong>them</strong>."</em>
+        <em>"Do you like ribs?"</em> &rarr; <em>"Yes, I like <strong>them</strong>" / "No, I don't like <strong>them</strong>."</em><br>
+        <em>"Would you like some coffee?"</em> &rarr; <em>"Yes, please." / "No, thank you."</em>
       </p>
     </div>
 
@@ -618,10 +619,10 @@
         <div class="title-content">
           <div class="title-main">
             Answer the questions using short positive (+) or negative (-) answers.
-            <span class="pts-badge">2 pts each &middot; 18 pts</span>
+            <span class="pts-badge">2 pts each &middot; 24 pts</span>
             <button class="btn-trans" onclick="toggleT('t-ex4')" title="Traducir">&#127760;</button>
           </div>
-          <div id="t-ex4" class="es-trans">Responde las preguntas usando respuestas cortas (Ej: <em>Yes, I do</em> / <em>No, I don't like it</em> / <em>Yes, I like them</em>). Presta atenci&oacute;n al s&iacute;mbolo (+ o -).</div>
+          <div id="t-ex4" class="es-trans">Responde las preguntas usando respuestas cortas (Ej: <em>Yes, I do / No, I don't like it / Yes, please / No, thank you</em>). Presta atenci&oacute;n al s&iacute;mbolo (+ o -).</div>
         </div>
       </div>
       <ol class="q-list">
@@ -634,6 +635,9 @@
         <li><span class="q-num">7.</span> Do you like strawberries? (+) &rarr; <input type="text" data-ans="Yes, I do|Yes, I like them" class="blank blank-lg">.</li>
         <li><span class="q-num">8.</span> Do you like pork chops? (-) &rarr; <input type="text" data-ans="No, I don't|No, I do not|No, I don't like them|No, I do not like them" class="blank blank-lg">.</li>
         <li><span class="q-num">9.</span> Do you like spinach for lunch? (+) &rarr; <input type="text" data-ans="Yes, I do|Yes, I like it" class="blank blank-lg">.</li>
+        <li><span class="q-num">10.</span> Would you like some cookies? (+) &rarr; <input type="text" data-ans="Yes, please|Yes, I would|Yes, I would like some" class="blank blank-lg">.</li>
+        <li><span class="q-num">11.</span> Would you like a cup of coffee? (-) &rarr; <input type="text" data-ans="No, thank you|No, thanks|No, I wouldn't|No, I would not" class="blank blank-lg">.</li>
+        <li><span class="q-num">12.</span> Would you like some cheese? (+) &rarr; <input type="text" data-ans="Yes, please|Yes, I would|Yes, I would like some" class="blank blank-lg">.</li>
       </ol>
     </div>
 
@@ -754,8 +758,8 @@
           <strong>Question:</strong> <input type="text" data-ans="How much do they cost|How much are they" class="blank blank-xl">?
         </li>
         <li>
-          <span class="q-num">4.</span> <strong>Answer:</strong> I want some milk.<br>
-          <strong>Question:</strong> <input type="text" data-ans="How much milk do you want|How much do you want" class="blank blank-xl">?
+          <span class="q-num">4.</span> <strong>Answer:</strong> I want two cartons of milk.<br>
+          <strong>Question:</strong> <input type="text" data-ans="How many cartons of milk do you want|How many cartons do you want|How much milk do you want" class="blank blank-xl">?
         </li>
         <li>
           <span class="q-num">5.</span> <strong>Answer:</strong> There are four apples.<br>
@@ -844,7 +848,7 @@
         <li>
           <span class="q-num">11.</span> <strong>Supermarket Clerk:</strong> ____ anything else?<br>
           <strong>You:</strong> No, that's all.<br>
-          <span style="font-size:13px; margin-left:30px; color:#555;"><strong>A)</strong> Is there &nbsp;&nbsp; <strong>B)</strong> Are there &nbsp;&nbsp; <strong>C)</strong> How much</span><br>
+          <span style="font-size:13px; margin-left:30px; color:#555;"><strong>A)</strong> Would you like &nbsp;&nbsp; <strong>B)</strong> Do you &nbsp;&nbsp; <strong>C)</strong> Are there</span><br>
           <input type="text" data-ans="a" class="blank blank-sm" style="min-width:40px; margin-left:30px; text-transform:uppercase;" maxlength="1">
         </li>
         <li>
@@ -943,6 +947,9 @@
               <div>7. <span>Yes, I do</span> / <span>Yes, I like them</span></div>
               <div>8. <span>No, I don't</span> / <span>No, I don't like them</span></div>
               <div>9. <span>Yes, I do</span> / <span>Yes, I like it</span></div>
+              <div>10. <span>Yes, please</span></div>
+              <div>11. <span>No, thank you</span></div>
+              <div>12. <span>Yes, please</span></div>
             </div>
           </div>
 
@@ -980,7 +987,7 @@
               <div>1. <span>How much does it cost?</span> (or 'How much is it?')</div>
               <div>2. <span>How many carrots do you need?</span> (or 'How many do you need?')</div>
               <div>3. <span>How much do they cost?</span> (or 'How much are they?')</div>
-              <div>4. <span>How much milk do you want?</span> (or 'How much do you want?')</div>
+              <div>4. <span>How many cartons of milk do you want?</span> (or 'How much milk...')</div>
               <div>5. <span>How many apples are there?</span></div>
               <div>6. <span>How much beef do you need?</span> (or 'How much do you need?')</div>
             </div>
