@@ -283,13 +283,13 @@
     background: #f7f3e8;
     border: 1.5px solid var(--rule);
     border-radius: 6px;
-    padding: 3px 10px;
-    font-size: 12px;
+    padding: 6px 12px;
+    font-size: 13px;
     font-weight: 800;
     color: #555;
     letter-spacing: 0.5px;
-    margin-left: 6px;
     word-spacing: 4px;
+    line-height: 1.8;
   }
 
   .blank {
@@ -312,7 +312,7 @@
   }
   .blank-sm  { min-width: 60px; }
   .blank-md  { min-width: 140px; }
-  .blank-lg  { min-width: 200px; }
+  .blank-lg  { min-width: 220px; }
   .blank-xl  { min-width: 380px; flex-grow: 1; text-align: left; padding: 0 8px; }
 
   .is-correct {
@@ -367,16 +367,6 @@
   .btn-reset { background: #e7e5e0; color: var(--ink); }
   .btn-reset:hover { background: #dcd9d2; transform: translateY(-1px); }
   .btn-action:active { transform: translateY(1px); }
-
-  /* DIVIDER */
-  .section-divider {
-    height: 2px;
-    background: repeating-linear-gradient(
-      90deg, var(--rule) 0, var(--rule) 8px,
-      transparent 8px, transparent 16px
-    );
-    margin: 44px 0;
-  }
 
   /* ANSWER KEY */
   .answer-key-wrapper {
@@ -485,6 +475,7 @@
 
   <div class="content">
 
+    <!-- LOGISTICS INSTRUCTIONS -->
     <div class="logistics-box">
       <h3>&#128203; Instructions &amp; Logistics</h3>
       <p>Welcome! If you need help understanding a task, click the <strong>&#127760;</strong> button next to the instructions to see the Spanish translation.</p>
@@ -494,13 +485,21 @@
       <p style="margin-top:8px"><em>Cuando termines, el sistema calificar&aacute; autom&aacute;ticamente la mayor&iacute;a de las preguntas. Sin embargo, para los ejercicios marcados como *(Teacher evaluated)*, por favor <strong>toma una captura de pantalla</strong> de tus respuestas y env&iacute;asela a tu profesor/a.</em></p>
     </div>
 
+    <!-- ========================================== -->
+    <!-- SECTION A: PREFERENCES & VOCABULARY        -->
+    <!-- ========================================== -->
     <div class="section-header">
       <span>Section A</span> Food Preferences &amp; Vocabulary
     </div>
 
+    <!-- VOCABULARY TABLE -->
     <div class="g-table-wrapper purple-table">
       <div class="g-table-header">&#127822; Food &amp; Market Vocabulary</div>
       <table class="g-table">
+        <tr>
+          <td>Meals</td>
+          <td>breakfast (desayuno), lunch (almuerzo), dinner (cena)</td>
+        </tr>
         <tr>
           <td>Bakery</td>
           <td>muffins, toast, cake, cookies, bread, cupcake, loaf</td>
@@ -524,6 +523,7 @@
       </table>
     </div>
 
+    <!-- GRAMMAR BOX: PLURALS & PREFERENCES -->
     <div class="grammar-box purple">
       <h3>&#128204; Grammar Notes</h3>
       <p><strong>1. Regular Plurals in English:</strong></p>
@@ -541,6 +541,7 @@
       </p>
     </div>
 
+    <!-- EXERCISE 1: PLURALS -->
     <div class="exercise">
       <div class="exercise-title">
         <span class="ex-num">1</span>
@@ -561,6 +562,7 @@
       </ol>
     </div>
 
+    <!-- EXERCISE 2: UNSCRAMBLE -->
     <div class="exercise">
       <div class="exercise-title">
         <span class="ex-num">2</span>
@@ -581,49 +583,70 @@
       </ol>
     </div>
 
+    <!-- EXERCISE 3: PREFERENCES -->
     <div class="exercise">
       <div class="exercise-title">
         <span class="ex-num">3</span>
         <div class="title-content">
           <div class="title-main">
-            Complete the sentences with <em>rather than</em>.
-            <span class="pts-badge">1 pt each &middot; 2 pts</span>
+            Complete the sentences with words from the box.
+            <span class="pts-badge">1 pt each &middot; 6 pts</span>
             <button class="btn-trans" onclick="toggleT('t-ex3')" title="Traducir">&#127760;</button>
           </div>
-          <div id="t-ex3" class="es-trans">Completa las oraciones expresando preferencia con <em>rather than</em>.</div>
+          <div id="t-ex3" class="es-trans">Completa las oraciones expresando preferencia con las opciones de la cajita.</div>
         </div>
       </div>
+      <p style="margin-bottom: 12px;">
+        <span class="choice-box">
+          rather than &nbsp;|&nbsp; I prefer &nbsp;|&nbsp; I like it &nbsp;|&nbsp; I like them &nbsp;|&nbsp; I don't like it
+        </span>
+      </p>
       <ol class="q-list">
         <li><span class="q-num">1.</span> I prefer chicken <input type="text" data-ans="rather than" class="blank blank-md"> beef.</li>
-        <li><span class="q-num">2.</span> She prefers yogurt <input type="text" data-ans="rather than" class="blank blank-md"> milk for breakfast.</li>
+        <li><span class="q-num">2.</span> Do you like broccoli? No, <input type="text" data-ans="I don't like it" class="blank blank-lg">.</li>
+        <li><span class="q-num">3.</span> <input type="text" data-ans="I prefer" class="blank blank-md"> to eat eggs for breakfast.</li>
+        <li><span class="q-num">4.</span> Do you like apples? Yes, <input type="text" data-ans="I like them" class="blank blank-lg">.</li>
+        <li><span class="q-num">5.</span> She prefers yogurt <input type="text" data-ans="rather than" class="blank blank-md"> milk.</li>
+        <li><span class="q-num">6.</span> For lunch, <input type="text" data-ans="I prefer" class="blank blank-md"> rice rather than potatoes.</li>
       </ol>
     </div>
 
+    <!-- EXERCISE 4: SHORT ANSWERS -->
     <div class="exercise">
       <div class="exercise-title">
         <span class="ex-num">4</span>
         <div class="title-content">
           <div class="title-main">
-            Answer the questions using short positive or negative answers.
-            <span class="pts-badge">2 pts each &middot; 6 pts</span>
+            Answer the questions using short positive (+) or negative (-) answers.
+            <span class="pts-badge">2 pts each &middot; 18 pts</span>
             <button class="btn-trans" onclick="toggleT('t-ex4')" title="Traducir">&#127760;</button>
           </div>
-          <div id="t-ex4" class="es-trans">Responde las preguntas usando respuestas cortas (Ej: <em>Yes, I do</em> / <em>No, I don't like it</em> / <em>Yes, I like them</em>).</div>
+          <div id="t-ex4" class="es-trans">Responde las preguntas usando respuestas cortas (Ej: <em>Yes, I do</em> / <em>No, I don't like it</em> / <em>Yes, I like them</em>). Presta atenci&oacute;n al s&iacute;mbolo (+ o -).</div>
         </div>
       </div>
       <ol class="q-list">
         <li><span class="q-num">1.</span> Do you like cheese? (+) &rarr; <input type="text" data-ans="Yes, I do|Yes, I like it" class="blank blank-lg">.</li>
         <li><span class="q-num">2.</span> Do you like plantains? (+) &rarr; <input type="text" data-ans="Yes, I do|Yes, I like them" class="blank blank-lg">.</li>
         <li><span class="q-num">3.</span> Do you like eggplant? (-) &rarr; <input type="text" data-ans="No, I don't|No, I do not|No, I don't like it|No, I do not like it" class="blank blank-lg">.</li>
+        <li><span class="q-num">4.</span> Do you like eggs for breakfast? (+) &rarr; <input type="text" data-ans="Yes, I do|Yes, I like them" class="blank blank-lg">.</li>
+        <li><span class="q-num">5.</span> Do you like ribs for dinner? (-) &rarr; <input type="text" data-ans="No, I don't|No, I do not|No, I don't like them|No, I do not like them" class="blank blank-lg">.</li>
+        <li><span class="q-num">6.</span> Do you like garlic? (-) &rarr; <input type="text" data-ans="No, I don't|No, I do not|No, I don't like it|No, I do not like it" class="blank blank-lg">.</li>
+        <li><span class="q-num">7.</span> Do you like strawberries? (+) &rarr; <input type="text" data-ans="Yes, I do|Yes, I like them" class="blank blank-lg">.</li>
+        <li><span class="q-num">8.</span> Do you like pork chops? (-) &rarr; <input type="text" data-ans="No, I don't|No, I do not|No, I don't like them|No, I do not like them" class="blank blank-lg">.</li>
+        <li><span class="q-num">9.</span> Do you like spinach for lunch? (+) &rarr; <input type="text" data-ans="Yes, I do|Yes, I like it" class="blank blank-lg">.</li>
       </ol>
     </div>
 
+    <!-- ========================================== -->
+    <!-- SECTION B: QUANTITIES & SUPERMARKET        -->
+    <!-- ========================================== -->
     <div class="section-divider"></div>
 
     <div class="section-header">
       <span>Section B</span> Going to the Supermarket
     </div>
 
+    <!-- GRAMMAR TABLE: SECTION B -->
     <div class="g-table-wrapper">
       <div class="g-table-header">&#128722; Grammar: Quantities &amp; Shopping</div>
       <table class="g-table">
@@ -654,26 +677,36 @@
       </table>
     </div>
 
+    <!-- EXERCISE 5: THERE IS / THERE ARE -->
     <div class="exercise">
       <div class="exercise-title">
         <span class="ex-num">5</span>
         <div class="title-content">
           <div class="title-main">
             Complete with <em>There is</em>, <em>There are</em>, <em>Is there</em>, or <em>Are there</em>.
-            <span class="pts-badge">1 pt each &middot; 4 pts</span>
+            <span class="pts-badge">1 pt each &middot; 12 pts</span>
             <button class="btn-trans" onclick="toggleT('t-ex5')" title="Traducir">&#127760;</button>
           </div>
-          <div id="t-ex5" class="es-trans">Completa las oraciones con <em>There is / There are</em> (afirmativo, negativo o pregunta). Presta atenci&oacute;n a si es singular/incontable o plural.</div>
+          <div id="t-ex5" class="es-trans">Completa las oraciones con <em>There is / There are</em> (afirmativo, negativo o pregunta). Presta atenci&oacute;n a si es singular/incontable o plural. F&iacute;jate en los s&iacute;mbolos (+), (-) y (?).</div>
         </div>
       </div>
       <ol class="q-list">
         <li><span class="q-num">1.</span> (?) <input type="text" data-ans="Is there" class="blank blank-md"> any milk in the fridge?</li>
         <li><span class="q-num">2.</span> (+) <input type="text" data-ans="There are" class="blank blank-md"> three tomatoes for the salad.</li>
-        <li><span class="q-num">3.</span> (-) <input type="text" data-ans="There isn't|There is not" class="blank blank-md"> any sugar left. We need to buy some.</li>
+        <li><span class="q-num">3.</span> (-) <input type="text" data-ans="There isn't|There is not" class="blank blank-md"> any sugar left.</li>
         <li><span class="q-num">4.</span> (?) <input type="text" data-ans="Are there" class="blank blank-md"> any plantains in the basket?</li>
+        <li><span class="q-num">5.</span> (+) <input type="text" data-ans="There is" class="blank blank-md"> some cheese for breakfast.</li>
+        <li><span class="q-num">6.</span> (-) <input type="text" data-ans="There aren't|There are not" class="blank blank-md"> any eggs for lunch.</li>
+        <li><span class="q-num">7.</span> (?) <input type="text" data-ans="Is there" class="blank blank-md"> any chicken for dinner?</li>
+        <li><span class="q-num">8.</span> (+) <input type="text" data-ans="There are" class="blank blank-md"> five potatoes on the table.</li>
+        <li><span class="q-num">9.</span> (-) <input type="text" data-ans="There isn't|There is not" class="blank blank-md"> any butter.</li>
+        <li><span class="q-num">10.</span> (?) <input type="text" data-ans="Are there" class="blank blank-md"> any carrots?</li>
+        <li><span class="q-num">11.</span> (+) <input type="text" data-ans="There is" class="blank blank-md"> some garlic in the soup.</li>
+        <li><span class="q-num">12.</span> (-) <input type="text" data-ans="There aren't|There are not" class="blank blank-md"> any onions.</li>
       </ol>
     </div>
 
+    <!-- EXERCISE 6: HOW MUCH / HOW MANY -->
     <div class="exercise">
       <div class="exercise-title">
         <span class="ex-num">6</span>
@@ -694,13 +727,14 @@
       </ol>
     </div>
 
+    <!-- EXERCISE 7: WRITE THE QUESTION -->
     <div class="exercise">
       <div class="exercise-title">
         <span class="ex-num">7</span>
         <div class="title-content">
           <div class="title-main">
             Write the correct question for each answer.
-            <span class="pts-badge">2 pts each &middot; 4 pts</span>
+            <span class="pts-badge">2 pts each &middot; 12 pts</span>
             <button class="btn-trans" onclick="toggleT('t-ex7')" title="Traducir">&#127760;</button>
           </div>
           <div id="t-ex7" class="es-trans">Escribe la pregunta correcta para cada respuesta. &iexcl;Usa las estructuras de la tabla de gram&aacute;tica de arriba!</div>
@@ -715,48 +749,114 @@
           <span class="q-num">2.</span> <strong>Answer:</strong> I need three carrots.<br>
           <strong>Question:</strong> <input type="text" data-ans="How many carrots do you need|How many do you need" class="blank blank-xl">?
         </li>
+        <li>
+          <span class="q-num">3.</span> <strong>Answer:</strong> They cost $10.<br>
+          <strong>Question:</strong> <input type="text" data-ans="How much do they cost|How much are they" class="blank blank-xl">?
+        </li>
+        <li>
+          <span class="q-num">4.</span> <strong>Answer:</strong> I want some milk.<br>
+          <strong>Question:</strong> <input type="text" data-ans="How much milk do you want|How much do you want" class="blank blank-xl">?
+        </li>
+        <li>
+          <span class="q-num">5.</span> <strong>Answer:</strong> There are four apples.<br>
+          <strong>Question:</strong> <input type="text" data-ans="How many apples are there" class="blank blank-xl">?
+        </li>
+        <li>
+          <span class="q-num">6.</span> <strong>Answer:</strong> I need a kilo of beef.<br>
+          <strong>Question:</strong> <input type="text" data-ans="How much beef do you need|How much do you need" class="blank blank-xl">?
+        </li>
       </ol>
     </div>
 
+    <!-- EXERCISE 8: MULTIPLE CHOICE DIALOGUE -->
     <div class="exercise">
       <div class="exercise-title">
         <span class="ex-num">8</span>
         <div class="title-content">
           <div class="title-main">
             Multiple Choice: Supermarket Conversation. Type A, B, or C.
-            <span class="pts-badge">1 pt each &middot; 4 pts</span>
+            <span class="pts-badge">1 pt each &middot; 12 pts</span>
             <button class="btn-trans" onclick="toggleT('t-ex8')" title="Traducir">&#127760;</button>
           </div>
-          <div id="t-ex8" class="es-trans">Selecci&oacute;n m&uacute;ltiple. Escribe A, B o C en la cajita para completar el di&aacute;logo en el supermercado.</div>
+          <div id="t-ex8" class="es-trans">Selecci&oacute;n m&uacute;ltiple. Escribe A, B o C en la cajita para completar el largo di&aacute;logo en el supermercado.</div>
         </div>
       </div>
-      <ol class="q-list" style="gap:22px;">
+      <ol class="q-list" style="gap:22px; background:#f9f9f9; padding:20px; border-radius:8px; border:1px solid #ddd;">
         <li>
-          <span class="q-num">1.</span> <strong>Clerk:</strong> Hello! What would you like today?<br>
+          <span class="q-num">1.</span> <strong>Supermarket Clerk:</strong> Hello! What would you like today?<br>
           <strong>You:</strong> <input type="text" data-ans="b" class="blank blank-sm" style="min-width:40px; text-transform:uppercase;" maxlength="1"><br>
-          <span style="font-size:14px; margin-left:30px; color:#555;"><strong>A)</strong> I like apples. &nbsp;&nbsp; <strong>B)</strong> I would like a pound of beef. &nbsp;&nbsp; <strong>C)</strong> I prefer chicken.</span>
+          <span style="font-size:13px; margin-left:30px; color:#555;"><strong>A)</strong> I like apples. &nbsp;&nbsp; <strong>B)</strong> I would like a pound of beef. &nbsp;&nbsp; <strong>C)</strong> I prefer chicken.</span>
         </li>
         <li>
-          <span class="q-num">2.</span> <strong>Clerk:</strong> Sure. ____?<br>
+          <span class="q-num">2.</span> <strong>Supermarket Clerk:</strong> Sure. ____?<br>
           <strong>You:</strong> Yes, do you have any garlic powder?<br>
-          <span style="font-size:14px; margin-left:30px; color:#555;"><strong>A)</strong> Anything else &nbsp;&nbsp; <strong>B)</strong> How much &nbsp;&nbsp; <strong>C)</strong> How many</span><br>
+          <span style="font-size:13px; margin-left:30px; color:#555;"><strong>A)</strong> Anything else &nbsp;&nbsp; <strong>B)</strong> How much &nbsp;&nbsp; <strong>C)</strong> How many</span><br>
           <input type="text" data-ans="a" class="blank blank-sm" style="min-width:40px; margin-left:30px; text-transform:uppercase;" maxlength="1">
         </li>
         <li>
-          <span class="q-num">3.</span> <strong>Clerk:</strong> Yes, we do. Here it is.<br>
+          <span class="q-num">3.</span> <strong>Supermarket Clerk:</strong> Yes, we do. Here it is.<br>
           <strong>You:</strong> Great. ____ does it cost?<br>
-          <span style="font-size:14px; margin-left:30px; color:#555;"><strong>A)</strong> How many &nbsp;&nbsp; <strong>B)</strong> Are there &nbsp;&nbsp; <strong>C)</strong> How much</span><br>
+          <span style="font-size:13px; margin-left:30px; color:#555;"><strong>A)</strong> How many &nbsp;&nbsp; <strong>B)</strong> Are there &nbsp;&nbsp; <strong>C)</strong> How much</span><br>
           <input type="text" data-ans="c" class="blank blank-sm" style="min-width:40px; margin-left:30px; text-transform:uppercase;" maxlength="1">
         </li>
         <li>
-          <span class="q-num">4.</span> <strong>Clerk:</strong> ____ costs $2.<br>
+          <span class="q-num">4.</span> <strong>Supermarket Clerk:</strong> ____ costs $2.<br>
           <strong>You:</strong> Perfect, I'll take it.<br>
-          <span style="font-size:14px; margin-left:30px; color:#555;"><strong>A)</strong> It &nbsp;&nbsp; <strong>B)</strong> They &nbsp;&nbsp; <strong>C)</strong> There</span><br>
+          <span style="font-size:13px; margin-left:30px; color:#555;"><strong>A)</strong> It &nbsp;&nbsp; <strong>B)</strong> They &nbsp;&nbsp; <strong>C)</strong> There</span><br>
+          <input type="text" data-ans="a" class="blank blank-sm" style="min-width:40px; margin-left:30px; text-transform:uppercase;" maxlength="1">
+        </li>
+        <li>
+          <span class="q-num">5.</span> <strong>Supermarket Clerk:</strong> Do you need ____ vegetables?<br>
+          <strong>You:</strong> Yes. I need tomatoes.<br>
+          <span style="font-size:13px; margin-left:30px; color:#555;"><strong>A)</strong> many &nbsp;&nbsp; <strong>B)</strong> much &nbsp;&nbsp; <strong>C)</strong> any</span><br>
+          <input type="text" data-ans="c" class="blank blank-sm" style="min-width:40px; margin-left:30px; text-transform:uppercase;" maxlength="1">
+        </li>
+        <li>
+          <span class="q-num">6.</span> <strong>You:</strong> ____ tomatoes are there in that bag?<br>
+          <strong>Supermarket Clerk:</strong> Let me check...<br>
+          <span style="font-size:13px; margin-left:30px; color:#555;"><strong>A)</strong> How much &nbsp;&nbsp; <strong>B)</strong> How many &nbsp;&nbsp; <strong>C)</strong> Are there</span><br>
+          <input type="text" data-ans="b" class="blank blank-sm" style="min-width:40px; margin-left:30px; text-transform:uppercase;" maxlength="1">
+        </li>
+        <li>
+          <span class="q-num">7.</span> <strong>Supermarket Clerk:</strong> ____ six tomatoes in this bag.<br>
+          <strong>You:</strong> Okay.<br>
+          <span style="font-size:13px; margin-left:30px; color:#555;"><strong>A)</strong> There are &nbsp;&nbsp; <strong>B)</strong> There is &nbsp;&nbsp; <strong>C)</strong> They</span><br>
+          <input type="text" data-ans="a" class="blank blank-sm" style="min-width:40px; margin-left:30px; text-transform:uppercase;" maxlength="1">
+        </li>
+        <li>
+          <span class="q-num">8.</span> <strong>You:</strong> I'll take them. And do you have ____ milk?<br>
+          <strong>Supermarket Clerk:</strong> Yes, we do.<br>
+          <span style="font-size:13px; margin-left:30px; color:#555;"><strong>A)</strong> a &nbsp;&nbsp; <strong>B)</strong> any &nbsp;&nbsp; <strong>C)</strong> many</span><br>
+          <input type="text" data-ans="b" class="blank blank-sm" style="min-width:40px; margin-left:30px; text-transform:uppercase;" maxlength="1">
+        </li>
+        <li>
+          <span class="q-num">9.</span> <strong>Supermarket Clerk:</strong> ____ milk do you need?<br>
+          <strong>You:</strong> Just one carton, please.<br>
+          <span style="font-size:13px; margin-left:30px; color:#555;"><strong>A)</strong> How many &nbsp;&nbsp; <strong>B)</strong> Is there &nbsp;&nbsp; <strong>C)</strong> How much</span><br>
+          <input type="text" data-ans="c" class="blank blank-sm" style="min-width:40px; margin-left:30px; text-transform:uppercase;" maxlength="1">
+        </li>
+        <li>
+          <span class="q-num">10.</span> <strong>You:</strong> What do I need for ____ tonight? Ah, rice!<br>
+          <strong>Supermarket Clerk:</strong> It is in aisle 4.<br>
+          <span style="font-size:13px; margin-left:30px; color:#555;"><strong>A)</strong> breakfast &nbsp;&nbsp; <strong>B)</strong> dinner &nbsp;&nbsp; <strong>C)</strong> bakery</span><br>
+          <input type="text" data-ans="b" class="blank blank-sm" style="min-width:40px; margin-left:30px; text-transform:uppercase;" maxlength="1">
+        </li>
+        <li>
+          <span class="q-num">11.</span> <strong>Supermarket Clerk:</strong> ____ anything else?<br>
+          <strong>You:</strong> No, that's all.<br>
+          <span style="font-size:13px; margin-left:30px; color:#555;"><strong>A)</strong> Is there &nbsp;&nbsp; <strong>B)</strong> Are there &nbsp;&nbsp; <strong>C)</strong> How much</span><br>
+          <input type="text" data-ans="a" class="blank blank-sm" style="min-width:40px; margin-left:30px; text-transform:uppercase;" maxlength="1">
+        </li>
+        <li>
+          <span class="q-num">12.</span> <strong>You:</strong> How much ____ in total?<br>
+          <strong>Supermarket Clerk:</strong> That will be $15, please.<br>
+          <span style="font-size:13px; margin-left:30px; color:#555;"><strong>A)</strong> is it &nbsp;&nbsp; <strong>B)</strong> are they &nbsp;&nbsp; <strong>C)</strong> does it</span><br>
           <input type="text" data-ans="a" class="blank blank-sm" style="min-width:40px; margin-left:30px; text-transform:uppercase;" maxlength="1">
         </li>
       </ol>
     </div>
 
+    <!-- EXERCISE 9: FINAL CHALLENGE -->
     <div class="exercise">
       <div class="exercise-title">
         <span class="ex-num">9</span>
@@ -769,17 +869,18 @@
           <div id="t-ex9" class="es-trans">Reto Final: &iexcl;Crea tu propia lista de compras! Escribe un p&aacute;rrafo respondiendo las preguntas de abajo. &iexcl;No olvides mandar el pantallazo (screenshot) a tu profesor!</div>
         </div>
       </div>
-      <p style="font-size:13px;font-weight:700;opacity:0.6;margin-bottom:12px">Write a short paragraph (4-5 lines). Answer:<br> <em>What would you like for breakfast this weekend? Do you prefer eggs or bread? Make a shopping list: what do you need to buy and how much/many do you need?</em></p>
+      <p style="font-size:13px;font-weight:700;opacity:0.6;margin-bottom:12px">Write a short paragraph (4-5 lines). Answer:<br> <em>What would you like for <strong>lunch</strong> this weekend? Do you prefer chicken or pork? Make a shopping list: what do you need to buy and how much/many do you need?</em></p>
       <textarea
         data-ans="OPEN"
         rows="6"
-        placeholder="Write your paragraph here...&#10;Example: For breakfast, I would like... I prefer... I need to go to the supermarket. I need a carton of milk, three tomatoes, and some..."
+        placeholder="Write your paragraph here...&#10;Example: For lunch, I would like... I prefer... I need to go to the supermarket. I need a kilo of chicken, three tomatoes, and some..."
         style="width:100%;border:2px dashed #ccc;border-radius:8px;padding:14px;font-family:'Nunito',sans-serif;font-size:15px;font-weight:600;color:#2b2b2b;outline:none;resize:vertical;background:#fafafa;transition:border-color 0.2s;"
         onfocus="this.style.borderColor='#1a1a2e'"
         onblur="this.style.borderColor='#ccc'"
       ></textarea>
     </div>
 
+    <!-- ACTION BAR -->
     <div class="action-bar">
       <div class="score-display" id="gradeScoreBox">Score: 0</div>
       <div class="button-group">
@@ -788,6 +889,7 @@
       </div>
     </div>
 
+    <!-- ANSWER KEY -->
     <div class="answer-key-wrapper">
       <button class="btn-toggle-key" id="toggleKeyBtn" onclick="toggleAnswerKey()">
         &#128065;&#65039; Show Answer Key
@@ -818,10 +920,14 @@
           </div>
 
           <div class="key-section">
-            <h3>3. Preferences (Rather than)</h3>
+            <h3>3. Preferences</h3>
             <div class="key-list">
               <div>1. <span>rather than</span></div>
-              <div>2. <span>rather than</span></div>
+              <div>2. <span>I don't like it</span></div>
+              <div>3. <span>I prefer</span></div>
+              <div>4. <span>I like them</span></div>
+              <div>5. <span>rather than</span></div>
+              <div>6. <span>I prefer</span></div>
             </div>
           </div>
 
@@ -831,6 +937,12 @@
               <div>1. <span>Yes, I do</span> / <span>Yes, I like it</span></div>
               <div>2. <span>Yes, I do</span> / <span>Yes, I like them</span></div>
               <div>3. <span>No, I don't</span> / <span>No, I don't like it</span></div>
+              <div>4. <span>Yes, I do</span> / <span>Yes, I like them</span></div>
+              <div>5. <span>No, I don't</span> / <span>No, I don't like them</span></div>
+              <div>6. <span>No, I don't</span> / <span>No, I don't like it</span></div>
+              <div>7. <span>Yes, I do</span> / <span>Yes, I like them</span></div>
+              <div>8. <span>No, I don't</span> / <span>No, I don't like them</span></div>
+              <div>9. <span>Yes, I do</span> / <span>Yes, I like it</span></div>
             </div>
           </div>
 
@@ -841,6 +953,14 @@
               <div>2. <span>There are</span></div>
               <div>3. <span>There isn't</span> / <span>There is not</span></div>
               <div>4. <span>Are there</span></div>
+              <div>5. <span>There is</span></div>
+              <div>6. <span>There aren't</span> / <span>There are not</span></div>
+              <div>7. <span>Is there</span></div>
+              <div>8. <span>There are</span></div>
+              <div>9. <span>There isn't</span> / <span>There is not</span></div>
+              <div>10. <span>Are there</span></div>
+              <div>11. <span>There is</span></div>
+              <div>12. <span>There aren't</span> / <span>There are not</span></div>
             </div>
           </div>
 
@@ -859,6 +979,10 @@
             <div class="key-list" style="column-count: 1;">
               <div>1. <span>How much does it cost?</span> (or 'How much is it?')</div>
               <div>2. <span>How many carrots do you need?</span> (or 'How many do you need?')</div>
+              <div>3. <span>How much do they cost?</span> (or 'How much are they?')</div>
+              <div>4. <span>How much milk do you want?</span> (or 'How much do you want?')</div>
+              <div>5. <span>How many apples are there?</span></div>
+              <div>6. <span>How much beef do you need?</span> (or 'How much do you need?')</div>
             </div>
           </div>
 
@@ -869,6 +993,14 @@
               <div>2. <span>A</span></div>
               <div>3. <span>C</span></div>
               <div>4. <span>A</span></div>
+              <div>5. <span>C</span></div>
+              <div>6. <span>B</span></div>
+              <div>7. <span>A</span></div>
+              <div>8. <span>B</span></div>
+              <div>9. <span>C</span></div>
+              <div>10. <span>B</span></div>
+              <div>11. <span>A</span></div>
+              <div>12. <span>A</span></div>
             </div>
           </div>
 
