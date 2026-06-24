@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Describing Your Job & Experience &ndash; A2.1 English Worksheet</title>
+<title>Describing Your Job &amp; Experience &ndash; A2.1 English Worksheet</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Baloo+2:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -331,6 +331,74 @@
     background-color: rgba(69,123,157,0.06) !important;
   }
 
+  /* LINE MATCHING GRAPHIC LAYOUT */
+  .matching-workspace {
+    position: relative;
+    display: table;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0px 14px;
+    margin-top: 10px;
+  }
+  .matching-column {
+    display: table-cell;
+    width: 44%;
+    vertical-align: top;
+  }
+  .matching-spacer {
+    display: table-cell;
+    width: 12%;
+  }
+  .match-card {
+    background: #fdfbf7;
+    border: 2px solid var(--rule);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #333;
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+    transition: all 0.2s;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .match-card:hover {
+    border-color: var(--ink);
+    background: #f4f1ea;
+  }
+  .match-card.selected {
+    border-color: var(--D);
+    background: var(--D-light);
+    color: var(--ink);
+  }
+  .match-dot {
+    width: 12px;
+    height: 12px;
+    background: #cbd5e1;
+    border: 2px solid #94a3b8;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .column-left .match-dot { right: -6px; }
+  .column-right .match-dot { left: -6px; }
+  .match-card.selected .match-dot {
+    background: var(--D);
+    border-color: var(--D);
+  }
+  .matching-svg-container {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 5;
+  }
+
   /* LINKEDIN PROFILE STYLE */
   .profile-card {
     background: #fff;
@@ -530,6 +598,7 @@
     .blank { border-bottom-color: #000; }
     .answer-key-wrapper { display: none !important; }
     .btn-trans { display: none !important; }
+    .matching-svg-container { display: none !important; }
   }
 
   @media (max-width: 600px) {
@@ -542,6 +611,12 @@
     .button-group { flex-direction: column; align-items: stretch; width: 100%; }
     .btn-action { text-align: center; }
     .profile-header { flex-direction: column; text-align: center; }
+    .matching-workspace { display: block; }
+    .matching-column { display: block; width: 100%; }
+    .matching-spacer { display: none; }
+    .column-left .match-dot, .column-right .match-dot { display: none; }
+    .matching-svg-container { display: none !important; }
+    .match-card::after { content: ' (Tap to link)'; font-size: 10px; opacity: 0.5; font-weight: normal;}
   }
 </style>
 </head>
@@ -556,9 +631,8 @@
 
   <div class="content">
 
-    <!-- LOGISTICS INSTRUCTIONS -->
     <div class="logistics-box">
-      <h3>&#128203; Instructions & Logistics</h3>
+      <h3>&#128203; Instructions &amp; Logistics</h3>
       <p>Welcome! If you need help understanding a task, click the <strong>&#127760;</strong> button next to the instructions to see the Spanish translation.</p>
       <p style="margin-top:8px">When you finish, the system will auto-grade most questions. However, for exercises marked as <em>(Teacher evaluated)</em>, please <strong>take a screenshot</strong> of your answers and send it to your teacher.</p>
       <hr style="border: none; border-top: 1px dashed #90caf9; margin: 12px 0;">
@@ -566,11 +640,6 @@
       <p style="margin-top:8px"><em>Cuando termines, el sistema calificar&aacute; autom&aacute;ticamente la mayor&iacute;a de las preguntas. Sin embargo, para los ejercicios marcados como *(Teacher evaluated)*, por favor <strong>toma una captura de pantalla</strong> de tus respuestas y env&iacute;asela a tu profesor/a.</em></p>
     </div>
 
-    <!-- ========================================== -->
-    <!-- GRAMMAR & VOCABULARY REFERENCE             -->
-    <!-- ========================================== -->
-
-    <!-- VOCABULARY TABLE -->
     <div class="g-table-wrapper purple-table">
       <div class="g-table-header">&#128188; Job Vocabulary</div>
       <table class="g-table">
@@ -585,7 +654,6 @@
       </table>
     </div>
 
-    <!-- GRAMMAR BOX -->
     <div class="grammar-box purple">
       <h3>&#128204; Grammar Notes: Responsibilities &amp; Tenses</h3>
       <p><strong>1. Expressing Duties:</strong></p>
@@ -596,7 +664,7 @@
       <p style="margin-top:10px; border-top:1px dashed rgba(0,0,0,0.1); padding-top:10px;">
         <strong>2. Present &amp; Past Tenses:</strong><br>
         <ul style="margin-left: 20px; font-size: 14px; font-weight: 600; line-height: 1.7;">
-          <li><strong>Present Simple:</strong> Routines & facts. <em>(I work in an office)</em></li>
+          <li><strong>Present Simple:</strong> Routines &amp; facts. <em>(I work in an office)</em></li>
           <li><strong>Present Progressive:</strong> Happening right now. <em>(I am designing an app this month)</em></li>
           <li><strong>Past Simple:</strong> Finished past actions. <em>(I worked at a bank in 2021)</em></li>
           <li><strong>Past Progressive:</strong> Actions in progress in the past. <em>(I was studying while I was working)</em></li>
@@ -604,14 +672,10 @@
       </p>
     </div>
 
-    <!-- ========================================== -->
-    <!-- EXERCISES: CONTROLLED                      -->
-    <!-- ========================================== -->
     <div class="section-header">
       <span>Part 1</span> Vocabulary &amp; Structure
     </div>
 
-    <!-- EXERCISE 1: FILL IN THE BLANKS (VOCAB) -->
     <div class="exercise">
       <div class="exercise-title">
         <span class="ex-num">1</span>
@@ -639,35 +703,80 @@
       </ol>
     </div>
 
-    <!-- EXERCISE 2: MATCHING -->
     <div class="exercise">
       <div class="exercise-title">
         <span class="ex-num">2</span>
         <div class="title-content">
           <div class="title-main">
-            Match the beginning of the sentence (1-6) with the correct ending (A-F).
+            Match the beginnings with the correct endings. Click one left card and then click its match on the right.
             <span class="pts-badge">1 pt each &middot; 6 pts</span>
             <button class="btn-trans" onclick="toggleT('t-ex2')" title="Traducir">&#127760;</button>
           </div>
-          <div id="t-ex2" class="es-trans">Escribe la letra correcta (A-F) en la cajita para completar la oración.</div>
+          <div id="t-ex2" class="es-trans">Une con l&iacute;neas: Haz clic en una tarjeta de la izquierda y luego en su pareja correspondiente de la derecha para conectarlas visualmente.</div>
         </div>
       </div>
-      <div style="background:#f9f9f9; padding:16px; border-radius:8px; border:1px solid #ddd; margin-bottom:12px;">
-        <strong>A)</strong> attend meetings every morning. &nbsp;&nbsp; <strong>B)</strong> as a sales assistant.<br>
-        <strong>C)</strong> for training new employees. &nbsp;&nbsp;&nbsp;&nbsp; <strong>D)</strong> do for a living?<br>
-        <strong>E)</strong> a new project this month. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>F)</strong> is my online business.
+
+      <div class="matching-workspace" id="matchingWorkspace">
+        <svg class="matching-svg-container" id="matchingSvg"></svg>
+        
+        <div class="matching-column column-left">
+          <div class="match-card" data-id="left-1" onclick="handleCardClick(this, 'left')">
+            <span>I am responsible...</span>
+            <div class="match-dot"></div>
+          </div>
+          <div class="match-card" data-id="left-2" onclick="handleCardClick(this, 'left')">
+            <span>My main source of income...</span>
+            <div class="match-dot"></div>
+          </div>
+          <div class="match-card" data-id="left-3" onclick="handleCardClick(this, 'left')">
+            <span>I have to...</span>
+            <div class="match-dot"></div>
+          </div>
+          <div class="match-card" data-id="left-4" onclick="handleCardClick(this, 'left')">
+            <span>I am working on...</span>
+            <div class="match-dot"></div>
+          </div>
+          <div class="match-card" data-id="left-5" onclick="handleCardClick(this, 'left')">
+            <span>Last year, I worked...</span>
+            <div class="match-dot"></div>
+          </div>
+          <div class="match-card" data-id="left-6" onclick="handleCardClick(this, 'left')">
+            <span>What do you...</span>
+            <div class="match-dot"></div>
+          </div>
+        </div>
+
+        <div class="matching-spacer"></div>
+
+        <div class="matching-column column-right">
+          <div class="match-card" data-id="right-1" onclick="handleCardClick(this, 'right')">
+            <div class="match-dot"></div>
+            <span>attend meetings every morning.</span>
+          </div>
+          <div class="match-card" data-id="right-2" onclick="handleCardClick(this, 'right')">
+            <div class="match-dot"></div>
+            <span>as a sales assistant.</span>
+          </div>
+          <div class="match-card" data-id="right-3" onclick="handleCardClick(this, 'right')">
+            <div class="match-dot"></div>
+            <span>for training new employees.</span>
+          </div>
+          <div class="match-card" data-id="right-4" onclick="handleCardClick(this, 'right')">
+            <div class="match-dot"></div>
+            <span>do for a living?</span>
+          </div>
+          <div class="match-card" data-id="right-5" onclick="handleCardClick(this, 'right')">
+            <div class="match-dot"></div>
+            <span>a new project this month.</span>
+          </div>
+          <div class="match-card" data-id="right-6" onclick="handleCardClick(this, 'right')">
+            <div class="match-dot"></div>
+            <span>is my online business.</span>
+          </div>
+        </div>
       </div>
-      <ol class="q-list">
-        <li><span class="q-num">1.</span> <input type="text" data-ans="c" class="blank blank-sm" style="min-width:40px; text-transform:uppercase;" maxlength="1"> I am responsible...</li>
-        <li><span class="q-num">2.</span> <input type="text" data-ans="f" class="blank blank-sm" style="min-width:40px; text-transform:uppercase;" maxlength="1"> My main source of income...</li>
-        <li><span class="q-num">3.</span> <input type="text" data-ans="a" class="blank blank-sm" style="min-width:40px; text-transform:uppercase;" maxlength="1"> I have to...</li>
-        <li><span class="q-num">4.</span> <input type="text" data-ans="e" class="blank blank-sm" style="min-width:40px; text-transform:uppercase;" maxlength="1"> I am working on...</li>
-        <li><span class="q-num">5.</span> <input type="text" data-ans="b" class="blank blank-sm" style="min-width:40px; text-transform:uppercase;" maxlength="1"> Last year, I worked...</li>
-        <li><span class="q-num">6.</span> <input type="text" data-ans="d" class="blank blank-sm" style="min-width:40px; text-transform:uppercase;" maxlength="1"> What do you...</li>
-      </ol>
     </div>
 
-    <!-- EXERCISE 3: VERB FORMS (-ING vs BASE) -->
     <div class="exercise">
       <div class="exercise-title">
         <span class="ex-num">3</span>
@@ -677,7 +786,7 @@
             <span class="pts-badge">1 pt each &middot; 8 pts</span>
             <button class="btn-trans" onclick="toggleT('t-ex3')" title="Traducir">&#127760;</button>
           </div>
-          <div id="t-ex3" class="es-trans">Escribe el verbo en paréntesis de forma correcta. Recuerda las reglas de "responsible for" y "have to".</div>
+          <div id="t-ex3" class="es-trans">Escribe el verbo en par&eacute;ntesis de forma correcta. Recuerda las reglas de "responsible for" y "have to".</div>
         </div>
       </div>
       <p style="font-size:13px; font-weight:700; opacity:0.6; margin-bottom:12px;">Rule: <em>responsible for</em> + (verb-ing) / <em>have to</em> + (base verb)</p>
@@ -693,7 +802,6 @@
       </ol>
     </div>
 
-    <!-- EXERCISE 4: MULTIPLE CHOICE TENSES -->
     <div class="exercise">
       <div class="exercise-title">
         <span class="ex-num">4</span>
@@ -703,7 +811,7 @@
             <span class="pts-badge">1 pt each &middot; 6 pts</span>
             <button class="btn-trans" onclick="toggleT('t-ex4')" title="Traducir">&#127760;</button>
           </div>
-          <div id="t-ex4" class="es-trans">Escribe A o B en la cajita para elegir el tiempo verbal correcto según el contexto (presente, pasado, simple o progresivo).</div>
+          <div id="t-ex4" class="es-trans">Escribe A o B en la cajita para elegir el tiempo verbal correcto seg&uacute;n el contexto (presente, pasado, simple o progresivo).</div>
         </div>
       </div>
       <ol class="q-list">
@@ -724,7 +832,7 @@
           <span style="font-size:14px; margin-left:30px; color:#555;"><strong>A)</strong> left &nbsp;&nbsp; <strong>B)</strong> was leaving</span>
         </li>
         <li>
-          <span class="q-num">5.</span> <input type="text" data-ans="a" class="blank blank-sm" style="min-width:40px; text-transform:uppercase;" maxlength="1"> While I ____, I worked part-time at a café.<br>
+          <span class="q-num">5.</span> <input type="text" data-ans="a" class="blank blank-sm" style="min-width:40px; text-transform:uppercase;" maxlength="1"> While I ____, I worked part-time at a caf&eacute;.<br>
           <span style="font-size:14px; margin-left:30px; color:#555;"><strong>A)</strong> was studying &nbsp;&nbsp; <strong>B)</strong> studied</span>
         </li>
         <li>
@@ -734,16 +842,12 @@
       </ol>
     </div>
 
-    <!-- ========================================== -->
-    <!-- EXERCISES: LESS CONTROLLED                 -->
-    <!-- ========================================== -->
     <div class="section-divider"></div>
 
     <div class="section-header">
       <span>Part 2</span> Applied Grammar &amp; Reading
     </div>
 
-    <!-- EXERCISE 5: UNSCRAMBLE -->
     <div class="exercise">
       <div class="exercise-title">
         <span class="ex-num">5</span>
@@ -758,29 +862,23 @@
       </div>
       <ol class="q-list">
         <li>
-          <span class="q-num">1.</span> (do / living / what / you / for / a / do / ?)<br>
-          &rarr; <input type="text" data-ans="What do you do for a living?|What do you do for a living" class="blank blank-xl">
+          <span class="q-num">1.</span> What do you do for a living? <br>&rarr; <input type="text" data-ans="What do you do for a living?|What do you do for a living" class="blank blank-xl">
         </li>
         <li>
-          <span class="q-num">2.</span> (as / work / nurse / I / a)<br>
-          &rarr; <input type="text" data-ans="I work as a nurse.|I work as a nurse" class="blank blank-xl">
+          <span class="q-num">2.</span> I work as a nurse. <br>&rarr; <input type="text" data-ans="I work as a nurse.|I work as a nurse" class="blank blank-xl">
         </li>
         <li>
-          <span class="q-num">3.</span> (responsible / am / for / I / sales / managing)<br>
-          &rarr; <input type="text" data-ans="I am responsible for managing sales.|I am responsible for managing sales" class="blank blank-xl">
+          <span class="q-num">3.</span> I am responsible for managing sales. <br>&rarr; <input type="text" data-ans="I am responsible for managing sales.|I am responsible for managing sales|I'm responsible for managing sales" class="blank blank-xl">
         </li>
         <li>
-          <span class="q-num">4.</span> (source / of / my / income / main / is / teaching)<br>
-          &rarr; <input type="text" data-ans="My main source of income is teaching.|My main source of income is teaching" class="blank blank-xl">
+          <span class="q-num">4.</span> My main source of income is teaching. <br>&rarr; <input type="text" data-ans="My main source of income is teaching.|My main source of income is teaching" class="blank blank-xl">
         </li>
         <li>
-          <span class="q-num">5.</span> (to / wear / have / I / a / uniform)<br>
-          &rarr; <input type="text" data-ans="I have to wear a uniform.|I have to wear a uniform" class="blank blank-xl">
+          <span class="q-num">5.</span> I have to wear a uniform. <br>&rarr; <input type="text" data-ans="I have to wear a uniform.|I have to wear a uniform" class="blank blank-xl">
         </li>
       </ol>
     </div>
 
-    <!-- EXERCISE 6: CONJUGATION PARAGRAPH -->
     <div class="exercise">
       <div class="exercise-title">
         <span class="ex-num">6</span>
@@ -790,16 +888,15 @@
             <span class="pts-badge">1 pt each &middot; 8 pts</span>
             <button class="btn-trans" onclick="toggleT('t-ex6')" title="Traducir">&#127760;</button>
           </div>
-          <div id="t-ex6" class="es-trans">Conjuga los verbos en el tiempo correcto (presente o pasado, simple o progresivo) dependiendo del contexto del párrafo.</div>
+          <div id="t-ex6" class="es-trans">Conjuga los verbos en el tiempo correcto (presente o pasado, simple o progresivo) dependiendo del contexto del p&aacute;rrafo.</div>
         </div>
       </div>
       
       <div style="background:#f9f9f9; padding:20px; border-radius:8px; border:1px solid #ddd; line-height:2.2; font-size:15px; font-weight:600;">
-        Currently, I <input type="text" data-ans="work" class="blank blank-md"> (work) as a chef in a restaurant. Right now, I <input type="text" data-ans="am preparing|'m preparing" class="blank blank-md"> (prepare) a special menu for a wedding. Two years ago, I <input type="text" data-ans="lived" class="blank blank-md"> (live) in Peru. At that time, I <input type="text" data-ans="was studying" class="blank blank-md"> (study) gastronomy. Back then, I <input type="text" data-ans="was" class="blank blank-md"> (be) responsible for making desserts at a small café. I <input type="text" data-ans="didn't like|did not like" class="blank blank-md"> (not/like) the schedule because I had to wake up very early. Today, I <input type="text" data-ans="have" class="blank blank-md"> (have) to cook every day, but I <input type="text" data-ans="am enjoying|'m enjoying|enjoy" class="blank blank-md"> (enjoy) my new position very much!
+        Currently, I <input type="text" data-ans="work" class="blank blank-md"> (work) as a chef in a restaurant. Right now, I <input type="text" data-ans="am preparing|'m preparing" class="blank blank-md"> (prepare) a special menu for a wedding. Two years ago, I <input type="text" data-ans="lived" class="blank blank-md"> (live) in Peru. At that time, I <input type="text" data-ans="was studying" class="blank blank-md"> (study) gastronomy. Back then, I <input type="text" data-ans="was" class="blank blank-md"> (be) responsible for making desserts at a small caf&eacute;. I <input type="text" data-ans="didn't like|did not like" class="blank blank-md"> (not/like) the schedule because I had to wake up very early. Today, I <input type="text" data-ans="have" class="blank blank-md"> (have) to cook every day, but I <input type="text" data-ans="am enjoying|'m enjoying|enjoy" class="blank blank-md"> (enjoy) my new position very much!
       </div>
     </div>
 
-    <!-- EXERCISE 7: READING COMPREHENSION (LINKEDIN) -->
     <div class="exercise">
       <div class="exercise-title">
         <span class="ex-num">7</span>
@@ -809,11 +906,10 @@
             <span class="pts-badge">2 pts each &middot; 10 pts</span>
             <button class="btn-trans" onclick="toggleT('t-ex7')" title="Traducir">&#127760;</button>
           </div>
-          <div id="t-ex7" class="es-trans">Lee el perfil profesional y responde a las preguntas en inglés.</div>
+          <div id="t-ex7" class="es-trans">Lee el perfil profesional y responde a las preguntas en ingl&eacute;s.</div>
         </div>
       </div>
 
-      <!-- LINKEDIN PROFILE VISUAL -->
       <div class="profile-card">
         <div class="profile-header">
           <div class="profile-pic">&#128104;&#8205;&#128187;</div>
@@ -866,7 +962,6 @@
       </ol>
     </div>
 
-    <!-- EXERCISE 8: ANSWER THE QUESTION BASED ON CLUES -->
     <div class="exercise">
       <div class="exercise-title">
         <span class="ex-num">8</span>
@@ -876,7 +971,7 @@
             <span class="pts-badge">2 pts each &middot; 10 pts</span>
             <button class="btn-trans" onclick="toggleT('t-ex8')" title="Traducir">&#127760;</button>
           </div>
-          <div id="t-ex8" class="es-trans">Responde a las preguntas utilizando las pistas en paréntesis. Escribe oraciones completas iniciando con el pronombre "I".</div>
+          <div id="t-ex8" class="es-trans">Responde a las preguntas utilizando las pistas en par&eacute;ntesis. Escribe oraciones completas iniciando con el pronombre "I".</div>
         </div>
       </div>
       <p style="font-size:13px; font-weight:700; opacity:0.6; margin-bottom:12px;">Start your answers with "I...". Example: <em>(Doctor) &rarr; I work as a doctor.</em></p>
@@ -904,7 +999,6 @@
       </ol>
     </div>
 
-    <!-- EXERCISE 9: DIALOGUE COMPLETION -->
     <div class="exercise">
       <div class="exercise-title">
         <span class="ex-num">9</span>
@@ -914,7 +1008,7 @@
             <span class="pts-badge">1 pt each &middot; 6 pts</span>
             <button class="btn-trans" onclick="toggleT('t-ex9')" title="Traducir">&#127760;</button>
           </div>
-          <div id="t-ex9" class="es-trans">Completa el diálogo de la entrevista de trabajo con la palabra que falta. (Pista: usa el vocabulario y gramática que hemos practicado).</div>
+          <div id="t-ex9" class="es-trans">Completa el di&aacute;logo de la entrevista de trabajo con la palabra que falta. (Pista: usa el vocabulario y gram&aacute;tica que hemos practicado).</div>
         </div>
       </div>
       <ul class="q-list" style="background:#f9f9f9; padding:20px; border-radius:8px; border:1px solid #ddd; list-style:none;">
@@ -927,7 +1021,6 @@
       </ul>
     </div>
 
-    <!-- EXERCISE 10: FINAL CHALLENGE (OPEN) -->
     <div class="exercise">
       <div class="exercise-title">
         <span class="ex-num">10</span>
@@ -937,7 +1030,7 @@
             <span class="pts-badge">15 pts</span>
             <button class="btn-trans" onclick="toggleT('t-ex10')" title="Traducir">&#127760;</button>
           </div>
-          <div id="t-ex10" class="es-trans">Reto Final: ¡Describe tu experiencia! Escribe un párrafo describiendo tu trabajo actual y un trabajo anterior. ¡No olvides mandar el pantallazo (screenshot) a tu profesor!</div>
+          <div id="t-ex10" class="es-trans">Reto Final: &iexcl;Describe tu experiencia! Escribe un p&aacute;rrafo describiendo tu trabajo actual y un trabajo anterior. &iexcl;No olvides mandar el pantallazo (screenshot) a tu profesor!</div>
         </div>
       </div>
       <p style="font-size:13px;font-weight:700;opacity:0.6;margin-bottom:12px">
@@ -957,7 +1050,6 @@
       <p style="font-size:13px; font-weight:800; color:#e63946; margin-top:8px;">&#128248; Reminder: Take a screenshot of your paragraph to send to your teacher.</p>
     </div>
 
-    <!-- ACTION BAR -->
     <div class="action-bar">
       <div class="score-display" id="gradeScoreBox">Score: 0</div>
       <div class="button-group">
@@ -966,7 +1058,6 @@
       </div>
     </div>
 
-    <!-- ANSWER KEY -->
     <div class="answer-key-wrapper">
       <button class="btn-toggle-key" id="toggleKeyBtn" onclick="toggleAnswerKey()">
         &#128065;&#65039; Show Answer Key
@@ -989,14 +1080,14 @@
           </div>
 
           <div class="key-section">
-            <h3>2. Matching</h3>
+            <h3>2. Matching Lines Pairs</h3>
             <div class="key-list">
-              <div>1. <span>C</span></div>
-              <div>2. <span>F</span></div>
-              <div>3. <span>A</span></div>
-              <div>4. <span>E</span></div>
-              <div>5. <span>B</span></div>
-              <div>6. <span>D</span></div>
+              <div>left-1 &rarr; <span>right-3</span></div>
+              <div>left-2 &rarr; <span>right-6</span></div>
+              <div>left-3 &rarr; <span>right-1</span></div>
+              <div>left-4 &rarr; <span>right-5</span></div>
+              <div>left-5 &rarr; <span>right-2</span></div>
+              <div>left-6 &rarr; <span>right-4</span></div>
             </div>
           </div>
 
@@ -1109,14 +1200,112 @@
     }
   }
 
+  // INTERACTIVE LINE MATCHING SYSTEM
+  let selectedLeftCard = null;
+  let matches = {}; // Structure: { 'left-1': 'right-3' }
+  const correctMatches = {
+    'left-1': 'right-3',
+    'left-2': 'right-6',
+    'left-3': 'right-1',
+    'left-4': 'right-5',
+    'left-5': 'right-2',
+    'left-6': 'right-4'
+  };
+
+  function handleCardClick(card, side) {
+    if (document.getElementById('gradeScoreBox').style.display === "block") return; // Locked after grading
+
+    if (side === 'left') {
+      if (selectedLeftCard) {
+        selectedLeftCard.classList.remove('selected');
+      }
+      selectedLeftCard = card;
+      card.classList.add('selected');
+    } else {
+      // It's a right card click
+      if (selectedLeftCard) {
+        const leftId = selectedLeftCard.getAttribute('data-id');
+        const rightId = card.getAttribute('data-id');
+        
+        // Remove old links with the same right card if any
+        for (let lKey in matches) {
+          if (matches[lKey] === rightId) delete matches[lKey];
+        }
+
+        matches[leftId] = rightId;
+        
+        selectedLeftCard.classList.remove('selected');
+        selectedLeftCard = null;
+        
+        drawAllLines();
+      }
+    }
+  }
+
+  function drawAllLines() {
+    const svg = document.getElementById('matchingSvg');
+    svg.innerHTML = ''; // Clear all lines
+    const workspace = document.getElementById('matchingWorkspace');
+    const workspaceRect = workspace.getBoundingClientRect();
+
+    for (let leftId in matches) {
+      const rightId = matches[leftId];
+      const leftEl = workspace.querySelector(`[data-id="${leftId}"] .match-dot`);
+      const rightEl = workspace.querySelector(`[data-id="${rightId}"] .match-dot`);
+      
+      if (leftEl && rightEl) {
+        const leftRect = leftEl.getBoundingClientRect();
+        const rightRect = rightEl.getBoundingClientRect();
+
+        const x1 = leftRect.left + leftRect.width / 2 - workspaceRect.left;
+        const y1 = leftRect.top + leftRect.height / 2 - workspaceRect.top;
+        const x2 = rightRect.left + rightRect.width / 2 - workspaceRect.left;
+        const y2 = rightRect.top + rightRect.height / 2 - workspaceRect.top;
+
+        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        line.setAttribute('x1', x1);
+        line.setAttribute('y1', y1);
+        line.setAttribute('x2', x2);
+        line.setAttribute('y2', y2);
+        line.setAttribute('stroke', '#5c4fcf');
+        line.setAttribute('stroke-width', '3');
+        line.setAttribute('id', `line-${leftId}`);
+        svg.appendChild(line);
+      }
+    }
+  }
+
+  window.addEventListener('resize', drawAllLines);
+
   function checkStudentAnswers() {
     let score = 0;
     let autoTotal = 0;
 
+    // 1. Grade Exercise 2 (Line Matching)
+    autoTotal += 6;
+    for (let leftId in correctMatches) {
+      const line = document.getElementById(`line-${leftId}`);
+      if (matches[leftId] === correctMatches[leftId]) {
+        score++;
+        if (line) line.setAttribute('stroke', '#2a9d8f'); // Green
+      } else {
+        if (line) line.setAttribute('stroke', '#e63946'); // Red
+      }
+    }
+
+    // 2. Grade all normal text boxes
     const inputs = document.querySelectorAll('input[data-ans]');
     inputs.forEach(input => {
-      // Normalize student answer: lowercase, remove punctuation except internal apostrophes, single spaces
       let studentAns = input.value.trim().toLowerCase().replace(/[.,?!]/g, "").replace(/\s+/g, " ");
+
+      // Expand standard contractions for flexibility
+      if (studentAns === "i'd like") studentAns = "i would like";
+      if (studentAns === "i'd") studentAns = "i would";
+      if (studentAns === "didn't like") studentAns = "did not like";
+      if (studentAns === "didn't") studentAns = "did not";
+      if (studentAns === "i'm preparing") studentAns = "am preparing";
+      if (studentAns === "i'm enjoying") studentAns = "am enjoying";
+      if (studentAns === "i'm responsible") studentAns = "am responsible";
 
       let rawTarget = input.getAttribute('data-ans').toLowerCase().replace(/[.,?!]/g, "");
       let targetAnsArray = rawTarget.split('|').map(s => s.replace(/\s+/g, " ").trim());
@@ -1138,7 +1327,7 @@
       }
     });
 
-    // Check textarea
+    // Check custom textareas
     document.querySelectorAll('textarea[data-ans]').forEach(ta => {
       ta.style.borderColor = ta.value.trim() !== "" ? "#457b9d" : "#ccc";
     });
@@ -1158,6 +1347,13 @@
         ta.value = "";
         ta.style.borderColor = "#ccc";
       });
+      
+      // Reset matching lines
+      matches = {};
+      if (selectedLeftCard) selectedLeftCard.classList.remove('selected');
+      selectedLeftCard = null;
+      document.getElementById('matchingSvg').innerHTML = '';
+
       document.getElementById('gradeScoreBox').style.display = "none";
     }
   }
@@ -1171,6 +1367,7 @@
     } else {
       content.style.display = "block";
       btn.innerHTML = "&#128584; Hide Answer Key";
+      setTimeout(drawAllLines, 50); // Make sure lines don't shift when DOM updates
     }
   }
 </script>
