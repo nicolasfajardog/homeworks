@@ -260,21 +260,25 @@
     margin-top: 6px;
   }
 
-  .q-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .q-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
   .q-list li {
     font-size: 15px;
     font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    display: block;
     line-height: 1.6;
-    flex-wrap: wrap;
+  }
+  .scrambled-box {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 6px;
+    display: inline-block;
   }
   .q-num {
     font-weight: 900;
     opacity: 0.4;
     min-width: 20px;
     font-size: 13px;
+    margin-right: 6px;
   }
 
   .choice-box {
@@ -313,7 +317,7 @@
   .blank-sm  { min-width: 60px; }
   .blank-md  { min-width: 140px; }
   .blank-lg  { min-width: 220px; }
-  .blank-xl  { min-width: 380px; flex-grow: 1; text-align: left; padding: 0 8px; }
+  .blank-xl  { display: block; width: 100%; text-align: left; padding: 4px 8px; margin-top: 6px; }
 
   .is-correct {
     border-bottom: 2px solid var(--correct) !important;
@@ -606,7 +610,7 @@
     header { padding: 28px 20px 22px; }
     header h1 { font-size: 34px; }
     .key-list { column-count: 1; }
-    .q-list li { flex-direction: column; align-items: flex-start; gap: 4px; margin-bottom: 12px; }
+    .q-list li { margin-bottom: 16px; }
     .blank-lg, .blank-xl { width: 100%; min-width: 100%; }
     .button-group { flex-direction: column; align-items: stretch; width: 100%; }
     .btn-action { text-align: center; }
@@ -616,7 +620,6 @@
     .matching-spacer { display: none; }
     .column-left .match-dot, .column-right .match-dot { display: none; }
     .matching-svg-container { display: none !important; }
-    .match-card::after { content: ' (Tap to link)'; font-size: 10px; opacity: 0.5; font-weight: normal;}
   }
 </style>
 </head>
@@ -693,13 +696,13 @@
           freelance &nbsp;|&nbsp; headquarters &nbsp;|&nbsp; branch &nbsp;|&nbsp; for a living &nbsp;|&nbsp; work for &nbsp;|&nbsp; work as
         </span>
       </p>
-      <ol class="q-list">
-        <li><span class="q-num">1.</span> What do you do <input type="text" data-ans="for a living" class="blank blank-md">?</li>
-        <li><span class="q-num">2.</span> I <input type="text" data-ans="work as" class="blank blank-sm"> an accountant in a big firm.</li>
-        <li><span class="q-num">3.</span> I <input type="text" data-ans="work for" class="blank blank-sm"> an international tech company.</li>
-        <li><span class="q-num">4.</span> The main office, or <input type="text" data-ans="headquarters" class="blank blank-md">, is in London.</li>
-        <li><span class="q-num">5.</span> But I work in the local <input type="text" data-ans="branch" class="blank blank-md"> in Bogota.</li>
-        <li><span class="q-num">6.</span> I don't have a boss because I am a <input type="text" data-ans="freelance" class="blank blank-md"> designer.</li>
+      <ol class="q-list" style="display: flex; flex-direction: column; gap: 12px;">
+        <li><span class="q-num">1.</span> I work in Bogota, but our main <input type="text" data-ans="headquarters" class="blank blank-md"> is located in London.</li>
+        <li><span class="q-num">2.</span> Tell me about your career, what do you do <input type="text" data-ans="for a living" class="blank blank-md">?</li>
+        <li><span class="q-num">3.</span> I am my own boss; I operate as a <input type="text" data-ans="freelance" class="blank blank-md"> software developer.</li>
+        <li><span class="q-num">4.</span> She wants to <input type="text" data-ans="work for" class="blank blank-sm"> a global company like Google.</li>
+        <li><span class="q-num">5.</span> He got hired to <input type="text" data-ans="work as" class="blank blank-sm"> a graphic designer in our creative team.</li>
+        <li><span class="q-num">6.</span> Our company just opened a new local <input type="text" data-ans="branch" class="blank blank-md"> across town.</li>
       </ol>
     </div>
 
@@ -790,15 +793,15 @@
         </div>
       </div>
       <p style="font-size:13px; font-weight:700; opacity:0.6; margin-bottom:12px;">Rule: <em>responsible for</em> + (verb-ing) / <em>have to</em> + (base verb)</p>
-      <ol class="q-list">
-        <li><span class="q-num">1.</span> I am responsible for <input type="text" data-ans="organizing" class="blank blank-md"> (organize) the files.</li>
-        <li><span class="q-num">2.</span> As a receptionist, I have to <input type="text" data-ans="call" class="blank blank-md"> (call) the clients.</li>
-        <li><span class="q-num">3.</span> She is responsible for <input type="text" data-ans="designing" class="blank blank-md"> (design) the websites.</li>
-        <li><span class="q-num">4.</span> We have to <input type="text" data-ans="write" class="blank blank-md"> (write) a report every Friday.</li>
-        <li><span class="q-num">5.</span> He is responsible for <input type="text" data-ans="managing" class="blank blank-md"> (manage) the budget.</li>
-        <li><span class="q-num">6.</span> They have to <input type="text" data-ans="travel" class="blank blank-md"> (travel) to the headquarters next week.</li>
-        <li><span class="q-num">7.</span> I am responsible for <input type="text" data-ans="solving" class="blank blank-md"> (solve) technical problems.</li>
-        <li><span class="q-num">8.</span> As a teacher, I have to <input type="text" data-ans="prepare" class="blank blank-md"> (prepare) my classes.</li>
+      <ol class="q-list" style="display: flex; flex-direction: column; gap: 12px;">
+        <li><span class="q-num">1.</span> As a receptionist, I have to <input type="text" data-ans="call" class="blank blank-md"> (call) the clients.</li>
+        <li><span class="q-num">2.</span> I am responsible for <input type="text" data-ans="organizing" class="blank blank-md"> (organize) the corporate files.</li>
+        <li><span class="q-num">3.</span> We have to <input type="text" data-ans="write" class="blank blank-md"> (write) a status report every Friday.</li>
+        <li><span class="q-num">4.</span> She is responsible for <input type="text" data-ans="designing" class="blank blank-md"> (design) the mobile apps.</li>
+        <li><span class="q-num">5.</span> They have to <input type="text" data-ans="travel" class="blank blank-md"> (travel) to our main office next week.</li>
+        <li><span class="q-num">6.</span> He is responsible for <input type="text" data-ans="managing" class="blank blank-md"> (manage) the monthly budget.</li>
+        <li><span class="q-num">7.</span> As a high school teacher, I have to <input type="text" data-ans="prepare" class="blank blank-md"> (prepare) my lessons.</li>
+        <li><span class="q-num">8.</span> I am responsible for <input type="text" data-ans="solving" class="blank blank-md"> (solve) critical technical problems.</li>
       </ol>
     </div>
 
@@ -807,37 +810,31 @@
         <span class="ex-num">4</span>
         <div class="title-content">
           <div class="title-main">
-            Multiple Choice: Choose the correct tense (A or B).
+            Type the correct option from the choices given in parentheses.
             <span class="pts-badge">1 pt each &middot; 6 pts</span>
             <button class="btn-trans" onclick="toggleT('t-ex4')" title="Traducir">&#127760;</button>
           </div>
-          <div id="t-ex4" class="es-trans">Escribe A o B en la cajita para elegir el tiempo verbal correcto seg&uacute;n el contexto (presente, pasado, simple o progresivo).</div>
+          <div id="t-ex4" class="es-trans">Escribe la opci&oacute;n correcta en la caja de texto bas&aacute;ndote en las dos opciones que aparecen entre par&eacute;ntesis al final.</div>
         </div>
       </div>
-      <ol class="q-list">
+      <ol class="q-list" style="display: flex; flex-direction: column; gap: 14px;">
         <li>
-          <span class="q-num">1.</span> <input type="text" data-ans="a" class="blank blank-sm" style="min-width:40px; text-transform:uppercase;" maxlength="1"> Right now, I ____ on a new project.<br>
-          <span style="font-size:14px; margin-left:30px; color:#555;"><strong>A)</strong> am working &nbsp;&nbsp; <strong>B)</strong> work</span>
+          <span class="q-num">1.</span> Right now, I <input type="text" data-ans="am working" class="blank blank-md"> on a new project. <em>(work / am working)</em>
         </li>
         <li>
-          <span class="q-num">2.</span> <input type="text" data-ans="b" class="blank blank-sm" style="min-width:40px; text-transform:uppercase;" maxlength="1"> Last year, I ____ at a hospital.<br>
-          <span style="font-size:14px; margin-left:30px; color:#555;"><strong>A)</strong> am working &nbsp;&nbsp; <strong>B)</strong> worked</span>
+          <span class="q-num">2.</span> Last year, I <input type="text" data-ans="worked" class="blank blank-md"> at a city hospital. <em>(worked / am working)</em>
         </li>
         <li>
-          <span class="q-num">3.</span> <input type="text" data-ans="b" class="blank blank-sm" style="min-width:40px; text-transform:uppercase;" maxlength="1"> Usually, I ____ work at 8:00 AM.<br>
-          <span style="font-size:14px; margin-left:30px; color:#555;"><strong>A)</strong> am starting &nbsp;&nbsp; <strong>B)</strong> start</span>
+          <span class="q-num">3.</span> Usually, I <input type="text" data-ans="start" class="blank blank-md"> my work shift at 8:00 AM. <em>(am starting / start)</em>
         </li>
         <li>
-          <span class="q-num">4.</span> <input type="text" data-ans="a" class="blank blank-sm" style="min-width:40px; text-transform:uppercase;" maxlength="1"> I ____ my previous job in 2024.<br>
-          <span style="font-size:14px; margin-left:30px; color:#555;"><strong>A)</strong> left &nbsp;&nbsp; <strong>B)</strong> was leaving</span>
+          <span class="q-num">4.</span> I <input type="text" data-ans="left" class="blank blank-md"> my previous company in 2024. <em>(left / was leaving)</em>
         </li>
         <li>
-          <span class="q-num">5.</span> <input type="text" data-ans="a" class="blank blank-sm" style="min-width:40px; text-transform:uppercase;" maxlength="1"> While I ____, I worked part-time at a caf&eacute;.<br>
-          <span style="font-size:14px; margin-left:30px; color:#555;"><strong>A)</strong> was studying &nbsp;&nbsp; <strong>B)</strong> studied</span>
+          <span class="q-num">5.</span> While I <input type="text" data-ans="was studying" class="blank blank-md">, I worked part-time at a local caf&eacute;. <em>(was studying / studied)</em>
         </li>
         <li>
-          <span class="q-num">6.</span> <input type="text" data-ans="b" class="blank blank-sm" style="min-width:40px; text-transform:uppercase;" maxlength="1"> She ____ to wear a uniform every day.<br>
-          <span style="font-size:14px; margin-left:30px; color:#555;"><strong>A)</strong> is having &nbsp;&nbsp; <strong>B)</strong> has</span>
+          <span class="q-num">6.</span> She <input type="text" data-ans="has" class="blank blank-md"> to wear a strict corporate uniform every day. <em>(is having / has)</em>
         </li>
       </ol>
     </div>
@@ -853,28 +850,33 @@
         <span class="ex-num">5</span>
         <div class="title-content">
           <div class="title-main">
-            Unscramble the words to make sentences or questions.
+            Unscramble the words to formulate correct sentences or questions.
             <span class="pts-badge">2 pts each &middot; 10 pts</span>
             <button class="btn-trans" onclick="toggleT('t-ex5')" title="Traducir">&#127760;</button>
           </div>
-          <div id="t-ex5" class="es-trans">Ordena las palabras para formar oraciones o preguntas correctas.</div>
+          <div id="t-ex5" class="es-trans">Ordena las palabras para formar una oraci&oacute;n o pregunta correcta. Escribe la respuesta completa en la caja de abajo.</div>
         </div>
       </div>
       <ol class="q-list">
         <li>
-          <span class="q-num">1.</span> What do you do for a living? <br>&rarr; <input type="text" data-ans="What do you do for a living?|What do you do for a living" class="blank blank-xl">
+          <span class="q-num">1.</span> <span class="scrambled-box">(do / living / what / you / for / a / do / ?)</span>
+          <input type="text" data-ans="What do you do for a living?|What do you do for a living" class="blank blank-xl" placeholder="Type sentence here...">
         </li>
         <li>
-          <span class="q-num">2.</span> I work as a nurse. <br>&rarr; <input type="text" data-ans="I work as a nurse.|I work as a nurse" class="blank blank-xl">
+          <span class="q-num">2.</span> <span class="scrambled-box">(responsible / sales / am / for / managing / I)</span>
+          <input type="text" data-ans="I am responsible for managing sales.|I am responsible for managing sales|I'm responsible for managing sales" class="blank blank-xl" placeholder="Type sentence here...">
         </li>
         <li>
-          <span class="q-num">3.</span> I am responsible for managing sales. <br>&rarr; <input type="text" data-ans="I am responsible for managing sales.|I am responsible for managing sales|I'm responsible for managing sales" class="blank blank-xl">
+          <span class="q-num">3.</span> <span class="scrambled-box">(uniform / wear / have / I / a / to)</span>
+          <input type="text" data-ans="I have to wear a uniform.|I have to wear a uniform" class="blank blank-xl" placeholder="Type sentence here...">
         </li>
         <li>
-          <span class="q-num">4.</span> My main source of income is teaching. <br>&rarr; <input type="text" data-ans="My main source of income is teaching.|My main source of income is teaching" class="blank blank-xl">
+          <span class="q-num">4.</span> <span class="scrambled-box">(as / work / nurse / I / a)</span>
+          <input type="text" data-ans="I work as a nurse.|I work as a nurse" class="blank blank-xl" placeholder="Type sentence here...">
         </li>
         <li>
-          <span class="q-num">5.</span> I have to wear a uniform. <br>&rarr; <input type="text" data-ans="I have to wear a uniform.|I have to wear a uniform" class="blank blank-xl">
+          <span class="q-num">5.</span> <span class="scrambled-box">(teaching / income / is / source / main / my / of)</span>
+          <input type="text" data-ans="My main source of income is teaching.|My main source of income is teaching" class="blank blank-xl" placeholder="Type sentence here...">
         </li>
       </ol>
     </div>
@@ -884,16 +886,16 @@
         <span class="ex-num">6</span>
         <div class="title-content">
           <div class="title-main">
-            Conjugate the verbs in parentheses. (Present/Past &middot; Simple/Progressive)
-            <span class="pts-badge">1 pt each &middot; 8 pts</span>
+            Conjugate the verbs in parentheses. (Present vs Past &middot; Simple vs Progressive)
+            <span class="pts-badge">1 pt each &middot; 7 pts</span>
             <button class="btn-trans" onclick="toggleT('t-ex6')" title="Traducir">&#127760;</button>
           </div>
-          <div id="t-ex6" class="es-trans">Conjuga los verbos en el tiempo correcto (presente o pasado, simple o progresivo) dependiendo del contexto del p&aacute;rrafo.</div>
+          <div id="t-ex6" class="es-trans">Conjuga los verbos en el tiempo correcto. Cada espacio cuenta con pistas claras de tiempo que admiten una sola respuesta posible.</div>
         </div>
       </div>
       
-      <div style="background:#f9f9f9; padding:20px; border-radius:8px; border:1px solid #ddd; line-height:2.2; font-size:15px; font-weight:600;">
-        Currently, I <input type="text" data-ans="work" class="blank blank-md"> (work) as a chef in a restaurant. Right now, I <input type="text" data-ans="am preparing|'m preparing" class="blank blank-md"> (prepare) a special menu for a wedding. Two years ago, I <input type="text" data-ans="lived" class="blank blank-md"> (live) in Peru. At that time, I <input type="text" data-ans="was studying" class="blank blank-md"> (study) gastronomy. Back then, I <input type="text" data-ans="was" class="blank blank-md"> (be) responsible for making desserts at a small caf&eacute;. I <input type="text" data-ans="didn't like|did not like" class="blank blank-md"> (not/like) the schedule because I had to wake up very early. Today, I <input type="text" data-ans="have" class="blank blank-md"> (have) to cook every day, but I <input type="text" data-ans="am enjoying|'m enjoying|enjoy" class="blank blank-md"> (enjoy) my new position very much!
+      <div style="background:#f9f9f9; padding:20px; border-radius:8px; border:1px solid #ddd; line-height:2.4; font-size:15px; font-weight:600;">
+        Every day, I <input type="text" data-ans="work" class="blank blank-md"> (work) as a chef in a busy restaurant. Look! Right now, I <input type="text" data-ans="am preparing" class="blank blank-md"> (prepare) a unique special menu for a wedding. In 2022, I <input type="text" data-ans="lived" class="blank blank-md"> (live) in Peru to learn their techniques. Exactly at 5 PM yesterday, I <input type="text" data-ans="was cooking" class="blank blank-md"> (cook) an experimental seafood dish in my kitchen. Back then, I <input type="text" data-ans="was" class="blank blank-md"> (be) responsible for making desserts at a small café. I <input type="text" data-ans="did not like|didn't like" class="blank blank-md"> (not/like) the old schedule because it was too stressful. Today, I <input type="text" data-ans="have" class="blank blank-md"> (have) to manage five kitchen assistants, but I love my career choice!
       </div>
     </div>
 
@@ -902,11 +904,11 @@
         <span class="ex-num">7</span>
         <div class="title-content">
           <div class="title-main">
-            Read the professional profile and answer the questions.
+            Read David's professional profile. Answer the questions using **complete sentences**.
             <span class="pts-badge">2 pts each &middot; 10 pts</span>
             <button class="btn-trans" onclick="toggleT('t-ex7')" title="Traducir">&#127760;</button>
           </div>
-          <div id="t-ex7" class="es-trans">Lee el perfil profesional y responde a las preguntas en ingl&eacute;s.</div>
+          <div id="t-ex7" class="es-trans">Lee el perfil profesional de David. Responde a las preguntas utilizando oraciones completas (Sujeto + Verbo + Complemento).</div>
         </div>
       </div>
 
@@ -938,26 +940,28 @@
         </div>
       </div>
 
+      <p style="font-size:12px; font-weight:800; color:var(--D); margin-bottom:12px;">Note: You must write full answers (e.g., "He works at..." or "David works for...").</p>
+      
       <ol class="q-list">
         <li>
-          <span class="q-num">1.</span> Where does he work now?<br>
-          &rarr; <input type="text" data-ans="TechCorp|TechCorp Headquarters|At TechCorp" class="blank blank-xl">
+          <span class="q-num">1.</span> Where does David work now?<br>
+          &rarr; <input type="text" data-ans="He works at TechCorp|He works for TechCorp|David works at TechCorp|David works for TechCorp" class="blank blank-xl" placeholder="Type a full sentence answer...">
         </li>
         <li>
           <span class="q-num">2.</span> What is he responsible for in his current job?<br>
-          &rarr; <input type="text" data-ans="leading the digital team|leading the team|for leading the digital team" class="blank blank-xl">
+          &rarr; <input type="text" data-ans="He is responsible for leading the digital team|He's responsible for leading the digital team|David is responsible for leading the digital team" class="blank blank-xl" placeholder="Type a full sentence answer...">
         </li>
         <li>
-          <span class="q-num">3.</span> What are they doing currently?<br>
-          &rarr; <input type="text" data-ans="developing a new app|they are developing a new app" class="blank blank-xl">
+          <span class="q-num">3.</span> What are they doing currently at his company?<br>
+          &rarr; <input type="text" data-ans="They are developing a new app|They're developing a new app" class="blank blank-xl" placeholder="Type a full sentence answer...">
         </li>
         <li>
-          <span class="q-num">4.</span> What was his previous job?<br>
-          &rarr; <input type="text" data-ans="Sales Representative|Sales Representative at GlobalTrade|a Sales Representative" class="blank blank-xl">
+          <span class="q-num">4.</span> What was his previous job at GlobalTrade?<br>
+          &rarr; <input type="text" data-ans="He worked as a sales representative|His previous job was a sales representative|He was a sales representative" class="blank blank-xl" placeholder="Type a full sentence answer...">
         </li>
         <li>
           <span class="q-num">5.</span> What was he doing while he was working at GlobalTrade?<br>
-          &rarr; <input type="text" data-ans="studying at university|studying|he was studying at university" class="blank blank-xl">
+          &rarr; <input type="text" data-ans="He was studying at university|He was studying|He was studying at a university" class="blank blank-xl" placeholder="Type a full sentence answer...">
         </li>
       </ol>
     </div>
@@ -1070,12 +1074,12 @@
           <div class="key-section">
             <h3>1. Fill in the blanks (Vocab)</h3>
             <div class="key-list">
-              <div>1. <span>for a living</span></div>
-              <div>2. <span>work as</span></div>
-              <div>3. <span>work for</span></div>
-              <div>4. <span>headquarters</span></div>
-              <div>5. <span>branch</span></div>
-              <div>6. <span>freelance</span></div>
+              <div>1. <span>headquarters</span></div>
+              <div>2. <span>for a living</span></div>
+              <div>3. <span>freelance</span></div>
+              <div>4. <span>work for</span></div>
+              <div>5. <span>work as</span></div>
+              <div>6. <span>branch</span></div>
             </div>
           </div>
 
@@ -1094,26 +1098,26 @@
           <div class="key-section">
             <h3>3. Verb Forms (-ing vs base)</h3>
             <div class="key-list">
-              <div>1. <span>organizing</span></div>
-              <div>2. <span>call</span></div>
-              <div>3. <span>designing</span></div>
-              <div>4. <span>write</span></div>
-              <div>5. <span>managing</span></div>
-              <div>6. <span>travel</span></div>
-              <div>7. <span>solving</span></div>
-              <div>8. <span>prepare</span></div>
+              <div>1. <span>call</span></div>
+              <div>2. <span>organizing</span></div>
+              <div>3. <span>write</span></div>
+              <div>4. <span>designing</span></div>
+              <div>5. <span>travel</span></div>
+              <div>6. <span>managing</span></div>
+              <div>7. <span>prepare</span></div>
+              <div>8. <span>solving</span></div>
             </div>
           </div>
 
           <div class="key-section">
-            <h3>4. Multiple Choice Tenses</h3>
+            <h3>4. Parentheses Choices</h3>
             <div class="key-list">
-              <div>1. <span>A</span> (am working)</div>
-              <div>2. <span>B</span> (worked)</div>
-              <div>3. <span>B</span> (start)</div>
-              <div>4. <span>A</span> (left)</div>
-              <div>5. <span>A</span> (was studying)</div>
-              <div>6. <span>B</span> (has)</div>
+              <div>1. <span>am working</span></div>
+              <div>2. <span>worked</span></div>
+              <div>3. <span>start</span></div>
+              <div>4. <span>left</span></div>
+              <div>5. <span>was studying</span></div>
+              <div>6. <span>has</span></div>
             </div>
           </div>
 
@@ -1121,10 +1125,10 @@
             <h3>5. Unscramble</h3>
             <div class="key-list" style="column-count: 1;">
               <div>1. <span>What do you do for a living?</span></div>
-              <div>2. <span>I work as a nurse.</span></div>
-              <div>3. <span>I am responsible for managing sales.</span></div>
-              <div>4. <span>My main source of income is teaching.</span></div>
-              <div>5. <span>I have to wear a uniform.</span></div>
+              <div>2. <span>I am responsible for managing sales.</span></div>
+              <div>3. <span>I have to wear a uniform.</span></div>
+              <div>4. <span>I work as a nurse.</span></div>
+              <div>5. <span>My main source of income is teaching.</span></div>
             </div>
           </div>
           
@@ -1134,27 +1138,26 @@
               <div>1. <span>work</span></div>
               <div>2. <span>am preparing</span></div>
               <div>3. <span>lived</span></div>
-              <div>4. <span>was studying</span></div>
+              <div>4. <span>was cooking</span></div>
               <div>5. <span>was</span></div>
-              <div>6. <span>didn't like</span></div>
+              <div>6. <span>did not like / didn't like</span></div>
               <div>7. <span>have</span></div>
-              <div>8. <span>am enjoying</span> (or enjoy)</div>
             </div>
           </div>
 
           <div class="key-section">
-            <h3>7. Reading Comprehension</h3>
+            <h3>7. Reading Comprehension (Full Sentences)</h3>
             <div class="key-list" style="column-count: 1;">
-              <div>1. <span>TechCorp</span></div>
-              <div>2. <span>leading the digital team</span></div>
-              <div>3. <span>developing a new app</span></div>
-              <div>4. <span>Sales Representative</span></div>
-              <div>5. <span>studying at university</span></div>
+              <div>1. <span>He works at TechCorp.</span> (or for TechCorp)</div>
+              <div>2. <span>He is responsible for leading the digital team.</span></div>
+              <div>3. <span>They are developing a new app.</span></div>
+              <div>4. <span>He worked as a sales representative.</span></div>
+              <div>5. <span>He was studying at university.</span></div>
             </div>
           </div>
 
           <div class="key-section">
-            <h3>8. Answer the Question based on Clues</h3>
+            <h3>8. Answer based on Clues</h3>
             <div class="key-list" style="column-count: 1;">
               <div>1. <span>I work as a teacher.</span></div>
               <div>2. <span>I work for Apple.</span></div>
@@ -1179,7 +1182,7 @@
           <div class="key-section">
             <h3>10. Final Challenge</h3>
             <div class="key-list" style="column-count: 1;">
-              <div>Teacher-evaluated open writing. Check for "work as/for", "responsible for/have to", and past continuous usage.</div>
+              <div>Teacher-evaluated open writing paragraph.</div>
             </div>
           </div>
 
@@ -1202,7 +1205,7 @@
 
   // INTERACTIVE LINE MATCHING SYSTEM
   let selectedLeftCard = null;
-  let matches = {}; // Structure: { 'left-1': 'right-3' }
+  let matches = {}; 
   const correctMatches = {
     'left-1': 'right-3',
     'left-2': 'right-6',
@@ -1213,7 +1216,7 @@
   };
 
   function handleCardClick(card, side) {
-    if (document.getElementById('gradeScoreBox').style.display === "block") return; // Locked after grading
+    if (document.getElementById('gradeScoreBox').style.display === "block") return; 
 
     if (side === 'left') {
       if (selectedLeftCard) {
@@ -1222,18 +1225,15 @@
       selectedLeftCard = card;
       card.classList.add('selected');
     } else {
-      // It's a right card click
       if (selectedLeftCard) {
         const leftId = selectedLeftCard.getAttribute('data-id');
         const rightId = card.getAttribute('data-id');
         
-        // Remove old links with the same right card if any
         for (let lKey in matches) {
           if (matches[lKey] === rightId) delete matches[lKey];
         }
 
         matches[leftId] = rightId;
-        
         selectedLeftCard.classList.remove('selected');
         selectedLeftCard = null;
         
@@ -1244,7 +1244,8 @@
 
   function drawAllLines() {
     const svg = document.getElementById('matchingSvg');
-    svg.innerHTML = ''; // Clear all lines
+    if (!svg) return;
+    svg.innerHTML = ''; 
     const workspace = document.getElementById('matchingWorkspace');
     const workspaceRect = workspace.getBoundingClientRect();
 
@@ -1281,19 +1282,19 @@
     let score = 0;
     let autoTotal = 0;
 
-    // 1. Grade Exercise 2 (Line Matching)
+    // 1. Grade Matching
     autoTotal += 6;
     for (let leftId in correctMatches) {
       const line = document.getElementById(`line-${leftId}`);
       if (matches[leftId] === correctMatches[leftId]) {
         score++;
-        if (line) line.setAttribute('stroke', '#2a9d8f'); // Green
+        if (line) line.setAttribute('stroke', '#2a9d8f'); 
       } else {
-        if (line) line.setAttribute('stroke', '#e63946'); // Red
+        if (line) line.setAttribute('stroke', '#e63946'); 
       }
     }
 
-    // 2. Grade all normal text boxes
+    // 2. Grade Text Inputs
     const inputs = document.querySelectorAll('input[data-ans]');
     inputs.forEach(input => {
       let studentAns = input.value.trim().toLowerCase().replace(/[.,?!]/g, "").replace(/\s+/g, " ");
@@ -1306,6 +1307,9 @@
       if (studentAns === "i'm preparing") studentAns = "am preparing";
       if (studentAns === "i'm enjoying") studentAns = "am enjoying";
       if (studentAns === "i'm responsible") studentAns = "am responsible";
+      if (studentAns === "he's responsible") studentAns = "he is responsible";
+      if (studentAns === "david's responsible") studentAns = "david is responsible";
+      if (studentAns === "they're developing") studentAns = "they are developing";
 
       let rawTarget = input.getAttribute('data-ans').toLowerCase().replace(/[.,?!]/g, "");
       let targetAnsArray = rawTarget.split('|').map(s => s.replace(/\s+/g, " ").trim());
@@ -1327,7 +1331,6 @@
       }
     });
 
-    // Check custom textareas
     document.querySelectorAll('textarea[data-ans]').forEach(ta => {
       ta.style.borderColor = ta.value.trim() !== "" ? "#457b9d" : "#ccc";
     });
@@ -1348,7 +1351,6 @@
         ta.style.borderColor = "#ccc";
       });
       
-      // Reset matching lines
       matches = {};
       if (selectedLeftCard) selectedLeftCard.classList.remove('selected');
       selectedLeftCard = null;
@@ -1367,7 +1369,7 @@
     } else {
       content.style.display = "block";
       btn.innerHTML = "&#128584; Hide Answer Key";
-      setTimeout(drawAllLines, 50); // Make sure lines don't shift when DOM updates
+      setTimeout(drawAllLines, 50); 
     }
   }
 </script>
