@@ -7,133 +7,33 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Baloo+2:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #1a1a2e; --paper: #fffef7; --B: #2a9d8f; --D: #5c4fcf; --E: #c77dff; --rule: #d4cfc0;
-    --correct: #2a9d8f; --incorrect: #e63946; --open-ans: #457b9d;
+    --ink: #1a1a2e;
+    --paper: #fffef7;
+    --A: #e63946;
+    --A-light: #fde8ea;
+    --B: #2a9d8f;
+    --B-light: #d6f5f2;
+    --C: #e07b00;
+    --C-light: #fff0d6;
+    --D: #5c4fcf;
+    --D-light: #ebe8ff;
+    --E: #c77dff;
+    --E-light: #f5e6ff;
+    --rule: #d4cfc0;
+
+    /* Feedback Colors */
+    --correct: #2a9d8f;
+    --incorrect: #e63946;
+    --open-ans: #457b9d;
   }
+
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Nunito', sans-serif; background: #e8e4d9; color: var(--ink); padding: 32px 16px 60px; }
-  .page { max-width: 860px; margin: 0 auto; background: var(--paper); border-radius: 4px; box-shadow: 0 4px 40px rgba(0,0,0,0.18); padding: 40px; }
-  .logistics-box { background: #e3f2fd; border-left: 5px solid #1e88e5; padding: 18px 22px; margin-bottom: 32px; font-size: 14px; font-weight: 600; }
-  header { background: var(--ink); color: #fff; padding: 40px; margin: -40px -40px 40px -40px; border-radius: 4px 4px 0 0; }
-  header h1 { font-family: 'Baloo 2', sans-serif; font-size: 42px; color: #f4a261; }
-  .section-header { font-family: 'Baloo 2', sans-serif; font-size: 26px; margin: 40px 0 20px; border-bottom: 3px solid var(--rule); }
-  .exercise { margin-bottom: 36px; }
-  .ex-num { width: 26px; height: 26px; background: var(--ink); color: white; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; margin-right: 10px; font-size: 13px; }
-  .blank { border: none; border-bottom: 2px solid #aaa; background: transparent; min-width: 120px; text-align: center; font-weight: 700; outline: none; }
-  .blank-xl { width: 100%; text-align: left; }
-  .btn-check { background: var(--B); color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 6px; font-weight: 800; }
-  .is-correct { border-bottom: 2px solid var(--correct) !important; color: var(--correct) !important; }
-  .is-incorrect { border-bottom: 2px solid var(--incorrect) !important; color: var(--incorrect) !important; }
-  .btn-trans { background: none; border: none; cursor: pointer; }
-  .es-trans { display: none; background: #f0f7fa; padding: 10px; border-left: 3px solid #457b9d; margin-top: 5px; font-size: 13px; }
-  .project-container { border: 1px solid #ddd; padding: 20px; border-radius: 8px; margin: 20px 0; }
-  .ptable { width: 100%; border-collapse: collapse; }
-  .ptable td, .ptable th { border: 1px solid #ccc; padding: 8px; }
-  .badge { padding: 4px; border-radius: 4px; font-size: 11px; font-weight: bold; }
-  .completed { background: #4caf50; color: white; }
-  .inprogress { background: #2196f3; color: white; }
-  .pending { background: #ff9800; color: white; }
-  .notstarted { background: #9e9e9e; color: white; }
-</style>
-</head>
-<body>
-<div class="page">
-  <header>
-    <h1>Previous Experiences</h1>
-    <p>Present Perfect &middot; ever, never, before, already, yet</p>
-  </header>
 
-  <div class="logistics-box">
-    <h3>&#128203; Instructions</h3>
-    <p>Click the <strong>&#127760;</strong> icon for translations. Take screenshots for teacher-evaluated tasks.</p>
-  </div>
-
-  <section class="section-header">Part 1: Controlled Practice</section>
-
-  <!-- E1: Vocab Fill-in -->
-  <div class="exercise">
-    <div class="exercise-title"><span class="ex-num">1</span> Complete with the correct word. <button class="btn-trans" onclick="toggleT('t1')">&#127760;</button>
-      <div id="t1" class="es-trans">Completa usando: ever, never, before, already, yet, abroad.</div>
-    </div>
-    <p>1. I have <input type="text" data-ans="already" class="blank"> finished my degree.</p>
-    <p>2. Have you <input type="text" data-ans="ever" class="blank"> worked in marketing?</p>
-    <p>3. She has <input type="text" data-ans="never" class="blank"> spoken English in a meeting.</p>
-    <p>4. I haven't started my training <input type="text" data-ans="yet" class="blank">.</p>
-    <p>5. Have you worked <input type="text" data-ans="in a big company" class="blank">?</p>
-    <p>6. Yes, I have seen this presentation <input type="text" data-ans="before" class="blank">.</p>
-  </div>
-
-  <!-- E2: Matching (Simplified logic for brevity) -->
-  <div class="exercise">
-    <div class="exercise-title"><span class="ex-num">2</span> Match the parts.</div>
-    <p>1. Have you finished ... <input type="text" data-ans="your master's yet" class="blank"></p>
-    <p>2. I have never ... <input type="text" data-ans="volunteered in a community center" class="blank"></p>
-    <p>3. She has already ... <input type="text" data-ans="launched the campaign" class="blank"></p>
-  </div>
-
-  <!-- E3: Verb Forms -->
-  <div class="exercise">
-    <div class="exercise-title"><span class="ex-num">3</span> Conjugate (Have/Has + Participle).</div>
-    <p>1. (+) They <input type="text" data-ans="have finished" class="blank"> (finish) the project.</p>
-    <p>2. (-) She <input type="text" data-ans="hasn't volunteered" class="blank"> (not/volunteer) before.</p>
-    <p>3. (?) <input type="text" data-ans="Have" class="blank"> you <input type="text" data-ans="given" class="blank"> (give) the talk?</p>
-  </div>
-
-  <!-- E4: Parentheses Choice -->
-  <div class="exercise">
-    <div class="exercise-title"><span class="ex-num">4</span> Choose the correct adverb.</div>
-    <p>1. Have you finished <input type="text" data-ans="yet" class="blank">? (yet / already)</p>
-    <p>2. I have <input type="text" data-ans="never" class="blank"> volunteered. (ever / never)</p>
-  </div>
-
-  <!-- E5: Unscramble -->
-  <div class="exercise">
-    <div class="exercise-title"><span class="ex-num">5</span> Unscramble.</div>
-    <p><input type="text" data-ans="Have you ever volunteered?" class="blank blank-xl" placeholder="(ever / you / volunteered / have / ?)"></p>
-    <p><input type="text" data-ans="I haven't started my master's yet." class="blank blank-xl" placeholder="(haven't / master's / I / my / yet / started)"></p>
-  </div>
-
-  <section class="section-header">Part 2: Applied Context</section>
-
-  <!-- E6: Image Table -->
-  <div class="exercise">
-    <div class="exercise-title"><span class="ex-num">6</span> Analysis of image_9082a1.jpg</div>
-    <div class="project-container">
-      <table class="ptable">
-        <tr><td>1. Define Target Accounts</td><td><span class="badge completed">COMPLETED</span></td></tr>
-        <tr><td>7. Monitor Sales Performance</td><td><span class="badge inprogress">IN PROGRESS</span></td></tr>
-      </table>
-    </div>
-    <p>1. Has Sarah J. defined target accounts? <input type="text" data-ans="yes she has" class="blank"></p>
-    <p>2. Has Lisa D. completed monitoring sales? <input type="text" data-ans="no she hasn't" class="blank"></p>
-  </div>
-
-  <!-- E7/E8/E9: New Contexts -->
-  <div class="exercise"><div class="exercise-title"><span class="ex-num">7</span> Correct: I have never volunteered at a center. <input type="text" data-ans="i have never volunteered at a center" class="blank blank-xl"></div></div>
-  <div class="exercise"><div class="exercise-title"><span class="ex-num">8</span> Question for: Yes, I have given a presentation to international clients. <input type="text" data-ans="have you given a presentation to international clients" class="blank blank-xl"></div></div>
-  <div class="exercise"><div class="exercise-title"><span class="ex-num">9</span> Interview: Have you worked <input type="text" data-ans="as a remote freelancer" class="blank">? Yes, I have <input type="text" data-ans="already" class="blank"> done that.</div></div>
-
-  <!-- E10: Open -->
-  <div class="exercise">
-    <div class="exercise-title"><span class="ex-num">10</span> Final Challenge (Teacher evaluated).</div>
-    <textarea rows="5" style="width:100%"></textarea>
-  </div>
-
-  <button class="btn-check" onclick="checkAnswers()">Check</button>
-</div>
-
-<script>
-  function toggleT(id) { document.getElementById(id).style.display = (document.getElementById(id).style.display === "block") ? "none" : "block"; }
-  function checkAnswers() {
-    document.querySelectorAll('input[data-ans]').forEach(i => {
-      let val = i.value.trim().toLowerCase();
-      let answers = i.getAttribute('data-ans').toLowerCase().split('|');
-      i.className = answers.includes(val) ? "blank is-correct" : "blank is-incorrect";
-    });
-  }
-</script>
-</body>
-</html>
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: #e8e4d9;
+    color: var(--ink);
+    min-height: 100vh;
     padding: 32px 16px 60px;
   }
 
@@ -363,7 +263,7 @@
   .match-card.selected .match-dot { background: var(--D); border-color: var(--D); }
   .matching-svg-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 5; }
 
-  /* PROJECT TABLE */
+  /* PROJECT TABLE (IMAGE RECREATION) */
   .project-container {
     background: white; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; margin-bottom: 24px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
   }
@@ -378,6 +278,7 @@
   .ptable td:last-child { border-right: none; }
   .ptable tr:last-child td { border-bottom: none; }
   .task-cell { display: flex; align-items: center; gap: 10px; font-weight: 700; color: #1e3a5f; }
+  .task-icon { font-size: 16px; }
   .badge { padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 800; text-transform: uppercase; display: inline-block; text-align: center; width: 100px;}
   .badge.completed { background: #4caf50; color: white; }
   .badge.inprogress { background: #457b9d; color: white; }
@@ -415,10 +316,27 @@
     .action-bar, .btn-trans, .answer-key-wrapper, .matching-svg-container { display: none !important; }
     .blank { border-bottom-color: #000; }
   }
+
+  @media (max-width: 600px) {
+    .content { padding: 0 20px 36px; }
+    header { padding: 28px 20px 22px; }
+    header h1 { font-size: 34px; }
+    .key-list { column-count: 1; }
+    .blank-lg, .blank-xl { width: 100%; min-width: 100%; }
+    .button-group { flex-direction: column; align-items: stretch; width: 100%; }
+    .btn-action { text-align: center; }
+    .matching-workspace { display: block; }
+    .matching-column { display: block; width: 100%; }
+    .matching-spacer { display: none; }
+    .column-left .match-dot, .column-right .match-dot { display: none; }
+    .matching-svg-container { display: none !important; }
+    .ptable { display: block; overflow-x: auto; white-space: nowrap; }
+  }
 </style>
 </head>
 <body>
 <div class="page">
+
   <header>
     <div class="header-badge">ESL Worksheet &middot; A2.1 Pre-Intermediate</div>
     <h1>Previous <span>Experiences</span></h1>
@@ -431,169 +349,645 @@
       <h3>&#128203; Instructions &amp; Logistics</h3>
       <p>Welcome! If you need help understanding a task, click the <strong>&#127760;</strong> button next to the instructions to see the Spanish translation.</p>
       <p style="margin-top:8px">When you finish, the system will auto-grade most questions. However, for exercises marked as <em>(Teacher evaluated)</em>, please <strong>take a screenshot</strong> of your answers and send it to your teacher.</p>
+      <hr style="border: none; border-top: 1px dashed #90caf9; margin: 12px 0;">
+      <p><em>&iexcl;Bienvenido/a! Si necesitas ayuda para entender una tarea, haz clic en el bot&oacute;n <strong>&#127760;</strong> junto a las instrucciones para ver la traducci&oacute;n al espa&ntilde;ol.</em></p>
+      <p style="margin-top:8px"><em>Cuando termines, el sistema calificar&aacute; autom&aacute;ticamente la mayor&iacute;a de las preguntas. Sin embargo, para los ejercicios marcados como *(Teacher evaluated)*, por favor <strong>toma una captura de pantalla</strong> de tus respuestas y env&iacute;asela a tu profesor/a.</em></p>
+    </div>
+
+    <!-- GRAMMAR & VOCABULARY REFERENCE -->
+    <div class="g-table-wrapper purple-table">
+      <div class="g-table-header">&#128202; Vocabulary Focus</div>
+      <table class="g-table">
+        <tr>
+          <td>Time Adverbs</td>
+          <td><strong>ever</strong>, <strong>never</strong>, <strong>before</strong>, <strong>already</strong>, <strong>yet</strong></td>
+        </tr>
+        <tr>
+          <td>Common Verbs</td>
+          <td><strong>work</strong> in marketing, <strong>travel</strong> abroad, <strong>finish</strong> a degree</td>
+        </tr>
+      </table>
     </div>
 
     <div class="grammar-box purple">
-      <h3>&#128204; Grammar Notes</h3>
-      <ul style="margin-left: 20px; font-size: 14px; font-weight: 600; line-height: 1.7;">
-        <li><strong>Have you ever worked in marketing?</strong></li>
-        <li><strong>I have never worked in marketing.</strong></li>
-        <li><strong>Have you finished your master's yet?</strong></li>
-        <li><strong>I have already finished my undergrad.</strong></li>
-        <li><strong>Have you spoken English at work before?</strong></li>
+      <h3>&#128204; Grammar Notes: The Present Perfect</h3>
+      <p>We use the present perfect for expressing actions and situations from the past that continue in the present. <br><strong>Structure: HAVE / HAS + PARTICIPLE</strong></p>
+      <ul style="margin-left: 20px; font-size: 14px; font-weight: 600; line-height: 1.7; margin-top: 8px;">
+        <li><strong>Questions:</strong> We can use <em>yet, already, before</em> and <em>ever</em>.<br>
+          <em>"Have you <strong>ever</strong> worked in marketing?"</em><br>
+          <em>"Have you finished your master's <strong>yet</strong>?"</em>
+        </li>
+        <li><strong>Affirmative:</strong> We can use <em>already</em> and <em>before</em>.<br>
+          <em>"I have <strong>already</strong> finished my undergrad."</em>
+        </li>
+        <li><strong>Negative:</strong> We can use <em>never, yet</em> and <em>before</em>.<br>
+          <em>"I have <strong>never</strong> worked in marketing."</em><br>
+          <em>"I haven't started it <strong>yet</strong>."</em>
+        </li>
       </ul>
+      <p style="margin-top:10px; border-top:1px dashed rgba(0,0,0,0.1); padding-top:10px;">
+        &#128161; <strong>Position rules:</strong> <em>Ever, never</em>, and <em>already</em> go <strong>before</strong> the participle. <em>Yet</em> and <em>before</em> go at the <strong>end</strong> of the sentence.
+      </p>
     </div>
 
-    <!-- EXERCISE 1 -->
+    <div class="section-header">
+      <span>Part 1</span> Controlled Practice
+    </div>
+
+    <!-- EXERCISE 1: FILL IN THE BLANKS (VOCAB) -->
     <div class="exercise">
       <div class="exercise-title">
         <span class="ex-num">1</span>
         <div class="title-content">
-          <div class="title-main">Complete the sentences. <span class="pts-badge">6 pts</span></div>
+          <div class="title-main">
+            Complete the sentences with words from the box.
+            <span class="pts-badge">1 pt each &middot; 6 pts</span>
+            <button class="btn-trans" onclick="toggleT('t-ex1')" title="Traducir">&#127760;</button>
+          </div>
+          <div id="t-ex1" class="es-trans">Completa las oraciones con las palabras de la cajita.</div>
         </div>
       </div>
-      <p class="choice-box">ever | never | before | already | yet | abroad</p>
+      <p style="margin-bottom: 12px;">
+        <span class="choice-box">
+          ever &nbsp;|&nbsp; never &nbsp;|&nbsp; before &nbsp;|&nbsp; already &nbsp;|&nbsp; yet &nbsp;|&nbsp; abroad
+        </span>
+      </p>
       <ol class="q-list">
-        <li>1. I have <input type="text" data-ans="already" class="blank blank-md"> finished my degree.</li>
-        <li>2. Have you <input type="text" data-ans="ever" class="blank blank-md"> worked in a big company?</li>
-        <li>3. She has <input type="text" data-ans="never" class="blank blank-md"> spoken English in a meeting.</li>
-        <li>4. I haven't started my training <input type="text" data-ans="yet" class="blank blank-md">.</li>
-        <li>5. Have you traveled <input type="text" data-ans="before" class="blank blank-md">?</li>
-        <li>6. He has worked <input type="text" data-ans="abroad" class="blank blank-md"> twice.</li>
+        <li><span class="q-num">1.</span> I have <input type="text" data-ans="already" class="blank blank-md"> finished my undergrad degree.</li>
+        <li><span class="q-num">2.</span> Have you <input type="text" data-ans="ever" class="blank blank-md"> worked in marketing?</li>
+        <li><span class="q-num">3.</span> She has <input type="text" data-ans="never" class="blank blank-md"> spoken English at work; it's her first time.</li>
+        <li><span class="q-num">4.</span> I haven't started my master's program <input type="text" data-ans="yet" class="blank blank-md">.</li>
+        <li><span class="q-num">5.</span> Have you traveled <input type="text" data-ans="abroad" class="blank blank-md"> outside your country?</li>
+        <li><span class="q-num">6.</span> Yes, I have seen this product presentation <input type="text" data-ans="before" class="blank blank-md">.</li>
       </ol>
     </div>
 
-    <!-- EXERCISE 2 -->
+    <!-- EXERCISE 2: INTERACTIVE MATCHING WITH LINES -->
     <div class="exercise">
-      <div class="exercise-title"><span class="ex-num">2</span> Match the parts (Click left card then right card).</div>
+      <div class="exercise-title">
+        <span class="ex-num">2</span>
+        <div class="title-content">
+          <div class="title-main">
+            Match the beginnings with the correct endings. Click a card on the left, then click its match on the right.
+            <span class="pts-badge">1 pt each &middot; 6 pts</span>
+            <button class="btn-trans" onclick="toggleT('t-ex2')" title="Traducir">&#127760;</button>
+          </div>
+          <div id="t-ex2" class="es-trans">Une con l&iacute;neas: Haz clic en una tarjeta de la izquierda y luego en su pareja correspondiente de la derecha para conectarlas visualmente.</div>
+        </div>
+      </div>
+
       <div class="matching-workspace" id="matchingWorkspace">
         <svg class="matching-svg-container" id="matchingSvg"></svg>
+        
         <div class="matching-column column-left">
-          <div class="match-card" data-id="left-1" onclick="handleCardClick(this, 'left')"><span>Have you finished...</span><div class="match-dot"></div></div>
-          <div class="match-card" data-id="left-2" onclick="handleCardClick(this, 'left')"><span>I have never...</span><div class="match-dot"></div></div>
-          <div class="match-card" data-id="left-3" onclick="handleCardClick(this, 'left')"><span>She has already...</span><div class="match-dot"></div></div>
+          <div class="match-card" data-id="left-1" onclick="handleCardClick(this, 'left')">
+            <span>Have you finished...</span>
+            <div class="match-dot"></div>
+          </div>
+          <div class="match-card" data-id="left-2" onclick="handleCardClick(this, 'left')">
+            <span>I have never...</span>
+            <div class="match-dot"></div>
+          </div>
+          <div class="match-card" data-id="left-3" onclick="handleCardClick(this, 'left')">
+            <span>She has already...</span>
+            <div class="match-dot"></div>
+          </div>
+          <div class="match-card" data-id="left-4" onclick="handleCardClick(this, 'left')">
+            <span>Have they ever...</span>
+            <div class="match-dot"></div>
+          </div>
+          <div class="match-card" data-id="left-5" onclick="handleCardClick(this, 'left')">
+            <span>We haven't started...</span>
+            <div class="match-dot"></div>
+          </div>
+          <div class="match-card" data-id="left-6" onclick="handleCardClick(this, 'left')">
+            <span>Has he traveled...</span>
+            <div class="match-dot"></div>
+          </div>
         </div>
+
         <div class="matching-spacer"></div>
+
         <div class="matching-column column-right">
-          <div class="match-card" data-id="right-1" onclick="handleCardClick(this, 'right')"><div class="match-dot"></div><span>launched the campaign.</span></div>
-          <div class="match-card" data-id="right-2" onclick="handleCardClick(this, 'right')"><div class="match-dot"></div><span>your master's yet?</span></div>
-          <div class="match-card" data-id="right-3" onclick="handleCardClick(this, 'right')"><div class="match-dot"></div><span>volunteered in a community center.</span></div>
+          <div class="match-card" data-id="right-1" onclick="handleCardClick(this, 'right')">
+            <div class="match-dot"></div>
+            <span>worked in a big company.</span>
+          </div>
+          <div class="match-card" data-id="right-2" onclick="handleCardClick(this, 'right')">
+            <div class="match-dot"></div>
+            <span>spoken English at work?</span>
+          </div>
+          <div class="match-card" data-id="right-3" onclick="handleCardClick(this, 'right')">
+            <div class="match-dot"></div>
+            <span>your master's yet?</span>
+          </div>
+          <div class="match-card" data-id="right-4" onclick="handleCardClick(this, 'right')">
+            <div class="match-dot"></div>
+            <span>launched the campaign.</span>
+          </div>
+          <div class="match-card" data-id="right-5" onclick="handleCardClick(this, 'right')">
+            <div class="match-dot"></div>
+            <span>abroad before?</span>
+          </div>
+          <div class="match-card" data-id="right-6" onclick="handleCardClick(this, 'right')">
+            <div class="match-dot"></div>
+            <span>our new jobs yet.</span>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- EXERCISE 3 -->
+    <!-- EXERCISE 3: VERB FORMS -->
     <div class="exercise">
-      <div class="exercise-title"><span class="ex-num">3</span> Present Perfect (have/has + participle). <span class="pts-badge">6 pts</span></div>
+      <div class="exercise-title">
+        <span class="ex-num">3</span>
+        <div class="title-content">
+          <div class="title-main">
+            Complete the sentences with the Present Perfect form (have/has + participle).
+            <span class="pts-badge">1 pt each &middot; 6 pts</span>
+            <button class="btn-trans" onclick="toggleT('t-ex3')" title="Traducir">&#127760;</button>
+          </div>
+          <div id="t-ex3" class="es-trans">Completa las oraciones conjugando el verbo en Present Perfect (have/has + participio). F&iacute;jate si es (+), (-) o (?).</div>
+        </div>
+      </div>
       <ol class="q-list">
-        <li>1. (+) They <input type="text" data-ans="have finished|'ve finished" class="blank blank-md"> (finish) their project.</li>
-        <li>2. (-) She <input type="text" data-ans="has not volunteered|hasn't volunteered" class="blank blank-md"> (not/volunteer) before.</li>
-        <li>3. (?) <input type="text" data-ans="Have" class="blank blank-sm"> you <input type="text" data-ans="given" class="blank blank-sm"> (give) a presentation?</li>
-        <li>4. (+) I <input type="text" data-ans="have traveled|'ve traveled" class="blank blank-md"> (travel) abroad.</li>
-        <li>5. (-) We <input type="text" data-ans="have not started|haven't started" class="blank blank-md"> (not/start) the training yet.</li>
-        <li>6. (?) <input type="text" data-ans="Has" class="blank blank-sm"> he ever <input type="text" data-ans="written" class="blank blank-sm"> (write) a report?</li>
+        <li><span class="q-num">1.</span> (+) They <input type="text" data-ans="have finished|'ve finished" class="blank blank-md"> (finish) their undergrad studies.</li>
+        <li><span class="q-num">2.</span> (-) She <input type="text" data-ans="has not worked|hasn't worked" class="blank blank-md"> (not / work) in marketing before.</li>
+        <li><span class="q-num">3.</span> (?) <input type="text" data-ans="Have" class="blank blank-sm"> you <input type="text" data-ans="spoken" class="blank blank-sm"> (speak) English at work?</li>
+        <li><span class="q-num">4.</span> (+) I <input type="text" data-ans="have traveled|have travelled|'ve traveled|'ve travelled" class="blank blank-md"> (travel) abroad.</li>
+        <li><span class="q-num">5.</span> (-) We <input type="text" data-ans="have not started|haven't started" class="blank blank-md"> (not / start) the project yet.</li>
+        <li><span class="q-num">6.</span> (?) <input type="text" data-ans="Has" class="blank blank-sm"> he ever <input type="text" data-ans="visited" class="blank blank-sm"> (visit) our headquarters?</li>
       </ol>
     </div>
 
-    <!-- EXERCISE 4 -->
+    <!-- EXERCISE 4: TYPING THE PARENTHESES CHOICE -->
     <div class="exercise">
-      <div class="exercise-title"><span class="ex-num">4</span> Type the correct choice from the parentheses.</div>
-      <ol class="q-list">
-        <li>1. Have you finished the presentation <input type="text" data-ans="yet" class="blank blank-sm">? <em>(yet / already)</em></li>
-        <li>2. I have <input type="text" data-ans="never" class="blank blank-sm"> volunteered at a hospital. <em>(ever / never)</em></li>
-        <li>3. She has <input type="text" data-ans="already" class="blank blank-sm"> sent the proposal. <em>(already / before)</em></li>
-        <li>4. We haven't traveled abroad <input type="text" data-ans="yet" class="blank blank-sm">. <em>(yet / never)</em></li>
-        <li>5. Have you <input type="text" data-ans="ever" class="blank blank-sm"> spoken to the CEO? <em>(ever / before)</em></li>
-        <li>6. I have done this work <input type="text" data-ans="before" class="blank blank-sm">. <em>(before / yet)</em></li>
-      </ol>
-    </div>
-
-    <!-- EXERCISE 5 -->
-    <div class="exercise">
-      <div class="exercise-title"><span class="ex-num">5</span> Unscramble sentences.</div>
+      <div class="exercise-title">
+        <span class="ex-num">4</span>
+        <div class="title-content">
+          <div class="title-main">
+            Type the correct option from the choices given in parentheses.
+            <span class="pts-badge">1 pt each &middot; 6 pts</span>
+            <button class="btn-trans" onclick="toggleT('t-ex4')" title="Traducir">&#127760;</button>
+          </div>
+          <div id="t-ex4" class="es-trans">Escribe la opci&oacute;n correcta en la caja de texto bas&aacute;ndote en las dos opciones de adverbios (already/yet/ever/never/before). Recuerda las reglas de posici&oacute;n.</div>
+        </div>
+      </div>
       <ol class="q-list">
         <li>
-          <span class="scrambled-box">(ever / you / volunteered / have / ?)</span>
-          <input type="text" data-ans="Have you ever volunteered?|Have you ever volunteered" class="blank blank-xl" placeholder="Type here...">
+          <span class="q-num">1.</span> Have you finished the report <input type="text" data-ans="yet" class="blank blank-sm">? <em>(yet / already)</em>
         </li>
         <li>
-          <span class="scrambled-box">(haven't / master's / I / my / yet / started)</span>
-          <input type="text" data-ans="I haven't started my master's yet.|I have not started my master's yet." class="blank blank-xl" placeholder="Type here...">
+          <span class="q-num">2.</span> I have <input type="text" data-ans="never" class="blank blank-sm"> worked in a sales department. <em>(ever / never)</em>
+        </li>
+        <li>
+          <span class="q-num">3.</span> She has <input type="text" data-ans="already" class="blank blank-sm"> finished the presentation. <em>(already / before)</em>
+        </li>
+        <li>
+          <span class="q-num">4.</span> We haven't traveled abroad <input type="text" data-ans="yet" class="blank blank-sm">. <em>(yet / never)</em>
+        </li>
+        <li>
+          <span class="q-num">5.</span> Have you <input type="text" data-ans="ever" class="blank blank-sm"> spoken to the general manager? <em>(ever / before)</em>
+        </li>
+        <li>
+          <span class="q-num">6.</span> I have seen this product <input type="text" data-ans="before" class="blank blank-sm">. <em>(before / yet)</em>
         </li>
       </ol>
     </div>
 
-    <!-- EXERCISE 6 -->
+    <!-- EXERCISE 5: UNSCRAMBLE -->
     <div class="exercise">
-      <div class="exercise-title"><span class="ex-num">6</span> Project Table Dashboard.</div>
+      <div class="exercise-title">
+        <span class="ex-num">5</span>
+        <div class="title-content">
+          <div class="title-main">
+            Unscramble the words to formulate correct sentences or questions.
+            <span class="pts-badge">2 pts each &middot; 10 pts</span>
+            <button class="btn-trans" onclick="toggleT('t-ex5')" title="Traducir">&#127760;</button>
+          </div>
+          <div id="t-ex5" class="es-trans">Ordena las palabras para formar una oraci&oacute;n o pregunta correcta. Escribe la respuesta completa en la caja de abajo.</div>
+        </div>
+      </div>
+      <ol class="q-list">
+        <li>
+          <span class="q-num">1.</span> <span class="scrambled-box">(ever / you / worked / in / marketing / have / ?)</span>
+          <input type="text" data-ans="Have you ever worked in marketing?|Have you ever worked in marketing" class="blank blank-xl" placeholder="Type here...">
+        </li>
+        <li>
+          <span class="q-num">2.</span> <span class="scrambled-box">(haven't / master's / I / my / yet / started)</span>
+          <input type="text" data-ans="I haven't started my master's yet.|I haven't started my master's yet|I have not started my master's yet.|I have not started my master's yet" class="blank blank-xl" placeholder="Type here...">
+        </li>
+        <li>
+          <span class="q-num">3.</span> <span class="scrambled-box">(already / finished / my / have / I / undergrad)</span>
+          <input type="text" data-ans="I have already finished my undergrad.|I have already finished my undergrad" class="blank blank-xl" placeholder="Type here...">
+        </li>
+        <li>
+          <span class="q-num">4.</span> <span class="scrambled-box">(English / have / spoken / work / before / at / you / ?)</span>
+          <input type="text" data-ans="Have you spoken English at work before?|Have you spoken English at work before" class="blank blank-xl" placeholder="Type here...">
+        </li>
+        <li>
+          <span class="q-num">5.</span> <span class="scrambled-box">(traveled / never / abroad / she / has)</span>
+          <input type="text" data-ans="She has never traveled abroad.|She has never traveled abroad" class="blank blank-xl" placeholder="Type here...">
+        </li>
+      </ol>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- EXERCISES: LESS CONTROLLED                 -->
+    <!-- ========================================== -->
+    <div class="section-divider"></div>
+
+    <div class="section-header">
+      <span>Part 2</span> Applied Reading &amp; Context
+    </div>
+
+    <!-- EXERCISE 6: IMAGE COMPREHENSION (PROJECT TABLE) -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">6</span>
+        <div class="title-content">
+          <div class="title-main">
+            Analyze the Project Dashboard and answer the questions.
+            <span class="pts-badge">2 pts each &middot; 10 pts</span>
+            <button class="btn-trans" onclick="toggleT('t-ex6')" title="Traducir">&#127760;</button>
+          </div>
+          <div id="t-ex6" class="es-trans">Analiza el tablero del proyecto y responde a las preguntas usando el Presente Perfecto (Ej: Yes, she has / No, he hasn't). S&oacute;lo las tareas "COMPLETED" han sido terminadas.</div>
+        </div>
+      </div>
+
+      <!-- RECREATED TABLE -->
       <div class="project-container">
+        <div class="project-header">
+          <div class="project-icon">&#128200;</div>
+          <div class="project-title-area">
+            <h2>Project: Q2 Sales Growth Initiative</h2>
+            <p><strong>Goal:</strong> Increase revenue by 15% in Q2 through targeted outreach, lead conversion, and customer retention.</p>
+          </div>
+        </div>
         <table class="ptable">
-          <tr><th>Task</th><th>Owner</th><th>Status</th></tr>
-          <tr><td>1. Define Target Accounts</td><td>Sarah J.</td><td><span class="badge completed">COMPLETED</span></td></tr>
-          <tr><td>7. Monitor Sales</td><td>Lisa D.</td><td><span class="badge inprogress">IN PROGRESS</span></td></tr>
+          <thead>
+            <tr>
+              <th>Task</th>
+              <th>Owner</th>
+              <th>Due Date</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><div class="task-cell"><span class="task-icon">&#127919;</span> 1. Define Target Accounts</div></td>
+              <td>Sarah J.</td>
+              <td>May 10, 2024</td>
+              <td><span class="badge completed">COMPLETED</span></td>
+            </tr>
+            <tr>
+              <td><div class="task-cell"><span class="task-icon">&#128101;</span> 2. Update Sales Collateral</div></td>
+              <td>Mike R.</td>
+              <td>May 14, 2024</td>
+              <td><span class="badge inprogress">IN PROGRESS</span></td>
+            </tr>
+            <tr>
+              <td><div class="task-cell"><span class="task-icon">&#9993;&#65039;</span> 3. Launch Outreach Campaign</div></td>
+              <td>Emily K.</td>
+              <td>May 20, 2024</td>
+              <td><span class="badge pending">PENDING</span></td>
+            </tr>
+            <tr>
+              <td><div class="task-cell"><span class="task-icon">&#128197;</span> 4. Schedule Product Demos</div></td>
+              <td>James T.</td>
+              <td>May 31, 2024</td>
+              <td><span class="badge pending">PENDING</span></td>
+            </tr>
+            <tr>
+              <td><div class="task-cell"><span class="task-icon">&#128269;</span> 5. Qualify &amp; Nurture Leads</div></td>
+              <td>Priya M.</td>
+              <td>June 5, 2024</td>
+              <td><span class="badge inprogress">IN PROGRESS</span></td>
+            </tr>
+            <tr>
+              <td><div class="task-cell"><span class="task-icon">&#129309;</span> 6. Negotiate &amp; Close Deals</div></td>
+              <td>Alex B.</td>
+              <td>June 15, 2024</td>
+              <td><span class="badge pending">PENDING</span></td>
+            </tr>
+            <tr>
+              <td><div class="task-cell"><span class="task-icon">&#128202;</span> 7. Monitor Sales Performance</div></td>
+              <td>Lisa D.</td>
+              <td>June 20, 2024</td>
+              <td><span class="badge inprogress">IN PROGRESS</span></td>
+            </tr>
+            <tr>
+              <td><div class="task-cell"><span class="task-icon">&#11088;</span> 8. Gather Testimonials</div></td>
+              <td>Sarah J.</td>
+              <td>June 25, 2024</td>
+              <td><span class="badge pending">PENDING</span></td>
+            </tr>
+            <tr>
+              <td><div class="task-cell"><span class="task-icon">&#127891;</span> 9. Sales Training Session</div></td>
+              <td>Mike R.</td>
+              <td>June 28, 2024</td>
+              <td><span class="badge pending">PENDING</span></td>
+            </tr>
+            <tr>
+              <td><div class="task-cell"><span class="task-icon">&#128209;</span> 10. Review &amp; Plan Next Steps</div></td>
+              <td>Alex B.</td>
+              <td>July 5, 2024</td>
+              <td><span class="badge notstarted">NOT STARTED</span></td>
+            </tr>
+          </tbody>
         </table>
       </div>
+      
+      <p style="font-size:13px; font-weight:700; opacity:0.6; margin-bottom:12px;">Answer with short responses (e.g., <em>Yes, she has. / No, he hasn't.</em>).</p>
+
       <ol class="q-list">
-        <li>1. Has Sarah J. defined target accounts? <input type="text" data-ans="yes she has" class="blank blank-lg"></li>
-        <li>2. Has Lisa D. completed monitoring sales? <input type="text" data-ans="no she hasn't" class="blank blank-lg"></li>
+        <li>
+          <span class="q-num">1.</span> Has Sarah J. defined the target accounts yet?<br>
+          &rarr; <input type="text" data-ans="Yes, she has.|Yes, she has" class="blank blank-lg">
+        </li>
+        <li>
+          <span class="q-num">2.</span> Has Mike R. finished updating the sales collateral yet?<br>
+          &rarr; <input type="text" data-ans="No, he hasn't.|No, he hasn't|No, he has not.|No, he has not" class="blank blank-lg">
+        </li>
+        <li>
+          <span class="q-num">3.</span> Have they launched the outreach campaign yet?<br>
+          &rarr; <input type="text" data-ans="No, they haven't.|No, they haven't|No, they have not.|No, they have not" class="blank blank-lg">
+        </li>
+        <li>
+          <span class="q-num">4.</span> Has Lisa D. monitored the sales performance yet?<br>
+          &rarr; <input type="text" data-ans="No, she hasn't.|No, she hasn't|No, she has not.|No, she has not" class="blank blank-lg">
+        </li>
+        <li>
+          <span class="q-num">5.</span> Have they started to review and plan next steps?<br>
+          &rarr; <input type="text" data-ans="No, they haven't.|No, they haven't|No, they have not.|No, they have not" class="blank blank-lg">
+        </li>
       </ol>
     </div>
 
-    <!-- EXERCISE 7 -->
+    <!-- EXERCISE 7: CORRECT THE MISTAKE -->
     <div class="exercise">
-      <div class="exercise-title"><span class="ex-num">7</span> Correct the sentences.</div>
+      <div class="exercise-title">
+        <span class="ex-num">7</span>
+        <div class="title-content">
+          <div class="title-main">
+            Find and correct the mistake in each sentence. Type the correct sentence.
+            <span class="pts-badge">2 pts each &middot; 8 pts</span>
+            <button class="btn-trans" onclick="toggleT('t-ex7')" title="Traducir">&#127760;</button>
+          </div>
+          <div id="t-ex7" class="es-trans">Encuentra y corrige el error gramatical en cada oraci&oacute;n. Escribe la oraci&oacute;n completa correctamente.</div>
+        </div>
+      </div>
       <ol class="q-list">
-        <li>1. I have never travel abroad. <input type="text" data-ans="i have never traveled abroad" class="blank blank-xl"></li>
-        <li>2. She has already finish the report. <input type="text" data-ans="she has already finished the report" class="blank blank-xl"></li>
+        <li>
+          <span class="q-num">1.</span> I have never travel abroad.<br>
+          &rarr; <input type="text" data-ans="I have never traveled abroad.|I have never traveled abroad|I have never travelled abroad.|I have never travelled abroad" class="blank blank-xl">
+        </li>
+        <li>
+          <span class="q-num">2.</span> Have you finished yet your master's?<br>
+          &rarr; <input type="text" data-ans="Have you finished your master's yet?|Have you finished your master's yet" class="blank blank-xl">
+        </li>
+        <li>
+          <span class="q-num">3.</span> She has already finish her undergrad.<br>
+          &rarr; <input type="text" data-ans="She has already finished her undergrad.|She has already finished her undergrad" class="blank blank-xl">
+        </li>
+        <li>
+          <span class="q-num">4.</span> I haven't started my undergrad already.<br>
+          &rarr; <input type="text" data-ans="I haven't started my undergrad yet.|I haven't started my undergrad yet|I have not started my undergrad yet.|I have not started my undergrad yet" class="blank blank-xl">
+        </li>
       </ol>
     </div>
 
-    <!-- EXERCISE 8 -->
+    <!-- EXERCISE 8: CREATE THE QUESTION -->
     <div class="exercise">
-      <div class="exercise-title"><span class="ex-num">8</span> Create the questions for the answers.</div>
+      <div class="exercise-title">
+        <span class="ex-num">8</span>
+        <div class="title-content">
+          <div class="title-main">
+            Create the question for the given answer.
+            <span class="pts-badge">2 pts each &middot; 8 pts</span>
+            <button class="btn-trans" onclick="toggleT('t-ex8')" title="Traducir">&#127760;</button>
+          </div>
+          <div id="t-ex8" class="es-trans">Crea la pregunta correspondiente para cada respuesta proporcionada. Utiliza las pistas (ever, yet, etc.) de las respuestas.</div>
+        </div>
+      </div>
       <ol class="q-list">
-        <li>1. Answer: Yes, I have given presentations before. <input type="text" data-ans="have you given presentations before" class="blank blank-xl"></li>
-        <li>2. Answer: No, I haven't volunteered yet. <input type="text" data-ans="have you volunteered yet" class="blank blank-xl"></li>
+        <li>
+          <span class="q-num">1.</span> <strong>Answer:</strong> Yes, I have worked in marketing before.<br>
+          <strong>Question:</strong> <input type="text" data-ans="Have you worked in marketing before?|Have you worked in marketing before|Have you ever worked in marketing?|Have you ever worked in marketing" class="blank blank-xl">
+        </li>
+        <li>
+          <span class="q-num">2.</span> <strong>Answer:</strong> No, she hasn't finished her master's yet.<br>
+          <strong>Question:</strong> <input type="text" data-ans="Has she finished her master's yet?|Has she finished her master's yet" class="blank blank-xl">
+        </li>
+        <li>
+          <span class="q-num">3.</span> <strong>Answer:</strong> Yes, we have already launched the campaign.<br>
+          <strong>Question:</strong> <input type="text" data-ans="Have you already launched the campaign?|Have you launched the campaign yet?|Have you launched the campaign yet|Have you already launched the campaign" class="blank blank-xl">
+        </li>
+        <li>
+          <span class="q-num">4.</span> <strong>Answer:</strong> No, I have never spoken English at work.<br>
+          <strong>Question:</strong> <input type="text" data-ans="Have you ever spoken English at work?|Have you ever spoken English at work|Have you spoken English at work before?|Have you spoken English at work before" class="blank blank-xl">
+        </li>
       </ol>
     </div>
 
-    <!-- EXERCISE 9 -->
+    <!-- EXERCISE 9: DIALOGUE COMPLETION -->
     <div class="exercise">
-      <div class="exercise-title"><span class="ex-num">9</span> Complete dialogue.</div>
+      <div class="exercise-title">
+        <span class="ex-num">9</span>
+        <div class="title-content">
+          <div class="title-main">
+            Complete the conversation.
+            <span class="pts-badge">1 pt each &middot; 6 pts</span>
+            <button class="btn-trans" onclick="toggleT('t-ex9')" title="Traducir">&#127760;</button>
+          </div>
+          <div id="t-ex9" class="es-trans">Completa la conversaci&oacute;n con las palabras gramaticales y de vocabulario correctas (have, yet, already, abroad, etc.).</div>
+        </div>
+      </div>
       <ul class="q-list" style="background:#f9f9f9; padding:20px; border-radius:8px; border:1px solid #ddd; list-style:none;">
-        <li>Interviewer: Have you worked <input type="text" data-ans="as a remote freelancer" class="blank blank-md">?</li>
-        <li>Candidate: Yes, I have <input type="text" data-ans="already" class="blank blank-md"> done that.</li>
+        <li><strong>Interviewer:</strong> <input type="text" data-ans="Have" class="blank blank-sm"> you ever traveled <input type="text" data-ans="abroad" class="blank blank-sm"> outside the country?</li>
+        <li><strong>Candidate:</strong> Yes, I <input type="text" data-ans="have" class="blank blank-sm">. I visited Canada last year.</li>
+        <li><strong>Interviewer:</strong> Wow, impressive! And have you finished your master's degree <input type="text" data-ans="yet" class="blank blank-sm">?</li>
+        <li><strong>Candidate:</strong> No, I <input type="text" data-ans="haven't|have not" class="blank blank-md"> started it yet. But I have <input type="text" data-ans="already" class="blank blank-md"> finished my undergrad degree in business.</li>
       </ul>
     </div>
 
-    <!-- EXERCISE 10 -->
+    <!-- EXERCISE 10: FINAL CHALLENGE (OPEN) -->
     <div class="exercise">
-      <div class="exercise-title"><span class="ex-num">10</span> Final Challenge (Teacher evaluated).</div>
-      <textarea data-ans="OPEN" rows="6" style="width:100%; border:2px dashed #ccc; padding:10px;"></textarea>
-      <p style="font-size:12px; color:red;">&#128248; Take a screenshot for your teacher!</p>
+      <div class="exercise-title">
+        <span class="ex-num">10</span>
+        <div class="title-content">
+          <div class="title-main">
+            Final Challenge &ndash; Talk About Your Experience! <em style="font-weight:400; opacity:0.7;">(Teacher evaluated)</em>
+            <span class="pts-badge">15 pts</span>
+            <button class="btn-trans" onclick="toggleT('t-ex10')" title="Traducir">&#127760;</button>
+          </div>
+          <div id="t-ex10" class="es-trans">Reto Final: &iexcl;Habla sobre tu experiencia! Escribe un p&aacute;rrafo de 5-8 l&iacute;neas. &iexcl;No olvides mandar el pantallazo (screenshot) a tu profesor!</div>
+        </div>
+      </div>
+      <p style="font-size:13px;font-weight:700;opacity:0.6;margin-bottom:12px">
+        Write a paragraph (5-8 lines) about your previous experiences. You MUST include answers to these questions:<br>
+        - <em>Where have you traveled abroad before?</em><br>
+        - <em>Have you ever worked in a big company?</em><br>
+        - <em>Have you finished your studies yet, or have you already graduated?</em><br>
+        Include words like <strong>ever, never, already, yet</strong> or <strong>before</strong>.
+      </p>
+      <textarea
+        data-ans="OPEN"
+        rows="8"
+        placeholder="Write your paragraph here...&#10;Example: I have never traveled abroad before, but I want to visit Canada. I haven't worked in a big company yet because I am still studying..."
+        style="width:100%;border:2px dashed #ccc;border-radius:8px;padding:14px;font-family:'Nunito',sans-serif;font-size:15px;font-weight:600;color:#2b2b2b;outline:none;resize:vertical;background:#fafafa;transition:border-color 0.2s;"
+        onfocus="this.style.borderColor='#1a1a2e'"
+        onblur="this.style.borderColor='#ccc'"
+      ></textarea>
+      <p style="font-size:13px; font-weight:800; color:#e63946; margin-top:8px;">&#128248; Reminder: Take a screenshot of your paragraph to send to your teacher.</p>
     </div>
 
+    <!-- ACTION BAR -->
     <div class="action-bar">
       <div class="score-display" id="gradeScoreBox">Score: 0</div>
-      <button class="btn-action btn-check" onclick="checkStudentAnswers()">&#10004; Check</button>
-      <button class="btn-action btn-reset" onclick="resetWorksheet()">&#128260; Reset</button>
-    </div>
-
-    <div class="answer-key-wrapper">
-      <button class="btn-toggle-key" id="toggleKeyBtn" onclick="toggleAnswerKey()">&#128065; Show Answer Key</button>
-      <div class="answer-key-content" id="answerKeyContent">
-        <div class="answer-key"><h2>Answer Key</h2></div>
+      <div class="button-group">
+        <button class="btn-action btn-check" onclick="checkStudentAnswers()">&#10004;&#65039; Check Answers</button>
+        <button class="btn-action btn-reset" onclick="resetWorksheet()">&#128260; Clear Sheet</button>
       </div>
     </div>
+
+    <!-- ANSWER KEY -->
+    <div class="answer-key-wrapper">
+      <button class="btn-toggle-key" id="toggleKeyBtn" onclick="toggleAnswerKey()">
+        &#128065;&#65039; Show Answer Key
+      </button>
+
+      <div class="answer-key-content" id="answerKeyContent">
+        <div class="answer-key">
+          <h2>Answer Key</h2>
+
+          <div class="key-section">
+            <h3>1. Fill in the blanks (Vocab)</h3>
+            <div class="key-list">
+              <div>1. <span>already</span></div>
+              <div>2. <span>ever</span></div>
+              <div>3. <span>never</span></div>
+              <div>4. <span>yet</span></div>
+              <div>5. <span>abroad</span></div>
+              <div>6. <span>before</span></div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>2. Matching Lines Pairs</h3>
+            <div class="key-list">
+              <div>left-1 &rarr; <span>right-3</span> (Have you finished... your master's yet?)</div>
+              <div>left-2 &rarr; <span>right-1</span> (I have never... worked in a big company.)</div>
+              <div>left-3 &rarr; <span>right-4</span> (She has already... launched the campaign.)</div>
+              <div>left-4 &rarr; <span>right-2</span> (Have they ever... spoken English at work?)</div>
+              <div>left-5 &rarr; <span>right-6</span> (We haven't started... our new jobs yet.)</div>
+              <div>left-6 &rarr; <span>right-5</span> (Has he traveled... abroad before?)</div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>3. Verb Forms (+ / - / ?)</h3>
+            <div class="key-list">
+              <div>1. <span>have finished</span> (or 've finished)</div>
+              <div>2. <span>hasn't worked</span> (or has not worked)</div>
+              <div>3. <span>Have / spoken</span></div>
+              <div>4. <span>have traveled</span> (or have travelled / 've traveled)</div>
+              <div>5. <span>haven't started</span> (or have not started)</div>
+              <div>6. <span>Has / visited</span></div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>4. Parentheses Choices</h3>
+            <div class="key-list">
+              <div>1. <span>yet</span></div>
+              <div>2. <span>never</span></div>
+              <div>3. <span>already</span></div>
+              <div>4. <span>yet</span></div>
+              <div>5. <span>ever</span></div>
+              <div>6. <span>before</span></div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>5. Unscramble</h3>
+            <div class="key-list" style="column-count: 1;">
+              <div>1. <span>Have you ever worked in marketing?</span></div>
+              <div>2. <span>I haven't started my master's yet.</span></div>
+              <div>3. <span>I have already finished my undergrad.</span></div>
+              <div>4. <span>Have you spoken English at work before?</span></div>
+              <div>5. <span>She has never traveled abroad.</span></div>
+            </div>
+          </div>
+          
+          <div class="key-section">
+            <h3>6. Image Comprehension (Project Table)</h3>
+            <div class="key-list" style="column-count: 1;">
+              <div>1. <span>Yes, she has.</span></div>
+              <div>2. <span>No, he hasn't.</span></div>
+              <div>3. <span>No, they haven't.</span></div>
+              <div>4. <span>No, she hasn't.</span></div>
+              <div>5. <span>No, they haven't.</span></div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>7. Correct the Mistake</h3>
+            <div class="key-list" style="column-count: 1;">
+              <div>1. <span>I have never traveled abroad.</span></div>
+              <div>2. <span>Have you finished your master's yet?</span></div>
+              <div>3. <span>She has already finished her undergrad.</span></div>
+              <div>4. <span>I haven't started my undergrad yet.</span></div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>8. Create the Question</h3>
+            <div class="key-list" style="column-count: 1;">
+              <div>1. <span>Have you worked in marketing before?</span> (or Have you ever worked...)</div>
+              <div>2. <span>Has she finished her master's yet?</span></div>
+              <div>3. <span>Have you already launched the campaign?</span> (or Have you launched the... yet?)</div>
+              <div>4. <span>Have you ever spoken English at work?</span> (or Have you spoken... before?)</div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>9. Dialogue Completion</h3>
+            <div class="key-list">
+              <div>1. <span>Have</span></div>
+              <div>2. <span>abroad</span></div>
+              <div>3. <span>have</span></div>
+              <div>4. <span>yet</span></div>
+              <div>5. <span>haven't / have not</span></div>
+              <div>6. <span>already</span></div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>10. Final Challenge</h3>
+            <div class="key-list" style="column-count: 1;">
+              <div>Teacher-evaluated open writing paragraph. Check for use of present perfect, ever, never, already, yet.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 
 <script>
   function toggleT(id) {
     const el = document.getElementById(id);
-    el.style.display = (el.style.display === "block") ? "none" : "block";
+    if (el.style.display === "block") {
+      el.style.display = "none";
+    } else {
+      el.style.display = "block";
+    }
   }
 
+  // INTERACTIVE LINE MATCHING SYSTEM
   let selectedLeftCard = null;
   let matches = {}; 
   const correctMatches = {
@@ -607,18 +1001,26 @@
 
   function handleCardClick(card, side) {
     if (document.getElementById('gradeScoreBox').style.display === "block") return; 
+
     if (side === 'left') {
-      if (selectedLeftCard) selectedLeftCard.classList.remove('selected');
+      if (selectedLeftCard) {
+        selectedLeftCard.classList.remove('selected');
+      }
       selectedLeftCard = card;
       card.classList.add('selected');
     } else {
       if (selectedLeftCard) {
         const leftId = selectedLeftCard.getAttribute('data-id');
         const rightId = card.getAttribute('data-id');
-        for (let lKey in matches) if (matches[lKey] === rightId) delete matches[lKey];
+        
+        for (let lKey in matches) {
+          if (matches[lKey] === rightId) delete matches[lKey];
+        }
+
         matches[leftId] = rightId;
         selectedLeftCard.classList.remove('selected');
         selectedLeftCard = null;
+        
         drawAllLines();
       }
     }
@@ -630,18 +1032,26 @@
     svg.innerHTML = ''; 
     const workspace = document.getElementById('matchingWorkspace');
     const workspaceRect = workspace.getBoundingClientRect();
+
     for (let leftId in matches) {
       const rightId = matches[leftId];
       const leftEl = workspace.querySelector(`[data-id="${leftId}"] .match-dot`);
       const rightEl = workspace.querySelector(`[data-id="${rightId}"] .match-dot`);
+      
       if (leftEl && rightEl) {
         const leftRect = leftEl.getBoundingClientRect();
         const rightRect = rightEl.getBoundingClientRect();
+
+        const x1 = leftRect.left + leftRect.width / 2 - workspaceRect.left;
+        const y1 = leftRect.top + leftRect.height / 2 - workspaceRect.top;
+        const x2 = rightRect.left + rightRect.width / 2 - workspaceRect.left;
+        const y2 = rightRect.top + rightRect.height / 2 - workspaceRect.top;
+
         const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-        line.setAttribute('x1', leftRect.left + leftRect.width/2 - workspaceRect.left);
-        line.setAttribute('y1', leftRect.top + leftRect.height/2 - workspaceRect.top);
-        line.setAttribute('x2', rightRect.left + rightRect.width/2 - workspaceRect.left);
-        line.setAttribute('y2', rightRect.top + rightRect.height/2 - workspaceRect.top);
+        line.setAttribute('x1', x1);
+        line.setAttribute('y1', y1);
+        line.setAttribute('x2', x2);
+        line.setAttribute('y2', y2);
         line.setAttribute('stroke', '#5c4fcf');
         line.setAttribute('stroke-width', '3');
         line.setAttribute('id', `line-${leftId}`);
@@ -650,40 +1060,89 @@
     }
   }
 
+  window.addEventListener('resize', drawAllLines);
+
   function checkStudentAnswers() {
-    let score = 0, autoTotal = 0;
+    let score = 0;
+    let autoTotal = 0;
+
+    // 1. Grade Matching
     autoTotal += 6;
     for (let leftId in correctMatches) {
       const line = document.getElementById(`line-${leftId}`);
-      if (matches[leftId] === correctMatches[leftId]) { score++; if (line) line.setAttribute('stroke', '#2a9d8f'); } 
-      else if (line) line.setAttribute('stroke', '#e63946');
+      if (matches[leftId] === correctMatches[leftId]) {
+        score++;
+        if (line) line.setAttribute('stroke', '#2a9d8f'); 
+      } else {
+        if (line) line.setAttribute('stroke', '#e63946'); 
+      }
     }
-    document.querySelectorAll('input[data-ans]').forEach(input => {
+
+    // 2. Grade Text Inputs
+    const inputs = document.querySelectorAll('input[data-ans]');
+    inputs.forEach(input => {
       let studentAns = input.value.trim().toLowerCase().replace(/[.,?!]/g, "").replace(/\s+/g, " ");
-      let targetAnsArray = input.getAttribute('data-ans').toLowerCase().split('|');
+
+      let rawTarget = input.getAttribute('data-ans').toLowerCase().replace(/[.,?!]/g, "");
+      let targetAnsArray = rawTarget.split('|').map(s => s.replace(/\s+/g, " ").trim());
+
       input.classList.remove('is-correct', 'is-incorrect', 'is-open');
-      if (targetAnsArray.includes("open")) { if (studentAns !== "") input.classList.add('is-open'); }
-      else {
+
+      if (targetAnsArray.includes("open")) {
+        if (studentAns !== "") {
+          input.classList.add('is-open');
+        }
+      } else {
         autoTotal++;
-        if (targetAnsArray.includes(studentAns)) { input.classList.add('is-correct'); score++; }
-        else input.classList.add('is-incorrect');
+        if (targetAnsArray.includes(studentAns)) {
+          input.classList.add('is-correct');
+          score++;
+        } else {
+          input.classList.add('is-incorrect');
+        }
       }
     });
+
+    document.querySelectorAll('textarea[data-ans]').forEach(ta => {
+      ta.style.borderColor = ta.value.trim() !== "" ? "#457b9d" : "#ccc";
+    });
+
     const scoreBox = document.getElementById('gradeScoreBox');
-    scoreBox.innerText = "Score: " + score + " / " + autoTotal;
+    scoreBox.innerText = "Auto-graded Score: " + score + " / " + autoTotal;
     scoreBox.style.display = "block";
   }
 
   function resetWorksheet() {
-    document.querySelectorAll('input').forEach(i => { i.value = ""; i.className = "blank"; });
-    document.querySelectorAll('textarea').forEach(t => t.value = "");
-    matches = {}; document.getElementById('matchingSvg').innerHTML = '';
-    document.getElementById('gradeScoreBox').style.display = "none";
+    if (confirm("Are you sure you want to clear all your answers? / ¿Seguro que quieres borrar tus respuestas?")) {
+      document.querySelectorAll('input').forEach(input => {
+        input.value = "";
+        input.classList.remove('is-correct', 'is-incorrect', 'is-open');
+      });
+      document.querySelectorAll('textarea').forEach(ta => {
+        ta.value = "";
+        ta.style.borderColor = "#ccc";
+      });
+      
+      matches = {};
+      if (selectedLeftCard) selectedLeftCard.classList.remove('selected');
+      selectedLeftCard = null;
+      document.getElementById('matchingSvg').innerHTML = '';
+
+      document.getElementById('gradeScoreBox').style.display = "none";
+    }
   }
-  
+
   function toggleAnswerKey() {
     const content = document.getElementById("answerKeyContent");
-    content.style.display = (content.style.display === "block") ? "none" : "block";
+    const btn = document.getElementById("toggleKeyBtn");
+    if (content.style.display === "block") {
+      content.style.display = "none";
+      btn.innerHTML = "&#128065;&#65039; Show Answer Key";
+    } else {
+      content.style.display = "block";
+      btn.innerHTML = "&#128584; Hide Answer Key";
+      setTimeout(drawAllLines, 50); 
+    }
   }
 </script>
 </body>
