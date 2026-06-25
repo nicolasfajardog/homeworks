@@ -7,33 +7,133 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Baloo+2:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #1a1a2e;
-    --paper: #fffef7;
-    --A: #e63946;
-    --A-light: #fde8ea;
-    --B: #2a9d8f;
-    --B-light: #d6f5f2;
-    --C: #e07b00;
-    --C-light: #fff0d6;
-    --D: #5c4fcf;
-    --D-light: #ebe8ff;
-    --E: #c77dff;
-    --E-light: #f5e6ff;
-    --rule: #d4cfc0;
-
-    /* Feedback Colors */
-    --correct: #2a9d8f;
-    --incorrect: #e63946;
-    --open-ans: #457b9d;
+    --ink: #1a1a2e; --paper: #fffef7; --B: #2a9d8f; --D: #5c4fcf; --E: #c77dff; --rule: #d4cfc0;
+    --correct: #2a9d8f; --incorrect: #e63946; --open-ans: #457b9d;
   }
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Nunito', sans-serif; background: #e8e4d9; color: var(--ink); padding: 32px 16px 60px; }
+  .page { max-width: 860px; margin: 0 auto; background: var(--paper); border-radius: 4px; box-shadow: 0 4px 40px rgba(0,0,0,0.18); padding: 40px; }
+  .logistics-box { background: #e3f2fd; border-left: 5px solid #1e88e5; padding: 18px 22px; margin-bottom: 32px; font-size: 14px; font-weight: 600; }
+  header { background: var(--ink); color: #fff; padding: 40px; margin: -40px -40px 40px -40px; border-radius: 4px 4px 0 0; }
+  header h1 { font-family: 'Baloo 2', sans-serif; font-size: 42px; color: #f4a261; }
+  .section-header { font-family: 'Baloo 2', sans-serif; font-size: 26px; margin: 40px 0 20px; border-bottom: 3px solid var(--rule); }
+  .exercise { margin-bottom: 36px; }
+  .ex-num { width: 26px; height: 26px; background: var(--ink); color: white; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; margin-right: 10px; font-size: 13px; }
+  .blank { border: none; border-bottom: 2px solid #aaa; background: transparent; min-width: 120px; text-align: center; font-weight: 700; outline: none; }
+  .blank-xl { width: 100%; text-align: left; }
+  .btn-check { background: var(--B); color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 6px; font-weight: 800; }
+  .is-correct { border-bottom: 2px solid var(--correct) !important; color: var(--correct) !important; }
+  .is-incorrect { border-bottom: 2px solid var(--incorrect) !important; color: var(--incorrect) !important; }
+  .btn-trans { background: none; border: none; cursor: pointer; }
+  .es-trans { display: none; background: #f0f7fa; padding: 10px; border-left: 3px solid #457b9d; margin-top: 5px; font-size: 13px; }
+  .project-container { border: 1px solid #ddd; padding: 20px; border-radius: 8px; margin: 20px 0; }
+  .ptable { width: 100%; border-collapse: collapse; }
+  .ptable td, .ptable th { border: 1px solid #ccc; padding: 8px; }
+  .badge { padding: 4px; border-radius: 4px; font-size: 11px; font-weight: bold; }
+  .completed { background: #4caf50; color: white; }
+  .inprogress { background: #2196f3; color: white; }
+  .pending { background: #ff9800; color: white; }
+  .notstarted { background: #9e9e9e; color: white; }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <h1>Previous Experiences</h1>
+    <p>Present Perfect &middot; ever, never, before, already, yet</p>
+  </header>
 
-  body {
-    font-family: 'Nunito', sans-serif;
-    background: #e8e4d9;
-    color: var(--ink);
-    min-height: 100vh;
+  <div class="logistics-box">
+    <h3>&#128203; Instructions</h3>
+    <p>Click the <strong>&#127760;</strong> icon for translations. Take screenshots for teacher-evaluated tasks.</p>
+  </div>
+
+  <section class="section-header">Part 1: Controlled Practice</section>
+
+  <!-- E1: Vocab Fill-in -->
+  <div class="exercise">
+    <div class="exercise-title"><span class="ex-num">1</span> Complete with the correct word. <button class="btn-trans" onclick="toggleT('t1')">&#127760;</button>
+      <div id="t1" class="es-trans">Completa usando: ever, never, before, already, yet, abroad.</div>
+    </div>
+    <p>1. I have <input type="text" data-ans="already" class="blank"> finished my degree.</p>
+    <p>2. Have you <input type="text" data-ans="ever" class="blank"> worked in marketing?</p>
+    <p>3. She has <input type="text" data-ans="never" class="blank"> spoken English in a meeting.</p>
+    <p>4. I haven't started my training <input type="text" data-ans="yet" class="blank">.</p>
+    <p>5. Have you worked <input type="text" data-ans="in a big company" class="blank">?</p>
+    <p>6. Yes, I have seen this presentation <input type="text" data-ans="before" class="blank">.</p>
+  </div>
+
+  <!-- E2: Matching (Simplified logic for brevity) -->
+  <div class="exercise">
+    <div class="exercise-title"><span class="ex-num">2</span> Match the parts.</div>
+    <p>1. Have you finished ... <input type="text" data-ans="your master's yet" class="blank"></p>
+    <p>2. I have never ... <input type="text" data-ans="volunteered in a community center" class="blank"></p>
+    <p>3. She has already ... <input type="text" data-ans="launched the campaign" class="blank"></p>
+  </div>
+
+  <!-- E3: Verb Forms -->
+  <div class="exercise">
+    <div class="exercise-title"><span class="ex-num">3</span> Conjugate (Have/Has + Participle).</div>
+    <p>1. (+) They <input type="text" data-ans="have finished" class="blank"> (finish) the project.</p>
+    <p>2. (-) She <input type="text" data-ans="hasn't volunteered" class="blank"> (not/volunteer) before.</p>
+    <p>3. (?) <input type="text" data-ans="Have" class="blank"> you <input type="text" data-ans="given" class="blank"> (give) the talk?</p>
+  </div>
+
+  <!-- E4: Parentheses Choice -->
+  <div class="exercise">
+    <div class="exercise-title"><span class="ex-num">4</span> Choose the correct adverb.</div>
+    <p>1. Have you finished <input type="text" data-ans="yet" class="blank">? (yet / already)</p>
+    <p>2. I have <input type="text" data-ans="never" class="blank"> volunteered. (ever / never)</p>
+  </div>
+
+  <!-- E5: Unscramble -->
+  <div class="exercise">
+    <div class="exercise-title"><span class="ex-num">5</span> Unscramble.</div>
+    <p><input type="text" data-ans="Have you ever volunteered?" class="blank blank-xl" placeholder="(ever / you / volunteered / have / ?)"></p>
+    <p><input type="text" data-ans="I haven't started my master's yet." class="blank blank-xl" placeholder="(haven't / master's / I / my / yet / started)"></p>
+  </div>
+
+  <section class="section-header">Part 2: Applied Context</section>
+
+  <!-- E6: Image Table -->
+  <div class="exercise">
+    <div class="exercise-title"><span class="ex-num">6</span> Analysis of image_9082a1.jpg</div>
+    <div class="project-container">
+      <table class="ptable">
+        <tr><td>1. Define Target Accounts</td><td><span class="badge completed">COMPLETED</span></td></tr>
+        <tr><td>7. Monitor Sales Performance</td><td><span class="badge inprogress">IN PROGRESS</span></td></tr>
+      </table>
+    </div>
+    <p>1. Has Sarah J. defined target accounts? <input type="text" data-ans="yes she has" class="blank"></p>
+    <p>2. Has Lisa D. completed monitoring sales? <input type="text" data-ans="no she hasn't" class="blank"></p>
+  </div>
+
+  <!-- E7/E8/E9: New Contexts -->
+  <div class="exercise"><div class="exercise-title"><span class="ex-num">7</span> Correct: I have never volunteered at a center. <input type="text" data-ans="i have never volunteered at a center" class="blank blank-xl"></div></div>
+  <div class="exercise"><div class="exercise-title"><span class="ex-num">8</span> Question for: Yes, I have given a presentation to international clients. <input type="text" data-ans="have you given a presentation to international clients" class="blank blank-xl"></div></div>
+  <div class="exercise"><div class="exercise-title"><span class="ex-num">9</span> Interview: Have you worked <input type="text" data-ans="as a remote freelancer" class="blank">? Yes, I have <input type="text" data-ans="already" class="blank"> done that.</div></div>
+
+  <!-- E10: Open -->
+  <div class="exercise">
+    <div class="exercise-title"><span class="ex-num">10</span> Final Challenge (Teacher evaluated).</div>
+    <textarea rows="5" style="width:100%"></textarea>
+  </div>
+
+  <button class="btn-check" onclick="checkAnswers()">Check</button>
+</div>
+
+<script>
+  function toggleT(id) { document.getElementById(id).style.display = (document.getElementById(id).style.display === "block") ? "none" : "block"; }
+  function checkAnswers() {
+    document.querySelectorAll('input[data-ans]').forEach(i => {
+      let val = i.value.trim().toLowerCase();
+      let answers = i.getAttribute('data-ans').toLowerCase().split('|');
+      i.className = answers.includes(val) ? "blank is-correct" : "blank is-incorrect";
+    });
+  }
+</script>
+</body>
+</html>
     padding: 32px 16px 60px;
   }
 
