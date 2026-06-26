@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Job Responsibilities & Hobbies &ndash; B2.1 English Worksheet</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Baloo+2:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a2e;
+    --paper: #fffef7;
+    --A: #e63946;
+    --A-light: #fde8ea;
+    --B: #2a9d8f;
+    --B-light: #d6f5f2;
+    --C: #e07b00;
+    --C-light: #fff0d6;
+    --D: #5c4fcf;
+    --D-light: #ebe8ff;
+    --E: #c77dff;
+    --E-light: #f5e6ff;
+    --rule: #d4cfc0;
+
+    /* Feedback Colors */
+    --correct: #2a9d8f;
+    --incorrect: #e63946;
+    --open-ans: #457b9d;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: #e8e4d9;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 32px 16px 60px;
+  }
+
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    background: var(--paper);
+    border-radius: 4px;
+    box-shadow: 0 4px 40px rgba(0,0,0,0.18);
+    overflow: hidden;
+  }
+
+  /* LOGISTICS BOX */
+  .logistics-box {
+    background: #e3f2fd;
+    border-left: 5px solid #1e88e5;
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 32px;
+  }
+  .logistics-box h3 {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-bottom: 10px;
+    color: #1e88e5;
+  }
+  .logistics-box p {
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 600;
+  }
+
+  /* HEADER */
+  header {
+    background: var(--ink);
+    color: #fff;
+    padding: 40px 48px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent, transparent 18px,
+      rgba(255,255,255,0.03) 18px, rgba(255,255,255,0.03) 36px
+    );
+  }
+  .header-badge {
+    display: inline-block;
+    background: #fff;
+    color: var(--ink);
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+  }
+  header h1 {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1.05;
+    margin-bottom: 8px;
+  }
+  header h1 span { color: #2a9d8f; }
+  header p {
+    font-size: 15px;
+    opacity: 0.7;
+    font-weight: 600;
+  }
+
+  .content { padding: 0 44px 44px; margin-top: 20px;}
+
+  /* SECTION DIVIDERS */
+  .section-header {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--ink);
+    margin: 40px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--rule);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-header span {
+    background: var(--ink);
+    color: white;
+    font-size: 14px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+  }
+
+  /* GRAMMAR BOX */
+  .grammar-box {
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 22px;
+    border-left: 5px solid;
+  }
+  .grammar-box.purple { background: var(--E-light); border-color: var(--E); }
+  .grammar-box.blue { background: var(--B-light); border-color: var(--B); }
+  .grammar-box h3 {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 10px;
+    opacity: 0.6;
+  }
+  .grammar-box p { font-size: 14px; line-height: 1.7; font-weight: 600; }
+  .grammar-box strong { font-weight: 900; }
+
+  /* TABLES */
+  .g-table-wrapper {
+    background: white;
+    border: 2px solid var(--B);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 24px;
+  }
+  .g-table-wrapper.purple-table { border-color: var(--E); }
+  .g-table-header {
+    background: var(--B);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-family: 'Baloo 2', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+  .purple-table .g-table-header { background: var(--E); }
+  .g-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .g-table td { padding: 10px 14px; border-bottom: 1px solid #eee; font-weight: 600; vertical-align: top; }
+  .g-table td:first-child { font-weight: 800; color: var(--B); width: 25%; border-right: 1px dashed #ccc; }
+  .purple-table td:first-child { color: var(--E); }
+  .g-table tr:last-child td { border-bottom: none; }
+
+  mark { background-color: #ffe066; padding: 0 4px; border-radius: 3px; font-weight: 800; color: #1a1a2e; }
+
+  /* EXERCISE BLOCK & INSTRUCTIONS */
+  .exercise { margin-bottom: 36px; }
+  .exercise-title {
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    border-bottom: 2px solid var(--rule);
+    padding-bottom: 8px;
+  }
+  .title-content { display: flex; flex-direction: column; gap: 4px; }
+  .title-main { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
+  .ex-num {
+    width: 26px; height: 26px;
+    background: var(--ink);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 900;
+    color: #fff;
+    flex-shrink: 0;
+    margin-top: -2px;
+  }
+
+  .btn-hint {
+    background: none; border: none; cursor: pointer; font-size: 16px; padding: 0 4px; transition: transform 0.2s;
+  }
+  .btn-hint:hover { transform: scale(1.1); }
+  .hint-box {
+    display: none; font-size: 13px; color: #1e88e5; font-weight: 700; background: #e3f2fd;
+    padding: 8px 14px; border-radius: 6px; border-left: 4px solid #1e88e5; margin-top: 6px;
+  }
+
+  .q-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+  .q-list li { font-size: 15px; font-weight: 600; display: block; line-height: 1.6; }
+  .q-num { font-weight: 900; opacity: 0.4; min-width: 20px; font-size: 13px; margin-right: 6px; }
+  .scrambled-box { color: #666; font-style: italic; margin-bottom: 6px; display: inline-block; }
+
+  .choice-box {
+    display: inline-flex; align-items: center; background: #f7f3e8; border: 1.5px solid var(--rule);
+    border-radius: 6px; padding: 6px 12px; font-size: 13px; font-weight: 800; color: #555;
+    letter-spacing: 0.5px; word-spacing: 4px; line-height: 1.8;
+  }
+
+  .blank {
+    border: none; border-bottom: 2px solid #aaa; background: transparent; min-width: 100px;
+    font-family: 'Nunito', sans-serif; font-size: 15px; font-weight: 700; color: #2b2b2b;
+    padding: 0 4px; outline: none; text-align: center; transition: all 0.2s;
+  }
+  .blank:focus { border-bottom-color: var(--ink); background: rgba(0,0,0,0.02); }
+  .blank-sm  { min-width: 60px; }
+  .blank-md  { min-width: 140px; }
+  .blank-lg  { min-width: 220px; }
+  .blank-xl  { display: block; width: 100%; text-align: left; padding: 4px 8px; margin-top: 6px; }
+
+  .is-correct { border-bottom: 2px solid var(--correct) !important; color: var(--correct) !important; background-color: rgba(42,157,143,0.06) !important; }
+  .is-incorrect { border-bottom: 2px solid var(--incorrect) !important; color: var(--incorrect) !important; background-color: rgba(230,57,70,0.06) !important; }
+  .is-open { border-bottom: 2px solid var(--open-ans) !important; color: var(--open-ans) !important; background-color: rgba(69,123,157,0.06) !important; }
+
+  /* MATCHING LINES */
+  .matching-workspace { position: relative; display: table; width: 100%; border-collapse: separate; border-spacing: 0px 14px; margin-top: 10px; }
+  .matching-column { display: table-cell; width: 44%; vertical-align: top; }
+  .matching-spacer { display: table-cell; width: 12%; }
+  .match-card {
+    background: #fdfbf7; border: 2px solid var(--rule); border-radius: 8px; padding: 12px 16px;
+    font-size: 14px; font-weight: 700; color: #333; cursor: pointer; position: relative;
+    user-select: none; transition: all 0.2s; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;
+  }
+  .match-card:hover { border-color: var(--ink); background: #f4f1ea; }
+  .match-card.selected { border-color: var(--D); background: var(--D-light); color: var(--ink); }
+  .match-dot {
+    width: 12px; height: 12px; background: #cbd5e1; border: 2px solid #94a3b8; border-radius: 50%;
+    position: absolute; top: 50%; transform: translateY(-50%);
+  }
+  .column-left .match-dot { right: -6px; }
+  .column-right .match-dot { left: -6px; }
+  .match-card.selected .match-dot { background: var(--D); border-color: var(--D); }
+  .matching-svg-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 5; }
+
+  /* READING CONTAINER */
+  .profile-container {
+    background: white; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; margin-bottom: 24px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); padding: 24px; display: flex; gap: 20px; align-items: flex-start;
+  }
+  .profile-pic { width: 80px; height: 80px; background: var(--B); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-size: 36px; flex-shrink: 0; }
+  .profile-content h2 { font-family: 'Baloo 2', sans-serif; color: var(--ink); font-size: 24px; margin-bottom: 2px; }
+  .profile-content h4 { font-size: 14px; color: var(--open-ans); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+  .profile-section { margin-bottom: 16px; font-size: 14px; line-height: 1.6; }
+  .profile-section strong { color: #1e3a5f; }
+
+  /* ACTIONS */
+  .action-bar { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 36px; }
+  .score-display { font-family: 'Baloo 2', sans-serif; font-size: 20px; font-weight: 800; color: var(--ink); display: none; background: #f0ede4; padding: 6px 20px; border-radius: 30px; border: 2px solid var(--rule); }
+  .button-group { display: flex; gap: 16px; }
+  .btn-action { font-family: 'Baloo 2', sans-serif; font-size: 15px; font-weight: 700; padding: 12px 32px; border: none; border-radius: 6px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.12); transition: all 0.2s; }
+  .btn-check { background: #2a9d8f; color: white; }
+  .btn-check:hover { background: #228074; transform: translateY(-1px); }
+  .btn-reset { background: #e7e5e0; color: var(--ink); }
+  .btn-reset:hover { background: #dcd9d2; transform: translateY(-1px); }
+  
+  .section-divider { height: 2px; background: repeating-linear-gradient(90deg, var(--rule) 0, var(--rule) 8px, transparent 8px, transparent 16px); margin: 44px 0; }
+
+  /* ANSWER KEY */
+  .answer-key-wrapper { margin-top: 48px; border-top: 3px solid var(--ink); padding-top: 20px; }
+  .btn-toggle-key { background: var(--ink); color: #fff; font-family: 'Baloo 2', sans-serif; font-size: 13px; font-weight: 700; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; letter-spacing: 0.5px; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+  .btn-toggle-key:hover { background: #2e2e4e; transform: translateY(-1px); }
+  .answer-key-content { display: none; margin-top: 24px; }
+  .answer-key h2 { font-family: 'Baloo 2', sans-serif; font-size: 20px; font-weight: 800; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+  .answer-key h2::after { content: '(Teacher Copy)'; font-size: 12px; background: var(--ink); color: #fff; padding: 3px 10px; border-radius: 20px; letter-spacing: 1px; font-weight: 700; }
+  .key-section { margin-bottom: 20px; }
+  .key-section h3 { font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; opacity: 0.5; }
+  .key-list { font-size: 14px; font-weight: 600; line-height: 2; column-count: 2; column-gap: 32px; }
+  .key-list span { font-weight: 900; }
+  .pts-badge { display: inline-block; font-family: 'Baloo 2', sans-serif; font-size: 10px; font-weight: 800; letter-spacing: 0.5px; padding: 2px 8px; border-radius: 10px; margin-left: 6px; background: rgba(0,0,0,0.08); color: var(--ink); }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; }
+    .action-bar, .btn-hint, .answer-key-wrapper, .matching-svg-container { display: none !important; }
+    .blank { border-bottom-color: #000; }
+  }
+
+  @media (max-width: 600px) {
+    .content { padding: 0 20px 36px; }
+    header { padding: 28px 20px 22px; }
+    header h1 { font-size: 34px; }
+    .key-list { column-count: 1; }
+    .blank-lg, .blank-xl { width: 100%; min-width: 100%; }
+    .button-group { flex-direction: column; align-items: stretch; width: 100%; }
+    .btn-action { text-align: center; }
+    .matching-workspace { display: block; }
+    .matching-column { display: block; width: 100%; }
+    .matching-spacer { display: none; }
+    .column-left .match-dot, .column-right .match-dot { display: none; }
+    .matching-svg-container { display: none !important; }
+    .profile-container { flex-direction: column; align-items: center; text-align: center; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="header-badge">ESL Worksheet &middot; B2.1</div>
+    <h1>Job <span>Responsibilities</span></h1>
+    <p>Present & Past Simple &middot; Roles &middot; Work Environment</p>
+  </header>
+
+  <div class="content">
+
+    <div class="logistics-box">
+      <h3>&#128203; Worksheet Guide</h3>
+      <p>Welcome! Click the <strong>&#127760;</strong> button next to the instructions to see helpful grammar and vocabulary hints based on your class notes.</p>
+      <p style="margin-top:8px">When you finish, the system will auto-grade most questions. For the final writing exercise, take a <strong>screenshot</strong> of your paragraph and send it to your teacher via WhatsApp.</p>
+    </div>
+
+    <!-- GRAMMAR & VOCABULARY REFERENCE -->
+    <div class="g-table-wrapper purple-table">
+      <div class="g-table-header">&#128202; Vocabulary Focus: Business & Work</div>
+      <table class="g-table">
+        <tr>
+          <td>Company Sizes</td>
+          <td><strong>small</strong>, <strong>medium-sized</strong>, <strong>big</strong>, <strong>start-up</strong>, <strong>multinational</strong></td>
+        </tr>
+        <tr>
+          <td>Company Structure</td>
+          <td><strong>headquarters</strong> (main office), <strong>subsidiaries</strong>, <strong>branches</strong></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="grammar-box purple">
+      <h3>&#128204; Grammar Notes: Describing your role</h3>
+      <p>Pay close attention to the prepositions and verbs we use to describe our jobs naturally.</p>
+      <ul style="margin-left: 20px; font-size: 14px; font-weight: 600; line-height: 1.7; margin-top: 8px;">
+        <li><strong>Position & Employer:</strong><br>
+          <em>"I work <strong>as</strong> an Industrial Engineer."</em> (Profession)<br>
+          <em>"I work <strong>for</strong> a company in the oil and gas industry."</em> (Employer/Industry)
+        </li>
+        <li><strong>Responsibilities (-ing vs Base Form):</strong><br>
+          <em>"I am responsible <strong>for paying</strong> the custom duties."</em> (Prep + <strong>-ing</strong>)<br>
+          <em>"I am in charge <strong>of managing</strong> the freight."</em> (Prep + <strong>-ing</strong>)<br>
+          <em>"I have <strong>to stay</strong> updated on trade policies."</em> (Infinitive <strong>to + base verb</strong>)
+        </li>
+      </ul>
+    </div>
+
+    <div class="section-header">
+      <span>Part 1</span> Controlled Structure Practice
+    </div>
+
+    <!-- EXERCISE 1: FILL IN THE BLANKS (VOCAB) -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">1</span>
+        <div class="title-content">
+          <div class="title-main">
+            Complete the sentences with words from the box.
+            <span class="pts-badge">1 pt each &middot; 6 pts</span>
+            <button class="btn-hint" onclick="toggleT('t-ex1')" title="Hint">&#127760;</button>
+          </div>
+          <div id="t-ex1" class="hint-box">&#128161; Hint: Remember we work <em>as</em> a profession, but we work <em>for</em> a company. Pay attention to company structures (multinational vs start-up).</div>
+        </div>
+      </div>
+      <p style="margin-bottom: 12px;">
+        <span class="choice-box">
+          as &nbsp;|&nbsp; for &nbsp;|&nbsp; multinational &nbsp;|&nbsp; headquarters &nbsp;|&nbsp; subsidiaries &nbsp;|&nbsp; start-up
+        </span>
+      </p>
+      <ol class="q-list">
+        <li><span class="q-num">1.</span> I work <input type="text" data-ans="as" class="blank blank-sm"> a logistic billing specialist.</li>
+        <li><span class="q-num">2.</span> My company is a huge <input type="text" data-ans="multinational" class="blank blank-md"> with offices worldwide.</li>
+        <li><span class="q-num">3.</span> She works <input type="text" data-ans="for" class="blank blank-sm"> a medium-sized company in the mining industry.</li>
+        <li><span class="q-num">4.</span> The main office, or <input type="text" data-ans="headquarters" class="blank blank-md">, is located in Madrid.</li>
+        <li><span class="q-num">5.</span> They opened three new <input type="text" data-ans="subsidiaries" class="blank blank-md"> in Latin America last year.</li>
+        <li><span class="q-num">6.</span> Before this, I worked at a small tech <input type="text" data-ans="start-up|startup" class="blank blank-md">.</li>
+      </ol>
+    </div>
+
+    <!-- EXERCISE 2: ING VS BASE FORM -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">2</span>
+        <div class="title-content">
+          <div class="title-main">
+            Complete the sentences with the correct form of the verb in parentheses.
+            <span class="pts-badge">1 pt each &middot; 8 pts</span>
+            <button class="btn-hint" onclick="toggleT('t-ex2')" title="Hint">&#127760;</button>
+          </div>
+          <div id="t-ex2" class="hint-box">&#128161; Hint: Use the <em>-ing</em> form after prepositions like "for" and "of" (responsible for, in charge of). Use the <em>base form</em> after "have to" or "had to".</div>
+        </div>
+      </div>
+      <ol class="q-list">
+        <li><span class="q-num">1.</span> I am responsible for <input type="text" data-ans="paying" class="blank blank-md"> (pay) all the custom duties in Mexico.</li>
+        <li><span class="q-num">2.</span> Currently, I have to <input type="text" data-ans="stay" class="blank blank-md"> (stay) updated on international trade policies.</li>
+        <li><span class="q-num">3.</span> She is in charge of <input type="text" data-ans="managing" class="blank blank-md"> (manage) the freight domestically and internationally.</li>
+        <li><span class="q-num">4.</span> Back then, I had to <input type="text" data-ans="create" class="blank blank-md"> (create) manuals about internship situations.</li>
+        <li><span class="q-num">5.</span> They are responsible for <input type="text" data-ans="analyzing" class="blank blank-md"> (analyze) the new operational costs.</li>
+        <li><span class="q-num">6.</span> Did you have to <input type="text" data-ans="travel" class="blank blank-md"> (travel) to the headquarters every week?</li>
+        <li><span class="q-num">7.</span> We were in charge of <input type="text" data-ans="organizing" class="blank blank-md"> (organize) the escape room event for our hobbies.</li>
+        <li><span class="q-num">8.</span> I don't have to <input type="text" data-ans="bill" class="blank blank-md"> (bill) the clients directly in my current position.</li>
+      </ol>
+    </div>
+
+    <!-- EXERCISE 3: INTERACTIVE MATCHING WITH LINES -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">3</span>
+        <div class="title-content">
+          <div class="title-main">
+            Match the sentence beginnings on the left with the endings on the right.
+            <span class="pts-badge">1 pt each &middot; 6 pts</span>
+            <button class="btn-hint" onclick="toggleT('t-ex3')" title="Hint">&#127760;</button>
+          </div>
+          <div id="t-ex3" class="hint-box">&#128161; Hint: Pay attention to grammar connections (e.g., "in charge <em>of</em>", "responsible <em>for</em>"). Click a card on the left, then click its match on the right.</div>
+        </div>
+      </div>
+
+      <div class="matching-workspace" id="matchingWorkspace">
+        <svg class="matching-svg-container" id="matchingSvg"></svg>
+        
+        <div class="matching-column column-left">
+          <div class="match-card" data-id="left-1" onclick="handleCardClick(this, 'left')">
+            <span>What do you do...</span>
+            <div class="match-dot"></div>
+          </div>
+          <div class="match-card" data-id="left-2" onclick="handleCardClick(this, 'left')">
+            <span>I work as an...</span>
+            <div class="match-dot"></div>
+          </div>
+          <div class="match-card" data-id="left-3" onclick="handleCardClick(this, 'left')">
+            <span>I am in charge of...</span>
+            <div class="match-dot"></div>
+          </div>
+          <div class="match-card" data-id="left-4" onclick="handleCardClick(this, 'left')">
+            <span>My previous job was...</span>
+            <div class="match-dot"></div>
+          </div>
+          <div class="match-card" data-id="left-5" onclick="handleCardClick(this, 'left')">
+            <span>Do you have to...</span>
+            <div class="match-dot"></div>
+          </div>
+          <div class="match-card" data-id="left-6" onclick="handleCardClick(this, 'left')">
+            <span>The company has several...</span>
+            <div class="match-dot"></div>
+          </div>
+        </div>
+
+        <div class="matching-spacer"></div>
+
+        <div class="matching-column column-right">
+          <div class="match-card" data-id="right-1" onclick="handleCardClick(this, 'right')">
+            <div class="match-dot"></div>
+            <span>paying every bill related to freight.</span>
+          </div>
+          <div class="match-card" data-id="right-2" onclick="handleCardClick(this, 'right')">
+            <div class="match-dot"></div>
+            <span>for a living?</span>
+          </div>
+          <div class="match-card" data-id="right-3" onclick="handleCardClick(this, 'right')">
+            <div class="match-dot"></div>
+            <span>branches across the country.</span>
+          </div>
+          <div class="match-card" data-id="right-4" onclick="handleCardClick(this, 'right')">
+            <div class="match-dot"></div>
+            <span>stay updated on trade policies?</span>
+          </div>
+          <div class="match-card" data-id="right-5" onclick="handleCardClick(this, 'right')">
+            <div class="match-dot"></div>
+            <span>Industrial Engineer.</span>
+          </div>
+          <div class="match-card" data-id="right-6" onclick="handleCardClick(this, 'right')">
+            <div class="match-dot"></div>
+            <span>in a medium-sized mining company.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXERCISE 4: PAST VS PRESENT -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">4</span>
+        <div class="title-content">
+          <div class="title-main">
+            Conjugate the verb in the Simple Present or Simple Past based on the <mark>highlighted</mark> time marker. Follow the (+), (-), or (?) instruction.
+            <span class="pts-badge">1 pt each &middot; 8 pts</span>
+            <button class="btn-hint" onclick="toggleT('t-ex4')" title="Hint">&#127760;</button>
+          </div>
+          <div id="t-ex4" class="hint-box">&#128161; Hint: "Currently", "nowadays", or "every day" = Present Simple. "Back then", "ten years ago", or "last year" = Past Simple. Remember the auxiliary verbs (do/does/did) for negatives and questions!</div>
+        </div>
+      </div>
+      <ol class="q-list">
+        <li><span class="q-num">1.</span> <mark>Currently</mark>, I (+) <input type="text" data-ans="work" class="blank blank-sm"> (work) in the oil and gas industry.</li>
+        <li><span class="q-num">2.</span> <mark>Back then</mark>, I (-) <input type="text" data-ans="was not|wasn't" class="blank blank-md"> (not / be) responsible for billing.</li>
+        <li><span class="q-num">3.</span> (?) <input type="text" data-ans="Did" class="blank blank-sm"> you <input type="text" data-ans="have" class="blank blank-sm"> (have) to travel <mark>every week in your previous job</mark>?</li>
+        <li><span class="q-num">4.</span> She (+) <input type="text" data-ans="studied" class="blank blank-md"> (study) at the Escuela de Ingenieros <mark>ten years ago</mark>.</li>
+        <li><span class="q-num">5.</span> <mark>Nowadays</mark>, he (-) <input type="text" data-ans="does not manage|doesn't manage" class="blank blank-md"> (not / manage) the international freight.</li>
+        <li><span class="q-num">6.</span> (?) <input type="text" data-ans="Does" class="blank blank-sm"> she <input type="text" data-ans="work" class="blank blank-sm"> (work) at the headquarters <mark>right now</mark>?</li>
+        <li><span class="q-num">7.</span> We (+) <input type="text" data-ans="opened" class="blank blank-md"> (open) a new subsidiary <mark>last year</mark>.</li>
+        <li><span class="q-num">8.</span> <mark>Every day</mark>, they (+) <input type="text" data-ans="pay" class="blank blank-md"> (pay) custom duties in Mexico.</li>
+      </ol>
+    </div>
+
+    <!-- EXERCISE 5: UNSCRAMBLE -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">5</span>
+        <div class="title-content">
+          <div class="title-main">
+            Unscramble the words to formulate correct sentences or questions.
+            <span class="pts-badge">2 pts each &middot; 12 pts</span>
+            <button class="btn-hint" onclick="toggleT('t-ex5')" title="Hint">&#127760;</button>
+          </div>
+          <div id="t-ex5" class="hint-box">&#128161; Hint: Pay close attention to question words (What, Who) and prepositions (for, of).</div>
+        </div>
+      </div>
+      <ol class="q-list">
+        <li>
+          <span class="q-num">1.</span> <span class="scrambled-box">(a / I / multinational / for / work / company)</span>
+          <input type="text" data-ans="I work for a multinational company.|I work for a multinational company" class="blank blank-xl" placeholder="Type here...">
+        </li>
+        <li>
+          <span class="q-num">2.</span> <span class="scrambled-box">(responsible / all / am / I / for / duties / paying)</span>
+          <input type="text" data-ans="I am responsible for paying all duties.|I am responsible for paying all duties|I'm responsible for paying all duties.|I'm responsible for paying all duties" class="blank blank-xl" placeholder="Type here...">
+        </li>
+        <li>
+          <span class="q-num">3.</span> <span class="scrambled-box">(you / what / for / do / living / do / a / ?)</span>
+          <input type="text" data-ans="What do you do for a living?|What do you do for a living" class="blank blank-xl" placeholder="Type here...">
+        </li>
+        <li>
+          <span class="q-num">4.</span> <span class="scrambled-box">(have / she / stay / updated / to / didn't)</span>
+          <input type="text" data-ans="She didn't have to stay updated.|She didn't have to stay updated|She did not have to stay updated.|She did not have to stay updated" class="blank blank-xl" placeholder="Type here...">
+        </li>
+        <li>
+          <span class="q-num">5.</span> <span class="scrambled-box">(charge / who / of / is / freight / the / ?)</span>
+          <input type="text" data-ans="Who is in charge of the freight?|Who is in charge of the freight" class="blank blank-xl" placeholder="Type here...">
+        </li>
+        <li>
+          <span class="q-num">6.</span> <span class="scrambled-box">(analyst / worked / a / as / data / he)</span>
+          <input type="text" data-ans="He worked as a data analyst.|He worked as a data analyst" class="blank blank-xl" placeholder="Type here...">
+        </li>
+      </ol>
+    </div>
+
+    <!-- EXERCISE 6: CREATE THE QUESTION -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">6</span>
+        <div class="title-content">
+          <div class="title-main">
+            Create a question for the given answer using the hint word in parenthesis.
+            <span class="pts-badge">2 pts each &middot; 12 pts</span>
+            <button class="btn-hint" onclick="toggleT('t-ex6')" title="Hint">&#127760;</button>
+          </div>
+          <div id="t-ex6" class="hint-box">&#128161; Hint: Look at the tense of the answer (Present or Past). Use "Did" for past and "Do/Does" for present.</div>
+        </div>
+      </div>
+      <ol class="q-list">
+        <li>
+          <span class="q-num">1.</span> <strong>Answer:</strong> Yes, I had to create manuals. <em>(Did...)</em><br>
+          <strong>Question:</strong> <input type="text" data-ans="Did you have to create manuals?|Did you have to create manuals" class="blank blank-xl">
+        </li>
+        <li>
+          <span class="q-num">2.</span> <strong>Answer:</strong> I am an Industrial Engineer. <em>(What...)</em><br>
+          <strong>Question:</strong> <input type="text" data-ans="What is your profession?|What is your profession|What do you do?|What do you do|What do you do for a living?|What do you do for a living" class="blank blank-xl">
+        </li>
+        <li>
+          <span class="q-num">3.</span> <strong>Answer:</strong> I work in the oil and gas industry. <em>(Where...)</em><br>
+          <strong>Question:</strong> <input type="text" data-ans="Where do you work?|Where do you work" class="blank blank-xl">
+        </li>
+        <li>
+          <span class="q-num">4.</span> <strong>Answer:</strong> No, she doesn't have to pay the bills. <em>(Does...)</em><br>
+          <strong>Question:</strong> <input type="text" data-ans="Does she have to pay the bills?|Does she have to pay the bills" class="blank blank-xl">
+        </li>
+        <li>
+          <span class="q-num">5.</span> <strong>Answer:</strong> I was responsible for custom duties. <em>(What...)</em><br>
+          <strong>Question:</strong> <input type="text" data-ans="What were you responsible for?|What were you responsible for" class="blank blank-xl">
+        </li>
+        <li>
+          <span class="q-num">6.</span> <strong>Answer:</strong> Yes, they opened a new branch last year. <em>(Did...)</em><br>
+          <strong>Question:</strong> <input type="text" data-ans="Did they open a new branch last year?|Did they open a new branch last year" class="blank blank-xl">
+        </li>
+      </ol>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- EXERCISES: LESS CONTROLLED                 -->
+    <!-- ========================================== -->
+    <div class="section-divider"></div>
+    <div class="section-header">
+      <span>Part 2</span> Applied Reading &amp; Context
+    </div>
+
+    <!-- EXERCISE 7: CORRECT THE MISTAKE -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">7</span>
+        <div class="title-content">
+          <div class="title-main">
+            Find and correct the mistake in each sentence. Type the entire correct sentence.
+            <span class="pts-badge">2 pts each &middot; 12 pts</span>
+            <button class="btn-hint" onclick="toggleT('t-ex7')" title="Hint">&#127760;</button>
+          </div>
+          <div id="t-ex7" class="hint-box">&#128161; Hint: Double check prepositions (in vs as vs for), verb tenses, and the rules for -ing.</div>
+        </div>
+      </div>
+      <ol class="q-list">
+        <li>
+          <span class="q-num">1.</span> I am in charge to pay the bills.<br>
+          &rarr; <input type="text" data-ans="I am in charge of paying the bills.|I'm in charge of paying the bills.|I am in charge of paying the bills|I'm in charge of paying the bills" class="blank blank-xl">
+        </li>
+        <li>
+          <span class="q-num">2.</span> I work like a billing specialist.<br>
+          &rarr; <input type="text" data-ans="I work as a billing specialist.|I work as a billing specialist" class="blank blank-xl">
+        </li>
+        <li>
+          <span class="q-num">3.</span> Did you had to stay updated?<br>
+          &rarr; <input type="text" data-ans="Did you have to stay updated?|Did you have to stay updated" class="blank blank-xl">
+        </li>
+        <li>
+          <span class="q-num">4.</span> Back then, I work for a small start-up.<br>
+          &rarr; <input type="text" data-ans="Back then, I worked for a small start-up.|Back then, I worked for a small startup.|Back then I worked for a small start-up.|Back then I worked for a small startup." class="blank blank-xl">
+        </li>
+        <li>
+          <span class="q-num">5.</span> I am responsible for create the manuals.<br>
+          &rarr; <input type="text" data-ans="I am responsible for creating the manuals.|I am responsible for creating the manuals|I am responsible for creating manuals.|I am responsible for creating manuals" class="blank blank-xl">
+        </li>
+        <li>
+          <span class="q-num">6.</span> Currently, I worked at the headquarters.<br>
+          &rarr; <input type="text" data-ans="Currently, I work at the headquarters.|Currently, I work at the headquarters|Currently I work at the headquarters.|Currently I work at the headquarters" class="blank blank-xl">
+        </li>
+      </ol>
+    </div>
+
+    <!-- EXERCISE 8: READING COMPREHENSION -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">8</span>
+        <div class="title-content">
+          <div class="title-main">
+            Read the professional profile and answer the questions with short answers.
+            <span class="pts-badge">2 pts each &middot; 10 pts</span>
+            <button class="btn-hint" onclick="toggleT('t-ex8')" title="Hint">&#127760;</button>
+          </div>
+          <div id="t-ex8" class="hint-box">&#128161; Hint: Short answers are enough (e.g., "A data analyst" or "No, he doesn't").</div>
+        </div>
+      </div>
+
+      <div class="profile-container">
+        <div class="profile-pic">&#128188;</div>
+        <div class="profile-content">
+          <h2>Alex Rivera</h2>
+          <h4>Logistics Billing Specialist</h4>
+          <div class="profile-section">
+            <strong>&#128205; Current Position:</strong> Logistics Billing Specialist at GlobalFreight (Multinational).<br>
+            <strong>&#128203; Responsibilities:</strong> I am in charge of paying international freight bills. I am also responsible for tracking customs duties in Mexico.<br>
+            <strong>&#127918; Escape Hobbies:</strong> Doing escape rooms with my friends to disconnect from the numbers!
+          </div>
+          <div class="profile-section">
+            <strong>&#9204;&#65039; Previous Position:</strong> Data Analyst at MineTech (Medium-sized mining company).<br>
+            <strong>&#128203; Responsibilities:</strong> I had to create data manuals and analyze daily operational costs.
+          </div>
+        </div>
+      </div>
+      
+      <ol class="q-list">
+        <li>
+          <span class="q-num">1.</span> What is Alex's current profession?<br>
+          &rarr; <input type="text" data-ans="Logistics Billing Specialist|A Logistics Billing Specialist|Logistic Billing Specialist" class="blank blank-lg">
+        </li>
+        <li>
+          <span class="q-num">2.</span> Does Alex work for a start-up now?<br>
+          &rarr; <input type="text" data-ans="No, he doesn't.|No, he doesn't|No" class="blank blank-lg">
+        </li>
+        <li>
+          <span class="q-num">3.</span> What was his previous job?<br>
+          &rarr; <input type="text" data-ans="Data Analyst|A Data Analyst|He was a Data Analyst." class="blank blank-lg">
+        </li>
+        <li>
+          <span class="q-num">4.</span> What did he have to create in his past job?<br>
+          &rarr; <input type="text" data-ans="Data manuals|Data manuals.|Manuals|He had to create data manuals." class="blank blank-lg">
+        </li>
+        <li>
+          <span class="q-num">5.</span> What is his hobby to escape routine?<br>
+          &rarr; <input type="text" data-ans="Escape rooms|Doing escape rooms|Escape rooms.|Doing escape rooms." class="blank blank-lg">
+        </li>
+      </ol>
+    </div>
+
+    <!-- EXERCISE 9: DIALOGUE COMPLETION -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">9</span>
+        <div class="title-content">
+          <div class="title-main">
+            Complete the job interview.
+            <span class="pts-badge">1 pt each &middot; 8 pts</span>
+            <button class="btn-hint" onclick="toggleT('t-ex9')" title="Hint">&#127760;</button>
+          </div>
+          <div id="t-ex9" class="hint-box">&#128161; Hint: Use the class vocabulary (living, responsibilities, previous, sized, etc.) to fill the gaps naturally.</div>
+        </div>
+      </div>
+      <ul class="q-list" style="background:#f9f9f9; padding:20px; border-radius:8px; border:1px solid #ddd; list-style:none;">
+        <li><strong>Interviewer:</strong> So, what do you do for a <input type="text" data-ans="living" class="blank blank-sm">?</li>
+        <li><strong>Candidate:</strong> I <input type="text" data-ans="work" class="blank blank-sm"> as an Industrial Engineer <input type="text" data-ans="for" class="blank blank-sm"> a multinational company.</li>
+        <li><strong>Interviewer:</strong> That's interesting! What are your <input type="text" data-ans="responsibilities" class="blank blank-md"> there?</li>
+        <li><strong>Candidate:</strong> I am <input type="text" data-ans="responsible" class="blank blank-sm"> for managing the supply chain. I am also in <input type="text" data-ans="charge" class="blank blank-sm"> of contacting our subsidiaries.</li>
+        <li><strong>Interviewer:</strong> And what was your <input type="text" data-ans="previous" class="blank blank-sm"> job?</li>
+        <li><strong>Candidate:</strong> I worked at a medium-<input type="text" data-ans="sized" class="blank blank-sm"> mining company. I had to create billing manuals.</li>
+      </ul>
+    </div>
+
+    <!-- EXERCISE 10: FINAL CHALLENGE (OPEN) -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">10</span>
+        <div class="title-content">
+          <div class="title-main">
+            Final Challenge &ndash; Talk About Your Experience! <em style="font-weight:400; opacity:0.7;">(Teacher evaluated)</em>
+            <span class="pts-badge">15 pts</span>
+            <button class="btn-hint" onclick="toggleT('t-ex10')" title="Hint">&#127760;</button>
+          </div>
+          <div id="t-ex10" class="hint-box">&#128161; Hint: Combine everything! Talk about what you do now, what you did in the past, and what you do for fun.</div>
+        </div>
+      </div>
+      <p style="font-size:13px;font-weight:700;opacity:0.6;margin-bottom:12px">
+        Write a paragraph (5-8 lines) about your job and hobbies. You MUST answer these questions:<br>
+        - <em>What do you do for a living and what kind of company do you work for?</em><br>
+        - <em>What are your current responsibilities? (Use "responsible for" / "in charge of")</em><br>
+        - <em>What was your previous job and what did you have to do?</em><br>
+        - <em>What are your escape hobbies?</em>
+      </p>
+      <textarea
+        data-ans="OPEN"
+        rows="8"
+        placeholder="Write your paragraph here...&#10;Example: Currently, I work as an Industrial Engineer for a multinational. I am responsible for..."
+        style="width:100%;border:2px dashed #ccc;border-radius:8px;padding:14px;font-family:'Nunito',sans-serif;font-size:15px;font-weight:600;color:#2b2b2b;outline:none;resize:vertical;background:#fafafa;transition:border-color 0.2s;"
+        onfocus="this.style.borderColor='#1a1a2e'"
+        onblur="this.style.borderColor='#ccc'"
+      ></textarea>
+      <p style="font-size:14px; font-weight:800; color:#e63946; margin-top:12px; background: var(--A-light); padding: 10px; border-radius: 6px; border: 1px solid var(--A); display: inline-block;">
+        &#128242; Reminder: Take a screenshot of your paragraph to send to your teacher via WhatsApp.
+      </p>
+    </div>
+
+    <!-- ACTION BAR -->
+    <div class="action-bar">
+      <div class="score-display" id="gradeScoreBox">Score: 0</div>
+      <div class="button-group">
+        <button class="btn-action btn-check" onclick="checkStudentAnswers()">&#10004;&#65039; Check Answers</button>
+        <button class="btn-action btn-reset" onclick="resetWorksheet()">&#128260; Clear Sheet</button>
+      </div>
+    </div>
+
+    <!-- ANSWER KEY -->
+    <div class="answer-key-wrapper">
+      <button class="btn-toggle-key" id="toggleKeyBtn" onclick="toggleAnswerKey()">
+        &#128065;&#65039; Show Answer Key
+      </button>
+
+      <div class="answer-key-content" id="answerKeyContent">
+        <div class="answer-key">
+          <h2>Answer Key</h2>
+
+          <div class="key-section">
+            <h3>1. Fill in the blanks (Vocab)</h3>
+            <div class="key-list">
+              <div>1. <span>as</span></div>
+              <div>2. <span>multinational</span></div>
+              <div>3. <span>for</span></div>
+              <div>4. <span>headquarters</span></div>
+              <div>5. <span>subsidiaries</span></div>
+              <div>6. <span>start-up</span></div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>2. ING vs Base Form</h3>
+            <div class="key-list">
+              <div>1. <span>paying</span></div>
+              <div>2. <span>stay</span></div>
+              <div>3. <span>managing</span></div>
+              <div>4. <span>create</span></div>
+              <div>5. <span>analyzing</span></div>
+              <div>6. <span>travel</span></div>
+              <div>7. <span>organizing</span></div>
+              <div>8. <span>bill</span></div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>3. Matching Lines Pairs</h3>
+            <div class="key-list" style="column-count: 1;">
+              <div>left-1 &rarr; <span>right-2</span> (What do you do... for a living?)</div>
+              <div>left-2 &rarr; <span>right-5</span> (I work as an... Industrial Engineer.)</div>
+              <div>left-3 &rarr; <span>right-1</span> (I am in charge of... paying every bill related to freight.)</div>
+              <div>left-4 &rarr; <span>right-6</span> (My previous job was... in a medium-sized mining company.)</div>
+              <div>left-5 &rarr; <span>right-4</span> (Do you have to... stay updated on trade policies?)</div>
+              <div>left-6 &rarr; <span>right-3</span> (The company has several... branches across the country.)</div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>4. Past vs Present</h3>
+            <div class="key-list">
+              <div>1. <span>work</span></div>
+              <div>2. <span>was not / wasn't</span></div>
+              <div>3. <span>Did / have</span></div>
+              <div>4. <span>studied</span></div>
+              <div>5. <span>does not / doesn't manage</span></div>
+              <div>6. <span>Does / work</span></div>
+              <div>7. <span>opened</span></div>
+              <div>8. <span>pay</span></div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>5. Unscramble</h3>
+            <div class="key-list" style="column-count: 1;">
+              <div>1. <span>I work for a multinational company.</span></div>
+              <div>2. <span>I am responsible for paying all duties.</span></div>
+              <div>3. <span>What do you do for a living?</span></div>
+              <div>4. <span>She didn't have to stay updated.</span></div>
+              <div>5. <span>Who is in charge of the freight?</span></div>
+              <div>6. <span>He worked as a data analyst.</span></div>
+            </div>
+          </div>
+          
+          <div class="key-section">
+            <h3>6. Create the Question</h3>
+            <div class="key-list" style="column-count: 1;">
+              <div>1. <span>Did you have to create manuals?</span></div>
+              <div>2. <span>What is your profession?</span> (or What do you do for a living?)</div>
+              <div>3. <span>Where do you work?</span></div>
+              <div>4. <span>Does she have to pay the bills?</span></div>
+              <div>5. <span>What were you responsible for?</span></div>
+              <div>6. <span>Did they open a new branch last year?</span></div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>7. Correct the Mistake</h3>
+            <div class="key-list" style="column-count: 1;">
+              <div>1. <span>I am in charge of paying the bills.</span></div>
+              <div>2. <span>I work as a billing specialist.</span></div>
+              <div>3. <span>Did you have to stay updated?</span></div>
+              <div>4. <span>Back then, I worked for a small start-up.</span></div>
+              <div>5. <span>I am responsible for creating the manuals.</span></div>
+              <div>6. <span>Currently, I work at the headquarters.</span></div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>8. Reading Comprehension</h3>
+            <div class="key-list" style="column-count: 1;">
+              <div>1. <span>Logistics Billing Specialist</span></div>
+              <div>2. <span>No, he doesn't.</span></div>
+              <div>3. <span>Data Analyst</span></div>
+              <div>4. <span>Data manuals</span></div>
+              <div>5. <span>Escape rooms</span></div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>9. Dialogue Completion</h3>
+            <div class="key-list">
+              <div>1. <span>living</span></div>
+              <div>2. <span>work</span></div>
+              <div>3. <span>for</span></div>
+              <div>4. <span>responsibilities</span></div>
+              <div>5. <span>responsible</span></div>
+              <div>6. <span>charge</span></div>
+              <div>7. <span>previous</span></div>
+              <div>8. <span>sized</span></div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>10. Final Challenge</h3>
+            <div class="key-list" style="column-count: 1;">
+              <div>Teacher-evaluated open writing paragraph. Check for use of present/past simple, prepositions, and vocabulary. Teacher checks via WhatsApp screenshot.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  function toggleT(id) {
+    const el = document.getElementById(id);
+    if (el.style.display === "block") {
+      el.style.display = "none";
+    } else {
+      el.style.display = "block";
+    }
+  }
+
+  // INTERACTIVE LINE MATCHING SYSTEM
+  let selectedLeftCard = null;
+  let matches = {}; 
+  const correctMatches = {
+    'left-1': 'right-2',
+    'left-2': 'right-5',
+    'left-3': 'right-1',
+    'left-4': 'right-6',
+    'left-5': 'right-4',
+    'left-6': 'right-3'
+  };
+
+  function handleCardClick(card, side) {
+    if (document.getElementById('gradeScoreBox').style.display === "block") return; 
+
+    if (side === 'left') {
+      if (selectedLeftCard) {
+        selectedLeftCard.classList.remove('selected');
+      }
+      selectedLeftCard = card;
+      card.classList.add('selected');
+    } else {
+      if (selectedLeftCard) {
+        const leftId = selectedLeftCard.getAttribute('data-id');
+        const rightId = card.getAttribute('data-id');
+        
+        for (let lKey in matches) {
+          if (matches[lKey] === rightId) delete matches[lKey];
+        }
+
+        matches[leftId] = rightId;
+        selectedLeftCard.classList.remove('selected');
+        selectedLeftCard = null;
+        
+        drawAllLines();
+      }
+    }
+  }
+
+  function drawAllLines() {
+    const svg = document.getElementById('matchingSvg');
+    if (!svg) return;
+    svg.innerHTML = ''; 
+    const workspace = document.getElementById('matchingWorkspace');
+    const workspaceRect = workspace.getBoundingClientRect();
+
+    for (let leftId in matches) {
+      const rightId = matches[leftId];
+      const leftEl = workspace.querySelector(`[data-id="${leftId}"] .match-dot`);
+      const rightEl = workspace.querySelector(`[data-id="${rightId}"] .match-dot`);
+      
+      if (leftEl && rightEl) {
+        const leftRect = leftEl.getBoundingClientRect();
+        const rightRect = rightEl.getBoundingClientRect();
+
+        const x1 = leftRect.left + leftRect.width / 2 - workspaceRect.left;
+        const y1 = leftRect.top + leftRect.height / 2 - workspaceRect.top;
+        const x2 = rightRect.left + rightRect.width / 2 - workspaceRect.left;
+        const y2 = rightRect.top + rightRect.height / 2 - workspaceRect.top;
+
+        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        line.setAttribute('x1', x1);
+        line.setAttribute('y1', y1);
+        line.setAttribute('x2', x2);
+        line.setAttribute('y2', y2);
+        line.setAttribute('stroke', '#5c4fcf');
+        line.setAttribute('stroke-width', '3');
+        line.setAttribute('id', `line-${leftId}`);
+        svg.appendChild(line);
+      }
+    }
+  }
+
+  window.addEventListener('resize', drawAllLines);
+
+  function checkStudentAnswers() {
+    let score = 0;
+    let autoTotal = 0;
+
+    // 1. Grade Matching
+    autoTotal += 6;
+    for (let leftId in correctMatches) {
+      const line = document.getElementById(`line-${leftId}`);
+      if (matches[leftId] === correctMatches[leftId]) {
+        score++;
+        if (line) line.setAttribute('stroke', '#2a9d8f'); 
+      } else {
+        if (line) line.setAttribute('stroke', '#e63946'); 
+      }
+    }
+
+    // 2. Grade Text Inputs
+    const inputs = document.querySelectorAll('input[data-ans]');
+    inputs.forEach(input => {
+      let studentAns = input.value.trim().toLowerCase().replace(/[.,?!]/g, "").replace(/\s+/g, " ");
+
+      let rawTarget = input.getAttribute('data-ans').toLowerCase().replace(/[.,?!]/g, "");
+      let targetAnsArray = rawTarget.split('|').map(s => s.replace(/\s+/g, " ").trim());
+
+      input.classList.remove('is-correct', 'is-incorrect', 'is-open');
+
+      if (targetAnsArray.includes("open")) {
+        if (studentAns !== "") {
+          input.classList.add('is-open');
+        }
+      } else {
+        autoTotal++;
+        if (targetAnsArray.includes(studentAns)) {
+          input.classList.add('is-correct');
+          score++;
+        } else {
+          input.classList.add('is-incorrect');
+        }
+      }
+    });
+
+    document.querySelectorAll('textarea[data-ans]').forEach(ta => {
+      ta.style.borderColor = ta.value.trim() !== "" ? "#457b9d" : "#ccc";
+    });
+
+    const scoreBox = document.getElementById('gradeScoreBox');
+    scoreBox.innerText = "Auto-graded Score: " + score + " / " + autoTotal;
+    scoreBox.style.display = "block";
+  }
+
+  function resetWorksheet() {
+    if (confirm("Are you sure you want to clear all your answers?")) {
+      document.querySelectorAll('input').forEach(input => {
+        input.value = "";
+        input.classList.remove('is-correct', 'is-incorrect', 'is-open');
+      });
+      document.querySelectorAll('textarea').forEach(ta => {
+        ta.value = "";
+        ta.style.borderColor = "#ccc";
+      });
+      
+      matches = {};
+      if (selectedLeftCard) selectedLeftCard.classList.remove('selected');
+      selectedLeftCard = null;
+      document.getElementById('matchingSvg').innerHTML = '';
+
+      document.getElementById('gradeScoreBox').style.display = "none";
+    }
+  }
+
+  function toggleAnswerKey() {
+    const content = document.getElementById("answerKeyContent");
+    const btn = document.getElementById("toggleKeyBtn");
+    if (content.style.display === "block") {
+      content.style.display = "none";
+      btn.innerHTML = "&#128065;&#65039; Show Answer Key";
+    } else {
+      content.style.display = "block";
+      btn.innerHTML = "&#128584; Hide Answer Key";
+      setTimeout(drawAllLines, 50); 
+    }
+  }
+</script>
+</body>
+</html>
