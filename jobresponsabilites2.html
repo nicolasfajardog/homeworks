@@ -182,7 +182,14 @@
   .purple-table td:first-child { color: var(--E); }
   .g-table tr:last-child td { border-bottom: none; }
 
-  mark { background-color: #ffe066; padding: 0 4px; border-radius: 3px; font-weight: 800; color: #1a1a2e; }
+  /* SUBTLE HIGHLIGHTS */
+  mark { 
+    background-color: var(--B-light); 
+    padding: 2px 6px; 
+    border-radius: 4px; 
+    font-weight: 800; 
+    color: var(--B); 
+  }
 
   /* EXERCISE BLOCK & INSTRUCTIONS */
   .exercise { margin-bottom: 36px; }
@@ -235,7 +242,8 @@
     font-family: 'Nunito', sans-serif; font-size: 15px; font-weight: 700; color: #2b2b2b;
     padding: 0 4px; outline: none; text-align: center; transition: all 0.2s;
   }
-  .blank:focus { border-bottom-color: var(--ink); background: rgba(0,0,0,0.02); }
+  select.blank { text-align: center; cursor: pointer; border-radius: 4px; appearance: none; -webkit-appearance: none; -moz-appearance: none; background: rgba(0,0,0,0.02); }
+  .blank:focus { border-bottom-color: var(--ink); background: rgba(0,0,0,0.04); }
   .blank-sm  { min-width: 60px; }
   .blank-md  { min-width: 140px; }
   .blank-lg  { min-width: 220px; }
@@ -244,6 +252,11 @@
   .is-correct { border-bottom: 2px solid var(--correct) !important; color: var(--correct) !important; background-color: rgba(42,157,143,0.06) !important; }
   .is-incorrect { border-bottom: 2px solid var(--incorrect) !important; color: var(--incorrect) !important; background-color: rgba(230,57,70,0.06) !important; }
   .is-open { border-bottom: 2px solid var(--open-ans) !important; color: var(--open-ans) !important; background-color: rgba(69,123,157,0.06) !important; }
+
+  /* MULTIPLE CHOICE OPTIONS */
+  .mcq-options { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; margin-left: 26px; }
+  .mcq-option { display: flex; align-items: flex-start; gap: 8px; font-size: 14px; font-weight: 600; color: #444; }
+  .mcq-letter { font-weight: 900; color: var(--ink); background: #eee; border-radius: 4px; padding: 0 6px; font-size: 12px; }
 
   /* MATCHING LINES */
   .matching-workspace { position: relative; display: table; width: 100%; border-collapse: separate; border-spacing: 0px 14px; margin-top: 10px; }
@@ -277,6 +290,7 @@
 
   /* ACTIONS */
   .action-bar { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 36px; }
+  .friendly-reminder { font-size: 14px; font-weight: 700; color: var(--D); text-align: center; margin-bottom: 4px; padding: 10px 20px; background: var(--D-light); border-radius: 8px; border: 1px dashed var(--D); max-width: 600px; }
   .score-display { font-family: 'Baloo 2', sans-serif; font-size: 20px; font-weight: 800; color: var(--ink); display: none; background: #f0ede4; padding: 6px 20px; border-radius: 30px; border: 2px solid var(--rule); }
   .button-group { display: flex; gap: 16px; }
   .btn-action { font-family: 'Baloo 2', sans-serif; font-size: 15px; font-weight: 700; padding: 12px 32px; border: none; border-radius: 6px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.12); transition: all 0.2s; }
@@ -580,13 +594,13 @@
             <span class="pts-badge">2 pts each &middot; 12 pts</span>
             <button class="btn-hint" onclick="toggleT('t-ex6')" title="Hint">&#127760;</button>
           </div>
-          <div id="t-ex6" class="hint-box">&#128161; Hint: Look at the tense of the answer (Present or Past). Use "Did" for past and "Do/Does" for present.</div>
+          <div id="t-ex6" class="hint-box">&#128161; Hint: Look at the tense of the answer (Present or Past). Use "Did" for past and "Do/Does" for present. Don't worry about including all the extra details! Keep the core structure intact.</div>
         </div>
       </div>
       <ol class="q-list">
         <li>
           <span class="q-num">1.</span> <strong>Answer:</strong> Yes, I had to create manuals. <em>(Did...)</em><br>
-          <strong>Question:</strong> <input type="text" data-ans="Did you have to create manuals?|Did you have to create manuals" class="blank blank-xl">
+          <strong>Question:</strong> <input type="text" data-ans="Did you have to create manuals?|Did you have to create manuals|Did you have to create them?|Did you have to create them" class="blank blank-xl">
         </li>
         <li>
           <span class="q-num">2.</span> <strong>Answer:</strong> I am an Industrial Engineer. <em>(What...)</em><br>
@@ -594,19 +608,19 @@
         </li>
         <li>
           <span class="q-num">3.</span> <strong>Answer:</strong> I work in the oil and gas industry. <em>(Where...)</em><br>
-          <strong>Question:</strong> <input type="text" data-ans="Where do you work?|Where do you work" class="blank blank-xl">
+          <strong>Question:</strong> <input type="text" data-ans="Where do you work?|Where do you work|What company do you work for?|What industry do you work in?|What industry do you work in" class="blank blank-xl">
         </li>
         <li>
           <span class="q-num">4.</span> <strong>Answer:</strong> No, she doesn't have to pay the bills. <em>(Does...)</em><br>
-          <strong>Question:</strong> <input type="text" data-ans="Does she have to pay the bills?|Does she have to pay the bills" class="blank blank-xl">
+          <strong>Question:</strong> <input type="text" data-ans="Does she have to pay the bills?|Does she have to pay the bills|Does she have to pay bills?|Does she have to pay bills|Does she pay the bills?|Does she pay the bills" class="blank blank-xl">
         </li>
         <li>
           <span class="q-num">5.</span> <strong>Answer:</strong> I was responsible for custom duties. <em>(What...)</em><br>
-          <strong>Question:</strong> <input type="text" data-ans="What were you responsible for?|What were you responsible for" class="blank blank-xl">
+          <strong>Question:</strong> <input type="text" data-ans="What were you responsible for?|What were you responsible for|What were your responsibilities?|What were your responsibilities|What was your responsibility?|What was your responsibility" class="blank blank-xl">
         </li>
         <li>
           <span class="q-num">6.</span> <strong>Answer:</strong> Yes, they opened a new branch last year. <em>(Did...)</em><br>
-          <strong>Question:</strong> <input type="text" data-ans="Did they open a new branch last year?|Did they open a new branch last year" class="blank blank-xl">
+          <strong>Question:</strong> <input type="text" data-ans="Did they open a new branch last year?|Did they open a new branch last year|Did they open a new branch?|Did they open a new branch|Did they open a branch last year?|Did they open a branch last year" class="blank blank-xl">
         </li>
       </ol>
     </div>
@@ -660,17 +674,17 @@
       </ol>
     </div>
 
-    <!-- EXERCISE 8: READING COMPREHENSION -->
+    <!-- EXERCISE 8: MULTIPLE CHOICE READING COMPREHENSION -->
     <div class="exercise">
       <div class="exercise-title">
         <span class="ex-num">8</span>
         <div class="title-content">
           <div class="title-main">
-            Read the professional profile and answer the questions with short answers.
+            Read the professional profile and select the correct option for each question.
             <span class="pts-badge">2 pts each &middot; 10 pts</span>
             <button class="btn-hint" onclick="toggleT('t-ex8')" title="Hint">&#127760;</button>
           </div>
-          <div id="t-ex8" class="hint-box">&#128161; Hint: Short answers are enough (e.g., "A data analyst" or "No, he doesn't").</div>
+          <div id="t-ex8" class="hint-box">&#128161; Hint: Pay very close attention to whether the sentence is talking about his CURRENT job (Present Simple) or his PREVIOUS job (Past Simple)!</div>
         </div>
       </div>
 
@@ -693,24 +707,69 @@
       
       <ol class="q-list">
         <li>
-          <span class="q-num">1.</span> What is Alex's current profession?<br>
-          &rarr; <input type="text" data-ans="Logistics Billing Specialist|A Logistics Billing Specialist|Logistic Billing Specialist" class="blank blank-lg">
+          <span class="q-num">1.</span> What is Alex's current profession?
+          <select data-ans="b" class="blank">
+            <option value="">--</option>
+            <option value="a">A</option><option value="b">B</option><option value="c">C</option><option value="d">D</option>
+          </select>
+          <div class="mcq-options">
+            <div class="mcq-option"><span class="mcq-letter">A</span> He works as a data analyst.</div>
+            <div class="mcq-option"><span class="mcq-letter">B</span> He is working as a Logistics Billing Specialist.</div>
+            <div class="mcq-option"><span class="mcq-letter">C</span> He worked for a multinational.</div>
+            <div class="mcq-option"><span class="mcq-letter">D</span> He was a billing specialist.</div>
+          </div>
         </li>
         <li>
-          <span class="q-num">2.</span> Does Alex work for a start-up now?<br>
-          &rarr; <input type="text" data-ans="No, he doesn't.|No, he doesn't|No" class="blank blank-lg">
+          <span class="q-num">2.</span> Does Alex work for a start-up now?
+          <select data-ans="c" class="blank">
+            <option value="">--</option>
+            <option value="a">A</option><option value="b">B</option><option value="c">C</option><option value="d">D</option>
+          </select>
+          <div class="mcq-options">
+            <div class="mcq-option"><span class="mcq-letter">A</span> No, he didn't. He worked for a medium-sized company.</div>
+            <div class="mcq-option"><span class="mcq-letter">B</span> Yes, he does. He works for GlobalFreight.</div>
+            <div class="mcq-option"><span class="mcq-letter">C</span> No, he doesn't. He works for a multinational.</div>
+            <div class="mcq-option"><span class="mcq-letter">D</span> Yes, he did. He worked for a start-up.</div>
+          </div>
         </li>
         <li>
-          <span class="q-num">3.</span> What was his previous job?<br>
-          &rarr; <input type="text" data-ans="Data Analyst|A Data Analyst|He was a Data Analyst." class="blank blank-lg">
+          <span class="q-num">3.</span> What was his previous job?
+          <select data-ans="b" class="blank">
+            <option value="">--</option>
+            <option value="a">A</option><option value="b">B</option><option value="c">C</option><option value="d">D</option>
+          </select>
+          <div class="mcq-options">
+            <div class="mcq-option"><span class="mcq-letter">A</span> He works as a Data Analyst.</div>
+            <div class="mcq-option"><span class="mcq-letter">B</span> He worked as a Data Analyst.</div>
+            <div class="mcq-option"><span class="mcq-letter">C</span> He is responsible for analyzing data.</div>
+            <div class="mcq-option"><span class="mcq-letter">D</span> He had to create data manuals.</div>
+          </div>
         </li>
         <li>
-          <span class="q-num">4.</span> What did he have to create in his past job?<br>
-          &rarr; <input type="text" data-ans="Data manuals|Data manuals.|Manuals|He had to create data manuals." class="blank blank-lg">
+          <span class="q-num">4.</span> What did he have to create in his past job?
+          <select data-ans="b" class="blank">
+            <option value="">--</option>
+            <option value="a">A</option><option value="b">B</option><option value="c">C</option><option value="d">D</option>
+          </select>
+          <div class="mcq-options">
+            <div class="mcq-option"><span class="mcq-letter">A</span> He has to create data manuals.</div>
+            <div class="mcq-option"><span class="mcq-letter">B</span> He had to create data manuals.</div>
+            <div class="mcq-option"><span class="mcq-letter">C</span> He creates data manuals.</div>
+            <div class="mcq-option"><span class="mcq-letter">D</span> He didn't have to create manuals.</div>
+          </div>
         </li>
         <li>
-          <span class="q-num">5.</span> What is his hobby to escape routine?<br>
-          &rarr; <input type="text" data-ans="Escape rooms|Doing escape rooms|Escape rooms.|Doing escape rooms." class="blank blank-lg">
+          <span class="q-num">5.</span> What is his hobby to escape routine?
+          <select data-ans="c" class="blank">
+            <option value="">--</option>
+            <option value="a">A</option><option value="b">B</option><option value="c">C</option><option value="d">D</option>
+          </select>
+          <div class="mcq-options">
+            <div class="mcq-option"><span class="mcq-letter">A</span> He is in charge of escape rooms.</div>
+            <div class="mcq-option"><span class="mcq-letter">B</span> He had to do escape rooms.</div>
+            <div class="mcq-option"><span class="mcq-letter">C</span> He likes doing escape rooms.</div>
+            <div class="mcq-option"><span class="mcq-letter">D</span> He did escape rooms last year.</div>
+          </div>
         </li>
       </ol>
     </div>
@@ -752,7 +811,7 @@
         </div>
       </div>
       <p style="font-size:13px;font-weight:700;opacity:0.6;margin-bottom:12px">
-        Write a paragraph (5-8 lines) about your job and hobbies. You MUST answer these questions:<br>
+        Write a paragraph (5-8 lines) about your job and hobbies. We invite you to answer these questions to guide your writing:<br>
         - <em>What do you do for a living and what kind of company do you work for?</em><br>
         - <em>What are your current responsibilities? (Use "responsible for" / "in charge of")</em><br>
         - <em>What was your previous job and what did you have to do?</em><br>
@@ -773,6 +832,7 @@
 
     <!-- ACTION BAR -->
     <div class="action-bar">
+      <p class="friendly-reminder">&#128161; Friendly reminder: Before you check your answers, take a quick moment to double-check your spelling, the structures we practiced in class, and your class notes if you need to! You've got this! &#128522;</p>
       <div class="score-display" id="gradeScoreBox">Score: 0</div>
       <div class="button-group">
         <button class="btn-action btn-check" onclick="checkStudentAnswers()">&#10004;&#65039; Check Answers</button>
@@ -861,7 +921,7 @@
               <div>2. <span>What is your profession?</span> (or What do you do for a living?)</div>
               <div>3. <span>Where do you work?</span></div>
               <div>4. <span>Does she have to pay the bills?</span></div>
-              <div>5. <span>What were you responsible for?</span></div>
+              <div>5. <span>What were you responsible for?</span> (or What were your responsibilities?)</div>
               <div>6. <span>Did they open a new branch last year?</span></div>
             </div>
           </div>
@@ -879,13 +939,13 @@
           </div>
 
           <div class="key-section">
-            <h3>8. Reading Comprehension</h3>
+            <h3>8. Multiple Choice Reading Comprehension</h3>
             <div class="key-list" style="column-count: 1;">
-              <div>1. <span>Logistics Billing Specialist</span></div>
-              <div>2. <span>No, he doesn't.</span></div>
-              <div>3. <span>Data Analyst</span></div>
-              <div>4. <span>Data manuals</span></div>
-              <div>5. <span>Escape rooms</span></div>
+              <div>1. <span>B</span> (He is working as a Logistics Billing Specialist.)</div>
+              <div>2. <span>C</span> (No, he doesn't. He works for a multinational.)</div>
+              <div>3. <span>B</span> (He worked as a Data Analyst.)</div>
+              <div>4. <span>B</span> (He had to create data manuals.)</div>
+              <div>5. <span>C</span> (He likes doing escape rooms.)</div>
             </div>
           </div>
 
@@ -1018,8 +1078,8 @@
       }
     }
 
-    // 2. Grade Text Inputs
-    const inputs = document.querySelectorAll('input[data-ans]');
+    // 2. Grade Text Inputs AND Select boxes
+    const inputs = document.querySelectorAll('input[type="text"][data-ans], select[data-ans]');
     inputs.forEach(input => {
       let studentAns = input.value.trim().toLowerCase().replace(/[.,?!]/g, "").replace(/\s+/g, " ");
 
@@ -1054,9 +1114,13 @@
 
   function resetWorksheet() {
     if (confirm("Are you sure you want to clear all your answers?")) {
-      document.querySelectorAll('input').forEach(input => {
+      document.querySelectorAll('input[type="text"]').forEach(input => {
         input.value = "";
         input.classList.remove('is-correct', 'is-incorrect', 'is-open');
+      });
+      document.querySelectorAll('select').forEach(sel => {
+        sel.value = "";
+        sel.classList.remove('is-correct', 'is-incorrect', 'is-open');
       });
       document.querySelectorAll('textarea').forEach(ta => {
         ta.value = "";
