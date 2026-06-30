@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Long-Term Plans & Dreams &ndash; A2.3 English Worksheet</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Baloo+2:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a2e;
+    --paper: #fffef7;
+    --A: #e63946;
+    --A-light: #fde8ea;
+    --B: #2a9d8f;
+    --B-light: #d6f5f2;
+    --C: #e07b00;
+    --C-light: #fff0d6;
+    --D: #5c4fcf;
+    --D-light: #ebe8ff;
+    --E: #c77dff;
+    --E-light: #f5e6ff;
+    --rule: #d4cfc0;
+
+    /* Feedback Colors */
+    --correct: #2a9d8f;
+    --incorrect: #e63946;
+    --open-ans: #457b9d;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: #e8e4d9;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 32px 16px 60px;
+  }
+
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    background: var(--paper);
+    border-radius: 4px;
+    box-shadow: 0 4px 40px rgba(0,0,0,0.18);
+    overflow: hidden;
+  }
+
+  /* LOGISTICS BOX */
+  .logistics-box {
+    background: #e3f2fd;
+    border-left: 5px solid #1e88e5;
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 32px;
+  }
+  .logistics-box h3 {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-bottom: 10px;
+    color: #1e88e5;
+  }
+  .logistics-box p {
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 600;
+  }
+
+  /* HEADER */
+  header {
+    background: var(--ink);
+    color: #fff;
+    padding: 40px 48px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent, transparent 18px,
+      rgba(255,255,255,0.03) 18px, rgba(255,255,255,0.03) 36px
+    );
+  }
+  .header-badge {
+    display: inline-block;
+    background: #fff;
+    color: var(--ink);
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+  }
+  header h1 {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1.05;
+    margin-bottom: 8px;
+  }
+  header h1 span { color: #f4a261; }
+  header p {
+    font-size: 15px;
+    opacity: 0.7;
+    font-weight: 600;
+  }
+
+  .content { padding: 0 44px 44px; margin-top: 20px;}
+
+  /* SECTION DIVIDERS */
+  .section-header {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--ink);
+    margin: 40px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--rule);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-header span {
+    background: var(--ink);
+    color: white;
+    font-size: 14px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+  }
+
+  /* GRAMMAR BOX */
+  .grammar-box {
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 22px;
+    border-left: 5px solid;
+  }
+  .grammar-box.purple { background: var(--E-light); border-color: var(--E); }
+  .grammar-box h3 {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 10px;
+    opacity: 0.6;
+  }
+  .grammar-box p { font-size: 14px; line-height: 1.7; font-weight: 600; }
+  .grammar-box strong { font-weight: 900; }
+
+  /* SUBTLE HIGHLIGHTS */
+  mark { 
+    background-color: var(--B-light); 
+    padding: 2px 6px; 
+    border-radius: 4px; 
+    font-weight: 800; 
+    color: var(--B); 
+  }
+
+  /* EXERCISE BLOCK & INSTRUCTIONS */
+  .exercise { margin-bottom: 36px; }
+  .exercise-title {
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    border-bottom: 2px solid var(--rule);
+    padding-bottom: 8px;
+  }
+  .title-content { display: flex; flex-direction: column; gap: 4px; }
+  .title-main { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
+  .ex-num {
+    width: 26px; height: 26px;
+    background: var(--ink);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 900;
+    color: #fff;
+    flex-shrink: 0;
+    margin-top: -2px;
+  }
+
+  .btn-hint {
+    background: none; border: none; cursor: pointer; font-size: 18px; padding: 0 4px; transition: transform 0.2s;
+  }
+  .btn-hint:hover { transform: scale(1.1); }
+  .hint-box {
+    display: none; font-size: 13px; color: #1e88e5; font-weight: 600; background: #e3f2fd;
+    padding: 12px 16px; border-radius: 6px; border-left: 4px solid #1e88e5; margin-top: 8px; line-height: 1.6;
+  }
+  .hint-box strong { color: #1565c0; font-weight: 800; }
+
+  .q-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+  .q-list li { font-size: 15px; font-weight: 600; display: block; line-height: 1.6; }
+  .q-num { font-weight: 900; opacity: 0.4; min-width: 20px; font-size: 13px; margin-right: 6px; }
+  .scrambled-box { color: #666; font-style: italic; margin-bottom: 6px; display: inline-block; }
+
+  .choice-box {
+    display: inline-flex; align-items: center; flex-wrap: wrap; background: #f7f3e8; border: 1.5px solid var(--rule);
+    border-radius: 6px; padding: 8px 14px; font-size: 13px; font-weight: 800; color: #555;
+    letter-spacing: 0.5px; word-spacing: 4px; line-height: 1.8; gap: 8px;
+  }
+  .choice-item { background: white; padding: 2px 8px; border-radius: 4px; border: 1px solid #ccc; }
+
+  .blank {
+    border: none; border-bottom: 2px solid #aaa; background: transparent; min-width: 100px;
+    font-family: 'Nunito', sans-serif; font-size: 15px; font-weight: 700; color: #2b2b2b;
+    padding: 0 4px; outline: none; text-align: center; transition: all 0.2s;
+  }
+  select.blank { text-align: center; cursor: pointer; border-radius: 4px; appearance: none; -webkit-appearance: none; -moz-appearance: none; background: rgba(0,0,0,0.02); }
+  .blank:focus { border-bottom-color: var(--ink); background: rgba(0,0,0,0.04); }
+  .blank-sm  { min-width: 60px; }
+  .blank-md  { min-width: 140px; }
+  .blank-lg  { min-width: 220px; }
+  .blank-xl  { display: block; width: 100%; text-align: left; padding: 4px 8px; margin-top: 6px; }
+
+  .is-correct { border-bottom: 2px solid var(--correct) !important; color: var(--correct) !important; background-color: rgba(42,157,143,0.06) !important; }
+  .is-incorrect { border-bottom: 2px solid var(--incorrect) !important; color: var(--incorrect) !important; background-color: rgba(230,57,70,0.06) !important; }
+  .is-open { border-bottom: 2px solid var(--open-ans) !important; color: var(--open-ans) !important; background-color: rgba(69,123,157,0.06) !important; }
+
+  /* MULTIPLE CHOICE OPTIONS */
+  .mcq-options { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; margin-left: 26px; }
+  .mcq-option { display: flex; align-items: flex-start; gap: 8px; font-size: 14px; font-weight: 600; color: #444; }
+  .mcq-letter { font-weight: 900; color: var(--ink); background: #eee; border-radius: 4px; padding: 0 6px; font-size: 12px; }
+
+  /* MATCHING LINES */
+  .matching-workspace { position: relative; display: table; width: 100%; border-collapse: separate; border-spacing: 0px 14px; margin-top: 10px; }
+  .matching-column { display: table-cell; width: 44%; vertical-align: top; }
+  .matching-spacer { display: table-cell; width: 12%; }
+  .match-card {
+    background: #fdfbf7; border: 2px solid var(--rule); border-radius: 8px; padding: 12px 16px;
+    font-size: 14px; font-weight: 700; color: #333; cursor: pointer; position: relative;
+    user-select: none; transition: all 0.2s; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;
+  }
+  .match-card:hover { border-color: var(--ink); background: #f4f1ea; }
+  .match-card.selected { border-color: var(--D); background: var(--D-light); color: var(--ink); }
+  .match-dot {
+    width: 12px; height: 12px; background: #cbd5e1; border: 2px solid #94a3b8; border-radius: 50%;
+    position: absolute; top: 50%; transform: translateY(-50%);
+  }
+  .column-left .match-dot { right: -6px; }
+  .column-right .match-dot { left: -6px; }
+  .match-card.selected .match-dot { background: var(--D); border-color: var(--D); }
+  .matching-svg-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 5; }
+
+  /* SCHEDULE CONTAINER */
+  .schedule-container {
+    background: white; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; margin-bottom: 24px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  }
+  .schedule-header { background: #336699; color: white; padding: 16px; font-family: 'Baloo 2', sans-serif; font-size: 20px; display: flex; align-items: center; gap: 10px; }
+  .schedule-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .schedule-table th { background: #f0f4f8; color: #336699; padding: 12px; text-align: left; font-weight: 800; text-transform: uppercase; border-bottom: 2px solid #336699; }
+  .schedule-table td { padding: 12px; border-bottom: 1px solid #eee; font-weight: 600; color: #333; }
+  .schedule-table td:first-child { width: 25%; color: #666; font-weight: 800; border-right: 1px dashed #ccc; }
+  .schedule-table tr:last-child td { border-bottom: none; }
+
+  /* ACTIONS */
+  .action-bar { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 36px; }
+  .friendly-reminder { font-size: 14px; font-weight: 700; color: var(--D); text-align: center; margin-bottom: 4px; padding: 10px 20px; background: var(--D-light); border-radius: 8px; border: 1px dashed var(--D); max-width: 600px; }
+  .score-display { font-family: 'Baloo 2', sans-serif; font-size: 20px; font-weight: 800; color: var(--ink); display: none; background: #f0ede4; padding: 6px 20px; border-radius: 30px; border: 2px solid var(--rule); }
+  .button-group { display: flex; gap: 16px; }
+  .btn-action { font-family: 'Baloo 2', sans-serif; font-size: 15px; font-weight: 700; padding: 12px 32px; border: none; border-radius: 6px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.12); transition: all 0.2s; }
+  .btn-check { background: #2a9d8f; color: white; }
+  .btn-check:hover { background: #228074; transform: translateY(-1px); }
+  .btn-reset { background: #e7e5e0; color: var(--ink); }
+  .btn-reset:hover { background: #dcd9d2; transform: translateY(-1px); }
+  
+  .section-divider { height: 2px; background: repeating-linear-gradient(90deg, var(--rule) 0, var(--rule) 8px, transparent 8px, transparent 16px); margin: 44px 0; }
+
+  /* ANSWER KEY */
+  .answer-key-wrapper { margin-top: 48px; border-top: 3px solid var(--ink); padding-top: 20px; }
+  .btn-toggle-key { background: var(--ink); color: #fff; font-family: 'Baloo 2', sans-serif; font-size: 13px; font-weight: 700; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; letter-spacing: 0.5px; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+  .btn-toggle-key:hover { background: #2e2e4e; transform: translateY(-1px); }
+  .answer-key-content { display: none; margin-top: 24px; }
+  .answer-key h2 { font-family: 'Baloo 2', sans-serif; font-size: 20px; font-weight: 800; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+  .answer-key h2::after { content: '(Teacher Copy)'; font-size: 12px; background: var(--ink); color: #fff; padding: 3px 10px; border-radius: 20px; letter-spacing: 1px; font-weight: 700; }
+  .key-section { margin-bottom: 20px; }
+  .key-section h3 { font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; opacity: 0.5; }
+  .key-list { font-size: 14px; font-weight: 600; line-height: 2; column-count: 2; column-gap: 32px; }
+  .key-list span { font-weight: 900; }
+  .pts-badge { display: inline-block; font-family: 'Baloo 2', sans-serif; font-size: 10px; font-weight: 800; letter-spacing: 0.5px; padding: 2px 8px; border-radius: 10px; margin-left: 6px; background: rgba(0,0,0,0.08); color: var(--ink); }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; }
+    .action-bar, .btn-hint, .answer-key-wrapper, .matching-svg-container { display: none !important; }
+    .blank { border-bottom-color: #000; }
+  }
+
+  @media (max-width: 600px) {
+    .content { padding: 0 20px 36px; }
+    header { padding: 28px 20px 22px; }
+    header h1 { font-size: 34px; }
+    .key-list { column-count: 1; }
+    .blank-lg, .blank-xl { width: 100%; min-width: 100%; }
+    .button-group { flex-direction: column; align-items: stretch; width: 100%; }
+    .btn-action { text-align: center; }
+    .matching-workspace { display: block; }
+    .matching-column { display: block; width: 100%; }
+    .matching-spacer { display: none; }
+    .column-left .match-dot, .column-right .match-dot { display: none; }
+    .matching-svg-container { display: none !important; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="header-badge">ESL Worksheet &middot; A2.3 / B1</div>
+    <h1>Plans, <span>Dreams</span> & Hopes</h1>
+    <p>Will &middot; Going to &middot; Present Progressive &middot; Future Progressive</p>
+  </header>
+
+  <div class="content">
+
+    <div class="logistics-box">
+      <h3>&#128203; Worksheet Guide</h3>
+      <p>Welcome! We are exploring the 4 forms of the future in English. If you get stuck, click the <strong>&#127760;</strong> button to see a Spanish translation of the instructions and a 💡 class note hint.</p>
+      <p style="margin-top:8px">When you finish, the system will auto-grade most questions. For the final writing exercise, take a <strong>screenshot</strong> of your paragraph and send it to your teacher via WhatsApp.</p>
+    </div>
+
+    <div class="grammar-box purple">
+      <h3>&#128204; Grammar Notes: The Four Futures</h3>
+      <ul style="margin-left: 20px; font-size: 14px; font-weight: 600; line-height: 1.7; margin-top: 8px;">
+        <li><strong>Future Simple (Will):</strong> Spontaneous decisions, promises, or predictions without evidence. <br><em>"I will be a sales manager in 10 years."</em></li>
+        <li><strong>Be + Going to:</strong> Planned decisions and predictions based on present evidence.<br><em>"Look at the traffic! We are going to be late."</em></li>
+        <li><strong>Present Progressive (Be + -ing):</strong> Fixed arrangements, dates, or meetings with other people.<br><em>"I am shopping in San Andresito tomorrow morning."</em></li>
+        <li><strong>Future Progressive (Will be + -ing):</strong> Actions that will be in progress at a specific time in the future.<br><em>"At 8 PM tonight, I will be dancing in Bachata Social."</em></li>
+      </ul>
+    </div>
+
+    <div class="section-header">
+      <span>Part 1</span> Controlled Structure Practice
+    </div>
+
+    <!-- EXERCISE 1: MATCHING LINES -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">1</span>
+        <div class="title-content">
+          <div class="title-main">
+            Match the sentence beginnings on the left with the correct endings on the right.
+            <span class="pts-badge">1 pt each &middot; 5 pts</span>
+            <button class="btn-hint" onclick="toggleT('t-ex1')" title="Translation & Hint">&#127760;</button>
+          </div>
+          <div id="t-ex1" class="hint-box">
+            <strong>Traducción:</strong> Une los inicios de las oraciones de la izquierda con los finales correctos de la derecha usando líneas.<br>
+            <strong>💡 Hint:</strong> "I think..." usually introduces a prediction with <em>will</em>. If someone bought tickets, it's a fixed arrangement (Present Progressive)!
+          </div>
+        </div>
+      </div>
+
+      <div class="matching-workspace" id="matchingWorkspace">
+        <svg class="matching-svg-container" id="matchingSvg"></svg>
+        
+        <div class="matching-column column-left">
+          <div class="match-card" data-id="left-1" onclick="handleCardClick(this, 'left')">
+            <span>Look at those dark clouds! It...</span>
+            <div class="match-dot"></div>
+          </div>
+          <div class="match-card" data-id="left-2" onclick="handleCardClick(this, 'left')">
+            <span>Tomorrow at exactly 9 AM, I...</span>
+            <div class="match-dot"></div>
+          </div>
+          <div class="match-card" data-id="left-3" onclick="handleCardClick(this, 'left')">
+            <span>I think that in 10 years, I...</span>
+            <div class="match-dot"></div>
+          </div>
+          <div class="match-card" data-id="left-4" onclick="handleCardClick(this, 'left')">
+            <span>She has the tickets. She...</span>
+            <div class="match-dot"></div>
+          </div>
+          <div class="match-card" data-id="left-5" onclick="handleCardClick(this, 'left')">
+            <span>I promise I...</span>
+            <div class="match-dot"></div>
+          </div>
+        </div>
+
+        <div class="matching-spacer"></div>
+
+        <div class="matching-column column-right">
+          <div class="match-card" data-id="right-1" onclick="handleCardClick(this, 'right')">
+            <div class="match-dot"></div>
+            <span>is flying to Miami next weekend.</span>
+          </div>
+          <div class="match-card" data-id="right-2" onclick="handleCardClick(this, 'right')">
+            <div class="match-dot"></div>
+            <span>will call you when I arrive.</span>
+          </div>
+          <div class="match-card" data-id="right-3" onclick="handleCardClick(this, 'right')">
+            <div class="match-dot"></div>
+            <span>is going to rain soon.</span>
+          </div>
+          <div class="match-card" data-id="right-4" onclick="handleCardClick(this, 'right')">
+            <div class="match-dot"></div>
+            <span>will be a sales manager.</span>
+          </div>
+          <div class="match-card" data-id="right-5" onclick="handleCardClick(this, 'right')">
+            <div class="match-dot"></div>
+            <span>will be presenting the pacemakers.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXERCISE 2: TIME MARKERS -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">2</span>
+        <div class="title-content">
+          <div class="title-main">
+            Type the correct time marker from the parentheses.
+            <span class="pts-badge">1 pt each &middot; 6 pts</span>
+            <button class="btn-hint" onclick="toggleT('t-ex2')" title="Translation & Hint">&#127760;</button>
+          </div>
+          <div id="t-ex2" class="hint-box">
+            <strong>Traducción:</strong> Escribe el marcador de tiempo correcto entre las opciones en el paréntesis.<br>
+            <strong>💡 Hint:</strong> Future Progressive (will be -ing) needs a <em>very specific</em> time, like "at 8 PM tomorrow". General predictions use markers like "in 50 years".
+          </div>
+        </div>
+      </div>
+      <ol class="q-list">
+        <li><span class="q-num">1.</span> She will be working on the reports <input type="text" data-ans="tomorrow at 8 am" class="blank blank-md">. <em>(tomorrow at 8 AM / next year)</em></li>
+        <li><span class="q-num">2.</span> I am meeting the client <input type="text" data-ans="in five minutes" class="blank blank-md">. <em>(in five minutes / one day)</em></li>
+        <li><span class="q-num">3.</span> We are flying to San Andresito <input type="text" data-ans="this weekend" class="blank blank-md">. <em>(this weekend / a long time ago)</em></li>
+        <li><span class="q-num">4.</span> Look at the time! We are going to be late <input type="text" data-ans="today" class="blank blank-sm">. <em>(today / in 2050)</em></li>
+        <li><span class="q-num">5.</span> He will be selling pacemakers <input type="text" data-ans="at this exact time next month" class="blank blank-lg">. <em>(at this exact time next month / never)</em></li>
+        <li><span class="q-num">6.</span> I think people will live on Mars <input type="text" data-ans="in 50 years" class="blank blank-md">. <em>(tonight / in 50 years)</em></li>
+      </ol>
+    </div>
+
+    <!-- EXERCISE 3: FILL IN BLANK (WORD BANK) -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">3</span>
+        <div class="title-content">
+          <div class="title-main">
+            Complete the sentences using the exact structures from the box.
+            <span class="pts-badge">1 pt each &middot; 6 pts</span>
+            <button class="btn-hint" onclick="toggleT('t-ex3')" title="Translation & Hint">&#127760;</button>
+          </div>
+          <div id="t-ex3" class="hint-box">
+            <strong>Traducción:</strong> Completa las oraciones usando exactamente las estructuras que están en la caja de opciones.<br>
+            <strong>💡 Hint:</strong> Is it a plan with someone else? (am meeting). A spontaneous promise? (won't forget). An ongoing action at a specific time? (will be dancing).
+          </div>
+        </div>
+      </div>
+      <p style="margin-bottom: 12px;">
+        <span class="choice-box">
+          <span class="choice-item">will buy</span>
+          <span class="choice-item">is going to rain</span>
+          <span class="choice-item">are visiting</span>
+          <span class="choice-item">will be dancing</span>
+          <span class="choice-item">won't forget</span>
+          <span class="choice-item">am going to apply</span>
+        </span>
+      </p>
+      <ol class="q-list">
+        <li><span class="q-num">1.</span> The sky is completely gray. It <input type="text" data-ans="is going to rain" class="blank blank-md">.</li>
+        <li><span class="q-num">2.</span> I promise I <input type="text" data-ans="won't forget|will not forget" class="blank blank-md"> to send you the report.</li>
+        <li><span class="q-num">3.</span> At midnight tonight, we <input type="text" data-ans="will be dancing" class="blank blank-md"> at Bachata Social.</li>
+        <li><span class="q-num">4.</span> We <input type="text" data-ans="are visiting" class="blank blank-md"> my grandmother this Sunday. It's on our calendar.</li>
+        <li><span class="q-num">5.</span> Maybe I <input type="text" data-ans="will buy" class="blank blank-md"> another air freshener. I'm not sure yet.</li>
+        <li><span class="q-num">6.</span> I <input type="text" data-ans="am going to apply" class="blank blank-md"> for the sales manager position next week. I already decided!</li>
+      </ol>
+    </div>
+
+    <!-- EXERCISE 4: CONJUGATE IN PARENTHESIS -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">4</span>
+        <div class="title-content">
+          <div class="title-main">
+            Conjugate the verb in parenthesis (+, -, ?). Use the time marker context to choose the correct future form!
+            <span class="pts-badge">2 pts each &middot; 12 pts</span>
+            <button class="btn-hint" onclick="toggleT('t-ex4')" title="Translation & Hint">&#127760;</button>
+          </div>
+          <div id="t-ex4" class="hint-box">
+            <strong>Traducción:</strong> Conjuga el verbo en paréntesis (+, -, ?). ¡Usa el contexto del marcador de tiempo para elegir la forma futura correcta (will, going to, present prog, future prog)!<br>
+            <strong>💡 Hint:</strong> Pay attention to the <mark>highlighted</mark> time markers. "At exactly 8 PM" points to Future Progressive. "Next Monday" with a scheduled meeting points to Present Progressive.
+          </div>
+        </div>
+      </div>
+      <ol class="q-list">
+        <li><span class="q-num">1.</span> (+) <mark>Next Monday at exactly 10 AM</mark>, she <input type="text" data-ans="will be presenting" class="blank blank-md"> (present) the new pacemakers to the board.</li>
+        <li><span class="q-num">2.</span> (-) I <input type="text" data-ans="am not meeting|'m not meeting" class="blank blank-md"> (not / meet) the investors <mark>tomorrow</mark>; the meeting was canceled.</li>
+        <li><span class="q-num">3.</span> (?) <input type="text" data-ans="Are" class="blank blank-sm"> you <input type="text" data-ans="going to buy" class="blank blank-md"> (buy) another air freshener <mark>later</mark>? (Premeditated plan)</li>
+        <li><span class="q-num">4.</span> (+) I think we <input type="text" data-ans="will have" class="blank blank-md"> (have) flying cars <mark>in the distant future</mark>.</li>
+        <li><span class="q-num">5.</span> (-) He <input type="text" data-ans="will not be working|won't be working" class="blank blank-md"> (not / work) <mark>at this exact time tomorrow</mark>.</li>
+        <li><span class="q-num">6.</span> (?) <input type="text" data-ans="Is" class="blank blank-sm"> she <input type="text" data-ans="attending|going to attend" class="blank blank-md"> (attend) the Bachata Social <mark>tonight</mark>? (She bought tickets!)</li>
+      </ol>
+    </div>
+
+    <!-- EXERCISE 5: UNSCRAMBLE -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">5</span>
+        <div class="title-content">
+          <div class="title-main">
+            Unscramble the words to formulate correct sentences or questions.
+            <span class="pts-badge">2 pts each &middot; 10 pts</span>
+            <button class="btn-hint" onclick="toggleT('t-ex5')" title="Translation & Hint">&#127760;</button>
+          </div>
+          <div id="t-ex5" class="hint-box">
+            <strong>Traducción:</strong> Ordena las palabras para formular oraciones o preguntas correctas.<br>
+            <strong>💡 Hint:</strong> Questions always start with a Wh- word (What) or an auxiliary verb (Will / Are / Is).
+          </div>
+        </div>
+      </div>
+      <ol class="q-list">
+        <li>
+          <span class="q-num">1.</span> <span class="scrambled-box">(manager / a / be / will / I / sales)</span>
+          <input type="text" data-ans="I will be a sales manager.|I will be a sales manager" class="blank blank-xl" placeholder="Type here...">
+        </li>
+        <li>
+          <span class="q-num">2.</span> <span class="scrambled-box">(morning / tomorrow / mom / shopping / I / with / my / am)</span>
+          <input type="text" data-ans="I am shopping with my mom tomorrow morning.|I am shopping with my mom tomorrow morning|Tomorrow morning I am shopping with my mom.|Tomorrow morning I am shopping with my mom" class="blank blank-xl" placeholder="Type here...">
+        </li>
+        <li>
+          <span class="q-num">3.</span> <span class="scrambled-box">(you / what / doing / Friday / are / next / ?)</span>
+          <input type="text" data-ans="What are you doing next Friday?|What are you doing next Friday" class="blank blank-xl" placeholder="Type here...">
+        </li>
+        <li>
+          <span class="q-num">4.</span> <span class="scrambled-box">(friends / be / I / dancing / with / will / my / tonight / at 10 PM)</span>
+          <input type="text" data-ans="I will be dancing with my friends tonight at 10 PM.|I will be dancing with my friends tonight at 10 PM|Tonight at 10 PM I will be dancing with my friends.|Tonight at 10 PM I will be dancing with my friends" class="blank blank-xl" placeholder="Type here...">
+        </li>
+        <li>
+          <span class="q-num">5.</span> <span class="scrambled-box">(going / sell / is / to / she / devices / medical)</span>
+          <input type="text" data-ans="She is going to sell medical devices.|She is going to sell medical devices" class="blank blank-xl" placeholder="Type here...">
+        </li>
+      </ol>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- EXERCISES: LESS CONTROLLED                 -->
+    <!-- ========================================== -->
+    <div class="section-divider"></div>
+    <div class="section-header">
+      <span>Part 2</span> Applied Context &amp; Reading
+    </div>
+
+    <!-- EXERCISE 6: READING COMPREHENSION (SCHEDULE) -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">6</span>
+        <div class="title-content">
+          <div class="title-main">
+            Read the Sales Representative's schedule and select the correct option for each question.
+            <span class="pts-badge">2 pts each &middot; 8 pts</span>
+            <button class="btn-hint" onclick="toggleT('t-ex6')" title="Translation & Hint">&#127760;</button>
+          </div>
+          <div id="t-ex6" class="hint-box">
+            <strong>Traducción:</strong> Lee el horario del Representante de Ventas y selecciona la opción correcta para cada pregunta.<br>
+            <strong>💡 Hint:</strong> Look at the schedule carefully. Is the action a confirmed meeting with someone else? Or an action happening at a specific hour? Choose the future form that matches the intention!
+          </div>
+        </div>
+      </div>
+
+      <div class="schedule-container">
+        <div class="schedule-header">
+          &#128197; Sales Rep Weekly Agenda
+        </div>
+        <table class="schedule-table">
+          <tr>
+            <td>Monday</td>
+            <td>9:00 AM – 11:00 AM: Meeting with regional investors.</td>
+          </tr>
+          <tr>
+            <td>Tuesday</td>
+            <td>10:00 AM: Flight to Monterrey (Tickets confirmed).</td>
+          </tr>
+          <tr>
+            <td>Wednesday</td>
+            <td>3:00 PM – 5:00 PM: Presenting pacemakers at Hospital Central.</td>
+          </tr>
+          <tr>
+            <td>Thursday</td>
+            <td>Free day. No plans yet. Might just relax!</td>
+          </tr>
+          <tr>
+            <td>Friday</td>
+            <td>8:00 PM: Bachata Social party with colleagues!</td>
+          </tr>
+        </table>
+      </div>
+
+      <ol class="q-list">
+        <li>
+          <span class="q-num">1.</span> What is the sales rep doing on Monday morning?
+          <select data-ans="b" class="blank">
+            <option value="">--</option>
+            <option value="a">A</option><option value="b">B</option><option value="c">C</option><option value="d">D</option>
+          </select>
+          <div class="mcq-options">
+            <div class="mcq-option"><span class="mcq-letter">A</span> He will meet with investors.</div>
+            <div class="mcq-option"><span class="mcq-letter">B</span> He is meeting with regional investors.</div>
+            <div class="mcq-option"><span class="mcq-letter">C</span> He is going to presenting to investors.</div>
+            <div class="mcq-option"><span class="mcq-letter">D</span> He will be meet with investors.</div>
+          </div>
+        </li>
+        <li>
+          <span class="q-num">2.</span> Where is he traveling on Tuesday?
+          <select data-ans="a" class="blank">
+            <option value="">--</option>
+            <option value="a">A</option><option value="b">B</option><option value="c">C</option><option value="d">D</option>
+          </select>
+          <div class="mcq-options">
+            <div class="mcq-option"><span class="mcq-letter">A</span> He is flying to Monterrey.</div>
+            <div class="mcq-option"><span class="mcq-letter">B</span> He will fly to Monterrey.</div>
+            <div class="mcq-option"><span class="mcq-letter">C</span> He is going to flying to Monterrey.</div>
+            <div class="mcq-option"><span class="mcq-letter">D</span> He flies to Monterrey next year.</div>
+          </div>
+        </li>
+        <li>
+          <span class="q-num">3.</span> What will he be doing on Wednesday at 3:15 PM?
+          <select data-ans="d" class="blank">
+            <option value="">--</option>
+            <option value="a">A</option><option value="b">B</option><option value="c">C</option><option value="d">D</option>
+          </select>
+          <div class="mcq-options">
+            <div class="mcq-option"><span class="mcq-letter">A</span> He is going to present pacemakers.</div>
+            <div class="mcq-option"><span class="mcq-letter">B</span> He will present pacemakers.</div>
+            <div class="mcq-option"><span class="mcq-letter">C</span> He presents pacemakers.</div>
+            <div class="mcq-option"><span class="mcq-letter">D</span> He will be presenting pacemakers.</div>
+          </div>
+        </li>
+        <li>
+          <span class="q-num">4.</span> Does he have plans for Thursday?
+          <select data-ans="c" class="blank">
+            <option value="">--</option>
+            <option value="a">A</option><option value="b">B</option><option value="c">C</option><option value="d">D</option>
+          </select>
+          <div class="mcq-options">
+            <div class="mcq-option"><span class="mcq-letter">A</span> Yes, he is relaxing.</div>
+            <div class="mcq-option"><span class="mcq-letter">B</span> Yes, he will be relaxing.</div>
+            <div class="mcq-option"><span class="mcq-letter">C</span> No, but he will probably relax.</div>
+            <div class="mcq-option"><span class="mcq-letter">D</span> No, he isn't going to relaxing.</div>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    <!-- EXERCISE 7: DIALOGUE COMPLETION -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">7</span>
+        <div class="title-content">
+          <div class="title-main">
+            Complete the dialogue. Conjugate the verbs appropriately.
+            <span class="pts-badge">2 pts each &middot; 8 pts</span>
+            <button class="btn-hint" onclick="toggleT('t-ex7')" title="Translation & Hint">&#127760;</button>
+          </div>
+          <div id="t-ex7" class="hint-box">
+            <strong>Traducción:</strong> Completa el diálogo. Conjuga los verbos apropiadamente para el futuro.<br>
+            <strong>💡 Hint:</strong> When asking about someone's schedule, we usually say "What are you doing...". If a decision is made in the moment, use <em>will</em>.
+          </div>
+        </div>
+      </div>
+      <ul class="q-list" style="background:#f9f9f9; padding:20px; border-radius:8px; border:1px solid #ddd; list-style:none;">
+        <li><strong>Ana:</strong> Hey, what <input type="text" data-ans="are you doing" class="blank blank-md"> (you / do) tomorrow morning?</li>
+        <li><strong>Luis:</strong> I <input type="text" data-ans="am shopping|'m shopping" class="blank blank-md"> (shop) in San Andresito with my mom. It's a planned trip.</li>
+        <li><strong>Ana:</strong> Oh nice! Are you going to buy anything special?</li>
+        <li><strong>Luis:</strong> Yes, I <input type="text" data-ans="am going to buy|'m going to buy" class="blank blank-md"> (buy) an air freshener. What about you?</li>
+        <li><strong>Ana:</strong> I don't know yet. Maybe I <input type="text" data-ans="will stay|'ll stay" class="blank blank-md"> (stay) home and watch a movie.</li>
+      </ul>
+    </div>
+
+    <!-- EXERCISE 8: CORRECT THE MISTAKE -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">8</span>
+        <div class="title-content">
+          <div class="title-main">
+            Find and correct the mistake in each sentence. Type the entire correct sentence.
+            <span class="pts-badge">2 pts each &middot; 10 pts</span>
+            <button class="btn-hint" onclick="toggleT('t-ex8')" title="Translation & Hint">&#127760;</button>
+          </div>
+          <div id="t-ex8" class="hint-box">
+            <strong>Traducción:</strong> Encuentra y corrige el error en cada oración. Escribe la oración completa correctamente.<br>
+            <strong>💡 Hint:</strong> Check if a prediction has evidence (e.g., look at the clouds -> going to). Also, we never say "I am going to dancing", it's "I am going to dance" or "I am dancing".
+          </div>
+        </div>
+      </div>
+      <ol class="q-list">
+        <li>
+          <span class="q-num">1.</span> I am going to dancing at Bachata Social tonight.<br>
+          &rarr; <input type="text" data-ans="I am going to dance at Bachata Social tonight.|I am going to dance at Bachata Social tonight|I am dancing at Bachata Social tonight.|I am dancing at Bachata Social tonight|I'm going to dance at Bachata Social tonight.|I'm dancing at Bachata Social tonight." class="blank blank-xl">
+        </li>
+        <li>
+          <span class="q-num">2.</span> Look at the dark clouds! It will rain.<br>
+          &rarr; <input type="text" data-ans="Look at the dark clouds! It is going to rain.|Look at the dark clouds! It is going to rain|Look at the dark clouds! It's going to rain.|Look at the dark clouds! It's going to rain" class="blank blank-xl">
+        </li>
+        <li>
+          <span class="q-num">3.</span> At exactly 8 PM tomorrow, I will watch a movie.<br>
+          &rarr; <input type="text" data-ans="At exactly 8 PM tomorrow, I will be watching a movie.|At exactly 8 PM tomorrow, I will be watching a movie|At exactly 8 PM tomorrow I will be watching a movie." class="blank blank-xl">
+        </li>
+        <li>
+          <span class="q-num">4.</span> I think I am being a manager in 10 years.<br>
+          &rarr; <input type="text" data-ans="I think I will be a manager in 10 years.|I think I will be a manager in 10 years|I think I'll be a manager in 10 years." class="blank blank-xl">
+        </li>
+        <li>
+          <span class="q-num">5.</span> We will having a meeting with the CEO next Monday. It's arranged.<br>
+          &rarr; <input type="text" data-ans="We are having a meeting with the CEO next Monday. It's arranged.|We are having a meeting with the CEO next Monday.|We're having a meeting with the CEO next Monday." class="blank blank-xl">
+        </li>
+      </ol>
+    </div>
+
+    <!-- EXERCISE 9: CREATE THE QUESTION -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">9</span>
+        <div class="title-content">
+          <div class="title-main">
+            Create a question for the given answer. Focus on the core structure!
+            <span class="pts-badge">2 pts each &middot; 10 pts</span>
+            <button class="btn-hint" onclick="toggleT('t-ex9')" title="Translation & Hint">&#127760;</button>
+          </div>
+          <div id="t-ex9" class="hint-box">
+            <strong>Traducción:</strong> Crea una pregunta para la respuesta dada. ¡Concéntrate en la estructura principal!<br>
+            <strong>💡 Hint:</strong> If the answer starts with "Yes/No", start your question with an auxiliary (Will / Are / Is). If the answer gives a time or place, use a Wh- word (What time / Where). 
+          </div>
+        </div>
+      </div>
+      <ol class="q-list">
+        <li>
+          <span class="q-num">1.</span> <strong>Answer:</strong> Yes, I am meeting the client tomorrow at 2 PM.<br>
+          <strong>Question:</strong> <input type="text" data-ans="Are you meeting the client tomorrow at 2 PM?|Are you meeting the client tomorrow?|Are you meeting the client?|Are you meeting the client" class="blank blank-xl">
+        </li>
+        <li>
+          <span class="q-num">2.</span> <strong>Answer:</strong> I will be sleeping at midnight.<br>
+          <strong>Question:</strong> <input type="text" data-ans="What will you be doing at midnight?|What will you be doing at midnight|What are you going to be doing at midnight?" class="blank blank-xl">
+        </li>
+        <li>
+          <span class="q-num">3.</span> <strong>Answer:</strong> No, I am not going to buy another pacemaker.<br>
+          <strong>Question:</strong> <input type="text" data-ans="Are you going to buy another pacemaker?|Are you going to buy another pacemaker|Are you going to buy one?|Are you going to buy one" class="blank blank-xl">
+        </li>
+        <li>
+          <span class="q-num">4.</span> <strong>Answer:</strong> I think I will be a sales manager in 10 years.<br>
+          <strong>Question:</strong> <input type="text" data-ans="Where do you see yourself in 10 years?|Where do you see yourself in 10 years|What will you be in 10 years?|What will you be in 10 years" class="blank blank-xl">
+        </li>
+        <li>
+          <span class="q-num">5.</span> <strong>Answer:</strong> We are flying to San Andresito next weekend.<br>
+          <strong>Question:</strong> <input type="text" data-ans="When are you flying to San Andresito?|When are you flying to San Andresito|Where are you flying next weekend?|Where are you flying next weekend" class="blank blank-xl">
+        </li>
+      </ol>
+    </div>
+
+    <!-- EXERCISE 10: FINAL CHALLENGE (OPEN) -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">10</span>
+        <div class="title-content">
+          <div class="title-main">
+            Final Challenge &ndash; Talk About Your Future! <em style="font-weight:400; opacity:0.7;">(Teacher evaluated)</em>
+            <span class="pts-badge">15 pts</span>
+            <button class="btn-hint" onclick="toggleT('t-ex10')" title="Translation & Hint">&#127760;</button>
+          </div>
+          <div id="t-ex10" class="hint-box">
+            <strong>Traducción:</strong> Reto Final: ¡Habla sobre tu futuro! Escribe un párrafo sobre tus planes.<br>
+            <strong>💡 Hint:</strong> Try to use a mix of structures! Use "will" for dreams, "going to" for decided plans, and present progressive for arrangements you already made for this week.
+          </div>
+        </div>
+      </div>
+      <p style="font-size:13px;font-weight:700;opacity:0.6;margin-bottom:12px">
+        Write a paragraph (5-8 lines) about your long-term plans, dreams, and hopes. We invite you to answer these questions to guide your writing:<br>
+        - <em>How do you see yourself in 10 years? (Will)</em><br>
+        - <em>What are some plans you have already decided on for your career? (Going to)</em><br>
+        - <em>What are you doing this weekend? (Present Progressive)</em><br>
+        - <em>What will you be doing exactly at this time tomorrow? (Future Progressive)</em>
+      </p>
+      <textarea
+        data-ans="OPEN"
+        rows="8"
+        placeholder="Write your paragraph here...&#10;Example: In 10 years, I think I will be a sales manager. I am going to study hard to get there. This weekend, I am visiting my family..."
+        style="width:100%;border:2px dashed #ccc;border-radius:8px;padding:14px;font-family:'Nunito',sans-serif;font-size:15px;font-weight:600;color:#2b2b2b;outline:none;resize:vertical;background:#fafafa;transition:border-color 0.2s;"
+        onfocus="this.style.borderColor='#1a1a2e'"
+        onblur="this.style.borderColor='#ccc'"
+      ></textarea>
+      <p style="font-size:14px; font-weight:800; color:#e63946; margin-top:12px; background: var(--A-light); padding: 10px; border-radius: 6px; border: 1px solid var(--A); display: inline-block;">
+        &#128242; Reminder: Take a screenshot of your paragraph to send to your teacher via WhatsApp.
+      </p>
+    </div>
+
+    <!-- ACTION BAR -->
+    <div class="action-bar">
+      <p class="friendly-reminder">&#128161; Friendly reminder: Before you check your answers, take a quick moment to double-check your spelling, the structures we practiced in class, and your class notes if you need to! You've got this! &#128522;</p>
+      <div class="score-display" id="gradeScoreBox">Score: 0</div>
+      <div class="button-group">
+        <button class="btn-action btn-check" onclick="checkStudentAnswers()">&#10004;&#65039; Check Answers</button>
+        <button class="btn-action btn-reset" onclick="resetWorksheet()">&#128260; Clear Sheet</button>
+      </div>
+    </div>
+
+    <!-- ANSWER KEY -->
+    <div class="answer-key-wrapper">
+      <button class="btn-toggle-key" id="toggleKeyBtn" onclick="toggleAnswerKey()">
+        &#128065;&#65039; Show Answer Key
+      </button>
+
+      <div class="answer-key-content" id="answerKeyContent">
+        <div class="answer-key">
+          <h2>Answer Key</h2>
+
+          <div class="key-section">
+            <h3>1. Matching Lines Pairs</h3>
+            <div class="key-list" style="column-count: 1;">
+              <div>left-1 &rarr; <span>right-3</span> (Look at those dark clouds! It... is going to rain soon.)</div>
+              <div>left-2 &rarr; <span>right-5</span> (Tomorrow at exactly 9 AM, I... will be presenting the pacemakers.)</div>
+              <div>left-3 &rarr; <span>right-4</span> (I think that in 10 years, I... will be a sales manager.)</div>
+              <div>left-4 &rarr; <span>right-1</span> (She has the tickets. She... is flying to Miami next weekend.)</div>
+              <div>left-5 &rarr; <span>right-2</span> (I promise I... will call you when I arrive.)</div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>2. Time Markers</h3>
+            <div class="key-list">
+              <div>1. <span>tomorrow at 8 AM</span></div>
+              <div>2. <span>in five minutes</span></div>
+              <div>3. <span>this weekend</span></div>
+              <div>4. <span>today</span></div>
+              <div>5. <span>at this exact time next month</span></div>
+              <div>6. <span>in 50 years</span></div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>3. Fill in the Blank (Word Bank)</h3>
+            <div class="key-list">
+              <div>1. <span>is going to rain</span></div>
+              <div>2. <span>won't forget / will not forget</span></div>
+              <div>3. <span>will be dancing</span></div>
+              <div>4. <span>are visiting</span></div>
+              <div>5. <span>will buy</span></div>
+              <div>6. <span>am going to apply</span></div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>4. Conjugate in Parenthesis</h3>
+            <div class="key-list">
+              <div>1. <span>will be presenting</span></div>
+              <div>2. <span>am not meeting / 'm not meeting</span></div>
+              <div>3. <span>Are / going to buy</span></div>
+              <div>4. <span>will have</span></div>
+              <div>5. <span>will not be working / won't be working</span></div>
+              <div>6. <span>Is / attending</span> (or going to attend)</div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>5. Unscramble</h3>
+            <div class="key-list" style="column-count: 1;">
+              <div>1. <span>I will be a sales manager.</span></div>
+              <div>2. <span>I am shopping with my mom tomorrow morning.</span></div>
+              <div>3. <span>What are you doing next Friday?</span></div>
+              <div>4. <span>I will be dancing with my friends tonight at 10 PM.</span></div>
+              <div>5. <span>She is going to sell medical devices.</span></div>
+            </div>
+          </div>
+          
+          <div class="key-section">
+            <h3>6. Reading Comprehension (Schedule)</h3>
+            <div class="key-list" style="column-count: 1;">
+              <div>1. <span>B</span> (He is meeting with regional investors.)</div>
+              <div>2. <span>A</span> (He is flying to Monterrey.)</div>
+              <div>3. <span>D</span> (He will be presenting pacemakers.)</div>
+              <div>4. <span>C</span> (No, but he will probably relax.)</div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>7. Dialogue Completion</h3>
+            <div class="key-list" style="column-count: 1;">
+              <div>1. <span>are you doing</span></div>
+              <div>2. <span>am shopping / 'm shopping</span></div>
+              <div>3. <span>am going to buy / 'm going to buy</span></div>
+              <div>4. <span>will stay / 'll stay</span></div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>8. Correct the Mistake</h3>
+            <div class="key-list" style="column-count: 1;">
+              <div>1. <span>I am going to dance at Bachata Social tonight.</span> (or I am dancing...)</div>
+              <div>2. <span>Look at the dark clouds! It is going to rain.</span></div>
+              <div>3. <span>At exactly 8 PM tomorrow, I will be watching a movie.</span></div>
+              <div>4. <span>I think I will be a manager in 10 years.</span></div>
+              <div>5. <span>We are having a meeting with the CEO next Monday.</span></div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>9. Create the Question</h3>
+            <div class="key-list" style="column-count: 1;">
+              <div>1. <span>Are you meeting the client tomorrow at 2 PM?</span></div>
+              <div>2. <span>What will you be doing at midnight?</span></div>
+              <div>3. <span>Are you going to buy another pacemaker?</span></div>
+              <div>4. <span>Where do you see yourself in 10 years?</span> (or What will you be...)</div>
+              <div>5. <span>When are you flying to San Andresito?</span> (or Where are you flying...)</div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>10. Final Challenge</h3>
+            <div class="key-list" style="column-count: 1;">
+              <div>Teacher-evaluated open writing paragraph. Check for use of all four future forms based on the prompts. Teacher checks via WhatsApp screenshot.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  function toggleT(id) {
+    const el = document.getElementById(id);
+    if (el.style.display === "block") {
+      el.style.display = "none";
+    } else {
+      el.style.display = "block";
+    }
+  }
+
+  // INTERACTIVE LINE MATCHING SYSTEM
+  let selectedLeftCard = null;
+  let matches = {}; 
+  const correctMatches = {
+    'left-1': 'right-3',
+    'left-2': 'right-5',
+    'left-3': 'right-4',
+    'left-4': 'right-1',
+    'left-5': 'right-2'
+  };
+
+  function handleCardClick(card, side) {
+    if (document.getElementById('gradeScoreBox').style.display === "block") return; 
+
+    if (side === 'left') {
+      if (selectedLeftCard) {
+        selectedLeftCard.classList.remove('selected');
+      }
+      selectedLeftCard = card;
+      card.classList.add('selected');
+    } else {
+      if (selectedLeftCard) {
+        const leftId = selectedLeftCard.getAttribute('data-id');
+        const rightId = card.getAttribute('data-id');
+        
+        for (let lKey in matches) {
+          if (matches[lKey] === rightId) delete matches[lKey];
+        }
+
+        matches[leftId] = rightId;
+        selectedLeftCard.classList.remove('selected');
+        selectedLeftCard = null;
+        
+        drawAllLines();
+      }
+    }
+  }
+
+  function drawAllLines() {
+    const svg = document.getElementById('matchingSvg');
+    if (!svg) return;
+    svg.innerHTML = ''; 
+    const workspace = document.getElementById('matchingWorkspace');
+    const workspaceRect = workspace.getBoundingClientRect();
+
+    for (let leftId in matches) {
+      const rightId = matches[leftId];
+      const leftEl = workspace.querySelector(`[data-id="${leftId}"] .match-dot`);
+      const rightEl = workspace.querySelector(`[data-id="${rightId}"] .match-dot`);
+      
+      if (leftEl && rightEl) {
+        const leftRect = leftEl.getBoundingClientRect();
+        const rightRect = rightEl.getBoundingClientRect();
+
+        const x1 = leftRect.left + leftRect.width / 2 - workspaceRect.left;
+        const y1 = leftRect.top + leftRect.height / 2 - workspaceRect.top;
+        const x2 = rightRect.left + rightRect.width / 2 - workspaceRect.left;
+        const y2 = rightRect.top + rightRect.height / 2 - workspaceRect.top;
+
+        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        line.setAttribute('x1', x1);
+        line.setAttribute('y1', y1);
+        line.setAttribute('x2', x2);
+        line.setAttribute('y2', y2);
+        line.setAttribute('stroke', '#5c4fcf');
+        line.setAttribute('stroke-width', '3');
+        line.setAttribute('id', `line-${leftId}`);
+        svg.appendChild(line);
+      }
+    }
+  }
+
+  window.addEventListener('resize', drawAllLines);
+
+  function checkStudentAnswers() {
+    let score = 0;
+    let autoTotal = 0;
+
+    // 1. Grade Matching
+    autoTotal += 5;
+    for (let leftId in correctMatches) {
+      const line = document.getElementById(`line-${leftId}`);
+      if (matches[leftId] === correctMatches[leftId]) {
+        score++;
+        if (line) line.setAttribute('stroke', '#2a9d8f'); 
+      } else {
+        if (line) line.setAttribute('stroke', '#e63946'); 
+      }
+    }
+
+    // 2. Grade Text Inputs AND Select boxes
+    const inputs = document.querySelectorAll('input[type="text"][data-ans], select[data-ans]');
+    inputs.forEach(input => {
+      let studentAns = input.value.trim().toLowerCase().replace(/[.,?!]/g, "").replace(/\s+/g, " ");
+
+      let rawTarget = input.getAttribute('data-ans').toLowerCase().replace(/[.,?!]/g, "");
+      let targetAnsArray = rawTarget.split('|').map(s => s.replace(/\s+/g, " ").trim());
+
+      input.classList.remove('is-correct', 'is-incorrect', 'is-open');
+
+      if (targetAnsArray.includes("open")) {
+        if (studentAns !== "") {
+          input.classList.add('is-open');
+        }
+      } else {
+        autoTotal++;
+        if (targetAnsArray.includes(studentAns)) {
+          input.classList.add('is-correct');
+          score++;
+        } else {
+          input.classList.add('is-incorrect');
+        }
+      }
+    });
+
+    document.querySelectorAll('textarea[data-ans]').forEach(ta => {
+      ta.style.borderColor = ta.value.trim() !== "" ? "#457b9d" : "#ccc";
+    });
+
+    const scoreBox = document.getElementById('gradeScoreBox');
+    scoreBox.innerText = "Auto-graded Score: " + score + " / " + autoTotal;
+    scoreBox.style.display = "block";
+  }
+
+  function resetWorksheet() {
+    if (confirm("Are you sure you want to clear all your answers?")) {
+      document.querySelectorAll('input[type="text"]').forEach(input => {
+        input.value = "";
+        input.classList.remove('is-correct', 'is-incorrect', 'is-open');
+      });
+      document.querySelectorAll('select').forEach(sel => {
+        sel.value = "";
+        sel.classList.remove('is-correct', 'is-incorrect', 'is-open');
+      });
+      document.querySelectorAll('textarea').forEach(ta => {
+        ta.value = "";
+        ta.style.borderColor = "#ccc";
+      });
+      
+      matches = {};
+      if (selectedLeftCard) selectedLeftCard.classList.remove('selected');
+      selectedLeftCard = null;
+      document.getElementById('matchingSvg').innerHTML = '';
+
+      document.getElementById('gradeScoreBox').style.display = "none";
+    }
+  }
+
+  function toggleAnswerKey() {
+    const content = document.getElementById("answerKeyContent");
+    const btn = document.getElementById("toggleKeyBtn");
+    if (content.style.display === "block") {
+      content.style.display = "none";
+      btn.innerHTML = "&#128065;&#65039; Show Answer Key";
+    } else {
+      content.style.display = "block";
+      btn.innerHTML = "&#128584; Hide Answer Key";
+      setTimeout(drawAllLines, 50); 
+    }
+  }
+</script>
+</body>
+</html>
