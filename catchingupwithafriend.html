@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catching Up &ndash; B2 English Worksheet</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Baloo+2:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a2e;
+    --paper: #fffef7;
+    --A: #e63946;
+    --A-light: #fde8ea;
+    --B: #2a9d8f;
+    --B-light: #d6f5f2;
+    --C: #e07b00;
+    --C-light: #fff0d6;
+    --D: #5c4fcf;
+    --D-light: #ebe8ff;
+    --E: #c77dff;
+    --E-light: #f5e6ff;
+    --rule: #d4cfc0;
+
+    /* Feedback Colors */
+    --correct: #2a9d8f;
+    --incorrect: #e63946;
+    --open-ans: #457b9d;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: #e8e4d9;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 32px 16px 60px;
+  }
+
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    background: var(--paper);
+    border-radius: 4px;
+    box-shadow: 0 4px 40px rgba(0,0,0,0.18);
+    overflow: hidden;
+  }
+
+  /* LOGISTICS BOX */
+  .logistics-box {
+    background: #e3f2fd;
+    border-left: 5px solid #1e88e5;
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 32px;
+  }
+  .logistics-box h3 {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-bottom: 10px;
+    color: #1e88e5;
+  }
+  .logistics-box p {
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 600;
+  }
+
+  /* HEADER */
+  header {
+    background: var(--ink);
+    color: #fff;
+    padding: 40px 48px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent, transparent 18px,
+      rgba(255,255,255,0.03) 18px, rgba(255,255,255,0.03) 36px
+    );
+  }
+  .header-badge {
+    display: inline-block;
+    background: #fff;
+    color: var(--ink);
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+  }
+  header h1 {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 38px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+  header h1 span { color: #f4a261; }
+  header p {
+    font-size: 15px;
+    opacity: 0.7;
+    font-weight: 600;
+  }
+
+  .content { padding: 0 44px 44px; margin-top: 20px;}
+
+  /* SECTION DIVIDERS */
+  .section-header {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--ink);
+    margin: 40px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--rule);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-header span {
+    background: var(--ink);
+    color: white;
+    font-size: 14px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+  }
+
+  /* GRAMMAR BOX */
+  .grammar-box {
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 22px;
+    border-left: 5px solid;
+  }
+  .grammar-box.purple { background: var(--E-light); border-color: var(--E); }
+  .grammar-box h3 {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 10px;
+    opacity: 0.6;
+  }
+  .grammar-box p { font-size: 14px; line-height: 1.7; font-weight: 600; }
+  .grammar-box strong { font-weight: 900; }
+
+  /* SUBTLE HIGHLIGHTS */
+  mark { 
+    background-color: var(--B-light); 
+    padding: 2px 6px; 
+    border-radius: 4px; 
+    font-weight: 800; 
+    color: var(--B); 
+  }
+
+  /* EXERCISE BLOCK & INSTRUCTIONS */
+  .exercise { margin-bottom: 36px; }
+  .exercise-title {
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    border-bottom: 2px solid var(--rule);
+    padding-bottom: 8px;
+  }
+  .title-content { display: flex; flex-direction: column; gap: 4px; }
+  .title-main { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
+  .ex-num {
+    width: 26px; height: 26px;
+    background: var(--ink);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 900;
+    color: #fff;
+    flex-shrink: 0;
+    margin-top: -2px;
+  }
+
+  .btn-hint {
+    background: none; border: none; cursor: pointer; font-size: 18px; padding: 0 4px; transition: transform 0.2s;
+  }
+  .btn-hint:hover { transform: scale(1.1); }
+  .hint-box {
+    display: none; font-size: 13px; color: #1e88e5; font-weight: 600; background: #e3f2fd;
+    padding: 12px 16px; border-radius: 6px; border-left: 4px solid #1e88e5; margin-top: 8px; line-height: 1.6;
+  }
+  .hint-box strong { color: #1565c0; font-weight: 800; }
+
+  .q-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+  .q-list li { font-size: 15px; font-weight: 600; display: block; line-height: 1.6; }
+  .q-num { font-weight: 900; opacity: 0.4; min-width: 20px; font-size: 13px; margin-right: 6px; }
+  .scrambled-box { color: #666; font-style: italic; margin-bottom: 6px; display: inline-block; }
+
+  .choice-box {
+    display: inline-flex; align-items: center; flex-wrap: wrap; background: #f7f3e8; border: 1.5px solid var(--rule);
+    border-radius: 6px; padding: 8px 14px; font-size: 13px; font-weight: 800; color: #555;
+    letter-spacing: 0.5px; word-spacing: 4px; line-height: 1.8; gap: 8px;
+  }
+  .choice-item { background: white; padding: 2px 8px; border-radius: 4px; border: 1px solid #ccc; }
+
+  .blank {
+    border: none; border-bottom: 2px solid #aaa; background: transparent; min-width: 100px;
+    font-family: 'Nunito', sans-serif; font-size: 15px; font-weight: 700; color: #2b2b2b;
+    padding: 0 4px; outline: none; text-align: center; transition: all 0.2s;
+  }
+  select.blank { text-align: center; cursor: pointer; border-radius: 4px; appearance: none; -webkit-appearance: none; -moz-appearance: none; background: rgba(0,0,0,0.02); }
+  .blank:focus { border-bottom-color: var(--ink); background: rgba(0,0,0,0.04); }
+  .blank-sm  { min-width: 60px; }
+  .blank-md  { min-width: 140px; }
+  .blank-lg  { min-width: 220px; }
+  .blank-xl  { display: block; width: 100%; text-align: left; padding: 4px 8px; margin-top: 6px; }
+
+  .is-correct { border-bottom: 2px solid var(--correct) !important; color: var(--correct) !important; background-color: rgba(42,157,143,0.06) !important; }
+  .is-incorrect { border-bottom: 2px solid var(--incorrect) !important; color: var(--incorrect) !important; background-color: rgba(230,57,70,0.06) !important; }
+  .is-open { border-bottom: 2px solid var(--open-ans) !important; color: var(--open-ans) !important; background-color: rgba(69,123,157,0.06) !important; }
+
+  /* ACTIONS */
+  .action-bar { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 36px; }
+  .friendly-reminder { font-size: 14px; font-weight: 700; color: var(--D); text-align: center; margin-bottom: 4px; padding: 10px 20px; background: var(--D-light); border-radius: 8px; border: 1px dashed var(--D); max-width: 600px; }
+  .score-display { font-family: 'Baloo 2', sans-serif; font-size: 20px; font-weight: 800; color: var(--ink); display: none; background: #f0ede4; padding: 6px 20px; border-radius: 30px; border: 2px solid var(--rule); }
+  .button-group { display: flex; gap: 16px; }
+  .btn-action { font-family: 'Baloo 2', sans-serif; font-size: 15px; font-weight: 700; padding: 12px 32px; border: none; border-radius: 6px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.12); transition: all 0.2s; }
+  .btn-check { background: #2a9d8f; color: white; }
+  .btn-check:hover { background: #228074; transform: translateY(-1px); }
+  .btn-reset { background: #e7e5e0; color: var(--ink); }
+  .btn-reset:hover { background: #dcd9d2; transform: translateY(-1px); }
+  
+  .pts-badge { display: inline-block; font-family: 'Baloo 2', sans-serif; font-size: 10px; font-weight: 800; letter-spacing: 0.5px; padding: 2px 8px; border-radius: 10px; margin-left: 6px; background: rgba(0,0,0,0.08); color: var(--ink); }
+
+  /* ANSWER KEY */
+  .answer-key-wrapper { margin-top: 48px; border-top: 3px solid var(--ink); padding-top: 20px; }
+  .btn-toggle-key { background: var(--ink); color: #fff; font-family: 'Baloo 2', sans-serif; font-size: 13px; font-weight: 700; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; letter-spacing: 0.5px; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+  .btn-toggle-key:hover { background: #2e2e4e; transform: translateY(-1px); }
+  .answer-key-content { display: none; margin-top: 24px; }
+  .answer-key h2 { font-family: 'Baloo 2', sans-serif; font-size: 20px; font-weight: 800; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+  .answer-key h2::after { content: '(Teacher Copy)'; font-size: 12px; background: var(--ink); color: #fff; padding: 3px 10px; border-radius: 20px; letter-spacing: 1px; font-weight: 700; }
+  .key-section { margin-bottom: 20px; }
+  .key-section h3 { font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; opacity: 0.5; }
+  .key-list { font-size: 14px; font-weight: 600; line-height: 2; column-count: 2; column-gap: 32px; }
+  .key-list span { font-weight: 900; }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; }
+    .action-bar, .btn-hint, .answer-key-wrapper { display: none !important; }
+    .blank { border-bottom-color: #000; }
+  }
+
+  @media (max-width: 600px) {
+    .content { padding: 0 20px 36px; }
+    header { padding: 28px 20px 22px; }
+    header h1 { font-size: 34px; }
+    .blank-lg, .blank-xl { width: 100%; min-width: 100%; }
+    .button-group { flex-direction: column; align-items: stretch; width: 100%; }
+    .btn-action { text-align: center; }
+    .key-list { column-count: 1; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="header-badge">ESL Worksheet &middot; Conversation Skills</div>
+    <h1>Catching Up With a <span>Friend</span></h1>
+    <p>Present Perfect Simple &amp; Continuous &middot; For/Since</p>
+  </header>
+
+  <div class="content">
+
+    <div class="logistics-box">
+      <h3>&#128203; Worksheet Guide</h3>
+      <p>Welcome! Today we are practicing how to talk to a friend you haven't seen in a while. We will review how to describe past events that connect to your present life.</p>
+      <p style="margin-top:8px">When you finish the 4 auto-graded exercises, remember to take a screenshot of your Final Challenge and send it to your teacher!</p>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- SECTION: GRAMMAR REVIEW                    -->
+    <!-- ========================================== -->
+    <div class="section-header">
+      <span>Grammar</span> Life Updates
+    </div>
+
+    <div class="grammar-box purple">
+      <h3>&#128204; Grammar Notes: Perfect Tenses</h3>
+      <ul style="margin-left: 20px; font-size: 14px; font-weight: 600; line-height: 1.7; margin-top: 8px;">
+        <li><strong>Present Perfect:</strong> (Have/has + participle) Used for experiences or finished actions that matter now. <br><em>"I have started a new job."</em></li>
+        <li><strong>Present Perfect Continuous:</strong> (Have/has + been + -ing) Used for actions that started in the past and are still ongoing.<br><em>"I have been working at SLB."</em></li>
+        <li><strong>For vs. Since:</strong><br>&bull; <strong>For:</strong> Periods of time (duration). <em>"For 10 months."</em><br>&bull; <strong>Since:</strong> The point of beginning. <em>"Since September 2025."</em></li>
+        <li><strong>Useful Words:</strong> already, yet, before, never, ever, recently, lately.</li>
+      </ul>
+    </div>
+
+    <!-- EXERCISE 1: FOR / SINCE -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">1</span>
+        <div class="title-content">
+          <div class="title-main">
+            Type "for" or "since" to complete the time expressions.
+            <span class="pts-badge">1 pt each &middot; 10 pts</span>
+            <button class="btn-hint" onclick="toggleT('t-ex1')" title="Hint">&#127760;</button>
+          </div>
+          <div id="t-ex1" class="hint-box">
+            <strong>💡 Hint:</strong> Remember, use "for" to count the amount of time (duration) and "since" for the exact starting point on a calendar or clock. 
+          </div>
+        </div>
+      </div>
+      <ol class="q-list">
+        <li>
+          1. <input type="text" data-ans="for" data-pts="1" class="blank blank-sm"> three weeks
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          6. <input type="text" data-ans="for" data-pts="1" class="blank blank-sm"> five hours
+        </li>
+        <li>
+          2. <input type="text" data-ans="since" data-pts="1" class="blank blank-sm"> 2022
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          7. <input type="text" data-ans="since" data-pts="1" class="blank blank-sm"> I moved to Bogotá
+        </li>
+        <li>
+          3. <input type="text" data-ans="for" data-pts="1" class="blank blank-sm"> a long time
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          8. <input type="text" data-ans="for" data-pts="1" class="blank blank-sm"> almost a decade
+        </li>
+        <li>
+          4. <input type="text" data-ans="since" data-pts="1" class="blank blank-sm"> I graduated
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          9. <input type="text" data-ans="since" data-pts="1" class="blank blank-sm"> January
+        </li>
+        <li>
+          5. <input type="text" data-ans="since" data-pts="1" class="blank blank-sm"> last Monday
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          10. <input type="text" data-ans="for" data-pts="1" class="blank blank-sm"> a couple of months
+        </li>
+      </ol>
+    </div>
+
+    <!-- EXERCISE 2: SIMPLE VS CONTINUOUS -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">2</span>
+        <div class="title-content">
+          <div class="title-main">
+            Conjugate the verb in parenthesis into the Present Perfect Simple OR Continuous.
+            <span class="pts-badge">2 pts each &middot; 10 pts</span>
+            <button class="btn-hint" onclick="toggleT('t-ex2')" title="Hint">&#127760;</button>
+          </div>
+          <div id="t-ex2" class="hint-box">
+            <strong>💡 Hint:</strong> Use the continuous form for actions that are still happening frequently right now (working, eating), and the simple form for finished actions or states (know, have, visit). Check the position of words like "already"!
+          </div>
+        </div>
+      </div>
+      <ol class="q-list">
+        <li><span class="q-num">1.</span> I <input type="text" data-ans="have known|'ve known" data-pts="2" class="blank blank-md"> (know) Mark since we were kids.</li>
+        <li><span class="q-num">2.</span> She <input type="text" data-ans="has been studying|'s been studying" data-pts="2" class="blank blank-md"> (study) French for three hours, and she's not done yet!</li>
+        <li><span class="q-num">3.</span> We <input type="text" data-ans="have already finished|'ve already finished|have finished already|'ve finished already" data-pts="2" class="blank blank-lg"> (already / finish) the project for our client.</li>
+        <li><span class="q-num">4.</span> I <input type="text" data-ans="have been working|'ve been working" data-pts="2" class="blank blank-md"> (work) from home lately, and I love the flexibility.</li>
+        <li><span class="q-num">5.</span> They <input type="text" data-ans="have visited|'ve visited" data-pts="2" class="blank blank-md"> (visit) that new museum three times before.</li>
+      </ol>
+    </div>
+
+    <!-- EXERCISE 3: UNSCRAMBLE -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">3</span>
+        <div class="title-content">
+          <div class="title-main">
+            Unscramble the words to formulate correct sentences.
+            <span class="pts-badge">2 pts each &middot; 10 pts</span>
+          </div>
+        </div>
+      </div>
+      <ol class="q-list">
+        <li>
+          <span class="q-num">1.</span> <span class="scrambled-box">(long / see / time / no / how / been / you / have / ?)</span>
+          <input type="text" data-ans="long time no see how have you been|how have you been long time no see" data-pts="2" class="blank blank-xl" placeholder="Type here...">
+        </li>
+        <li>
+          <span class="q-num">2.</span> <span class="scrambled-box">(lately / I / working / been / have / a / lot)</span>
+          <input type="text" data-ans="i have been working a lot lately|lately i have been working a lot|i've been working a lot lately|lately i've been working a lot" data-pts="2" class="blank blank-xl" placeholder="Type here...">
+        </li>
+        <li>
+          <span class="q-num">3.</span> <span class="scrambled-box">(apartment / lived / have / since / they / this / in / May)</span>
+          <input type="text" data-ans="they have lived in this apartment since may|they've lived in this apartment since may" data-pts="2" class="blank blank-xl" placeholder="Type here...">
+        </li>
+        <li>
+          <span class="q-num">4.</span> <span class="scrambled-box">(not / you / have / changed / at / all)</span>
+          <input type="text" data-ans="you have not changed at all|you haven't changed at all" data-pts="2" class="blank blank-xl" placeholder="Type here...">
+        </li>
+        <li>
+          <span class="q-num">5.</span> <span class="scrambled-box">(has / lately / she / eating / healthier / been)</span>
+          <input type="text" data-ans="she has been eating healthier lately|lately she has been eating healthier|she's been eating healthier lately|lately she's been eating healthier" data-pts="2" class="blank blank-xl" placeholder="Type here...">
+        </li>
+      </ol>
+    </div>
+
+    <!-- EXERCISE 4: DIALOGUE COMPLETION -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">4</span>
+        <div class="title-content">
+          <div class="title-main">
+            Complete the dialogue using the "Useful Words" from the box.
+            <span class="pts-badge">2 pts each &middot; 10 pts</span>
+          </div>
+        </div>
+      </div>
+      <p style="margin-bottom: 12px;">
+        <span class="choice-box">
+          <span class="choice-item">already</span>
+          <span class="choice-item">yet</span>
+          <span class="choice-item">recently</span>
+          <span class="choice-item">ever</span>
+          <span class="choice-item">for</span>
+        </span>
+      </p>
+      <ul class="q-list" style="background:#f9f9f9; padding:20px; border-radius:8px; border:1px solid #ddd; list-style:none;">
+        <li><strong>Emma:</strong> Hey Liam! Long time no see. Have you <input type="text" data-ans="ever" data-pts="2" class="blank blank-sm"> been back to our hometown?</li>
+        <li><strong>Liam:</strong> Oh hey! Not <input type="text" data-ans="recently" data-pts="2" class="blank blank-sm">, actually. I have been living in Canada <input type="text" data-ans="for" data-pts="2" class="blank blank-sm"> the last two years.</li>
+        <li><strong>Emma:</strong> Wow, Canada! Have you found a new job there <input type="text" data-ans="yet" data-pts="2" class="blank blank-sm">?</li>
+        <li><strong>Liam:</strong> Yes! I have <input type="text" data-ans="already" data-pts="2" class="blank blank-sm"> started working at a tech company, and I love it.</li>
+      </ul>
+    </div>
+
+    <!-- EXERCISE 5: FINAL CHALLENGE -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">5</span>
+        <div class="title-content">
+          <div class="title-main">
+            Final Challenge &ndash; Catching Up! <em style="font-weight:400; opacity:0.7;">(Teacher evaluated)</em>
+            <span class="pts-badge">10 pts</span>
+          </div>
+        </div>
+      </div>
+      <p style="font-size:13px;font-weight:700;opacity:0.6;margin-bottom:12px">
+        Write a short paragraph (4-6 lines) catching up with an old friend. Answer the question <em>"How have you been?"</em>. <br>
+        You MUST include:<br>
+        1. One thing you have <strong>done</strong> (Present Perfect Simple).<br>
+        2. One thing you have <strong>been doing</strong> lately (Present Perfect Continuous).<br>
+        3. Correct use of <strong>for</strong> or <strong>since</strong>.
+      </p>
+      <textarea
+        data-ans="OPEN"
+        rows="5"
+        placeholder="Write your paragraph here...&#10;Example: Hi! I have been great! I have lived in a new apartment for three months, and I have been eating a lot of pasta lately..."
+        style="width:100%;border:2px dashed #ccc;border-radius:8px;padding:14px;font-family:'Nunito',sans-serif;font-size:15px;font-weight:600;color:#2b2b2b;outline:none;resize:vertical;background:#fafafa;transition:border-color 0.2s;"
+        onfocus="this.style.borderColor='#1a1a2e'"
+        onblur="this.style.borderColor='#ccc'"
+      ></textarea>
+      <p style="font-size:14px; font-weight:800; color:#e63946; margin-top:12px; background: var(--A-light); padding: 10px; border-radius: 6px; border: 1px solid var(--A); display: inline-block;">
+        &#128242; Reminder: Take a screenshot of your paragraph to send to your teacher via WhatsApp.
+      </p>
+    </div>
+
+    <!-- ACTION BAR -->
+    <div class="action-bar">
+      <p class="friendly-reminder">&#128161; Double-check your spelling! The system grades up to 40 points automatically. The final 10 points are graded manually. &#128522;</p>
+      <div class="score-display" id="gradeScoreBox">Score: 0 / 40</div>
+      <div class="button-group">
+        <button class="btn-action btn-check" onclick="checkStudentAnswers()">&#10004;&#65039; Check Answers</button>
+        <button class="btn-action btn-reset" onclick="resetWorksheet()">&#128260; Clear Sheet</button>
+      </div>
+    </div>
+
+    <!-- ANSWER KEY -->
+    <div class="answer-key-wrapper">
+      <button class="btn-toggle-key" id="toggleKeyBtn" onclick="toggleAnswerKey()">
+        &#128065;&#65039; Show Answer Key
+      </button>
+
+      <div class="answer-key-content" id="answerKeyContent">
+        <div class="answer-key">
+          <h2>Answer Key</h2>
+
+          <div class="key-section">
+            <h3>1. For / Since (1 pt each)</h3>
+            <div class="key-list">
+              <div>1. <span>for</span></div>
+              <div>2. <span>since</span></div>
+              <div>3. <span>for</span></div>
+              <div>4. <span>since</span></div>
+              <div>5. <span>since</span></div>
+              <div>6. <span>for</span></div>
+              <div>7. <span>since</span></div>
+              <div>8. <span>for</span></div>
+              <div>9. <span>since</span></div>
+              <div>10. <span>for</span></div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>2. Simple vs Continuous (2 pts each)</h3>
+            <div class="key-list">
+              <div>1. <span>have known</span></div>
+              <div>2. <span>has been studying</span></div>
+              <div>3. <span>have already finished</span></div>
+              <div>4. <span>have been working</span></div>
+              <div>5. <span>have visited</span></div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>3. Unscramble (2 pts each)</h3>
+            <div class="key-list" style="column-count: 1;">
+              <div>1. <span>Long time no see! How have you been?</span></div>
+              <div>2. <span>I have been working a lot lately.</span> (or Lately I have been working a lot)</div>
+              <div>3. <span>They have lived in this apartment since May.</span></div>
+              <div>4. <span>You have not changed at all.</span> (or haven't)</div>
+              <div>5. <span>She has been eating healthier lately.</span> (or Lately she has been...)</div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>4. Dialogue Completion (2 pts each)</h3>
+            <div class="key-list">
+              <div>1. <span>ever</span></div>
+              <div>2. <span>recently</span></div>
+              <div>3. <span>for</span></div>
+              <div>4. <span>yet</span></div>
+              <div>5. <span>already</span></div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>5. Final Challenge (10 pts)</h3>
+            <div class="key-list" style="column-count: 1;">
+              <div>Teacher-evaluated open writing paragraph. Check for correct use of Present Perfect Simple (done), Present Perfect Continuous (been doing), and for/since.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  function toggleT(id) {
+    const el = document.getElementById(id);
+    if (el.style.display === "block") {
+      el.style.display = "none";
+    } else {
+      el.style.display = "block";
+    }
+  }
+
+  function checkStudentAnswers() {
+    let score = 0;
+    let autoTotal = 40; 
+
+    const inputs = document.querySelectorAll('input[type="text"][data-ans], select[data-ans]');
+    inputs.forEach(input => {
+      let studentAns = input.value.trim().toLowerCase().replace(/[.,?!]/g, "").replace(/\s+/g, " ");
+      let rawTarget = input.getAttribute('data-ans').toLowerCase().replace(/[.,?!]/g, "");
+      let targetAnsArray = rawTarget.split('|').map(s => s.replace(/\s+/g, " ").trim());
+      
+      let pts = parseInt(input.getAttribute('data-pts')) || 1;
+
+      input.classList.remove('is-correct', 'is-incorrect', 'is-open');
+
+      if (targetAnsArray.includes("open")) {
+        if (studentAns !== "") {
+          input.classList.add('is-open');
+        }
+      } else {
+        if (targetAnsArray.includes(studentAns)) {
+          input.classList.add('is-correct');
+          score += pts;
+        } else {
+          input.classList.add('is-incorrect');
+        }
+      }
+    });
+
+    document.querySelectorAll('textarea[data-ans]').forEach(ta => {
+      ta.style.borderColor = ta.value.trim() !== "" ? "#457b9d" : "#ccc";
+    });
+
+    const scoreBox = document.getElementById('gradeScoreBox');
+    scoreBox.innerText = "Auto-graded Score: " + score + " / " + autoTotal;
+    scoreBox.style.display = "block";
+  }
+
+  function resetWorksheet() {
+    if (confirm("Are you sure you want to clear all your answers?")) {
+      document.querySelectorAll('input[type="text"]').forEach(input => {
+        input.value = "";
+        input.classList.remove('is-correct', 'is-incorrect', 'is-open');
+      });
+      document.querySelectorAll('select').forEach(sel => {
+        sel.value = "";
+        sel.classList.remove('is-correct', 'is-incorrect', 'is-open');
+      });
+      document.querySelectorAll('textarea').forEach(ta => {
+        ta.value = "";
+        ta.style.borderColor = "#ccc";
+      });
+
+      document.getElementById('gradeScoreBox').style.display = "none";
+    }
+  }
+
+  function toggleAnswerKey() {
+    const content = document.getElementById("answerKeyContent");
+    const btn = document.getElementById("toggleKeyBtn");
+    if (content.style.display === "block") {
+      content.style.display = "none";
+      btn.innerHTML = "&#128065;&#65039; Show Answer Key";
+    } else {
+      content.style.display = "block";
+      btn.innerHTML = "&#128584; Hide Answer Key";
+    }
+  }
+</script>
+</body>
+</html>
