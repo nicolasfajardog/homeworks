@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Describing Company Processes &ndash; B2 English Worksheet</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Baloo+2:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a2e;
+    --paper: #fffef7;
+    --A: #e63946;
+    --A-light: #fde8ea;
+    --B: #2a9d8f;
+    --B-light: #d6f5f2;
+    --C: #e07b00;
+    --C-light: #fff0d6;
+    --D: #5c4fcf;
+    --D-light: #ebe8ff;
+    --E: #c77dff;
+    --E-light: #f5e6ff;
+    --rule: #d4cfc0;
+
+    /* Feedback Colors */
+    --correct: #2a9d8f;
+    --incorrect: #e63946;
+    --open-ans: #457b9d;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: #e8e4d9;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 32px 16px 60px;
+  }
+
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    background: var(--paper);
+    border-radius: 4px;
+    box-shadow: 0 4px 40px rgba(0,0,0,0.18);
+    overflow: hidden;
+  }
+
+  /* LOGISTICS BOX */
+  .logistics-box {
+    background: #e3f2fd;
+    border-left: 5px solid #1e88e5;
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 32px;
+  }
+  .logistics-box h3 {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-bottom: 10px;
+    color: #1e88e5;
+  }
+  .logistics-box p {
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 600;
+  }
+
+  /* HEADER */
+  header {
+    background: var(--ink);
+    color: #fff;
+    padding: 40px 48px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent, transparent 18px,
+      rgba(255,255,255,0.03) 18px, rgba(255,255,255,0.03) 36px
+    );
+  }
+  .header-badge {
+    display: inline-block;
+    background: #fff;
+    color: var(--ink);
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+  }
+  header h1 {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 38px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+  header h1 span { color: #f4a261; }
+  header p {
+    font-size: 15px;
+    opacity: 0.7;
+    font-weight: 600;
+  }
+
+  .content { padding: 0 44px 44px; margin-top: 20px;}
+
+  /* SECTION DIVIDERS */
+  .section-header {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--ink);
+    margin: 40px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--rule);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-header span {
+    background: var(--ink);
+    color: white;
+    font-size: 14px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+  }
+
+  /* GRAMMAR BOX */
+  .grammar-box {
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 22px;
+    border-left: 5px solid;
+  }
+  .grammar-box.purple { background: var(--E-light); border-color: var(--E); }
+  .grammar-box h3 {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 10px;
+    opacity: 0.6;
+  }
+  .grammar-box p { font-size: 14px; line-height: 1.7; font-weight: 600; }
+  .grammar-box strong { font-weight: 900; }
+
+  /* SUBTLE HIGHLIGHTS */
+  mark { 
+    background-color: var(--B-light); 
+    padding: 2px 6px; 
+    border-radius: 4px; 
+    font-weight: 800; 
+    color: var(--B); 
+  }
+
+  /* EXERCISE BLOCK & INSTRUCTIONS */
+  .exercise { margin-bottom: 36px; }
+  .exercise-title {
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    border-bottom: 2px solid var(--rule);
+    padding-bottom: 8px;
+  }
+  .title-content { display: flex; flex-direction: column; gap: 4px; }
+  .title-main { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
+  .ex-num {
+    width: 26px; height: 26px;
+    background: var(--ink);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 900;
+    color: #fff;
+    flex-shrink: 0;
+    margin-top: -2px;
+  }
+
+  .btn-hint {
+    background: none; border: none; cursor: pointer; font-size: 18px; padding: 0 4px; transition: transform 0.2s;
+  }
+  .btn-hint:hover { transform: scale(1.1); }
+  .hint-box {
+    display: none; font-size: 13px; color: #1e88e5; font-weight: 600; background: #e3f2fd;
+    padding: 12px 16px; border-radius: 6px; border-left: 4px solid #1e88e5; margin-top: 8px; line-height: 1.6;
+  }
+  .hint-box strong { color: #1565c0; font-weight: 800; }
+
+  .q-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+  .q-list li { font-size: 15px; font-weight: 600; display: block; line-height: 1.6; }
+  .q-num { font-weight: 900; opacity: 0.4; min-width: 20px; font-size: 13px; margin-right: 6px; }
+  .scrambled-box { color: #666; font-style: italic; margin-bottom: 6px; display: inline-block; }
+
+  .blank {
+    border: none; border-bottom: 2px solid #aaa; background: transparent; min-width: 100px;
+    font-family: 'Nunito', sans-serif; font-size: 15px; font-weight: 700; color: #2b2b2b;
+    padding: 0 4px; outline: none; text-align: center; transition: all 0.2s;
+  }
+  select.blank { text-align: center; cursor: pointer; border-radius: 4px; appearance: none; -webkit-appearance: none; -moz-appearance: none; background: rgba(0,0,0,0.02); }
+  .blank:focus { border-bottom-color: var(--ink); background: rgba(0,0,0,0.04); }
+  .blank-sm  { min-width: 60px; }
+  .blank-md  { min-width: 140px; }
+  .blank-lg  { min-width: 220px; }
+  .blank-xl  { display: block; width: 100%; text-align: left; padding: 4px 8px; margin-top: 6px; }
+
+  .is-correct { border-bottom: 2px solid var(--correct) !important; color: var(--correct) !important; background-color: rgba(42,157,143,0.06) !important; }
+  .is-incorrect { border-bottom: 2px solid var(--incorrect) !important; color: var(--incorrect) !important; background-color: rgba(230,57,70,0.06) !important; }
+  .is-open { border-bottom: 2px solid var(--open-ans) !important; color: var(--open-ans) !important; background-color: rgba(69,123,157,0.06) !important; }
+
+  /* ACTIONS */
+  .action-bar { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 36px; }
+  .friendly-reminder { font-size: 14px; font-weight: 700; color: var(--D); text-align: center; margin-bottom: 4px; padding: 10px 20px; background: var(--D-light); border-radius: 8px; border: 1px dashed var(--D); max-width: 600px; }
+  .score-display { font-family: 'Baloo 2', sans-serif; font-size: 20px; font-weight: 800; color: var(--ink); display: none; background: #f0ede4; padding: 6px 20px; border-radius: 30px; border: 2px solid var(--rule); }
+  .button-group { display: flex; gap: 16px; }
+  .btn-action { font-family: 'Baloo 2', sans-serif; font-size: 15px; font-weight: 700; padding: 12px 32px; border: none; border-radius: 6px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.12); transition: all 0.2s; }
+  .btn-check { background: #2a9d8f; color: white; }
+  .btn-check:hover { background: #228074; transform: translateY(-1px); }
+  .btn-reset { background: #e7e5e0; color: var(--ink); }
+  .btn-reset:hover { background: #dcd9d2; transform: translateY(-1px); }
+  
+  .pts-badge { display: inline-block; font-family: 'Baloo 2', sans-serif; font-size: 10px; font-weight: 800; letter-spacing: 0.5px; padding: 2px 8px; border-radius: 10px; margin-left: 6px; background: rgba(0,0,0,0.08); color: var(--ink); }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; }
+    .action-bar, .btn-hint { display: none !important; }
+    .blank { border-bottom-color: #000; }
+  }
+
+  @media (max-width: 600px) {
+    .content { padding: 0 20px 36px; }
+    header { padding: 28px 20px 22px; }
+    header h1 { font-size: 34px; }
+    .blank-lg, .blank-xl { width: 100%; min-width: 100%; }
+    .button-group { flex-direction: column; align-items: stretch; width: 100%; }
+    .btn-action { text-align: center; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="header-badge">ESL Worksheet &middot; Business English B2</div>
+    <h1>Describing <span>Company</span> Processes</h1>
+    <p>Corporate Environments &middot; The Passive Voice &middot; Modals</p>
+  </header>
+
+  <div class="content">
+
+    <div class="logistics-box">
+      <h3>&#128203; Worksheet Guide</h3>
+      <p>Welcome! Today we will practice using the <strong>Passive Voice</strong> to sound more professional and formal when describing business processes (HR, Sales, Logistics).</p>
+      <p style="margin-top:8px">Use the <strong>&#127760;</strong> button for hints based on your class notes. For the final challenge, remember to take a screenshot and send it directly to your teacher for manual grading!</p>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- SECTION: THE PASSIVE VOICE                 -->
+    <!-- ========================================== -->
+    <div class="section-header">
+      <span>Corporate English</span> The Passive Voice
+    </div>
+
+    <div class="grammar-box purple">
+      <h3>&#128204; Grammar Notes: Formality & Focus</h3>
+      <p>We use the Passive Voice when the <strong>object</strong> is more important than the subject, when the subject is irrelevant/obvious, or simply to sound more formal in business.</p>
+      <ul style="margin-left: 20px; font-size: 14px; font-weight: 600; line-height: 1.7; margin-top: 8px;">
+        <li><strong>Structure:</strong> Object + <strong>TO BE</strong> (gives the time/tense) + <strong>PARTICIPLE</strong> + complements</li>
+        <li><strong>Present:</strong> <em>"The salaries are paid on the 25th of each month."</em></li>
+        <li><strong>Past:</strong> <em>"Fifty packages were delivered last week."</em></li>
+        <li><strong>Modals:</strong> <em>"The money should be transferred in two workdays."</em></li>
+      </ul>
+    </div>
+
+    <!-- EXERCISE 1: TO BE VERB -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">1</span>
+        <div class="title-content">
+          <div class="title-main">
+            Select the correct form of the verb "TO BE" (am, is, are, was, were, be) to match the context.
+            <span class="pts-badge">1 pt each &middot; 6 pts</span>
+            <button class="btn-hint" onclick="toggleT('t-ex1')" title="Translation & Hint">&#127760;</button>
+          </div>
+          <div id="t-ex1" class="hint-box">
+            <strong>Traducción:</strong> Selecciona la forma correcta del verbo "TO BE" para que coincida con el contexto.<br>
+            <strong>💡 Hint:</strong> Mira el marcador de tiempo (yesterday = was/were), los sujetos plurales (salaries = are/were) o si hay un verbo modal (can/should = be). ¡Piensa en el ejemplo de <em>"I am compensated"</em>!
+          </div>
+        </div>
+      </div>
+      <ol class="q-list">
+        <li>
+          <span class="q-num">1.</span> The quarterly taxes 
+          <select data-ans="are" class="blank">
+            <option value="">--</option>
+            <option value="am">am</option><option value="is">is</option><option value="are">are</option>
+            <option value="was">was</option><option value="were">were</option><option value="be">be</option>
+          </select> 
+          calculated by the finance team every three months.
+        </li>
+        <li>
+          <span class="q-num">2.</span> Fifty laptops 
+          <select data-ans="were" class="blank">
+            <option value="">--</option>
+            <option value="am">am</option><option value="is">is</option><option value="are">are</option>
+            <option value="was">was</option><option value="were">were</option><option value="be">be</option>
+          </select> 
+          ordered for the new employees yesterday morning.
+        </li>
+        <li>
+          <span class="q-num">3.</span> The new security software can 
+          <select data-ans="be" class="blank">
+            <option value="">--</option>
+            <option value="am">am</option><option value="is">is</option><option value="are">are</option>
+            <option value="was">was</option><option value="were">were</option><option value="be">be</option>
+          </select> 
+          downloaded online from the internal portal.
+        </li>
+        <li>
+          <span class="q-num">4.</span> I 
+          <select data-ans="am" class="blank">
+            <option value="">--</option>
+            <option value="am">am</option><option value="is">is</option><option value="are">are</option>
+            <option value="was">was</option><option value="were">were</option><option value="be">be</option>
+          </select> 
+          compensated for all my overtime and travel expenses.
+        </li>
+        <li>
+          <span class="q-num">5.</span> The broken server 
+          <select data-ans="was" class="blank">
+            <option value="">--</option>
+            <option value="am">am</option><option value="is">is</option><option value="are">are</option>
+            <option value="was">was</option><option value="were">were</option><option value="be">be</option>
+          </select> 
+          repaired last night by the IT department.
+        </li>
+        <li>
+          <span class="q-num">6.</span> Highly confidential documents should 
+          <select data-ans="be" class="blank">
+            <option value="">--</option>
+            <option value="am">am</option><option value="is">is</option><option value="are">are</option>
+            <option value="was">was</option><option value="were">were</option><option value="be">be</option>
+          </select> 
+          shredded immediately after the meeting.
+        </li>
+      </ol>
+    </div>
+
+    <!-- EXERCISE 2: PARTICIPLES -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">2</span>
+        <div class="title-content">
+          <div class="title-main">
+            Fill in the blank with the correct Past Participle of the verb in parenthesis.
+            <span class="pts-badge">1 pt each &middot; 6 pts</span>
+            <button class="btn-hint" onclick="toggleT('t-ex2')" title="Translation & Hint">&#127760;</button>
+          </div>
+          <div id="t-ex2" class="hint-box">
+            <strong>Traducción:</strong> Llena el espacio con el Participio Pasado correcto del verbo en paréntesis.<br>
+            <strong>💡 Hint:</strong> Recuerda usar el Participio Pasado (la tercera columna de los verbos irregulares, o agregar -ed a los regulares). Por ejemplo: <em>The bills can be PAID online</em>.
+          </div>
+        </div>
+      </div>
+      <ol class="q-list">
+        <li><span class="q-num">1.</span> The marketing budget is <input type="text" data-ans="approved" class="blank blank-md"> (approve) every January by the board of directors.</li>
+        <li><span class="q-num">2.</span> Last month, over 500 packages were <input type="text" data-ans="shipped|delivered" class="blank blank-md"> (ship) to our European distributors.</li>
+        <li><span class="q-num">3.</span> The corporate invoices can be <input type="text" data-ans="paid" class="blank blank-md"> (pay) through our secure banking portal.</li>
+        <li><span class="q-num">4.</span> Difficult customer complaints are always <input type="text" data-ans="handled" class="blank blank-md"> (handle) by the senior support team.</li>
+        <li><span class="q-num">5.</span> Oh no! The money was <input type="text" data-ans="transferred" class="blank blank-md"> (transfer) to the wrong bank account!</li>
+        <li><span class="q-num">6.</span> The new safety guidelines should be <input type="text" data-ans="read" class="blank blank-md"> (read) by all factory employees.</li>
+      </ol>
+    </div>
+
+    <!-- EXERCISE 3: ACTIVE TO PASSIVE -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">3</span>
+        <div class="title-content">
+          <div class="title-main">
+            Transform these active sentences into the Passive Voice. Remove the subject completely.
+            <span class="pts-badge">2 pts each &middot; 10 pts</span>
+            <button class="btn-hint" onclick="toggleT('t-ex3')" title="Translation & Hint">&#127760;</button>
+          </div>
+          <div id="t-ex3" class="hint-box">
+            <strong>Traducción:</strong> Transforma estas oraciones activas a Voz Pasiva. Elimina el sujeto por completo.<br>
+            <strong>💡 Hint:</strong> "The sellers sell cochlear implants everyday" -> <em>"The cochlear implants are sold everyday."</em> El objeto (qué recibe la acción) se convierte en el sujeto de tu nueva oración.
+          </div>
+        </div>
+      </div>
+      <ol class="q-list">
+        <li>
+          <span class="q-num">1.</span> Someone scheduled the team meeting at 9 AM online.<br>
+          &rarr; <input type="text" data-ans="The team meeting was scheduled at 9 AM online.|The team meeting was scheduled at 9 AM online" class="blank blank-xl">
+        </li>
+        <li>
+          <span class="q-num">2.</span> The technicians repair the MRI machines daily.<br>
+          &rarr; <input type="text" data-ans="The MRI machines are repaired daily.|The MRI machines are repaired daily" class="blank blank-xl">
+        </li>
+        <li>
+          <span class="q-num">3.</span> The bank should process the refund in two workdays.<br>
+          &rarr; <input type="text" data-ans="The refund should be processed in two workdays.|The refund should be processed in two workdays" class="blank blank-xl">
+        </li>
+        <li>
+          <span class="q-num">4.</span> Logistics delivered twenty pallets to the warehouse this morning.<br>
+          &rarr; <input type="text" data-ans="Twenty pallets were delivered to the warehouse this morning.|Twenty pallets were delivered to the warehouse this morning" class="blank blank-xl">
+        </li>
+        <li>
+          <span class="q-num">5.</span> The HR department updates the vacation policy every year.<br>
+          &rarr; <input type="text" data-ans="The vacation policy is updated every year.|The vacation policy is updated every year" class="blank blank-xl">
+        </li>
+      </ol>
+    </div>
+
+    <!-- EXERCISE 4: UNSCRAMBLE -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">4</span>
+        <div class="title-content">
+          <div class="title-main">
+            Unscramble the words to formulate correct sentences in the Passive Voice.
+            <span class="pts-badge">2 pts each &middot; 8 pts</span>
+            <button class="btn-hint" onclick="toggleT('t-ex4')" title="Translation & Hint">&#127760;</button>
+          </div>
+          <div id="t-ex4" class="hint-box">
+            <strong>Traducción:</strong> Ordena las palabras para formular oraciones correctas en Voz Pasiva.<br>
+            <strong>💡 Hint:</strong> Recuerda la estructura base: Sujeto + TO BE + Participio. Si es con modal, va: Sujeto + Modal + be + Participio (ej. <em>The bills can be paid</em>).
+          </div>
+        </div>
+      </div>
+      <ol class="q-list">
+        <li>
+          <span class="q-num">1.</span> <span class="scrambled-box">(be / can / online / signed / contracts / the)</span>
+          <input type="text" data-ans="The contracts can be signed online.|The contracts can be signed online" class="blank blank-xl" placeholder="Type here...">
+        </li>
+        <li>
+          <span class="q-num">2.</span> <span class="scrambled-box">(month / paid / are / the / bonuses / every)</span>
+          <input type="text" data-ans="The bonuses are paid every month.|The bonuses are paid every month" class="blank blank-xl" placeholder="Type here...">
+        </li>
+        <li>
+          <span class="q-num">3.</span> <span class="scrambled-box">(delivered / warehouse / the / to / were / materials)</span>
+          <input type="text" data-ans="The materials were delivered to the warehouse.|The materials were delivered to the warehouse" class="blank blank-xl" placeholder="Type here...">
+        </li>
+        <li>
+          <span class="q-num">4.</span> <span class="scrambled-box">(by / planned / the / manager / meeting / was / the)</span>
+          <input type="text" data-ans="The meeting was planned by the manager.|The meeting was planned by the manager" class="blank blank-xl" placeholder="Type here...">
+        </li>
+      </ol>
+    </div>
+
+    <!-- EXERCISE 5: FINAL CHALLENGE -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">5</span>
+        <div class="title-content">
+          <div class="title-main">
+            Final Challenge &ndash; Company Processes <em style="font-weight:400; opacity:0.7;">(Teacher evaluated)</em>
+            <span class="pts-badge">10 pts</span>
+            <button class="btn-hint" onclick="toggleT('t-ex5')" title="Translation & Hint">&#127760;</button>
+          </div>
+          <div id="t-ex5" class="hint-box">
+            <strong>Traducción:</strong> Reto Final: Procesos de la empresa. Escribe un párrafo describiendo un proceso interno.<br>
+            <strong>💡 Hint:</strong> Usa el vocabulario de tu departamento (Ventas, Logística, Recursos Humanos). ¿Qué se aprueba? ¿Qué se envía? ¿Qué debe ser revisado? ¡Usa la voz pasiva!
+          </div>
+        </div>
+      </div>
+      <p style="font-size:13px;font-weight:700;opacity:0.6;margin-bottom:12px">
+        Write a short paragraph (4-6 lines) describing a standard process in your company or department (or invent one!). You MUST use the <strong>Passive Voice</strong> at least three times (mix present, past, or modals).
+      </p>
+      <textarea
+        data-ans="OPEN"
+        rows="5"
+        placeholder="Write your paragraph here...&#10;Example: In our sales department, invoices are processed daily. Before a product is shipped, the payments must be verified by the finance team..."
+        style="width:100%;border:2px dashed #ccc;border-radius:8px;padding:14px;font-family:'Nunito',sans-serif;font-size:15px;font-weight:600;color:#2b2b2b;outline:none;resize:vertical;background:#fafafa;transition:border-color 0.2s;"
+        onfocus="this.style.borderColor='#1a1a2e'"
+        onblur="this.style.borderColor='#ccc'"
+      ></textarea>
+      <p style="font-size:14px; font-weight:800; color:#e63946; margin-top:12px; background: var(--A-light); padding: 10px; border-radius: 6px; border: 1px solid var(--A); display: inline-block;">
+        &#128242; Reminder: Take a screenshot of your paragraph to send to your teacher via WhatsApp.
+      </p>
+    </div>
+
+    <!-- ACTION BAR -->
+    <div class="action-bar">
+      <p class="friendly-reminder">&#128161; Friendly reminder: Check your spelling and verbs before grading! Remember, the system grades up to 30 points automatically. The final 10 points are graded by your teacher. &#128522;</p>
+      <div class="score-display" id="gradeScoreBox">Score: 0 / 30</div>
+      <div class="button-group">
+        <button class="btn-action btn-check" onclick="checkStudentAnswers()">&#10004;&#65039; Check Answers</button>
+        <button class="btn-action btn-reset" onclick="resetWorksheet()">&#128260; Clear Sheet</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  function toggleT(id) {
+    const el = document.getElementById(id);
+    if (el.style.display === "block") {
+      el.style.display = "none";
+    } else {
+      el.style.display = "block";
+    }
+  }
+
+  function checkStudentAnswers() {
+    let score = 0;
+    let autoTotal = 30; // 6 + 6 + 10 + 8
+
+    // Grade Text Inputs and Selects
+    const inputs = document.querySelectorAll('input[type="text"][data-ans], select[data-ans]');
+    inputs.forEach(input => {
+      let studentAns = input.value.trim().toLowerCase().replace(/[.,?!]/g, "").replace(/\s+/g, " ");
+
+      let rawTarget = input.getAttribute('data-ans').toLowerCase().replace(/[.,?!]/g, "");
+      let targetAnsArray = rawTarget.split('|').map(s => s.replace(/\s+/g, " ").trim());
+
+      input.classList.remove('is-correct', 'is-incorrect', 'is-open');
+
+      if (targetAnsArray.includes("open")) {
+        if (studentAns !== "") {
+          input.classList.add('is-open');
+        }
+      } else {
+        if (targetAnsArray.includes(studentAns)) {
+          input.classList.add('is-correct');
+          // Add appropriate points based on the exercise type (inferred from DOM placement, simplified calculation)
+          if(input.classList.contains("blank-xl") && !input.closest('.scrambled-box')) {
+              score += 2; // Ex 3 & 4 (width blank-xl)
+          } else if(input.closest('.exercise-title') && input.closest('.exercise').querySelector('.ex-num').innerText === "4") {
+              score += 2; // Ex 4 fallback
+          } else {
+              score += 1; // Ex 1 & 2
+          }
+        } else {
+          input.classList.add('is-incorrect');
+        }
+      }
+    });
+
+    document.querySelectorAll('textarea[data-ans]').forEach(ta => {
+      ta.style.borderColor = ta.value.trim() !== "" ? "#457b9d" : "#ccc";
+    });
+
+    const scoreBox = document.getElementById('gradeScoreBox');
+    scoreBox.innerText = "Auto-graded Score: " + score + " / " + autoTotal;
+    scoreBox.style.display = "block";
+  }
+
+  function resetWorksheet() {
+    if (confirm("Are you sure you want to clear all your answers?")) {
+      document.querySelectorAll('input[type="text"]').forEach(input => {
+        input.value = "";
+        input.classList.remove('is-correct', 'is-incorrect', 'is-open');
+      });
+      document.querySelectorAll('select').forEach(sel => {
+        sel.value = "";
+        sel.classList.remove('is-correct', 'is-incorrect', 'is-open');
+      });
+      document.querySelectorAll('textarea').forEach(ta => {
+        ta.value = "";
+        ta.style.borderColor = "#ccc";
+      });
+
+      document.getElementById('gradeScoreBox').style.display = "none";
+    }
+  }
+</script>
+</body>
+</html>
