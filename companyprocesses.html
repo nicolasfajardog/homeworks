@@ -221,6 +221,16 @@
   .is-incorrect { border-bottom: 2px solid var(--incorrect) !important; color: var(--incorrect) !important; background-color: rgba(230,57,70,0.06) !important; }
   .is-open { border-bottom: 2px solid var(--open-ans) !important; color: var(--open-ans) !important; background-color: rgba(69,123,157,0.06) !important; }
 
+  /* TASKLIST CHART */
+  .tasklist-table { width: 100%; border-collapse: collapse; font-size: 14px; margin-bottom: 16px; background: white; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+  .tasklist-table th { background: #1a1a2e; color: white; padding: 12px; text-align: left; font-weight: 700; font-family: 'Baloo 2', sans-serif; font-size: 16px; letter-spacing: 0.5px;}
+  .tasklist-table td { padding: 12px; border-bottom: 1px solid #eee; color: #333; font-weight: 600;}
+  .tasklist-table tr:last-child td { border-bottom: none; }
+  .status-badge { padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; }
+  .status-done { background: #d6f5f2; color: #2a9d8f; }
+  .status-prog { background: #fff0d6; color: #e07b00; }
+  .status-pend { background: #fde8ea; color: #e63946; }
+
   /* ACTIONS */
   .action-bar { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 36px; }
   .friendly-reminder { font-size: 14px; font-weight: 700; color: var(--D); text-align: center; margin-bottom: 4px; padding: 10px 20px; background: var(--D-light); border-radius: 8px; border: 1px dashed var(--D); max-width: 600px; }
@@ -234,10 +244,22 @@
   
   .pts-badge { display: inline-block; font-family: 'Baloo 2', sans-serif; font-size: 10px; font-weight: 800; letter-spacing: 0.5px; padding: 2px 8px; border-radius: 10px; margin-left: 6px; background: rgba(0,0,0,0.08); color: var(--ink); }
 
+  /* ANSWER KEY */
+  .answer-key-wrapper { margin-top: 48px; border-top: 3px solid var(--ink); padding-top: 20px; }
+  .btn-toggle-key { background: var(--ink); color: #fff; font-family: 'Baloo 2', sans-serif; font-size: 13px; font-weight: 700; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; letter-spacing: 0.5px; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+  .btn-toggle-key:hover { background: #2e2e4e; transform: translateY(-1px); }
+  .answer-key-content { display: none; margin-top: 24px; }
+  .answer-key h2 { font-family: 'Baloo 2', sans-serif; font-size: 20px; font-weight: 800; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+  .answer-key h2::after { content: '(Teacher Copy)'; font-size: 12px; background: var(--ink); color: #fff; padding: 3px 10px; border-radius: 20px; letter-spacing: 1px; font-weight: 700; }
+  .key-section { margin-bottom: 20px; }
+  .key-section h3 { font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; opacity: 0.5; }
+  .key-list { font-size: 14px; font-weight: 600; line-height: 2; column-count: 2; column-gap: 32px; }
+  .key-list span { font-weight: 900; }
+
   @media print {
     body { background: white; padding: 0; }
     .page { box-shadow: none; }
-    .action-bar, .btn-hint { display: none !important; }
+    .action-bar, .btn-hint, .answer-key-wrapper { display: none !important; }
     .blank { border-bottom-color: #000; }
   }
 
@@ -248,6 +270,8 @@
     .blank-lg, .blank-xl { width: 100%; min-width: 100%; }
     .button-group { flex-direction: column; align-items: stretch; width: 100%; }
     .btn-action { text-align: center; }
+    .tasklist-table th, .tasklist-table td { font-size: 13px; padding: 8px 6px; }
+    .key-list { column-count: 1; }
   }
 </style>
 </head>
@@ -293,7 +317,7 @@
         <div class="title-content">
           <div class="title-main">
             Select the correct form of the verb "TO BE" (am, is, are, was, were, be) to match the context.
-            <span class="pts-badge">1 pt each &middot; 6 pts</span>
+            <span class="pts-badge">1 pt each &middot; 5 pts</span>
             <button class="btn-hint" onclick="toggleT('t-ex1')" title="Translation & Hint">&#127760;</button>
           </div>
           <div id="t-ex1" class="hint-box">
@@ -348,15 +372,6 @@
           </select> 
           repaired last night by the IT department.
         </li>
-        <li>
-          <span class="q-num">6.</span> Highly confidential documents should 
-          <select data-ans="be" class="blank">
-            <option value="">--</option>
-            <option value="am">am</option><option value="is">is</option><option value="are">are</option>
-            <option value="was">was</option><option value="were">were</option><option value="be">be</option>
-          </select> 
-          shredded immediately after the meeting.
-        </li>
       </ol>
     </div>
 
@@ -367,7 +382,7 @@
         <div class="title-content">
           <div class="title-main">
             Fill in the blank with the correct Past Participle of the verb in parenthesis.
-            <span class="pts-badge">1 pt each &middot; 6 pts</span>
+            <span class="pts-badge">1 pt each &middot; 5 pts</span>
             <button class="btn-hint" onclick="toggleT('t-ex2')" title="Translation & Hint">&#127760;</button>
           </div>
           <div id="t-ex2" class="hint-box">
@@ -381,8 +396,7 @@
         <li><span class="q-num">2.</span> Last month, over 500 packages were <input type="text" data-ans="shipped|delivered" class="blank blank-md"> (ship) to our European distributors.</li>
         <li><span class="q-num">3.</span> The corporate invoices can be <input type="text" data-ans="paid" class="blank blank-md"> (pay) through our secure banking portal.</li>
         <li><span class="q-num">4.</span> Difficult customer complaints are always <input type="text" data-ans="handled" class="blank blank-md"> (handle) by the senior support team.</li>
-        <li><span class="q-num">5.</span> Oh no! The money was <input type="text" data-ans="transferred" class="blank blank-md"> (transfer) to the wrong bank account!</li>
-        <li><span class="q-num">6.</span> The new safety guidelines should be <input type="text" data-ans="read" class="blank blank-md"> (read) by all factory employees.</li>
+        <li><span class="q-num">5.</span> The safety guidelines should be <input type="text" data-ans="read" class="blank blank-md"> (read) by all employees.</li>
       </ol>
     </div>
 
@@ -392,72 +406,140 @@
         <span class="ex-num">3</span>
         <div class="title-content">
           <div class="title-main">
-            Transform these active sentences into the Passive Voice. Remove the subject completely.
+            Transform these active sentences into the Passive Voice. (Using "by" is optional).
             <span class="pts-badge">2 pts each &middot; 10 pts</span>
             <button class="btn-hint" onclick="toggleT('t-ex3')" title="Translation & Hint">&#127760;</button>
           </div>
           <div id="t-ex3" class="hint-box">
-            <strong>Traducción:</strong> Transforma estas oraciones activas a Voz Pasiva. Elimina el sujeto por completo.<br>
-            <strong>💡 Hint:</strong> "The sellers sell cochlear implants everyday" -> <em>"The cochlear implants are sold everyday."</em> El objeto (qué recibe la acción) se convierte en el sujeto de tu nueva oración.
+            <strong>Traducción:</strong> Transforma estas oraciones activas a Voz Pasiva.<br>
+            <strong>💡 Hint:</strong> "The sellers sell cochlear implants everyday" -> <em>"The cochlear implants are sold everyday (by the sellers)."</em> ¡El objeto de la oración activa ahora es tu sujeto principal!
           </div>
         </div>
       </div>
       <ol class="q-list">
         <li>
           <span class="q-num">1.</span> Someone scheduled the team meeting at 9 AM online.<br>
-          &rarr; <input type="text" data-ans="The team meeting was scheduled at 9 AM online.|The team meeting was scheduled at 9 AM online" class="blank blank-xl">
+          &rarr; <input type="text" data-ans="the team meeting was scheduled at 9 am online|the team meeting was scheduled online at 9 am|the team meeting was scheduled at 9 am online by someone|the team meeting was scheduled online at 9 am by someone" class="blank blank-xl">
         </li>
         <li>
           <span class="q-num">2.</span> The technicians repair the MRI machines daily.<br>
-          &rarr; <input type="text" data-ans="The MRI machines are repaired daily.|The MRI machines are repaired daily" class="blank blank-xl">
+          &rarr; <input type="text" data-ans="the mri machines are repaired daily|the mri machines are repaired daily by the technicians|the mri machines are repaired by the technicians daily" class="blank blank-xl">
         </li>
         <li>
           <span class="q-num">3.</span> The bank should process the refund in two workdays.<br>
-          &rarr; <input type="text" data-ans="The refund should be processed in two workdays.|The refund should be processed in two workdays" class="blank blank-xl">
+          &rarr; <input type="text" data-ans="the refund should be processed in two workdays|the refund should be processed in two workdays by the bank|the refund should be processed by the bank in two workdays" class="blank blank-xl">
         </li>
         <li>
           <span class="q-num">4.</span> Logistics delivered twenty pallets to the warehouse this morning.<br>
-          &rarr; <input type="text" data-ans="Twenty pallets were delivered to the warehouse this morning.|Twenty pallets were delivered to the warehouse this morning" class="blank blank-xl">
+          &rarr; <input type="text" data-ans="twenty pallets were delivered to the warehouse this morning|twenty pallets were delivered this morning to the warehouse|twenty pallets were delivered to the warehouse this morning by logistics|twenty pallets were delivered by logistics to the warehouse this morning" class="blank blank-xl">
         </li>
         <li>
           <span class="q-num">5.</span> The HR department updates the vacation policy every year.<br>
-          &rarr; <input type="text" data-ans="The vacation policy is updated every year.|The vacation policy is updated every year" class="blank blank-xl">
+          &rarr; <input type="text" data-ans="the vacation policy is updated every year|the vacation policy is updated every year by the hr department|the vacation policy is updated by the hr department every year" class="blank blank-xl">
         </li>
       </ol>
     </div>
 
-    <!-- EXERCISE 4: UNSCRAMBLE -->
+    <!-- EXERCISE 4: READING (TASKLIST CHART) -->
     <div class="exercise">
       <div class="exercise-title">
         <span class="ex-num">4</span>
         <div class="title-content">
           <div class="title-main">
-            Unscramble the words to formulate correct sentences in the Passive Voice.
-            <span class="pts-badge">2 pts each &middot; 8 pts</span>
+            Read the Sales Team Tasklist and select True or False for each statement.
+            <span class="pts-badge">2 pts each &middot; 10 pts</span>
             <button class="btn-hint" onclick="toggleT('t-ex4')" title="Translation & Hint">&#127760;</button>
           </div>
           <div id="t-ex4" class="hint-box">
-            <strong>Traducción:</strong> Ordena las palabras para formular oraciones correctas en Voz Pasiva.<br>
-            <strong>💡 Hint:</strong> Recuerda la estructura base: Sujeto + TO BE + Participio. Si es con modal, va: Sujeto + Modal + be + Participio (ej. <em>The bills can be paid</em>).
+            <strong>Traducción:</strong> Lee la lista de tareas del equipo de ventas y selecciona Verdadero (True) o Falso (False) para cada oración.<br>
+            <strong>💡 Hint:</strong> Lee cuidadosamente los tiempos verbales. "Was finished" (pasado), "are processed" (presente), "must be approved" (modal futuro).
           </div>
         </div>
       </div>
+
+      <table class="tasklist-table">
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>Responsible</th>
+            <th>Status</th>
+            <th>Delivery Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Q3 Sales Report</td>
+            <td>Sarah</td>
+            <td><span class="status-badge status-done">Completed</span></td>
+            <td>July 18th</td>
+          </tr>
+          <tr>
+            <td>New Client Contracts</td>
+            <td>Mark</td>
+            <td><span class="status-badge status-prog">In Progress</span></td>
+            <td>July 22nd</td>
+          </tr>
+          <tr>
+            <td>Budget Approval</td>
+            <td>Management</td>
+            <td><span class="status-badge status-pend">Pending</span></td>
+            <td>July 25th</td>
+          </tr>
+          <tr>
+            <td>Product Delivery</td>
+            <td>Logistics Team</td>
+            <td><span class="status-badge status-done">Completed</span></td>
+            <td>July 20th</td>
+          </tr>
+          <tr>
+            <td>Invoice Processing</td>
+            <td>David</td>
+            <td><span class="status-badge status-prog">In Progress</span></td>
+            <td>July 23rd</td>
+          </tr>
+        </tbody>
+      </table>
+
       <ol class="q-list">
         <li>
-          <span class="q-num">1.</span> <span class="scrambled-box">(be / can / online / signed / contracts / the)</span>
-          <input type="text" data-ans="The contracts can be signed online.|The contracts can be signed online" class="blank blank-xl" placeholder="Type here...">
+          <span class="q-num">1.</span> The Q3 Sales Report was finished by Sarah on July 18th.
+          <select data-ans="true" class="blank blank-md">
+            <option value="">--</option>
+            <option value="true">True</option>
+            <option value="false">False</option>
+          </select>
         </li>
         <li>
-          <span class="q-num">2.</span> <span class="scrambled-box">(month / paid / are / the / bonuses / every)</span>
-          <input type="text" data-ans="The bonuses are paid every month.|The bonuses are paid every month" class="blank blank-xl" placeholder="Type here...">
+          <span class="q-num">2.</span> The new client contracts are already completed by Mark.
+          <select data-ans="false" class="blank blank-md">
+            <option value="">--</option>
+            <option value="true">True</option>
+            <option value="false">False</option>
+          </select>
         </li>
         <li>
-          <span class="q-num">3.</span> <span class="scrambled-box">(delivered / warehouse / the / to / were / materials)</span>
-          <input type="text" data-ans="The materials were delivered to the warehouse.|The materials were delivered to the warehouse" class="blank blank-xl" placeholder="Type here...">
+          <span class="q-num">3.</span> The budget must be approved by July 25th.
+          <select data-ans="true" class="blank blank-md">
+            <option value="">--</option>
+            <option value="true">True</option>
+            <option value="false">False</option>
+          </select>
         </li>
         <li>
-          <span class="q-num">4.</span> <span class="scrambled-box">(by / planned / the / manager / meeting / was / the)</span>
-          <input type="text" data-ans="The meeting was planned by the manager.|The meeting was planned by the manager" class="blank blank-xl" placeholder="Type here...">
+          <span class="q-num">4.</span> The products will be delivered next week by Logistics.
+          <select data-ans="false" class="blank blank-md">
+            <option value="">--</option>
+            <option value="true">True</option>
+            <option value="false">False</option>
+          </select>
+        </li>
+        <li>
+          <span class="q-num">5.</span> Currently, the invoices are processed by Sarah.
+          <select data-ans="false" class="blank blank-md">
+            <option value="">--</option>
+            <option value="true">True</option>
+            <option value="false">False</option>
+          </select>
         </li>
       </ol>
     </div>
@@ -474,7 +556,7 @@
           </div>
           <div id="t-ex5" class="hint-box">
             <strong>Traducción:</strong> Reto Final: Procesos de la empresa. Escribe un párrafo describiendo un proceso interno.<br>
-            <strong>💡 Hint:</strong> Usa el vocabulario de tu departamento (Ventas, Logística, Recursos Humanos). ¿Qué se aprueba? ¿Qué se envía? ¿Qué debe ser revisado? ¡Usa la voz pasiva!
+            <strong>💡 Hint:</strong> Usa el vocabulario de tu departamento (Ventas, Logística, Recursos Humanos). ¿Qué se aprueba? ¿Qué se envía? ¿Qué debe ser revisado? ¡Usa la voz pasiva al menos 3 veces!
           </div>
         </div>
       </div>
@@ -504,6 +586,71 @@
       </div>
     </div>
 
+    <!-- ANSWER KEY -->
+    <div class="answer-key-wrapper">
+      <button class="btn-toggle-key" id="toggleKeyBtn" onclick="toggleAnswerKey()">
+        &#128065;&#65039; Show Answer Key
+      </button>
+
+      <div class="answer-key-content" id="answerKeyContent">
+        <div class="answer-key">
+          <h2>Answer Key</h2>
+
+          <div class="key-section">
+            <h3>1. To Be Verb</h3>
+            <div class="key-list">
+              <div>1. <span>are</span></div>
+              <div>2. <span>were</span></div>
+              <div>3. <span>be</span></div>
+              <div>4. <span>am</span></div>
+              <div>5. <span>was</span></div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>2. Participles</h3>
+            <div class="key-list">
+              <div>1. <span>approved</span></div>
+              <div>2. <span>shipped / delivered</span></div>
+              <div>3. <span>paid</span></div>
+              <div>4. <span>handled</span></div>
+              <div>5. <span>read</span></div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>3. Active to Passive</h3>
+            <div class="key-list" style="column-count: 1;">
+              <div>1. <span>The team meeting was scheduled at 9 AM online (by someone).</span></div>
+              <div>2. <span>The MRI machines are repaired daily (by the technicians).</span></div>
+              <div>3. <span>The refund should be processed in two workdays (by the bank).</span></div>
+              <div>4. <span>Twenty pallets were delivered to the warehouse this morning (by Logistics).</span></div>
+              <div>5. <span>The vacation policy is updated every year (by the HR department).</span></div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>4. Reading Tasklist (T/F)</h3>
+            <div class="key-list">
+              <div>1. <span>True</span> (Past simple passive)</div>
+              <div>2. <span>False</span> (They are in progress)</div>
+              <div>3. <span>True</span> (Modal passive)</div>
+              <div>4. <span>False</span> (They were already delivered)</div>
+              <div>5. <span>False</span> (Processed by David, not Sarah)</div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>5. Final Challenge</h3>
+            <div class="key-list" style="column-count: 1;">
+              <div>Teacher-evaluated open writing paragraph. Check for correct use of Passive Voice at least 3 times. Teacher checks via WhatsApp screenshot.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -519,11 +666,12 @@
 
   function checkStudentAnswers() {
     let score = 0;
-    let autoTotal = 30; // 6 + 6 + 10 + 8
+    let autoTotal = 30; // 5 + 5 + 10 + 10
 
     // Grade Text Inputs and Selects
     const inputs = document.querySelectorAll('input[type="text"][data-ans], select[data-ans]');
     inputs.forEach(input => {
+      // Gentle parsing: trim, lowercase, remove punctuation, collapse multiple spaces
       let studentAns = input.value.trim().toLowerCase().replace(/[.,?!]/g, "").replace(/\s+/g, " ");
 
       let rawTarget = input.getAttribute('data-ans').toLowerCase().replace(/[.,?!]/g, "");
@@ -538,13 +686,13 @@
       } else {
         if (targetAnsArray.includes(studentAns)) {
           input.classList.add('is-correct');
-          // Add appropriate points based on the exercise type (inferred from DOM placement, simplified calculation)
-          if(input.classList.contains("blank-xl") && !input.closest('.scrambled-box')) {
-              score += 2; // Ex 3 & 4 (width blank-xl)
-          } else if(input.closest('.exercise-title') && input.closest('.exercise').querySelector('.ex-num').innerText === "4") {
-              score += 2; // Ex 4 fallback
+          // Assign points based on exercise section logic
+          if(input.classList.contains("blank-xl")) {
+              score += 2; // Ex 3 is worth 2 pts each
+          } else if(input.tagName === "SELECT" && input.options[1].value === "true") {
+              score += 2; // Ex 4 (T/F) is worth 2 pts each
           } else {
-              score += 1; // Ex 1 & 2
+              score += 1; // Ex 1 & 2 are worth 1 pt each
           }
         } else {
           input.classList.add('is-incorrect');
@@ -577,6 +725,18 @@
       });
 
       document.getElementById('gradeScoreBox').style.display = "none";
+    }
+  }
+
+  function toggleAnswerKey() {
+    const content = document.getElementById("answerKeyContent");
+    const btn = document.getElementById("toggleKeyBtn");
+    if (content.style.display === "block") {
+      content.style.display = "none";
+      btn.innerHTML = "&#128065;&#65039; Show Answer Key";
+    } else {
+      content.style.display = "block";
+      btn.innerHTML = "&#128584; Hide Answer Key";
     }
   }
 </script>
