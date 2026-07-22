@@ -221,6 +221,11 @@
   .is-incorrect { border-bottom: 2px solid var(--incorrect) !important; color: var(--incorrect) !important; background-color: rgba(230,57,70,0.06) !important; }
   .is-open { border-bottom: 2px solid var(--open-ans) !important; color: var(--open-ans) !important; background-color: rgba(69,123,157,0.06) !important; }
 
+  /* MULTIPLE CHOICE OPTIONS */
+  .mcq-options { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; margin-left: 26px; }
+  .mcq-option { display: flex; align-items: flex-start; gap: 8px; font-size: 14px; font-weight: 600; color: #444; }
+  .mcq-letter { font-weight: 900; color: var(--ink); background: #eee; border-radius: 4px; padding: 0 6px; font-size: 12px; }
+
   /* ACTIONS */
   .action-bar { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 36px; }
   .friendly-reminder { font-size: 14px; font-weight: 700; color: var(--D); text-align: center; margin-bottom: 4px; padding: 10px 20px; background: var(--D-light); border-radius: 8px; border: 1px dashed var(--D); max-width: 600px; }
@@ -339,8 +344,8 @@
           a new planet.
         </li>
         <li>
-          <span class="q-num">3.</span> <strong>Athlete:</strong> "I <u>don't want</u> to retire yet."<br>
-          &rarr; The athlete said he 
+          <span class="q-num">3.</span> <strong>Actor:</strong> "I <u>don't want</u> to retire yet."<br>
+          &rarr; The actor said he 
           <select data-ans="a" class="blank">
             <option value="">--</option>
             <option value="a">didn't want</option>
@@ -385,7 +390,7 @@
             <button class="btn-hint" onclick="toggleT('t-ex2')" title="Hint">&#127760;</button>
           </div>
           <div id="t-ex2" class="hint-box">
-            <strong>💡 Hint:</strong> "Simple Past" and "Present Perfect" both change to "Past Perfect" (had + participle). Example: "She sang" -> "She had sung". 
+            <strong>💡 Hint:</strong> Remember that "Simple Past" and "Present Perfect" both change to "Past Perfect" (had + participle). Example: "She sang" -> "She had sung". 
           </div>
         </div>
       </div>
@@ -395,16 +400,16 @@
           &rarr; The newspaper reported that the government <input type="text" data-ans="planned" data-pts="2" class="blank blank-md"> to increase taxes.
         </li>
         <li>
-          <span class="q-num">2.</span> <strong>Direct:</strong> "The doctors <u>are designing</u> a new vaccine."<br>
-          &rarr; The news told us that the doctors <input type="text" data-ans="were designing" data-pts="2" class="blank blank-md"> a new vaccine.
+          <span class="q-num">2.</span> <strong>Direct:</strong> "The engineers <u>are designing</u> a new electric car."<br>
+          &rarr; The news told us that the engineers <input type="text" data-ans="were designing" data-pts="2" class="blank blank-md"> a new electric car.
         </li>
         <li>
-          <span class="q-num">3.</span> <strong>Direct:</strong> "Shakira <u>has already sung</u> in the closing ceremony."<br>
-          &rarr; The reporter claimed that Shakira <input type="text" data-ans="had already sung|had sung" data-pts="2" class="blank blank-md"> in the closing ceremony.
+          <span class="q-num">3.</span> <strong>Direct:</strong> "The band <u>has already sold out</u> the stadium."<br>
+          &rarr; The reporter claimed that the band <input type="text" data-ans="had already sold out|had sold out" data-pts="2" class="blank blank-md"> the stadium.
         </li>
         <li>
-          <span class="q-num">4.</span> <strong>Direct:</strong> "The Pentagon <u>identified</u> another soldier."<br>
-          &rarr; The NYT announced that the Pentagon <input type="text" data-ans="had identified" data-pts="2" class="blank blank-md"> another soldier.
+          <span class="q-num">4.</span> <strong>Direct:</strong> "The detective <u>identified</u> the main suspect."<br>
+          &rarr; The police announced that the detective <input type="text" data-ans="had identified" data-pts="2" class="blank blank-md"> the main suspect.
         </li>
         <li>
           <span class="q-num">5.</span> <strong>Direct:</strong> "We <u>won't accept</u> the new contract."<br>
@@ -413,37 +418,80 @@
       </ol>
     </div>
 
-    <!-- EXERCISE 3: UNSCRAMBLE -->
+    <!-- EXERCISE 3: HEADLINE LANGUAGE -->
     <div class="exercise">
       <div class="exercise-title">
         <span class="ex-num">3</span>
         <div class="title-content">
           <div class="title-main">
-            Unscramble the words to formulate correct reported sentences.
+            Headline Language: Choose the best Reported Speech translation for each news headline.
             <span class="pts-badge">2 pts each &middot; 10 pts</span>
+          </div>
+          <div style="font-size: 13px; font-weight: 600; opacity: 0.7; margin-top: 4px;">
+            Note: Headlines often drop articles (a, an, the) and use the present tense for recent past events. You must add them back and apply tense backshifting!
           </div>
         </div>
       </div>
       <ol class="q-list">
         <li>
-          <span class="q-num">1.</span> <span class="scrambled-box">(president / a / that / army / fired / reported / commander / BBC / the / had / the / high)</span>
-          <input type="text" data-ans="the bbc reported that the president had fired a high army commander|the bbc reported that the president had fired a high commander of the army|the bbc reported the president had fired a high army commander" data-pts="2" class="blank blank-xl" placeholder="Type here...">
+          <span class="q-num">1.</span> <strong>Headline:</strong> <em>MAYOR RESIGNS AFTER FINANCIAL SCANDAL</em>
+          <select data-ans="b" class="blank" style="margin-top: 8px;">
+            <option value="">-- Select the best option --</option>
+            <option value="a">A</option><option value="b">B</option><option value="c">C</option>
+          </select>
+          <div class="mcq-options">
+            <div class="mcq-option"><span class="mcq-letter">A</span> The newspaper reported that mayor resigns after financial scandal.</div>
+            <div class="mcq-option"><span class="mcq-letter">B</span> The newspaper reported that the mayor had resigned after a financial scandal.</div>
+            <div class="mcq-option"><span class="mcq-letter">C</span> The newspaper reported that the mayor resigns after a financial scandal.</div>
+          </div>
         </li>
         <li>
-          <span class="q-num">2.</span> <span class="scrambled-box">(announced / period / new / with / congress / started / the / had / members / they / that / the)</span>
-          <input type="text" data-ans="they announced that the congress had started the new period with members|they announced that the congress had started a new period with members|they announced the congress had started the new period with members|they announced that the congress had started the period with new members" data-pts="2" class="blank blank-xl" placeholder="Type here...">
+          <span class="q-num">2.</span> <strong>Headline:</strong> <em>TECH GIANT RELEASES NEW SMARTPHONE</em>
+          <select data-ans="a" class="blank" style="margin-top: 8px;">
+            <option value="">-- Select the best option --</option>
+            <option value="a">A</option><option value="b">B</option><option value="c">C</option>
+          </select>
+          <div class="mcq-options">
+            <div class="mcq-option"><span class="mcq-letter">A</span> The article announced that the tech giant released a new smartphone.</div>
+            <div class="mcq-option"><span class="mcq-letter">B</span> The article announced that tech giant released new smartphone.</div>
+            <div class="mcq-option"><span class="mcq-letter">C</span> The article announced that the tech giant releases a new smartphone.</div>
+          </div>
         </li>
         <li>
-          <span class="q-num">3.</span> <span class="scrambled-box">(Lamine Yamal / hadn't / the / that / said / selected / been / commenter)</span>
-          <input type="text" data-ans="the commenter said that lamine yamal hadn't been selected|the commenter said lamine yamal hadn't been selected" data-pts="2" class="blank blank-xl" placeholder="Type here...">
+          <span class="q-num">3.</span> <strong>Headline:</strong> <em>POLICE ARREST TWO SUSPECTS IN DOWNTOWN ROBBERY</em>
+          <select data-ans="c" class="blank" style="margin-top: 8px;">
+            <option value="">-- Select the best option --</option>
+            <option value="a">A</option><option value="b">B</option><option value="c">C</option>
+          </select>
+          <div class="mcq-options">
+            <div class="mcq-option"><span class="mcq-letter">A</span> The news stated that police arrest two suspects in downtown robbery.</div>
+            <div class="mcq-option"><span class="mcq-letter">B</span> The news stated that the police arrest two suspects in a downtown robbery.</div>
+            <div class="mcq-option"><span class="mcq-letter">C</span> The news stated that the police had arrested two suspects in a downtown robbery.</div>
+          </div>
         </li>
         <li>
-          <span class="q-num">4.</span> <span class="scrambled-box">(win / claimed / World Cup / they / the / team / would / the / that)</span>
-          <input type="text" data-ans="they claimed that the team would win the world cup|they claimed the team would win the world cup" data-pts="2" class="blank blank-xl" placeholder="Type here...">
+          <span class="q-num">4.</span> <strong>Headline:</strong> <em>GOVERNMENT CANCELS CONTROVERSIAL HIGHWAY PROJECT</em>
+          <select data-ans="c" class="blank" style="margin-top: 8px;">
+            <option value="">-- Select the best option --</option>
+            <option value="a">A</option><option value="b">B</option><option value="c">C</option>
+          </select>
+          <div class="mcq-options">
+            <div class="mcq-option"><span class="mcq-letter">A</span> The channel reported that the government cancels the controversial highway project.</div>
+            <div class="mcq-option"><span class="mcq-letter">B</span> The channel reported that government canceled controversial highway project.</div>
+            <div class="mcq-option"><span class="mcq-letter">C</span> The channel reported that the government canceled the controversial highway project.</div>
+          </div>
         </li>
         <li>
-          <span class="q-num">5.</span> <span class="scrambled-box">(designing / were / a / the / said / that / scientists / vaccine / they / new)</span>
-          <input type="text" data-ans="the scientists said that they were designing a new vaccine|the scientists said they were designing a new vaccine|they said that the scientists were designing a new vaccine|they said the scientists were designing a new vaccine" data-pts="2" class="blank blank-xl" placeholder="Type here...">
+          <span class="q-num">5.</span> <strong>Headline:</strong> <em>LOCAL ATHLETE WINS OLYMPIC GOLD MEDAL</em>
+          <select data-ans="a" class="blank" style="margin-top: 8px;">
+            <option value="">-- Select the best option --</option>
+            <option value="a">A</option><option value="b">B</option><option value="c">C</option>
+          </select>
+          <div class="mcq-options">
+            <div class="mcq-option"><span class="mcq-letter">A</span> The anchor claimed that the local athlete won an Olympic gold medal.</div>
+            <div class="mcq-option"><span class="mcq-letter">B</span> The anchor claimed that local athlete won Olympic gold medal.</div>
+            <div class="mcq-option"><span class="mcq-letter">C</span> The anchor claimed that the local athlete wins an Olympic gold medal.</div>
+          </div>
         </li>
       </ol>
     </div>
@@ -461,16 +509,16 @@
       </div>
       <ol class="q-list">
         <li>
-          <span class="q-num">1.</span> <strong>Direct:</strong> "Spain wins the second World Cup."<br>
-          &rarr; The news reported <input type="text" data-ans="that spain won the second world cup|spain won the second world cup" data-pts="2" class="blank blank-xl">
+          <span class="q-num">1.</span> <strong>Direct:</strong> "The company plans to hire 500 new employees."<br>
+          &rarr; The news reported <input type="text" data-ans="that the company planned to hire 500 new employees|the company planned to hire 500 new employees" data-pts="2" class="blank blank-xl">
         </li>
         <li>
-          <span class="q-num">2.</span> <strong>Direct:</strong> "The Congress starts the period with new members."<br>
-          &rarr; The journalist said <input type="text" data-ans="that the congress started the period with new members|the congress started the period with new members" data-pts="2" class="blank blank-xl">
+          <span class="q-num">2.</span> <strong>Direct:</strong> "The local hospital is expanding its emergency room."<br>
+          &rarr; The journalist said <input type="text" data-ans="that the local hospital was expanding its emergency room|the local hospital was expanding its emergency room" data-pts="2" class="blank blank-xl">
         </li>
         <li>
-          <span class="q-num">3.</span> <strong>Direct:</strong> "I didn't want to say goodbye to the World Cup."<br>
-          &rarr; Messi stated <input type="text" data-ans="that he had not wanted to say goodbye to the world cup|that he hadn't wanted to say goodbye to the world cup|he had not wanted to say goodbye to the world cup|he hadn't wanted to say goodbye to the world cup" data-pts="2" class="blank blank-xl">
+          <span class="q-num">3.</span> <strong>Direct:</strong> "I didn't steal the money from the safe."<br>
+          &rarr; The suspect stated <input type="text" data-ans="that he had not stolen the money from the safe|that he hadn't stolen the money from the safe|he had not stolen the money from the safe|he hadn't stolen the money from the safe" data-pts="2" class="blank blank-xl">
         </li>
         <li>
           <span class="q-num">4.</span> <strong>Direct:</strong> "We are protesting in the streets."<br>
@@ -551,29 +599,29 @@
             <div class="key-list">
               <div>1. <span>planned</span></div>
               <div>2. <span>were designing</span></div>
-              <div>3. <span>had already sung / had sung</span></div>
+              <div>3. <span>had already sold out / had sold out</span></div>
               <div>4. <span>had identified</span></div>
               <div>5. <span>would not accept / wouldn't accept</span></div>
             </div>
           </div>
 
           <div class="key-section">
-            <h3>3. Unscramble (2 pts each)</h3>
+            <h3>3. Headline Language (2 pts each)</h3>
             <div class="key-list" style="column-count: 1;">
-              <div>1. <span>The BBC reported that the president had fired a high army commander.</span></div>
-              <div>2. <span>They announced that the congress had started the period with new members.</span></div>
-              <div>3. <span>The commenter said that Lamine Yamal hadn't been selected.</span></div>
-              <div>4. <span>They claimed that the team would win the World Cup.</span></div>
-              <div>5. <span>The scientists said that they were designing a new vaccine.</span></div>
+              <div>1. <span>B</span> (The newspaper reported that the mayor had resigned after a financial scandal.)</div>
+              <div>2. <span>A</span> (The article announced that the tech giant released a new smartphone.)</div>
+              <div>3. <span>C</span> (The news stated that the police had arrested two suspects in a downtown robbery.)</div>
+              <div>4. <span>C</span> (The channel reported that the government canceled the controversial highway project.)</div>
+              <div>5. <span>A</span> (The anchor claimed that the local athlete won an Olympic gold medal.)</div>
             </div>
           </div>
 
           <div class="key-section">
             <h3>4. Full Transformation (2 pts each)</h3>
             <div class="key-list" style="column-count: 1;">
-              <div>1. <span>(that) Spain won the second World Cup.</span></div>
-              <div>2. <span>(that) the Congress started the period with new members.</span></div>
-              <div>3. <span>(that) he hadn't wanted to say goodbye to the World Cup.</span></div>
+              <div>1. <span>(that) the company planned to hire 500 new employees.</span></div>
+              <div>2. <span>(that) the local hospital was expanding its emergency room.</span></div>
+              <div>3. <span>(that) he hadn't stolen the money from the safe.</span></div>
               <div>4. <span>(that) they were protesting in the streets.</span></div>
               <div>5. <span>(that) the president would sign the new law.</span></div>
             </div>
@@ -613,7 +661,7 @@
       let rawTarget = input.getAttribute('data-ans').toLowerCase().replace(/[.,?!]/g, "");
       let targetAnsArray = rawTarget.split('|').map(s => s.replace(/\s+/g, " ").trim());
       
-      let pts = parseInt(input.getAttribute('data-pts')) || 1;
+      let pts = parseInt(input.getAttribute('data-pts')) || 2; // Default to 2 for these exercises
 
       input.classList.remove('is-correct', 'is-incorrect', 'is-open');
 
