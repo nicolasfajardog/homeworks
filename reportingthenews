@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retelling the News &ndash; B2 English Worksheet</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Baloo+2:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a2e;
+    --paper: #fffef7;
+    --A: #e63946;
+    --A-light: #fde8ea;
+    --B: #2a9d8f;
+    --B-light: #d6f5f2;
+    --C: #e07b00;
+    --C-light: #fff0d6;
+    --D: #5c4fcf;
+    --D-light: #ebe8ff;
+    --E: #c77dff;
+    --E-light: #f5e6ff;
+    --rule: #d4cfc0;
+
+    /* Feedback Colors */
+    --correct: #2a9d8f;
+    --incorrect: #e63946;
+    --open-ans: #457b9d;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: #e8e4d9;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 32px 16px 60px;
+  }
+
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    background: var(--paper);
+    border-radius: 4px;
+    box-shadow: 0 4px 40px rgba(0,0,0,0.18);
+    overflow: hidden;
+  }
+
+  /* LOGISTICS BOX */
+  .logistics-box {
+    background: #e3f2fd;
+    border-left: 5px solid #1e88e5;
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 32px;
+  }
+  .logistics-box h3 {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-bottom: 10px;
+    color: #1e88e5;
+  }
+  .logistics-box p {
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 600;
+  }
+
+  /* HEADER */
+  header {
+    background: var(--ink);
+    color: #fff;
+    padding: 40px 48px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent, transparent 18px,
+      rgba(255,255,255,0.03) 18px, rgba(255,255,255,0.03) 36px
+    );
+  }
+  .header-badge {
+    display: inline-block;
+    background: #fff;
+    color: var(--ink);
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+  }
+  header h1 {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 38px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+  header h1 span { color: #f4a261; }
+  header p {
+    font-size: 15px;
+    opacity: 0.7;
+    font-weight: 600;
+  }
+
+  .content { padding: 0 44px 44px; margin-top: 20px;}
+
+  /* SECTION DIVIDERS */
+  .section-header {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--ink);
+    margin: 40px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--rule);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-header span {
+    background: var(--ink);
+    color: white;
+    font-size: 14px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+  }
+
+  /* GRAMMAR BOX */
+  .grammar-box {
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 22px;
+    border-left: 5px solid;
+  }
+  .grammar-box.purple { background: var(--E-light); border-color: var(--E); }
+  .grammar-box h3 {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 10px;
+    opacity: 0.6;
+  }
+  .grammar-box p { font-size: 14px; line-height: 1.7; font-weight: 600; }
+  .grammar-box strong { font-weight: 900; }
+
+  /* SUBTLE HIGHLIGHTS */
+  mark { 
+    background-color: var(--B-light); 
+    padding: 2px 6px; 
+    border-radius: 4px; 
+    font-weight: 800; 
+    color: var(--B); 
+  }
+
+  /* EXERCISE BLOCK & INSTRUCTIONS */
+  .exercise { margin-bottom: 36px; }
+  .exercise-title {
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    border-bottom: 2px solid var(--rule);
+    padding-bottom: 8px;
+  }
+  .title-content { display: flex; flex-direction: column; gap: 4px; }
+  .title-main { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
+  .ex-num {
+    width: 26px; height: 26px;
+    background: var(--ink);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 900;
+    color: #fff;
+    flex-shrink: 0;
+    margin-top: -2px;
+  }
+
+  .btn-hint {
+    background: none; border: none; cursor: pointer; font-size: 18px; padding: 0 4px; transition: transform 0.2s;
+  }
+  .btn-hint:hover { transform: scale(1.1); }
+  .hint-box {
+    display: none; font-size: 13px; color: #1e88e5; font-weight: 600; background: #e3f2fd;
+    padding: 12px 16px; border-radius: 6px; border-left: 4px solid #1e88e5; margin-top: 8px; line-height: 1.6;
+  }
+  .hint-box strong { color: #1565c0; font-weight: 800; }
+
+  .q-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+  .q-list li { font-size: 15px; font-weight: 600; display: block; line-height: 1.6; }
+  .q-num { font-weight: 900; opacity: 0.4; min-width: 20px; font-size: 13px; margin-right: 6px; }
+  .scrambled-box { color: #666; font-style: italic; margin-bottom: 6px; display: inline-block; }
+
+  .blank {
+    border: none; border-bottom: 2px solid #aaa; background: transparent; min-width: 100px;
+    font-family: 'Nunito', sans-serif; font-size: 15px; font-weight: 700; color: #2b2b2b;
+    padding: 0 4px; outline: none; text-align: center; transition: all 0.2s;
+  }
+  select.blank { text-align: center; cursor: pointer; border-radius: 4px; appearance: none; -webkit-appearance: none; -moz-appearance: none; background: rgba(0,0,0,0.02); }
+  .blank:focus { border-bottom-color: var(--ink); background: rgba(0,0,0,0.04); }
+  .blank-sm  { min-width: 60px; }
+  .blank-md  { min-width: 140px; }
+  .blank-lg  { min-width: 220px; }
+  .blank-xl  { display: block; width: 100%; text-align: left; padding: 4px 8px; margin-top: 6px; }
+
+  .is-correct { border-bottom: 2px solid var(--correct) !important; color: var(--correct) !important; background-color: rgba(42,157,143,0.06) !important; }
+  .is-incorrect { border-bottom: 2px solid var(--incorrect) !important; color: var(--incorrect) !important; background-color: rgba(230,57,70,0.06) !important; }
+  .is-open { border-bottom: 2px solid var(--open-ans) !important; color: var(--open-ans) !important; background-color: rgba(69,123,157,0.06) !important; }
+
+  /* ACTIONS */
+  .action-bar { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 36px; }
+  .friendly-reminder { font-size: 14px; font-weight: 700; color: var(--D); text-align: center; margin-bottom: 4px; padding: 10px 20px; background: var(--D-light); border-radius: 8px; border: 1px dashed var(--D); max-width: 600px; }
+  .score-display { font-family: 'Baloo 2', sans-serif; font-size: 20px; font-weight: 800; color: var(--ink); display: none; background: #f0ede4; padding: 6px 20px; border-radius: 30px; border: 2px solid var(--rule); }
+  .button-group { display: flex; gap: 16px; }
+  .btn-action { font-family: 'Baloo 2', sans-serif; font-size: 15px; font-weight: 700; padding: 12px 32px; border: none; border-radius: 6px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.12); transition: all 0.2s; }
+  .btn-check { background: #2a9d8f; color: white; }
+  .btn-check:hover { background: #228074; transform: translateY(-1px); }
+  .btn-reset { background: #e7e5e0; color: var(--ink); }
+  .btn-reset:hover { background: #dcd9d2; transform: translateY(-1px); }
+  
+  .pts-badge { display: inline-block; font-family: 'Baloo 2', sans-serif; font-size: 10px; font-weight: 800; letter-spacing: 0.5px; padding: 2px 8px; border-radius: 10px; margin-left: 6px; background: rgba(0,0,0,0.08); color: var(--ink); }
+
+  /* ANSWER KEY */
+  .answer-key-wrapper { margin-top: 48px; border-top: 3px solid var(--ink); padding-top: 20px; }
+  .btn-toggle-key { background: var(--ink); color: #fff; font-family: 'Baloo 2', sans-serif; font-size: 13px; font-weight: 700; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; letter-spacing: 0.5px; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+  .btn-toggle-key:hover { background: #2e2e4e; transform: translateY(-1px); }
+  .answer-key-content { display: none; margin-top: 24px; }
+  .answer-key h2 { font-family: 'Baloo 2', sans-serif; font-size: 20px; font-weight: 800; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+  .answer-key h2::after { content: '(Teacher Copy)'; font-size: 12px; background: var(--ink); color: #fff; padding: 3px 10px; border-radius: 20px; letter-spacing: 1px; font-weight: 700; }
+  .key-section { margin-bottom: 20px; }
+  .key-section h3 { font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; opacity: 0.5; }
+  .key-list { font-size: 14px; font-weight: 600; line-height: 2; column-count: 2; column-gap: 32px; }
+  .key-list span { font-weight: 900; }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; }
+    .action-bar, .btn-hint, .answer-key-wrapper { display: none !important; }
+    .blank { border-bottom-color: #000; }
+  }
+
+  @media (max-width: 600px) {
+    .content { padding: 0 20px 36px; }
+    header { padding: 28px 20px 22px; }
+    header h1 { font-size: 34px; }
+    .blank-lg, .blank-xl { width: 100%; min-width: 100%; }
+    .button-group { flex-direction: column; align-items: stretch; width: 100%; }
+    .btn-action { text-align: center; }
+    .key-list { column-count: 1; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="header-badge">ESL Worksheet &middot; Conversation Skills</div>
+    <h1>Retelling the <span>News</span></h1>
+    <p>Reported Speech &middot; Tense Shifting &middot; News Headlines</p>
+  </header>
+
+  <div class="content">
+
+    <div class="logistics-box">
+      <h3>&#128203; Worksheet Guide</h3>
+      <p>Welcome! Today we will practice <strong>Reported Speech</strong> by retelling what we heard or read in the news. You will transform direct quotes and headlines into reported statements.</p>
+      <p style="margin-top:8px">When you finish the 4 auto-graded exercises, remember to take a screenshot of your Final Challenge and send it to your teacher!</p>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- SECTION: GRAMMAR REVIEW                    -->
+    <!-- ========================================== -->
+    <div class="section-header">
+      <span>Grammar</span> Tense Backshifting
+    </div>
+
+    <div class="grammar-box purple">
+      <h3>&#128204; Grammar Notes: Reporting Verbs & Tenses</h3>
+      <p>When retelling news, we use reporting verbs like <em>said, told, reported, announced,</em> and <em>claimed</em>. Remember to shift the tense backwards:</p>
+      <ul style="margin-left: 20px; font-size: 14px; font-weight: 600; line-height: 1.7; margin-top: 8px;">
+        <li><strong>Simple Present &rarr; Simple Past</strong> (<em>"I want..." &rarr; said he wanted</em>)</li>
+        <li><strong>Present Progressive &rarr; Past Progressive</strong> (<em>"We are designing..." &rarr; told that they were designing</em>)</li>
+        <li><strong>Simple Past &rarr; Past Perfect</strong> (<em>"She sang..." &rarr; claimed she had sung</em>)</li>
+        <li><strong>Present Perfect &rarr; Past Perfect</strong> (<em>"They haven't won..." &rarr; reported they hadn't won</em>)</li>
+        <li><strong>Will &rarr; Would</strong> (<em>"We will win..." &rarr; announced they would win</em>)</li>
+      </ul>
+    </div>
+
+    <!-- EXERCISE 1: TENSE SELECTION -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">1</span>
+        <div class="title-content">
+          <div class="title-main">
+            Select the correct backshifted verb tense from the dropdown menu.
+            <span class="pts-badge">2 pts each &middot; 10 pts</span>
+            <button class="btn-hint" onclick="toggleT('t-ex1')" title="Hint">&#127760;</button>
+          </div>
+          <div id="t-ex1" class="hint-box">
+            <strong>💡 Hint:</strong> Identify the original tense first. If the quote uses "is building" (Present Progressive), it must change to "was building" (Past Progressive). If the quote uses "will", it changes to "would".
+          </div>
+        </div>
+      </div>
+      <ol class="q-list">
+        <li>
+          <span class="q-num">1.</span> <strong>Mayor:</strong> "We <u>are building</u> a new hospital."<br>
+          &rarr; The mayor announced that they 
+          <select data-ans="b" class="blank">
+            <option value="">--</option>
+            <option value="a">build</option>
+            <option value="b">were building</option>
+            <option value="c">are building</option>
+          </select> 
+          a new hospital.
+        </li>
+        <li>
+          <span class="q-num">2.</span> <strong>Scientist:</strong> "We <u>discovered</u> a new planet."<br>
+          &rarr; The scientists reported that they 
+          <select data-ans="c" class="blank">
+            <option value="">--</option>
+            <option value="a">discovered</option>
+            <option value="b">have discovered</option>
+            <option value="c">had discovered</option>
+          </select> 
+          a new planet.
+        </li>
+        <li>
+          <span class="q-num">3.</span> <strong>Athlete:</strong> "I <u>don't want</u> to retire yet."<br>
+          &rarr; The athlete said he 
+          <select data-ans="a" class="blank">
+            <option value="">--</option>
+            <option value="a">didn't want</option>
+            <option value="b">hadn't wanted</option>
+            <option value="c">doesn't want</option>
+          </select> 
+          to retire yet.
+        </li>
+        <li>
+          <span class="q-num">4.</span> <strong>CEO:</strong> "We <u>will open</u> three new stores."<br>
+          &rarr; The CEO claimed they 
+          <select data-ans="b" class="blank">
+            <option value="">--</option>
+            <option value="a">will open</option>
+            <option value="b">would open</option>
+            <option value="c">had opened</option>
+          </select> 
+          three new stores.
+        </li>
+        <li>
+          <span class="q-num">5.</span> <strong>Reporter:</strong> "The storm <u>has destroyed</u> the bridge."<br>
+          &rarr; The reporter noted that the storm 
+          <select data-ans="c" class="blank">
+            <option value="">--</option>
+            <option value="a">destroyed</option>
+            <option value="b">has destroyed</option>
+            <option value="c">had destroyed</option>
+          </select> 
+          the bridge.
+        </li>
+      </ol>
+    </div>
+
+    <!-- EXERCISE 2: FILL IN THE BLANK -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">2</span>
+        <div class="title-content">
+          <div class="title-main">
+            Type the correct backshifted verb to complete the reported speech.
+            <span class="pts-badge">2 pts each &middot; 10 pts</span>
+            <button class="btn-hint" onclick="toggleT('t-ex2')" title="Hint">&#127760;</button>
+          </div>
+          <div id="t-ex2" class="hint-box">
+            <strong>💡 Hint:</strong> "Simple Past" and "Present Perfect" both change to "Past Perfect" (had + participle). Example: "She sang" -> "She had sung". 
+          </div>
+        </div>
+      </div>
+      <ol class="q-list">
+        <li>
+          <span class="q-num">1.</span> <strong>Direct:</strong> "The government <u>plans</u> to increase taxes."<br>
+          &rarr; The newspaper reported that the government <input type="text" data-ans="planned" data-pts="2" class="blank blank-md"> to increase taxes.
+        </li>
+        <li>
+          <span class="q-num">2.</span> <strong>Direct:</strong> "The doctors <u>are designing</u> a new vaccine."<br>
+          &rarr; The news told us that the doctors <input type="text" data-ans="were designing" data-pts="2" class="blank blank-md"> a new vaccine.
+        </li>
+        <li>
+          <span class="q-num">3.</span> <strong>Direct:</strong> "Shakira <u>has already sung</u> in the closing ceremony."<br>
+          &rarr; The reporter claimed that Shakira <input type="text" data-ans="had already sung|had sung" data-pts="2" class="blank blank-md"> in the closing ceremony.
+        </li>
+        <li>
+          <span class="q-num">4.</span> <strong>Direct:</strong> "The Pentagon <u>identified</u> another soldier."<br>
+          &rarr; The NYT announced that the Pentagon <input type="text" data-ans="had identified" data-pts="2" class="blank blank-md"> another soldier.
+        </li>
+        <li>
+          <span class="q-num">5.</span> <strong>Direct:</strong> "We <u>won't accept</u> the new contract."<br>
+          &rarr; The workers said they <input type="text" data-ans="would not accept|wouldn't accept" data-pts="2" class="blank blank-md"> the new contract.
+        </li>
+      </ol>
+    </div>
+
+    <!-- EXERCISE 3: UNSCRAMBLE -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">3</span>
+        <div class="title-content">
+          <div class="title-main">
+            Unscramble the words to formulate correct reported sentences.
+            <span class="pts-badge">2 pts each &middot; 10 pts</span>
+          </div>
+        </div>
+      </div>
+      <ol class="q-list">
+        <li>
+          <span class="q-num">1.</span> <span class="scrambled-box">(president / a / that / army / fired / reported / commander / BBC / the / had / the / high)</span>
+          <input type="text" data-ans="the bbc reported that the president had fired a high army commander|the bbc reported that the president had fired a high commander of the army|the bbc reported the president had fired a high army commander" data-pts="2" class="blank blank-xl" placeholder="Type here...">
+        </li>
+        <li>
+          <span class="q-num">2.</span> <span class="scrambled-box">(announced / period / new / with / congress / started / the / had / members / they / that / the)</span>
+          <input type="text" data-ans="they announced that the congress had started the new period with members|they announced that the congress had started a new period with members|they announced the congress had started the new period with members|they announced that the congress had started the period with new members" data-pts="2" class="blank blank-xl" placeholder="Type here...">
+        </li>
+        <li>
+          <span class="q-num">3.</span> <span class="scrambled-box">(Lamine Yamal / hadn't / the / that / said / selected / been / commenter)</span>
+          <input type="text" data-ans="the commenter said that lamine yamal hadn't been selected|the commenter said lamine yamal hadn't been selected" data-pts="2" class="blank blank-xl" placeholder="Type here...">
+        </li>
+        <li>
+          <span class="q-num">4.</span> <span class="scrambled-box">(win / claimed / World Cup / they / the / team / would / the / that)</span>
+          <input type="text" data-ans="they claimed that the team would win the world cup|they claimed the team would win the world cup" data-pts="2" class="blank blank-xl" placeholder="Type here...">
+        </li>
+        <li>
+          <span class="q-num">5.</span> <span class="scrambled-box">(designing / were / a / the / said / that / scientists / vaccine / they / new)</span>
+          <input type="text" data-ans="the scientists said that they were designing a new vaccine|the scientists said they were designing a new vaccine|they said that the scientists were designing a new vaccine|they said the scientists were designing a new vaccine" data-pts="2" class="blank blank-xl" placeholder="Type here...">
+        </li>
+      </ol>
+    </div>
+
+    <!-- EXERCISE 4: FULL TRANSFORMATION -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">4</span>
+        <div class="title-content">
+          <div class="title-main">
+            Transform the direct quote into a full reported speech sentence. (The word "that" is optional).
+            <span class="pts-badge">2 pts each &middot; 10 pts</span>
+          </div>
+        </div>
+      </div>
+      <ol class="q-list">
+        <li>
+          <span class="q-num">1.</span> <strong>Direct:</strong> "Spain wins the second World Cup."<br>
+          &rarr; The news reported <input type="text" data-ans="that spain won the second world cup|spain won the second world cup" data-pts="2" class="blank blank-xl">
+        </li>
+        <li>
+          <span class="q-num">2.</span> <strong>Direct:</strong> "The Congress starts the period with new members."<br>
+          &rarr; The journalist said <input type="text" data-ans="that the congress started the period with new members|the congress started the period with new members" data-pts="2" class="blank blank-xl">
+        </li>
+        <li>
+          <span class="q-num">3.</span> <strong>Direct:</strong> "I didn't want to say goodbye to the World Cup."<br>
+          &rarr; Messi stated <input type="text" data-ans="that he had not wanted to say goodbye to the world cup|that he hadn't wanted to say goodbye to the world cup|he had not wanted to say goodbye to the world cup|he hadn't wanted to say goodbye to the world cup" data-pts="2" class="blank blank-xl">
+        </li>
+        <li>
+          <span class="q-num">4.</span> <strong>Direct:</strong> "We are protesting in the streets."<br>
+          &rarr; The citizens claimed <input type="text" data-ans="that they were protesting in the streets|they were protesting in the streets" data-pts="2" class="blank blank-xl">
+        </li>
+        <li>
+          <span class="q-num">5.</span> <strong>Direct:</strong> "The president will sign the new law."<br>
+          &rarr; The anchor announced <input type="text" data-ans="that the president would sign the new law|the president would sign the new law" data-pts="2" class="blank blank-xl">
+        </li>
+      </ol>
+    </div>
+
+    <!-- EXERCISE 5: FINAL CHALLENGE -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">5</span>
+        <div class="title-content">
+          <div class="title-main">
+            Final Challenge &ndash; The News Anchor <em style="font-weight:400; opacity:0.7;">(Teacher evaluated)</em>
+            <span class="pts-badge">10 pts</span>
+          </div>
+        </div>
+      </div>
+      <p style="font-size:13px;font-weight:700;opacity:0.6;margin-bottom:12px">
+        You are watching the evening news. Read the following direct headlines and write a short paragraph (3-5 lines) reporting what was said on TV to your friend. Use different reporting verbs (said, reported, announced, claimed).
+        <br><br>
+        <strong>Headlines:</strong><br>
+        1. "The national team has won the gold medal!"<br>
+        2. "The new subway line will open next week."<br>
+        3. "The mayor is planning a new city park."
+      </p>
+      <textarea
+        data-ans="OPEN"
+        rows="5"
+        placeholder="Write your paragraph here...&#10;Example: I was watching the news and the anchor announced that the national team..."
+        style="width:100%;border:2px dashed #ccc;border-radius:8px;padding:14px;font-family:'Nunito',sans-serif;font-size:15px;font-weight:600;color:#2b2b2b;outline:none;resize:vertical;background:#fafafa;transition:border-color 0.2s;"
+        onfocus="this.style.borderColor='#1a1a2e'"
+        onblur="this.style.borderColor='#ccc'"
+      ></textarea>
+      <p style="font-size:14px; font-weight:800; color:#e63946; margin-top:12px; background: var(--A-light); padding: 10px; border-radius: 6px; border: 1px solid var(--A); display: inline-block;">
+        &#128242; Reminder: Take a screenshot of your paragraph to send to your teacher via WhatsApp.
+      </p>
+    </div>
+
+    <!-- ACTION BAR -->
+    <div class="action-bar">
+      <p class="friendly-reminder">&#128161; Double-check your spelling! The system grades up to 40 points automatically. The final 10 points are graded manually. &#128522;</p>
+      <div class="score-display" id="gradeScoreBox">Score: 0 / 40</div>
+      <div class="button-group">
+        <button class="btn-action btn-check" onclick="checkStudentAnswers()">&#10004;&#65039; Check Answers</button>
+        <button class="btn-action btn-reset" onclick="resetWorksheet()">&#128260; Clear Sheet</button>
+      </div>
+    </div>
+
+    <!-- ANSWER KEY -->
+    <div class="answer-key-wrapper">
+      <button class="btn-toggle-key" id="toggleKeyBtn" onclick="toggleAnswerKey()">
+        &#128065;&#65039; Show Answer Key
+      </button>
+
+      <div class="answer-key-content" id="answerKeyContent">
+        <div class="answer-key">
+          <h2>Answer Key</h2>
+
+          <div class="key-section">
+            <h3>1. Tense Selection (2 pts each)</h3>
+            <div class="key-list">
+              <div>1. <span>were building</span></div>
+              <div>2. <span>had discovered</span></div>
+              <div>3. <span>didn't want</span></div>
+              <div>4. <span>would open</span></div>
+              <div>5. <span>had destroyed</span></div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>2. Fill in the Blank (2 pts each)</h3>
+            <div class="key-list">
+              <div>1. <span>planned</span></div>
+              <div>2. <span>were designing</span></div>
+              <div>3. <span>had already sung / had sung</span></div>
+              <div>4. <span>had identified</span></div>
+              <div>5. <span>would not accept / wouldn't accept</span></div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>3. Unscramble (2 pts each)</h3>
+            <div class="key-list" style="column-count: 1;">
+              <div>1. <span>The BBC reported that the president had fired a high army commander.</span></div>
+              <div>2. <span>They announced that the congress had started the period with new members.</span></div>
+              <div>3. <span>The commenter said that Lamine Yamal hadn't been selected.</span></div>
+              <div>4. <span>They claimed that the team would win the World Cup.</span></div>
+              <div>5. <span>The scientists said that they were designing a new vaccine.</span></div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>4. Full Transformation (2 pts each)</h3>
+            <div class="key-list" style="column-count: 1;">
+              <div>1. <span>(that) Spain won the second World Cup.</span></div>
+              <div>2. <span>(that) the Congress started the period with new members.</span></div>
+              <div>3. <span>(that) he hadn't wanted to say goodbye to the World Cup.</span></div>
+              <div>4. <span>(that) they were protesting in the streets.</span></div>
+              <div>5. <span>(that) the president would sign the new law.</span></div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>5. Final Challenge (10 pts)</h3>
+            <div class="key-list" style="column-count: 1;">
+              <div>Teacher-evaluated open writing paragraph. Check for correct tense backshifting from the 3 headlines provided.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  function toggleT(id) {
+    const el = document.getElementById(id);
+    if (el.style.display === "block") {
+      el.style.display = "none";
+    } else {
+      el.style.display = "block";
+    }
+  }
+
+  function checkStudentAnswers() {
+    let score = 0;
+    let autoTotal = 40; 
+
+    const inputs = document.querySelectorAll('input[type="text"][data-ans], select[data-ans]');
+    inputs.forEach(input => {
+      let studentAns = input.value.trim().toLowerCase().replace(/[.,?!]/g, "").replace(/\s+/g, " ");
+      let rawTarget = input.getAttribute('data-ans').toLowerCase().replace(/[.,?!]/g, "");
+      let targetAnsArray = rawTarget.split('|').map(s => s.replace(/\s+/g, " ").trim());
+      
+      let pts = parseInt(input.getAttribute('data-pts')) || 1;
+
+      input.classList.remove('is-correct', 'is-incorrect', 'is-open');
+
+      if (targetAnsArray.includes("open")) {
+        if (studentAns !== "") {
+          input.classList.add('is-open');
+        }
+      } else {
+        if (targetAnsArray.includes(studentAns)) {
+          input.classList.add('is-correct');
+          score += pts;
+        } else {
+          input.classList.add('is-incorrect');
+        }
+      }
+    });
+
+    document.querySelectorAll('textarea[data-ans]').forEach(ta => {
+      ta.style.borderColor = ta.value.trim() !== "" ? "#457b9d" : "#ccc";
+    });
+
+    const scoreBox = document.getElementById('gradeScoreBox');
+    scoreBox.innerText = "Auto-graded Score: " + score + " / " + autoTotal;
+    scoreBox.style.display = "block";
+  }
+
+  function resetWorksheet() {
+    if (confirm("Are you sure you want to clear all your answers?")) {
+      document.querySelectorAll('input[type="text"]').forEach(input => {
+        input.value = "";
+        input.classList.remove('is-correct', 'is-incorrect', 'is-open');
+      });
+      document.querySelectorAll('select').forEach(sel => {
+        sel.value = "";
+        sel.classList.remove('is-correct', 'is-incorrect', 'is-open');
+      });
+      document.querySelectorAll('textarea').forEach(ta => {
+        ta.value = "";
+        ta.style.borderColor = "#ccc";
+      });
+
+      document.getElementById('gradeScoreBox').style.display = "none";
+    }
+  }
+
+  function toggleAnswerKey() {
+    const content = document.getElementById("answerKeyContent");
+    const btn = document.getElementById("toggleKeyBtn");
+    if (content.style.display === "block") {
+      content.style.display = "none";
+      btn.innerHTML = "&#128065;&#65039; Show Answer Key";
+    } else {
+      content.style.display = "block";
+      btn.innerHTML = "&#128584; Hide Answer Key";
+    }
+  }
+</script>
+</body>
+</html>
