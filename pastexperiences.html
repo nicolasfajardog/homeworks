@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Past Experiences & Lessons Learned</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .header-box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            border-left: 5px solid #3498db;
+        }
+        .exercise-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        input[type="text"] {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        select {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .feedback {
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .correct {
+            color: #27ae60;
+        }
+        .incorrect {
+            color: #e74c3c;
+        }
+        .btn-check {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            display: block;
+            width: 100%;
+        }
+        .btn-check:hover {
+            background-color: #2980b9;
+        }
+        .score-display {
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #e8f8f5;
+            border-radius: 5px;
+            display: none;
+        }
+        .oral-challenge {
+            background-color: #fcf3cf;
+            border-left: 5px solid #f1c40f;
+        }
+        .note {
+            font-size: 0.9em;
+            color: #555;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-box">
+        <h1>Describing Past Experiences</h1>
+        <p>Welcome to your homework! This assignment focuses on describing professional milestones and past experiences, drawing inspiration from our class notes in <strong>image_956a7e.png</strong>.</p>
+        <p><strong>Remember the rules:</strong></p>
+        <ul>
+            <li><strong>Past Perfect (had + past participle):</strong> For a completed action that happened before another action in the past.</li>
+            <li><strong>Past Perfect Progressive (had been + verb-ing):</strong> For an action that was in progress up to a specific point in the past, focusing on duration.</li>
+        </ul>
+    </div>
+
+    <form id="homeworkForm">
+        <!-- EXERCISE 1: Multiple Choice -->
+        <div class="exercise-container">
+            <h2>Exercise 1: Choose the correct form</h2>
+            <p class="note">Select the most appropriate verb tense based on the context and time expressions.</p>
+            
+            <div class="question">
+                1. When I got promoted to manager last year, I <select id="q1_1" data-answer="had been working">
+                    <option value="">--select--</option>
+                    <option value="had worked">had worked</option>
+                    <option value="had been working">had been working</option>
+                </select> in the department for over three years. <span id="fb1_1" class="feedback"></span>
+            </div>
+            <div class="question">
+                2. By the time the client meeting started, she <select id="q1_2" data-answer="had finished">
+                    <option value="">--select--</option>
+                    <option value="had finished">had finished</option>
+                    <option value="had been finishing">had been finishing</option>
+                </select> preparing all the slides. <span id="fb1_2" class="feedback"></span>
+            </div>
+            <div class="question">
+                3. I was exhausted when I arrived at the conference because I <select id="q1_3" data-answer="had been traveling">
+                    <option value="">--select--</option>
+                    <option value="had traveled">had traveled</option>
+                    <option value="had been traveling">had been traveling</option>
+                </select> for 14 hours straight. <span id="fb1_3" class="feedback"></span>
+            </div>
+            <div class="question">
+                4. When I bought my new laptop, I <select id="q1_4" data-answer="had never had">
+                    <option value="">--select--</option>
+                    <option value="had never had">had never had</option>
+                    <option value="had never been having">had never been having</option>
+                </select> a computer with such a fast processor before. <span id="fb1_4" class="feedback"></span>
+            </div>
+        </div>
+
+        <!-- EXERCISE 2: Fill in the Blanks -->
+        <div class="exercise-container">
+            <h2>Exercise 2: Complete the sentences</h2>
+            <p class="note">Type the correct <strong>Past Perfect</strong> or <strong>Past Perfect Progressive</strong> form of the verb in parentheses. Avoid using contractions for this exercise.</p>
+            
+            <div class="question">
+                1. When I arrived at the office, I realized I <input type="text" id="q2_1" data-answer="had forgotten" size="15"> (forget) my access badge at home. <span id="fb2_1" class="feedback"></span>
+            </div>
+            <div class="question">
+                2. We <input type="text" id="q2_2" data-answer="had been negotiating" size="20"> (negotiate) the new contract for months before they finally signed it. <span id="fb2_2" class="feedback"></span>
+            </div>
+            <div class="question">
+                3. Before she joined our team in August, she <input type="text" id="q2_3" data-answer="had not used" size="15"> (not / use) this specific software. <span id="fb2_3" class="feedback"></span>
+            </div>
+            <div class="question">
+                4. The project was a success because they <input type="text" id="q2_4" data-answer="had planned" size="15"> (plan) every detail carefully. <span id="fb2_4" class="feedback"></span>
+            </div>
+        </div>
+
+        <!-- EXERCISE 3: Matching -->
+        <div class="exercise-container">
+            <h2>Exercise 3: Match the sentence halves</h2>
+            <p class="note">Choose the correct ending (A, B, C, or D) for each sentence beginning.</p>
+            <ul>
+                <li><strong>A:</strong> because I had already read the report.</li>
+                <li><strong>B:</strong> I had been working in customer service for two years.</li>
+                <li><strong>C:</strong> I had saved money for almost a decade.</li>
+                <li><strong>D:</strong> after we had already spent weeks designing the prototype.</li>
+            </ul>
+
+            <div class="question">
+                1. When I finally bought my first car... <select id="q3_1" data-answer="C">
+                    <option value="">-</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option>
+                </select> <span id="fb3_1" class="feedback"></span>
+            </div>
+            <div class="question">
+                2. Before I transferred to the marketing department... <select id="q3_2" data-answer="B">
+                    <option value="">-</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option>
+                </select> <span id="fb3_2" class="feedback"></span>
+            </div>
+            <div class="question">
+                3. The director canceled the project... <select id="q3_3" data-answer="D">
+                    <option value="">-</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option>
+                </select> <span id="fb3_3" class="feedback"></span>
+            </div>
+            <div class="question">
+                4. I didn't need to attend the briefing... <select id="q3_4" data-answer="A">
+                    <option value="">-</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option>
+                </select> <span id="fb3_4" class="feedback"></span>
+            </div>
+        </div>
+
+        <!-- EXERCISE 4: Concept Check -->
+        <div class="exercise-container">
+            <h2>Exercise 4: Concept Check</h2>
+            <p class="note">Read the sentence and answer the question about the timeline.</p>
+            
+            <div class="question">
+                1. <em>"When I bought my VW GOL, I had driven a Renault Logan."</em><br>
+                Which happened first? <select id="q4_1" data-answer="Renault">
+                    <option value="">--select--</option>
+                    <option value="Renault">Driving the Renault</option>
+                    <option value="VW">Buying the VW</option>
+                </select> <span id="fb4_1" class="feedback"></span>
+            </div>
+            <div class="question">
+                2. <em>"In August 2021, I had been working there for 8 months."</em><br>
+                What does this sentence emphasize? <select id="q4_2" data-answer="Duration">
+                    <option value="">--select--</option>
+                    <option value="Completion">The completion of the job</option>
+                    <option value="Duration">The duration of the work up to that point</option>
+                </select> <span id="fb4_2" class="feedback"></span>
+            </div>
+        </div>
+
+        <button type="button" class="btn-check" onclick="checkAnswers()">Check Answers (Exercises 1-4)</button>
+        <div id="scoreDisplay" class="score-display"></div>
+    </form>
+
+    <!-- EXERCISE 5: Teacher Corrected Challenge -->
+    <div class="exercise-container oral-challenge">
+        <h2>Exercise 5: Final Challenge (Teacher Corrected)</h2>
+        <h3>Oral Assignment: Share a Past Experience</h3>
+        <p>It is time to put everything together! Imagine you are describing a past experience and a lesson learned to a coworker.</p>
+        <p><strong>Instructions:</strong></p>
+        <ol>
+            <li>Think of a major milestone in your life (e.g., getting your first job, buying a house/car, or finishing a big project).</li>
+            <li>Prepare a short story about what happened. You <strong>must</strong> include:
+                <ul>
+                    <li>At least one sentence using the <strong>Past Simple</strong> to describe the main event.</li>
+                    <li>At least one sentence using the <strong>Past Perfect</strong> to describe what happened before.</li>
+                    <li>At least one sentence using the <strong>Past Perfect Progressive</strong> to describe an action in progress before the event.</li>
+                </ul>
+            </li>
+            <li><strong>Do not type your answer here.</strong> Instead, record a voice note (1 to 2 minutes long) telling your story.</li>
+            <li>Send the audio file to your teacher via the class WhatsApp group or virtual campus platform before the next class.</li>
+        </ol>
+        <p><em>Example prompt to start: "I want to tell you about the time I finally bought my..."</em></p>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            let score = 0;
+            let totalQuestions = 14; 
+            
+            // Arrays of inputs to check
+            const inputs = [
+                { id: 'q1_1', fb: 'fb1_1' }, { id: 'q1_2', fb: 'fb1_2' },
+                { id: 'q1_3', fb: 'fb1_3' }, { id: 'q1_4', fb: 'fb1_4' },
+                { id: 'q2_1', fb: 'fb2_1' }, { id: 'q2_2', fb: 'fb2_2' },
+                { id: 'q2_3', fb: 'fb2_3' }, { id: 'q2_4', fb: 'fb2_4' },
+                { id: 'q3_1', fb: 'fb3_1' }, { id: 'q3_2', fb: 'fb3_2' },
+                { id: 'q3_3', fb: 'fb3_3' }, { id: 'q3_4', fb: 'fb3_4' },
+                { id: 'q4_1', fb: 'fb4_1' }, { id: 'q4_2', fb: 'fb4_2' }
+            ];
+
+            inputs.forEach(item => {
+                const element = document.getElementById(item.id);
+                const feedback = document.getElementById(item.fb);
+                const correctAnswer = element.getAttribute('data-answer').toLowerCase();
+                const userAnswer = element.value.trim().toLowerCase();
+
+                if (userAnswer === "") {
+                    feedback.textContent = "Please answer this question.";
+                    feedback.className = "feedback incorrect";
+                } else if (userAnswer === correctAnswer) {
+                    feedback.textContent = "✓ Correct";
+                    feedback.className = "feedback correct";
+                    score++;
+                } else {
+                    feedback.textContent = "✗ Incorrect";
+                    feedback.className = "feedback incorrect";
+                }
+            });
+
+            const scoreDisplay = document.getElementById('scoreDisplay');
+            scoreDisplay.style.display = "block";
+            scoreDisplay.textContent = `You scored ${score} out of ${totalQuestions} on the self-corrected exercises. Don't forget to record your voice note for Exercise 5!`;
+        }
+    </script>
+
+</body>
+</html>
