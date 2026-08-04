@@ -1,286 +1,691 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Past Experiences & Lessons Learned</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f9f9f9;
-        }
-        h1, h2, h3 {
-            color: #2c3e50;
-        }
-        .header-box {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-            border-left: 5px solid #3498db;
-        }
-        .exercise-container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-        }
-        .question {
-            margin-bottom: 15px;
-        }
-        input[type="text"] {
-            padding: 5px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 16px;
-        }
-        select {
-            padding: 5px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 16px;
-        }
-        .feedback {
-            font-weight: bold;
-            margin-left: 10px;
-        }
-        .correct {
-            color: #27ae60;
-        }
-        .incorrect {
-            color: #e74c3c;
-        }
-        .btn-check {
-            background-color: #3498db;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 20px;
-            display: block;
-            width: 100%;
-        }
-        .btn-check:hover {
-            background-color: #2980b9;
-        }
-        .score-display {
-            font-size: 18px;
-            font-weight: bold;
-            text-align: center;
-            margin-top: 15px;
-            padding: 10px;
-            background-color: #e8f8f5;
-            border-radius: 5px;
-            display: none;
-        }
-        .oral-challenge {
-            background-color: #fcf3cf;
-            border-left: 5px solid #f1c40f;
-        }
-        .note {
-            font-size: 0.9em;
-            color: #555;
-            font-style: italic;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Describing Past Experiences - ESL Worksheet</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Baloo+2:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a2e;
+    --paper: #fffef7;
+    --A: #e63946;
+    --A-light: #fde8ea;
+    --B: #2a9d8f;
+    --B-light: #d6f5f2;
+    --C: #e07b00;
+    --C-light: #fff0d6;
+    --D: #5c4fcf;
+    --D-light: #ebe8ff;
+    --E: #c77dff;
+    --E-light: #f5e6ff;
+    --rule: #d4cfc0;
+
+    /* Feedback Colors */
+    --correct: #2a9d8f;
+    --incorrect: #e63946;
+    --open-ans: #457b9d;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: #e8e4d9;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 32px 16px 60px;
+  }
+
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    background: var(--paper);
+    border-radius: 4px;
+    box-shadow: 0 4px 40px rgba(0,0,0,0.18);
+    overflow: hidden;
+  }
+
+  /* LOGISTICS BOX */
+  .logistics-box {
+    background: #e3f2fd;
+    border-left: 5px solid #1e88e5;
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 32px;
+  }
+  .logistics-box h3 {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-bottom: 10px;
+    color: #1e88e5;
+  }
+  .logistics-box p {
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 600;
+  }
+
+  /* HEADER */
+  header {
+    background: var(--ink);
+    color: #fff;
+    padding: 40px 48px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent, transparent 18px,
+      rgba(255,255,255,0.03) 18px, rgba(255,255,255,0.03) 36px
+    );
+  }
+  .header-badge {
+    display: inline-block;
+    background: #fff;
+    color: var(--ink);
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+  }
+  header h1 {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1.05;
+    margin-bottom: 8px;
+  }
+  header h1 span { color: #e63946; }
+  header p {
+    font-size: 15px;
+    opacity: 0.7;
+    font-weight: 600;
+  }
+
+  .content { padding: 0 44px 44px; margin-top: 20px;}
+
+  /* SECTION DIVIDERS */
+  .section-header {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--ink);
+    margin: 40px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--rule);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-header span {
+    background: var(--ink);
+    color: white;
+    font-size: 14px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+  }
+
+  /* GRAMMAR BOX */
+  .grammar-box {
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 22px;
+    border-left: 5px solid;
+  }
+  .grammar-box.purple { background: var(--E-light); border-color: var(--E); }
+  .grammar-box h3 {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 10px;
+    opacity: 0.6;
+  }
+  .grammar-box p { font-size: 14px; line-height: 1.7; font-weight: 600; }
+  .grammar-box strong { font-weight: 900; }
+
+  /* SUBTLE HIGHLIGHTS */
+  mark { 
+    background-color: var(--B-light); 
+    padding: 2px 6px; 
+    border-radius: 4px; 
+    font-weight: 800; 
+    color: var(--B); 
+  }
+
+  /* EXERCISE BLOCK & INSTRUCTIONS */
+  .exercise { margin-bottom: 36px; }
+  .exercise-title {
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    border-bottom: 2px solid var(--rule);
+    padding-bottom: 8px;
+  }
+  .title-content { display: flex; flex-direction: column; gap: 4px; }
+  .title-main { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
+  .ex-num {
+    width: 26px; height: 26px;
+    background: var(--ink);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 900;
+    color: #fff;
+    flex-shrink: 0;
+    margin-top: -2px;
+  }
+
+  .btn-hint {
+    background: none; border: none; cursor: pointer; font-size: 18px; padding: 0 4px; transition: transform 0.2s;
+  }
+  .btn-hint:hover { transform: scale(1.1); }
+  .hint-box {
+    display: none; font-size: 13px; color: #1e88e5; font-weight: 600; background: #e3f2fd;
+    padding: 12px 16px; border-radius: 6px; border-left: 4px solid #1e88e5; margin-top: 8px; line-height: 1.6;
+  }
+  .hint-box strong { color: #1565c0; font-weight: 800; }
+
+  .q-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+  .q-list li { font-size: 15px; font-weight: 600; display: block; line-height: 1.6; }
+  .q-num { font-weight: 900; opacity: 0.4; min-width: 20px; font-size: 13px; margin-right: 6px; }
+  .scrambled-box { color: #666; font-style: italic; margin-bottom: 6px; display: inline-block; }
+
+  .choice-box {
+    display: inline-flex; align-items: center; flex-wrap: wrap; background: #f7f3e8; border: 1.5px solid var(--rule);
+    border-radius: 6px; padding: 8px 14px; font-size: 13px; font-weight: 800; color: #555;
+    letter-spacing: 0.5px; word-spacing: 4px; line-height: 1.8; gap: 8px;
+  }
+  .choice-item { background: white; padding: 2px 8px; border-radius: 4px; border: 1px solid #ccc; }
+
+  .blank {
+    border: none; border-bottom: 2px solid #aaa; background: transparent; min-width: 100px;
+    font-family: 'Nunito', sans-serif; font-size: 15px; font-weight: 700; color: #2b2b2b;
+    padding: 0 4px; outline: none; text-align: center; transition: all 0.2s;
+  }
+  select.blank { text-align: center; cursor: pointer; border-radius: 4px; appearance: none; -webkit-appearance: none; -moz-appearance: none; background: rgba(0,0,0,0.02); }
+  .blank:focus { border-bottom-color: var(--ink); background: rgba(0,0,0,0.04); }
+  .blank-sm  { min-width: 60px; }
+  .blank-md  { min-width: 140px; }
+  .blank-lg  { min-width: 220px; }
+  .blank-xl  { display: block; width: 100%; text-align: left; padding: 4px 8px; margin-top: 6px; }
+
+  .is-correct { border-bottom: 2px solid var(--correct) !important; color: var(--correct) !important; background-color: rgba(42,157,143,0.06) !important; }
+  .is-incorrect { border-bottom: 2px solid var(--incorrect) !important; color: var(--incorrect) !important; background-color: rgba(230,57,70,0.06) !important; }
+  .is-open { border-bottom: 2px solid var(--open-ans) !important; color: var(--open-ans) !important; background-color: rgba(69,123,157,0.06) !important; }
+
+  /* STORY BUILDER TABLES */
+  .story-table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 10px; background: white; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+  .story-table th { background: #336699; color: white; padding: 12px; text-align: left; font-weight: 700; }
+  .story-table td { padding: 12px; border-bottom: 1px solid #eee; vertical-align: top; line-height: 1.5; color: #333; }
+  .story-table tr:last-child td { border-bottom: none; }
+  .story-table select { width: 100%; text-align: left; padding: 6px; margin-top: 8px; border: 1px solid #ccc; }
+  .options-box { background: #f9f9f9; padding: 14px; border: 1px dashed #bbb; border-radius: 6px; margin-bottom: 16px; font-size: 13px; font-weight: 600; color: #444; }
+  .options-box strong { color: #e63946; }
+  .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px; }
+  .option-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  .option-list li { display: flex; align-items: flex-start; gap: 6px; }
+  .op-letter { font-weight: 900; background: #e0e0e0; padding: 2px 6px; border-radius: 4px; font-size: 11px; }
+
+  /* MULTIPLE CHOICE OPTIONS */
+  .mcq-options { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; margin-left: 26px; }
+  .mcq-option { display: flex; align-items: flex-start; gap: 8px; font-size: 14px; font-weight: 600; color: #444; }
+  .mcq-letter { font-weight: 900; color: var(--ink); background: #eee; border-radius: 4px; padding: 0 6px; font-size: 12px; }
+
+  /* ACTIONS */
+  .action-bar { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 36px; }
+  .friendly-reminder { font-size: 14px; font-weight: 700; color: var(--D); text-align: center; margin-bottom: 4px; padding: 10px 20px; background: var(--D-light); border-radius: 8px; border: 1px dashed var(--D); max-width: 600px; }
+  .score-display { font-family: 'Baloo 2', sans-serif; font-size: 20px; font-weight: 800; color: var(--ink); display: none; background: #f0ede4; padding: 6px 20px; border-radius: 30px; border: 2px solid var(--rule); }
+  .button-group { display: flex; gap: 16px; }
+  .btn-action { font-family: 'Baloo 2', sans-serif; font-size: 15px; font-weight: 700; padding: 12px 32px; border: none; border-radius: 6px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.12); transition: all 0.2s; }
+  .btn-check { background: #2a9d8f; color: white; }
+  .btn-check:hover { background: #228074; transform: translateY(-1px); }
+  .btn-reset { background: #e7e5e0; color: var(--ink); }
+  .btn-reset:hover { background: #dcd9d2; transform: translateY(-1px); }
+  
+  .section-divider { height: 2px; background: repeating-linear-gradient(90deg, var(--rule) 0, var(--rule) 8px, transparent 8px, transparent 16px); margin: 44px 0; }
+
+  /* ANSWER KEY */
+  .answer-key-wrapper { margin-top: 48px; border-top: 3px solid var(--ink); padding-top: 20px; }
+  .btn-toggle-key { background: var(--ink); color: #fff; font-family: 'Baloo 2', sans-serif; font-size: 13px; font-weight: 700; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; letter-spacing: 0.5px; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+  .btn-toggle-key:hover { background: #2e2e4e; transform: translateY(-1px); }
+  .answer-key-content { display: none; margin-top: 24px; }
+  .answer-key h2 { font-family: 'Baloo 2', sans-serif; font-size: 20px; font-weight: 800; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+  .answer-key h2::after { content: '(Teacher Copy)'; font-size: 12px; background: var(--ink); color: #fff; padding: 3px 10px; border-radius: 20px; letter-spacing: 1px; font-weight: 700; }
+  .key-section { margin-bottom: 20px; }
+  .key-section h3 { font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; opacity: 0.5; }
+  .key-list { font-size: 14px; font-weight: 600; line-height: 2; column-count: 2; column-gap: 32px; }
+  .key-list span { font-weight: 900; }
+  .pts-badge { display: inline-block; font-family: 'Baloo 2', sans-serif; font-size: 10px; font-weight: 800; letter-spacing: 0.5px; padding: 2px 8px; border-radius: 10px; margin-left: 6px; background: rgba(0,0,0,0.08); color: var(--ink); }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; }
+    .action-bar, .btn-hint, .answer-key-wrapper { display: none !important; }
+    .blank { border-bottom-color: #000; }
+  }
+
+  @media (max-width: 600px) {
+    .content { padding: 0 20px 36px; }
+    header { padding: 28px 20px 22px; }
+    header h1 { font-size: 34px; }
+    .key-list { column-count: 1; }
+    .blank-lg, .blank-xl { width: 100%; min-width: 100%; }
+    .button-group { flex-direction: column; align-items: stretch; width: 100%; }
+    .btn-action { text-align: center; }
+    .options-grid { grid-template-columns: 1fr; }
+    .story-table th, .story-table td { display: block; width: 100%; }
+    .story-table td { border-bottom: none; padding-bottom: 4px; }
+    .story-table tr { border-bottom: 2px solid #336699; display: block; padding-bottom: 12px; margin-bottom: 12px; }
+  }
+</style>
 </head>
 <body>
+<div class="page">
 
-    <div class="header-box">
-        <h1>Describing Past Experiences</h1>
-        <p>Welcome to your homework! This assignment focuses on describing professional milestones and past experiences, drawing inspiration from our class notes in <strong>image_956a7e.png</strong>.</p>
-        <p><strong>Remember the rules:</strong></p>
-        <ul>
-            <li><strong>Past Perfect (had + past participle):</strong> For a completed action that happened before another action in the past.</li>
-            <li><strong>Past Perfect Progressive (had been + verb-ing):</strong> For an action that was in progress up to a specific point in the past, focusing on duration.</li>
+  <header>
+    <div class="header-badge">ESL Worksheet &middot; Past Experiences</div>
+    <h1>Describing Past <span>Experiences</span></h1>
+    <p>Past Perfect vs. Past Perfect Progressive &middot; Milestones &middot; Storytelling</p>
+  </header>
+
+  <div class="content">
+
+    <div class="logistics-box">
+      <h3>&#128203; Worksheet Guide</h3>
+      <p>Welcome! Today we are practicing how to describe past milestones and experiences, drawing inspiration from our timelines. If you get stuck, click the <strong>&#127760;</strong> button for translated instructions and a 💡 class note hint.</p>
+      <p style="margin-top:8px">When you finish, the system will auto-grade exercises 1 through 4. For the final challenge, remember to record your <strong>voice note</strong> and send it to your teacher via WhatsApp.</p>
+    </div>
+
+    <div class="grammar-box purple">
+      <h3>&#128204; Grammar Notes: Structuring Past Timelines</h3>
+      <ul style="margin-left: 20px; font-size: 14px; font-weight: 600; line-height: 1.7; margin-top: 8px;">
+        <li><strong>Past Perfect (had + past participle):</strong> For a completed action that happened <em>before</em> another action in the past.<br><em>"When I bought my first car, I <strong>had never had</strong> my own car."</em></li>
+        <li><strong>Past Perfect Progressive (had been + verb-ing):</strong> For an action that was in progress up to a specific point in the past, focusing heavily on the duration.<br><em>"In August 2021, I <strong>had been working</strong> there for 8 months."</em></li>
+      </ul>
+    </div>
+
+    <div class="section-header">
+      <span>Part 1</span> Controlled Practice
+    </div>
+
+    <!-- EXERCISE 1: MULTIPLE CHOICE -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">1</span>
+        <div class="title-content">
+          <div class="title-main">
+            Choose the correct form based on the context and time expressions.
+            <span class="pts-badge">1 pt each &middot; 4 pts</span>
+            <button class="btn-hint" onclick="toggleT('t-ex1')" title="Translation & Hint">&#127760;</button>
+          </div>
+          <div id="t-ex1" class="hint-box">
+            <strong>Traducción:</strong> Elige la forma correcta basándote en el contexto y las expresiones de tiempo.<br>
+            <strong>💡 Hint:</strong> Si la oración enfatiza "cuánto tiempo" (for over three years, for 14 hours), usa Past Perfect Progressive (had been -ing). Si se enfoca en una acción completada antes de otra, usa Past Perfect.
+          </div>
+        </div>
+      </div>
+      
+      <ol class="q-list">
+        <li><span class="q-num">1.</span> When I got promoted to manager last year, I 
+          <select data-ans="had been working" class="blank blank-md">
+            <option value="">--select--</option>
+            <option value="had worked">had worked</option>
+            <option value="had been working">had been working</option>
+          </select> in the department for over three years.
+        </li>
+        <li><span class="q-num">2.</span> By the time the client meeting started, she 
+          <select data-ans="had finished" class="blank blank-md">
+            <option value="">--select--</option>
+            <option value="had finished">had finished</option>
+            <option value="had been finishing">had been finishing</option>
+          </select> preparing all the slides.
+        </li>
+        <li><span class="q-num">3.</span> I was exhausted when I arrived at the conference because I 
+          <select data-ans="had been traveling" class="blank blank-md">
+            <option value="">--select--</option>
+            <option value="had traveled">had traveled</option>
+            <option value="had been traveling">had been traveling</option>
+          </select> for 14 hours straight.
+        </li>
+        <li><span class="q-num">4.</span> When I bought my new laptop, I 
+          <select data-ans="had never had" class="blank blank-md">
+            <option value="">--select--</option>
+            <option value="had never had">had never had</option>
+            <option value="had never been having">had never been having</option>
+          </select> a computer with such a fast processor before.
+        </li>
+      </ol>
+    </div>
+
+    <!-- EXERCISE 2: FILL IN THE BLANKS -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">2</span>
+        <div class="title-content">
+          <div class="title-main">
+            Complete the sentences: Type the correct Past Perfect or Past Perfect Progressive form.
+            <span class="pts-badge">2 pts each &middot; 8 pts</span>
+            <button class="btn-hint" onclick="toggleT('t-ex2')" title="Translation & Hint">&#127760;</button>
+          </div>
+          <div id="t-ex2" class="hint-box">
+            <strong>Traducción:</strong> Completa las oraciones escribiendo la forma correcta en Pasado Perfecto o Pasado Perfecto Progresivo.<br>
+            <strong>💡 Hint:</strong> No uses contracciones. Recuerda la estructura: "had + participio" o "had been + verbo-ing".
+          </div>
+        </div>
+      </div>
+
+      <ol class="q-list">
+        <li><span class="q-num">1.</span> When I arrived at the office, I realized I <input type="text" data-ans="had forgotten" class="blank blank-md"> (forget) my access badge at home.</li>
+        <li><span class="q-num">2.</span> We <input type="text" data-ans="had been negotiating" class="blank blank-lg"> (negotiate) the new contract for months before they finally signed it.</li>
+        <li><span class="q-num">3.</span> Before she joined our team in August, she <input type="text" data-ans="had not used" class="blank blank-md"> (not / use) this specific software.</li>
+        <li><span class="q-num">4.</span> The project was a success because they <input type="text" data-ans="had planned" class="blank blank-md"> (plan) every detail carefully.</li>
+      </ol>
+    </div>
+
+    <div class="section-divider"></div>
+    <div class="section-header">
+      <span>Part 2</span> Applied Context
+    </div>
+
+    <!-- EXERCISE 3: MATCHING -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">3</span>
+        <div class="title-content">
+          <div class="title-main">
+            Match the sentence halves logically. 
+            <span class="pts-badge">1 pt each &middot; 4 pts</span>
+            <button class="btn-hint" onclick="toggleT('t-ex3')" title="Translation & Hint">&#127760;</button>
+          </div>
+          <div id="t-ex3" class="hint-box">
+            <strong>Traducción:</strong> Empareja las mitades de las oraciones lógicamente usando el menú.<br>
+            <strong>💡 Hint:</strong> Lee cuidadosamente. ¿Cuál es la causa y el efecto? "No necesité asistir a la reunión" (I didn't need to attend...) hace sentido con "...porque ya había leído el reporte".
+          </div>
+        </div>
+      </div>
+      
+      <div class="options-box">
+        <ul class="option-list">
+          <li><span class="op-letter">A</span> because I had already read the report.</li>
+          <li><span class="op-letter">B</span> I had been working in customer service for two years.</li>
+          <li><span class="op-letter">C</span> I had saved money for almost a decade.</li>
+          <li><span class="op-letter">D</span> after we had already spent weeks designing the prototype.</li>
         </ul>
+      </div>
+
+      <ol class="q-list">
+        <li><span class="q-num">1.</span> When I finally bought my first car... 
+          <select data-ans="c" class="blank blank-sm">
+            <option value="">-</option><option value="a">A</option><option value="b">B</option><option value="c">C</option><option value="d">D</option>
+          </select>
+        </li>
+        <li><span class="q-num">2.</span> Before I transferred to the marketing department... 
+          <select data-ans="b" class="blank blank-sm">
+            <option value="">-</option><option value="a">A</option><option value="b">B</option><option value="c">C</option><option value="d">D</option>
+          </select>
+        </li>
+        <li><span class="q-num">3.</span> The director canceled the project... 
+          <select data-ans="d" class="blank blank-sm">
+            <option value="">-</option><option value="a">A</option><option value="b">B</option><option value="c">C</option><option value="d">D</option>
+          </select>
+        </li>
+        <li><span class="q-num">4.</span> I didn't need to attend the briefing... 
+          <select data-ans="a" class="blank blank-sm">
+            <option value="">-</option><option value="a">A</option><option value="b">B</option><option value="c">C</option><option value="d">D</option>
+          </select>
+        </li>
+      </ol>
     </div>
 
-    <form id="homeworkForm">
-        <!-- EXERCISE 1: Multiple Choice -->
-        <div class="exercise-container">
-            <h2>Exercise 1: Choose the correct form</h2>
-            <p class="note">Select the most appropriate verb tense based on the context and time expressions.</p>
-            
-            <div class="question">
-                1. When I got promoted to manager last year, I <select id="q1_1" data-answer="had been working">
-                    <option value="">--select--</option>
-                    <option value="had worked">had worked</option>
-                    <option value="had been working">had been working</option>
-                </select> in the department for over three years. <span id="fb1_1" class="feedback"></span>
-            </div>
-            <div class="question">
-                2. By the time the client meeting started, she <select id="q1_2" data-answer="had finished">
-                    <option value="">--select--</option>
-                    <option value="had finished">had finished</option>
-                    <option value="had been finishing">had been finishing</option>
-                </select> preparing all the slides. <span id="fb1_2" class="feedback"></span>
-            </div>
-            <div class="question">
-                3. I was exhausted when I arrived at the conference because I <select id="q1_3" data-answer="had been traveling">
-                    <option value="">--select--</option>
-                    <option value="had traveled">had traveled</option>
-                    <option value="had been traveling">had been traveling</option>
-                </select> for 14 hours straight. <span id="fb1_3" class="feedback"></span>
-            </div>
-            <div class="question">
-                4. When I bought my new laptop, I <select id="q1_4" data-answer="had never had">
-                    <option value="">--select--</option>
-                    <option value="had never had">had never had</option>
-                    <option value="had never been having">had never been having</option>
-                </select> a computer with such a fast processor before. <span id="fb1_4" class="feedback"></span>
-            </div>
+    <!-- EXERCISE 4: CONCEPT CHECK -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">4</span>
+        <div class="title-content">
+          <div class="title-main">
+            Concept Check: Read the sentence and answer the question about the timeline.
+            <span class="pts-badge">2 pts each &middot; 4 pts</span>
+            <button class="btn-hint" onclick="toggleT('t-ex4')" title="Translation & Hint">&#127760;</button>
+          </div>
+          <div id="t-ex4" class="hint-box">
+            <strong>Traducción:</strong> Verificación de concepto: Lee la oración y responde la pregunta sobre la línea de tiempo.<br>
+            <strong>💡 Hint:</strong> Piensa en tu línea de tiempo: ¿Qué acción ocurrió más al pasado que la otra? ¿Qué enfatiza el "-ing"?
+          </div>
         </div>
+      </div>
+      
+      <ol class="q-list">
+        <li>
+          <span class="q-num">1.</span> <em>"When I bought my VW GOL, I had driven a Renault Logan."</em><br>
+          Which happened first?
+          <select data-ans="renault" class="blank blank-md" style="margin-left: 26px;">
+            <option value="">--select--</option>
+            <option value="renault">Driving the Renault</option>
+            <option value="vw">Buying the VW</option>
+          </select>
+        </li>
+        <li>
+          <span class="q-num">2.</span> <em>"In August 2021, I had been working there for 8 months."</em><br>
+          What does this sentence emphasize?
+          <select data-ans="duration" class="blank blank-lg" style="margin-left: 26px;">
+            <option value="">--select--</option>
+            <option value="completion">The completion of the job</option>
+            <option value="duration">The duration of the work up to that point</option>
+          </select>
+        </li>
+      </ol>
+    </div>
 
-        <!-- EXERCISE 2: Fill in the Blanks -->
-        <div class="exercise-container">
-            <h2>Exercise 2: Complete the sentences</h2>
-            <p class="note">Type the correct <strong>Past Perfect</strong> or <strong>Past Perfect Progressive</strong> form of the verb in parentheses. Avoid using contractions for this exercise.</p>
-            
-            <div class="question">
-                1. When I arrived at the office, I realized I <input type="text" id="q2_1" data-answer="had forgotten" size="15"> (forget) my access badge at home. <span id="fb2_1" class="feedback"></span>
-            </div>
-            <div class="question">
-                2. We <input type="text" id="q2_2" data-answer="had been negotiating" size="20"> (negotiate) the new contract for months before they finally signed it. <span id="fb2_2" class="feedback"></span>
-            </div>
-            <div class="question">
-                3. Before she joined our team in August, she <input type="text" id="q2_3" data-answer="had not used" size="15"> (not / use) this specific software. <span id="fb2_3" class="feedback"></span>
-            </div>
-            <div class="question">
-                4. The project was a success because they <input type="text" id="q2_4" data-answer="had planned" size="15"> (plan) every detail carefully. <span id="fb2_4" class="feedback"></span>
-            </div>
+    <!-- EXERCISE 5: FINAL CHALLENGE (OPEN/ORAL) -->
+    <div class="exercise">
+      <div class="exercise-title" style="border-bottom-color: #f1c40f;">
+        <span class="ex-num" style="background: #f1c40f;">5</span>
+        <div class="title-content">
+          <div class="title-main">
+            Final Challenge &ndash; Share a Past Experience! <em style="font-weight:400; opacity:0.7;">(Teacher evaluated)</em>
+            <span class="pts-badge">15 pts</span>
+            <button class="btn-hint" onclick="toggleT('t-ex5')" title="Translation & Hint">&#127760;</button>
+          </div>
+          <div id="t-ex5" class="hint-box">
+            <strong>Traducción:</strong> Reto Final: ¡Comparte una experiencia pasada! Piensa en un hito de tu vida.<br>
+            <strong>💡 Hint:</strong> Puedes usar la caja de texto para planear tu guion o notas. Luego debes grabar la nota de voz.
+          </div>
         </div>
-
-        <!-- EXERCISE 3: Matching -->
-        <div class="exercise-container">
-            <h2>Exercise 3: Match the sentence halves</h2>
-            <p class="note">Choose the correct ending (A, B, C, or D) for each sentence beginning.</p>
-            <ul>
-                <li><strong>A:</strong> because I had already read the report.</li>
-                <li><strong>B:</strong> I had been working in customer service for two years.</li>
-                <li><strong>C:</strong> I had saved money for almost a decade.</li>
-                <li><strong>D:</strong> after we had already spent weeks designing the prototype.</li>
+      </div>
+      
+      <div style="background: #fcf3cf; border-left: 5px solid #f1c40f; padding: 18px; border-radius: 6px; margin-bottom: 16px;">
+        <p style="font-size:14px;font-weight:700;margin-bottom:8px;">It is time to put everything together! Imagine you are describing a past experience and a lesson learned to a coworker.</p>
+        <ol style="margin-left: 20px; font-size: 14px; font-weight: 600; line-height: 1.6;">
+          <li>Think of a major milestone (e.g., getting your first job, buying a house/car, finishing a big project).</li>
+          <li>Prepare a short story. You <strong>must</strong> include:
+            <ul style="margin-top:4px; margin-bottom:8px;">
+              <li>At least one sentence using the <strong>Past Simple</strong> (the main event).</li>
+              <li>At least one sentence using the <strong>Past Perfect</strong> (what happened before).</li>
+              <li>At least one sentence using the <strong>Past Perfect Progressive</strong> (an action in progress before the event).</li>
             </ul>
-
-            <div class="question">
-                1. When I finally bought my first car... <select id="q3_1" data-answer="C">
-                    <option value="">-</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option>
-                </select> <span id="fb3_1" class="feedback"></span>
-            </div>
-            <div class="question">
-                2. Before I transferred to the marketing department... <select id="q3_2" data-answer="B">
-                    <option value="">-</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option>
-                </select> <span id="fb3_2" class="feedback"></span>
-            </div>
-            <div class="question">
-                3. The director canceled the project... <select id="q3_3" data-answer="D">
-                    <option value="">-</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option>
-                </select> <span id="fb3_3" class="feedback"></span>
-            </div>
-            <div class="question">
-                4. I didn't need to attend the briefing... <select id="q3_4" data-answer="A">
-                    <option value="">-</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option>
-                </select> <span id="fb3_4" class="feedback"></span>
-            </div>
-        </div>
-
-        <!-- EXERCISE 4: Concept Check -->
-        <div class="exercise-container">
-            <h2>Exercise 4: Concept Check</h2>
-            <p class="note">Read the sentence and answer the question about the timeline.</p>
-            
-            <div class="question">
-                1. <em>"When I bought my VW GOL, I had driven a Renault Logan."</em><br>
-                Which happened first? <select id="q4_1" data-answer="Renault">
-                    <option value="">--select--</option>
-                    <option value="Renault">Driving the Renault</option>
-                    <option value="VW">Buying the VW</option>
-                </select> <span id="fb4_1" class="feedback"></span>
-            </div>
-            <div class="question">
-                2. <em>"In August 2021, I had been working there for 8 months."</em><br>
-                What does this sentence emphasize? <select id="q4_2" data-answer="Duration">
-                    <option value="">--select--</option>
-                    <option value="Completion">The completion of the job</option>
-                    <option value="Duration">The duration of the work up to that point</option>
-                </select> <span id="fb4_2" class="feedback"></span>
-            </div>
-        </div>
-
-        <button type="button" class="btn-check" onclick="checkAnswers()">Check Answers (Exercises 1-4)</button>
-        <div id="scoreDisplay" class="score-display"></div>
-    </form>
-
-    <!-- EXERCISE 5: Teacher Corrected Challenge -->
-    <div class="exercise-container oral-challenge">
-        <h2>Exercise 5: Final Challenge (Teacher Corrected)</h2>
-        <h3>Oral Assignment: Share a Past Experience</h3>
-        <p>It is time to put everything together! Imagine you are describing a past experience and a lesson learned to a coworker.</p>
-        <p><strong>Instructions:</strong></p>
-        <ol>
-            <li>Think of a major milestone in your life (e.g., getting your first job, buying a house/car, or finishing a big project).</li>
-            <li>Prepare a short story about what happened. You <strong>must</strong> include:
-                <ul>
-                    <li>At least one sentence using the <strong>Past Simple</strong> to describe the main event.</li>
-                    <li>At least one sentence using the <strong>Past Perfect</strong> to describe what happened before.</li>
-                    <li>At least one sentence using the <strong>Past Perfect Progressive</strong> to describe an action in progress before the event.</li>
-                </ul>
-            </li>
-            <li><strong>Do not type your answer here.</strong> Instead, record a voice note (1 to 2 minutes long) telling your story.</li>
-            <li>Send the audio file to your teacher via the class WhatsApp group or virtual campus platform before the next class.</li>
+          </li>
+          <li><strong>Record a voice note (1 to 2 minutes long)</strong> telling your story. Start with: <em>"I want to tell you about the time I finally..."</em></li>
         </ol>
-        <p><em>Example prompt to start: "I want to tell you about the time I finally bought my..."</em></p>
+      </div>
+
+      <textarea
+        data-ans="OPEN"
+        rows="6"
+        placeholder="Draft your script or notes here before recording...&#10;Example: I want to tell you about the time I finally bought my..."
+        style="width:100%;border:2px dashed #ccc;border-radius:8px;padding:14px;font-family:'Nunito',sans-serif;font-size:15px;font-weight:600;color:#2b2b2b;outline:none;resize:vertical;background:#fafafa;transition:border-color 0.2s;"
+        onfocus="this.style.borderColor='#f1c40f'"
+        onblur="this.style.borderColor='#ccc'"
+      ></textarea>
+      
+      <p style="font-size:14px; font-weight:800; color:#e63946; margin-top:12px; background: var(--A-light); padding: 10px; border-radius: 6px; border: 1px solid var(--A); display: inline-block;">
+        &#128242; Reminder: Send your AUDIO file (and a screenshot of this completed page) to your teacher via WhatsApp.
+      </p>
     </div>
 
-    <script>
-        function checkAnswers() {
-            let score = 0;
-            let totalQuestions = 14; 
-            
-            // Arrays of inputs to check
-            const inputs = [
-                { id: 'q1_1', fb: 'fb1_1' }, { id: 'q1_2', fb: 'fb1_2' },
-                { id: 'q1_3', fb: 'fb1_3' }, { id: 'q1_4', fb: 'fb1_4' },
-                { id: 'q2_1', fb: 'fb2_1' }, { id: 'q2_2', fb: 'fb2_2' },
-                { id: 'q2_3', fb: 'fb2_3' }, { id: 'q2_4', fb: 'fb2_4' },
-                { id: 'q3_1', fb: 'fb3_1' }, { id: 'q3_2', fb: 'fb3_2' },
-                { id: 'q3_3', fb: 'fb3_3' }, { id: 'q3_4', fb: 'fb3_4' },
-                { id: 'q4_1', fb: 'fb4_1' }, { id: 'q4_2', fb: 'fb4_2' }
-            ];
+    <!-- ACTION BAR -->
+    <div class="action-bar">
+      <p class="friendly-reminder">&#128161; Friendly reminder: Before you check your answers, double-check your verb tenses! You've got this! &#128522;</p>
+      <div class="score-display" id="gradeScoreBox">Score: 0</div>
+      <div class="button-group">
+        <button class="btn-action btn-check" onclick="checkStudentAnswers()">&#10004;&#65039; Check Answers</button>
+        <button class="btn-action btn-reset" onclick="resetWorksheet()">&#128260; Clear Sheet</button>
+      </div>
+    </div>
 
-            inputs.forEach(item => {
-                const element = document.getElementById(item.id);
-                const feedback = document.getElementById(item.fb);
-                const correctAnswer = element.getAttribute('data-answer').toLowerCase();
-                const userAnswer = element.value.trim().toLowerCase();
+    <!-- ANSWER KEY -->
+    <div class="answer-key-wrapper">
+      <button class="btn-toggle-key" id="toggleKeyBtn" onclick="toggleAnswerKey()">
+        &#128065;&#65039; Show Answer Key
+      </button>
 
-                if (userAnswer === "") {
-                    feedback.textContent = "Please answer this question.";
-                    feedback.className = "feedback incorrect";
-                } else if (userAnswer === correctAnswer) {
-                    feedback.textContent = "✓ Correct";
-                    feedback.className = "feedback correct";
-                    score++;
-                } else {
-                    feedback.textContent = "✗ Incorrect";
-                    feedback.className = "feedback incorrect";
-                }
-            });
+      <div class="answer-key-content" id="answerKeyContent">
+        <div class="answer-key">
+          <h2>Answer Key</h2>
 
-            const scoreDisplay = document.getElementById('scoreDisplay');
-            scoreDisplay.style.display = "block";
-            scoreDisplay.textContent = `You scored ${score} out of ${totalQuestions} on the self-corrected exercises. Don't forget to record your voice note for Exercise 5!`;
+          <div class="key-section">
+            <h3>1. Multiple Choice</h3>
+            <div class="key-list">
+              <div>1. <span>had been working</span></div>
+              <div>2. <span>had finished</span></div>
+              <div>3. <span>had been traveling</span></div>
+              <div>4. <span>had never had</span></div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>2. Fill in the Blanks</h3>
+            <div class="key-list">
+              <div>1. <span>had forgotten</span></div>
+              <div>2. <span>had been negotiating</span></div>
+              <div>3. <span>had not used</span></div>
+              <div>4. <span>had planned</span></div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>3. Matching</h3>
+            <div class="key-list">
+              <div>1. <span>C</span> (I had saved money for almost a decade.)</div>
+              <div>2. <span>B</span> (I had been working in customer service for two years.)</div>
+              <div>3. <span>D</span> (after we had already spent weeks designing the prototype.)</div>
+              <div>4. <span>A</span> (because I had already read the report.)</div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>4. Concept Check</h3>
+            <div class="key-list" style="column-count: 1;">
+              <div>1. Which happened first? <span>Driving the Renault</span></div>
+              <div>2. Emphasizes? <span>The duration of the work up to that point</span></div>
+            </div>
+          </div>
+          
+          <div class="key-section">
+            <h3>5. Final Challenge (Oral)</h3>
+            <div class="key-list" style="column-count: 1;">
+              <div>Teacher-evaluated voice note. Check for proper use of Past Simple, Past Perfect, and Past Perfect Progressive based on the timeline.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  function toggleT(id) {
+    const el = document.getElementById(id);
+    if (el.style.display === "block") {
+      el.style.display = "none";
+    } else {
+      el.style.display = "block";
+    }
+  }
+
+  function checkStudentAnswers() {
+    let score = 0;
+    let autoTotal = 0;
+
+    const inputs = document.querySelectorAll('input[type="text"][data-ans], select[data-ans]');
+    inputs.forEach(input => {
+      let studentAns = input.value.trim().toLowerCase().replace(/[.,?!]/g, "").replace(/\s+/g, " ");
+
+      let rawTarget = input.getAttribute('data-ans').toLowerCase().replace(/[.,?!]/g, "");
+      let targetAnsArray = rawTarget.split('|').map(s => s.replace(/\s+/g, " ").trim());
+
+      input.classList.remove('is-correct', 'is-incorrect', 'is-open');
+
+      if (targetAnsArray.includes("open")) {
+        if (studentAns !== "") {
+          input.classList.add('is-open');
         }
-    </script>
+      } else {
+        autoTotal++;
+        if (targetAnsArray.includes(studentAns)) {
+          input.classList.add('is-correct');
+          score++;
+        } else {
+          input.classList.add('is-incorrect');
+        }
+      }
+    });
 
+    document.querySelectorAll('textarea[data-ans]').forEach(ta => {
+      ta.style.borderColor = ta.value.trim() !== "" ? "#457b9d" : "#ccc";
+    });
+
+    const scoreBox = document.getElementById('gradeScoreBox');
+    scoreBox.innerText = "Auto-graded Score: " + score + " / " + autoTotal;
+    scoreBox.style.display = "block";
+  }
+
+  function resetWorksheet() {
+    if (confirm("Are you sure you want to clear all your answers?")) {
+      document.querySelectorAll('input[type="text"]').forEach(input => {
+        input.value = "";
+        input.classList.remove('is-correct', 'is-incorrect', 'is-open');
+      });
+      document.querySelectorAll('select').forEach(sel => {
+        sel.value = "";
+        sel.classList.remove('is-correct', 'is-incorrect', 'is-open');
+      });
+      document.querySelectorAll('textarea').forEach(ta => {
+        ta.value = "";
+        ta.style.borderColor = "#ccc";
+      });
+
+      document.getElementById('gradeScoreBox').style.display = "none";
+    }
+  }
+
+  function toggleAnswerKey() {
+    const content = document.getElementById("answerKeyContent");
+    const btn = document.getElementById("toggleKeyBtn");
+    if (content.style.display === "block") {
+      content.style.display = "none";
+      btn.innerHTML = "&#128065;&#65039; Show Answer Key";
+    } else {
+      content.style.display = "block";
+      btn.innerHTML = "&#128584; Hide Answer Key";
+    }
+  }
+</script>
 </body>
 </html>
