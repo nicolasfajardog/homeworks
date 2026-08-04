@@ -384,16 +384,16 @@
           </div>
           <div id="t-ex2" class="hint-box">
             <strong>Traducción:</strong> Completa las oraciones escribiendo la forma correcta en Pasado Perfecto o Pasado Perfecto Progresivo.<br>
-            <strong>💡 Hint:</strong> No uses contracciones. Recuerda la estructura: "had + participio" o "had been + verbo-ing".
+            <strong>💡 Hint:</strong> Recuerda la estructura: "had + participio" o "had been + verbo-ing". (Puedes usar contracciones si lo prefieres).
           </div>
         </div>
       </div>
 
       <ol class="q-list">
-        <li><span class="q-num">1.</span> When I arrived at the office, I realized I <input type="text" data-ans="had forgotten" class="blank blank-md"> (forget) my access badge at home.</li>
-        <li><span class="q-num">2.</span> We <input type="text" data-ans="had been negotiating" class="blank blank-lg"> (negotiate) the new contract for months before they finally signed it.</li>
-        <li><span class="q-num">3.</span> Before she joined our team in August, she <input type="text" data-ans="had not used" class="blank blank-md"> (not / use) this specific software.</li>
-        <li><span class="q-num">4.</span> The project was a success because they <input type="text" data-ans="had planned" class="blank blank-md"> (plan) every detail carefully.</li>
+        <li><span class="q-num">1.</span> When I arrived at the office, I realized I <input type="text" data-ans="had forgotten|'d forgotten" class="blank blank-md"> (forget) my access badge at home.</li>
+        <li><span class="q-num">2.</span> We <input type="text" data-ans="had been negotiating|'d been negotiating" class="blank blank-lg"> (negotiate) the new contract for months before they finally signed it.</li>
+        <li><span class="q-num">3.</span> Before she joined our team in August, she <input type="text" data-ans="had not used|hadn't used|'d not used" class="blank blank-md"> (not / use) this specific software.</li>
+        <li><span class="q-num">4.</span> The project was a success because they <input type="text" data-ans="had planned|'d planned" class="blank blank-md"> (plan) every detail carefully.</li>
       </ol>
     </div>
 
@@ -570,10 +570,10 @@
           <div class="key-section">
             <h3>2. Fill in the Blanks</h3>
             <div class="key-list">
-              <div>1. <span>had forgotten</span></div>
-              <div>2. <span>had been negotiating</span></div>
-              <div>3. <span>had not used</span></div>
-              <div>4. <span>had planned</span></div>
+              <div>1. <span>had forgotten / 'd forgotten</span></div>
+              <div>2. <span>had been negotiating / 'd been negotiating</span></div>
+              <div>3. <span>had not used / hadn't used</span></div>
+              <div>4. <span>had planned / 'd planned</span></div>
             </div>
           </div>
 
@@ -625,20 +625,36 @@
 
     const inputs = document.querySelectorAll('input[type="text"][data-ans], select[data-ans]');
     inputs.forEach(input => {
-      let studentAns = input.value.trim().toLowerCase().replace(/[.,?!]/g, "").replace(/\s+/g, " ");
+      let rawStudent = input.value;
+      let isSelect = input.tagName.toLowerCase() === 'select';
+      
+      // Super-forgiving normalization for text fields
+      let studentAns = rawStudent.toLowerCase().replace(/[.,?!'’´`]/g, "");
+      if (!isSelect) {
+          studentAns = studentAns.replace(/\s+/g, ""); // completely strip spaces for text inputs
+      } else {
+          studentAns = studentAns.replace(/\s+/g, " ").trim(); // keep single spaces for select matching
+      }
 
-      let rawTarget = input.getAttribute('data-ans').toLowerCase().replace(/[.,?!]/g, "");
-      let targetAnsArray = rawTarget.split('|').map(s => s.replace(/\s+/g, " ").trim());
+      let rawTarget = input.getAttribute('data-ans').toLowerCase();
+      let targetAnsArray = rawTarget.split('|').map(s => {
+          let normalized = s.replace(/[.,?!'’´`]/g, "");
+          if (!isSelect) {
+              return normalized.replace(/\s+/g, "");
+          } else {
+              return normalized.replace(/\s+/g, " ").trim();
+          }
+      });
 
       input.classList.remove('is-correct', 'is-incorrect', 'is-open');
 
       if (targetAnsArray.includes("open")) {
-        if (studentAns !== "") {
+        if (rawStudent.trim() !== "") {
           input.classList.add('is-open');
         }
       } else {
         autoTotal++;
-        if (targetAnsArray.includes(studentAns)) {
+        if (studentAns !== "" && targetAnsArray.includes(studentAns)) {
           input.classList.add('is-correct');
           score++;
         } else {
