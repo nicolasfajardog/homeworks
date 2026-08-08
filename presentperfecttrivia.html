@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pop Culture Millionaire (Present Perfect Edition)</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle at center, #1b1b4b 0%, #020211 100%);
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    user-select: none;
+  }
+  
+  #game-container {
+    display: flex;
+    width: 95vw;
+    max-width: 1200px;
+    height: 90vh;
+    gap: 20px;
+  }
+  
+  #main-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 40px;
+    position: relative;
+  }
+  
+  #logo {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 4px solid #d4af37;
+    background: radial-gradient(circle, #000044 0%, #000000 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.5);
+  }
+  
+  #logo h1 {
+    color: #d4af37;
+    font-size: 1.8rem;
+    margin: 0;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px black;
+    line-height: 1.2;
+  }
+  
+  #logo span {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-top: 10px;
+  }
+
+  /* Clip Paths for the Hexagonal Millionaire shapes */
+  .clip-box {
+    position: relative;
+    background: linear-gradient(to bottom, #d4af37, #aa7700);
+    padding: 2px;
+    margin-bottom: 20px;
+  }
+  
+  .q-box {
+    clip-path: polygon(3% 0, 97% 0, 100% 50%, 97% 100%, 3% 100%, 0% 50%);
+  }
+  
+  .q-inner {
+    background: linear-gradient(to bottom, #000055, #000011);
+    clip-path: polygon(3% 0, 97% 0, 100% 50%, 97% 100%, 3% 100%, 0% 50%);
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.4rem;
+    padding: 15px 40px;
+    font-weight: 500;
+  }
+  
+  #answers-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px 30px;
+  }
+  
+  .a-box {
+    clip-path: polygon(6% 0, 94% 0, 100% 50%, 94% 100%, 6% 100%, 0% 50%);
+    cursor: pointer;
+    transition: transform 0.1s;
+  }
+  
+  .a-box:active {
+    transform: scale(0.98);
+  }
+  
+  .a-inner {
+    background: linear-gradient(to bottom, #000044, #000011);
+    clip-path: polygon(6% 0, 94% 0, 100% 50%, 94% 100%, 6% 100%, 0% 50%);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    transition: background 0.2s;
+  }
+  
+  .a-box:hover .a-inner {
+    background: linear-gradient(to bottom, #000088, #000022);
+  }
+  
+  /* State Colors */
+  .a-box.selected .a-inner {
+    background: #ffa500; /* Flashing Orange */
+    color: black;
+  }
+  .a-box.selected .letter {
+    color: black;
+  }
+  .a-box.correct .a-inner {
+    background: #00aa00; /* Correct Green */
+    color: white;
+  }
+  .a-box.correct .letter {
+    color: #ffd700;
+  }
+  .a-box.incorrect .a-inner {
+    background: #cc0000; /* Incorrect Red */
+    color: white;
+  }
+  .a-box.incorrect .letter {
+    color: #ffd700;
+  }
+
+  .letter {
+    color: #d4af37;
+    font-weight: bold;
+    margin-right: 15px;
+    font-size: 1.3rem;
+  }
+
+  /* Sidebar Money Ladder */
+  #sidebar {
+    width: 250px;
+    background: rgba(0, 0, 0, 0.4);
+    border-left: 2px solid #d4af37;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  #ladder {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  
+  #ladder li {
+    padding: 5px 15px;
+    font-family: monospace;
+    font-size: 1.2rem;
+    color: #cc8800;
+    display: flex;
+    justify-content: space-between;
+    margin: 2px 0;
+  }
+  
+  #ladder li.safe {
+    color: white;
+    font-weight: bold;
+  }
+  
+  #ladder li.active {
+    background-color: #d4af37;
+    color: black;
+    border-radius: 3px;
+    font-weight: bold;
+  }
+  
+  #ladder li.active.safe {
+    color: black;
+  }
+
+  /* End Screen */
+  #end-screen {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.95);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    text-align: center;
+  }
+  
+  #end-screen h2 {
+    font-size: 3.5rem;
+    color: #d4af37;
+    margin-bottom: 10px;
+  }
+  
+  #end-screen p {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+  
+  #restart-btn {
+    padding: 15px 40px;
+    background: linear-gradient(to bottom, #d4af37, #aa7700);
+    color: black;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  #restart-btn:hover {
+    background: linear-gradient(to bottom, #ffcc00, #cc9900);
+  }
+
+  /* Responsive styling */
+  @media(max-width: 900px) {
+    #game-container { flex-direction: column; height: 100vh; width: 100vw; gap: 0;}
+    #sidebar { width: 100%; border-left: none; border-bottom: 2px solid #d4af37; flex-direction: row; align-items: center; padding: 10px 0; max-height: 50px; }
+    #ladder { flex-direction: row; width: 100%; justify-content: space-around; }
+    #ladder li { font-size: 1rem; padding: 5px; display: none; }
+    #ladder li.active, #ladder li:nth-child(5n) { display: flex; }
+    #logo { width: 140px; height: 140px; top: 15%; }
+    #logo h1 { font-size: 1.2rem; }
+    .q-inner { font-size: 1.1rem; padding: 10px 20px; }
+    .a-inner { font-size: 1rem; padding: 10px 20px;}
+    #answers-grid { grid-template-columns: 1fr; gap: 10px; }
+    .q-box, .q-inner, .a-box, .a-inner {
+      clip-path: polygon(4% 0, 96% 0, 100% 50%, 96% 100%, 4% 100%, 0% 50%);
+    }
+  }
+</style>
+</head>
+<body>
+
+  <div id="game-container">
+    <div id="main-area">
+      
+      <div id="logo">
+        <h1>Pop Culture</h1>
+        <h1>Trivia</h1>
+        <span>Present Perfect Edition</span>
+      </div>
+
+      <!-- Question Box -->
+      <div class="clip-box q-box">
+        <div class="q-inner" id="question-text">Loading question...</div>
+      </div>
+
+      <!-- Answers Grid -->
+      <div id="answers-grid">
+        <div class="clip-box a-box" id="ans-0" onclick="selectAnswer(0)">
+          <div class="a-inner"><span class="letter">A:</span><span class="ans-text" id="text-0"></span></div>
+        </div>
+        <div class="clip-box a-box" id="ans-1" onclick="selectAnswer(1)">
+          <div class="a-inner"><span class="letter">B:</span><span class="ans-text" id="text-1"></span></div>
+        </div>
+        <div class="clip-box a-box" id="ans-2" onclick="selectAnswer(2)">
+          <div class="a-inner"><span class="letter">C:</span><span class="ans-text" id="text-2"></span></div>
+        </div>
+        <div class="clip-box a-box" id="ans-3" onclick="selectAnswer(3)">
+          <div class="a-inner"><span class="letter">D:</span><span class="ans-text" id="text-3"></span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Money Ladder -->
+    <div id="sidebar">
+      <ul id="ladder"></ul>
+    </div>
+  </div>
+
+  <!-- End Game Screen -->
+  <div id="end-screen">
+    <h2 id="end-title">Game Over!</h2>
+    <p id="end-desc">You walked away with $0.</p>
+    <button id="restart-btn" onclick="restartGame()">Play Again</button>
+  </div>
+
+  <script>
+    // 15 Questions using the Present Perfect tense regarding pop culture history
+    const questions = [
+      {
+        q: "Has Britney Spears ever danced on stage with a snake?",
+        options: ["Yes, an albino python", "Yes, a rattlesnake", "No, it was just CGI", "No, she has never danced with a snake"],
+        answer: 0
+      },
+      {
+        q: "Have the cast members of 'Friends' ever reunited for a TV special?",
+        options: ["No, they have always refused", "Yes, they have reunited on HBO Max", "Yes, they have filmed a new season", "Yes, but only three of them"],
+        answer: 1
+      },
+      {
+        q: "Has Lady Gaga ever worn a dress made of raw meat to an award show?",
+        options: ["Yes, she has worn one to the VMAs", "No, it was made of red plastic", "Yes, but it was just a rumor", "No, she has never worn meat"],
+        answer: 0
+      },
+      {
+        q: "Has Tom Cruise ever jumped on Oprah Winfrey's couch during an interview?",
+        options: ["Yes, he has jumped on it to declare his love", "No, he has only danced on it", "Yes, he has jumped on it during a stunt", "No, he has never been on her show"],
+        answer: 0
+      },
+      {
+        q: "Has Will Smith ever slapped a presenter at the Academy Awards?",
+        options: ["No, he has never attended", "Yes, he has slapped Chris Rock", "Yes, he has slapped Kevin Hart", "No, it was a staged comedy skit"],
+        answer: 1
+      },
+      {
+        q: "Has Taylor Swift re-recorded her old albums to regain ownership of them?",
+        options: ["Yes, she has released 'Taylor's Versions'", "No, she has only bought the originals", "Yes, but only her very first album", "No, she has never lost her masters"],
+        answer: 0
+      },
+      {
+        q: "Have Brad Pitt and Angelina Jolie ever starred in a movie together?",
+        options: ["No, they have never shared the screen", "Yes, they have starred in 'Mr. & Mrs. Smith'", "Yes, they have starred in 'Ocean's Eleven'", "Yes, they have starred in 'Fight Club'"],
+        answer: 1
+      },
+      {
+        q: "Has Kanye West ever interrupted another artist's acceptance speech?",
+        options: ["No, he has always been polite", "Yes, he has interrupted Taylor Swift", "Yes, he has interrupted Beyoncé", "Yes, he has interrupted Jay-Z"],
+        answer: 1
+      },
+      {
+        q: "Has Justin Bieber ever released a full-length country music album?",
+        options: ["Yes, he has recorded one in Nashville", "Yes, but it was never released", "No, he has only sung pop and R&B", "No, but he has featured on country songs"],
+        answer: 3
+      },
+      {
+        q: "Has Kim Kardashian broken the internet with a magazine cover?",
+        options: ["Yes, she has posed for Vogue", "Yes, she has posed for Paper Magazine", "No, she has never been on a cover", "No, she has only broken Instagram"],
+        answer: 1
+      },
+      {
+        q: "Has Snoop Dogg ever performed at the Super Bowl halftime show?",
+        options: ["Yes, alongside Dr. Dre and Eminem", "No, he has only done commercials", "Yes, he has headlined it solo", "No, he has never been invited"],
+        answer: 0
+      },
+      {
+        q: "Have the Avengers ever time-traveled in the Marvel Cinematic Universe?",
+        options: ["No, they have only used multiverses", "Yes, they have done so in 'Endgame'", "Yes, but only Iron Man has", "No, they have never altered time"],
+        answer: 1
+      },
+      {
+        q: "Has Rihanna ever performed at the Super Bowl halftime show while pregnant?",
+        options: ["No, she has never performed at the Super Bowl", "Yes, she has done it in 2023", "Yes, she has done it with Destiny's Child", "No, she has performed but wasn't pregnant"],
+        answer: 1
+      },
+      {
+        q: "Has Ryan Reynolds ever bought a professional sports team?",
+        options: ["Yes, he has bought a Welsh football club", "No, he has only sponsored one", "Yes, he has bought an NFL team", "No, he has never invested in sports"],
+        answer: 0
+      },
+      {
+        q: "Has a non-English language film ever won the Oscar for Best Picture?",
+        options: ["No, only British and American films have", "Yes, 'Parasite' has won it", "Yes, 'Amélie' has won it", "No, they have their own separate category"],
+        answer: 1
+      }
+    ];
+
+    const moneyValues = [
+      "$100", "$200", "$300", "$500", "$1,000", 
+      "$2,000", "$4,000", "$8,000", "$16,000", "$32,000", 
+      "$64,000", "$125,000", "$250,000", "$500,000", "$1,000,000"
+    ];
+
+    let currentLevel = 0;
+    let isWaiting = false;
+    let safeNet = "$0";
+
+    // Initialize Money Ladder
+    const ladderEl = document.getElementById("ladder");
+    moneyValues.forEach((amt, index) => {
+      const li = document.createElement("li");
+      li.innerHTML = `<span>${index + 1}</span> <span>${amt}</span>`;
+      // Safe havens at 5, 10, and 15
+      if (index === 4 || index === 9 || index === 14) {
+        li.classList.add("safe");
+      }
+      ladderEl.appendChild(li);
+    });
+
+    function loadQuestion() {
+      isWaiting = false;
+      const q = questions[currentLevel];
+      
+      document.getElementById("question-text").innerText = q.q;
+      
+      for (let i = 0; i < 4; i++) {
+        const box = document.getElementById(`ans-${i}`);
+        const text = document.getElementById(`text-${i}`);
+        
+        box.className = "clip-box a-box"; // Reset classes
+        text.innerText = q.options[i];
+      }
+      
+      // Update ladder highlighting
+      const items = document.querySelectorAll("#ladder li");
+      items.forEach(item => item.classList.remove("active"));
+      // Items are appended 0 to 14, meaning items[0] is $100.
+      items[currentLevel].classList.add("active");
+    }
+
+    function selectAnswer(index) {
+      if (isWaiting) return;
+      isWaiting = true;
+      
+      const selectedBox = document.getElementById(`ans-${index}`);
+      selectedBox.classList.add("selected");
+      
+      // Dramatic pause before revealing answer
+      setTimeout(() => {
+        const correctIndex = questions[currentLevel].answer;
+        
+        if (index === correctIndex) {
+          // Correct Answer
+          selectedBox.classList.remove("selected");
+          selectedBox.classList.add("correct");
+          
+          setTimeout(() => {
+            currentLevel++;
+            
+            // Set safety nets
+            if (currentLevel === 5) safeNet = "$1,000";
+            if (currentLevel === 10) safeNet = "$32,000";
+            
+            if (currentLevel >= 15) {
+              endGame(true, "$1,000,000");
+            } else {
+              loadQuestion();
+            }
+          }, 2000);
+          
+        } else {
+          // Incorrect Answer
+          selectedBox.classList.remove("selected");
+          selectedBox.classList.add("incorrect");
+          
+          // Highlight the actual correct answer
+          document.getElementById(`ans-${correctIndex}`).classList.add("correct");
+          
+          setTimeout(() => {
+            let winnings = currentLevel === 0 ? "$0" : safeNet;
+            endGame(false, winnings);
+          }, 3000);
+        }
+      }, 2000); // 2 second pause just like the show!
+    }
+
+    function endGame(won, amount) {
+      const endScreen = document.getElementById("end-screen");
+      const endTitle = document.getElementById("end-title");
+      const endDesc = document.getElementById("end-desc");
+      
+      endScreen.style.display = "flex";
+      
+      if (won) {
+        endTitle.innerText = "Congratulations!";
+        endTitle.style.color = "#00ff00";
+        endDesc.innerText = `You are a Pop Culture Millionaire!\nYou answered all present perfect questions correctly and won ${amount}!`;
+      } else {
+        endTitle.innerText = "Game Over!";
+        endTitle.style.color = "#ff3333";
+        endDesc.innerText = `You walked away with ${amount}.`;
+      }
+    }
+
+    function restartGame() {
+      currentLevel = 0;
+      safeNet = "$0";
+      document.getElementById("end-screen").style.display = "none";
+      loadQuestion();
+    }
+
+    // Start Game
+    loadQuestion();
+  </script>
+</body>
+</html>
