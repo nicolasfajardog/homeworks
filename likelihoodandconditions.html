@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consequences & Likelihood - ESL Worksheet</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Baloo+2:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a2e;
+    --paper: #fffef7;
+    --A: #e63946;
+    --A-light: #fde8ea;
+    --B: #2a9d8f;
+    --B-light: #d6f5f2;
+    --C: #e07b00;
+    --C-light: #fff0d6;
+    --D: #5c4fcf;
+    --D-light: #ebe8ff;
+    --E: #c77dff;
+    --E-light: #f5e6ff;
+    --rule: #d4cfc0;
+
+    /* Feedback Colors */
+    --correct: #2a9d8f;
+    --incorrect: #e63946;
+    --open-ans: #457b9d;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: #e8e4d9;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 32px 16px 60px;
+  }
+
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    background: var(--paper);
+    border-radius: 4px;
+    box-shadow: 0 4px 40px rgba(0,0,0,0.18);
+    overflow: hidden;
+  }
+
+  /* LOGISTICS BOX */
+  .logistics-box {
+    background: #e3f2fd;
+    border-left: 5px solid #1e88e5;
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 32px;
+  }
+  .logistics-box h3 {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-bottom: 10px;
+    color: #1e88e5;
+  }
+  .logistics-box p {
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 600;
+  }
+
+  /* HEADER */
+  header {
+    background: var(--ink);
+    color: #fff;
+    padding: 40px 48px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent, transparent 18px,
+      rgba(255,255,255,0.03) 18px, rgba(255,255,255,0.03) 36px
+    );
+  }
+  .header-badge {
+    display: inline-block;
+    background: #fff;
+    color: var(--ink);
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+  }
+  header h1 {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1.05;
+    margin-bottom: 8px;
+  }
+  header h1 span { color: #e63946; }
+  header p {
+    font-size: 15px;
+    opacity: 0.7;
+    font-weight: 600;
+  }
+
+  .content { padding: 0 44px 44px; margin-top: 20px;}
+
+  /* SECTION DIVIDERS */
+  .section-header {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--ink);
+    margin: 40px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--rule);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-header span {
+    background: var(--ink);
+    color: white;
+    font-size: 14px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+  }
+
+  /* GRAMMAR BOX */
+  .grammar-box {
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 22px;
+    border-left: 5px solid;
+  }
+  .grammar-box.purple { background: var(--E-light); border-color: var(--E); }
+  .grammar-box h3 {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 10px;
+    opacity: 0.6;
+  }
+  .grammar-box p { font-size: 14px; line-height: 1.7; font-weight: 600; }
+  .grammar-box strong { font-weight: 900; }
+
+  /* SUBTLE HIGHLIGHTS */
+  mark { 
+    background-color: var(--B-light); 
+    padding: 2px 6px; 
+    border-radius: 4px; 
+    font-weight: 800; 
+    color: var(--B); 
+  }
+
+  /* EXERCISE BLOCK & INSTRUCTIONS */
+  .exercise { margin-bottom: 36px; }
+  .exercise-title {
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    border-bottom: 2px solid var(--rule);
+    padding-bottom: 8px;
+  }
+  .title-content { display: flex; flex-direction: column; gap: 4px; }
+  .title-main { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
+  .ex-num {
+    width: 26px; height: 26px;
+    background: var(--ink);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 900;
+    color: #fff;
+    flex-shrink: 0;
+    margin-top: -2px;
+  }
+
+  .btn-hint {
+    background: none; border: none; cursor: pointer; font-size: 18px; padding: 0 4px; transition: transform 0.2s;
+  }
+  .btn-hint:hover { transform: scale(1.1); }
+  .hint-box {
+    display: none; font-size: 13px; color: #1e88e5; font-weight: 600; background: #e3f2fd;
+    padding: 12px 16px; border-radius: 6px; border-left: 4px solid #1e88e5; margin-top: 8px; line-height: 1.6;
+  }
+  .hint-box strong { color: #1565c0; font-weight: 800; }
+
+  .q-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+  .q-list li { font-size: 15px; font-weight: 600; display: block; line-height: 1.6; }
+  .q-num { font-weight: 900; opacity: 0.4; min-width: 20px; font-size: 13px; margin-right: 6px; }
+  .scrambled-box { color: #666; font-style: italic; margin-bottom: 6px; display: inline-block; }
+
+  .blank {
+    border: none; border-bottom: 2px solid #aaa; background: transparent; min-width: 100px;
+    font-family: 'Nunito', sans-serif; font-size: 15px; font-weight: 700; color: #2b2b2b;
+    padding: 0 4px; outline: none; text-align: center; transition: all 0.2s;
+  }
+  select.blank { text-align: center; cursor: pointer; border-radius: 4px; appearance: none; -webkit-appearance: none; -moz-appearance: none; background: rgba(0,0,0,0.02); }
+  .blank:focus { border-bottom-color: var(--ink); background: rgba(0,0,0,0.04); }
+  .blank-sm  { min-width: 60px; }
+  .blank-md  { min-width: 140px; }
+  .blank-lg  { min-width: 220px; }
+  .blank-xl  { display: block; width: 100%; text-align: left; padding: 4px 8px; margin-top: 6px; }
+
+  .is-correct { border-bottom: 2px solid var(--correct) !important; color: var(--correct) !important; background-color: rgba(42,157,143,0.06) !important; }
+  .is-incorrect { border-bottom: 2px solid var(--incorrect) !important; color: var(--incorrect) !important; background-color: rgba(230,57,70,0.06) !important; }
+  .is-open { border-bottom: 2px solid var(--open-ans) !important; color: var(--open-ans) !important; background-color: rgba(69,123,157,0.06) !important; }
+
+  /* ACTIONS */
+  .action-bar { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 36px; }
+  .friendly-reminder { font-size: 14px; font-weight: 700; color: var(--D); text-align: center; margin-bottom: 4px; padding: 10px 20px; background: var(--D-light); border-radius: 8px; border: 1px dashed var(--D); max-width: 600px; }
+  .score-display { font-family: 'Baloo 2', sans-serif; font-size: 20px; font-weight: 800; color: var(--ink); display: none; background: #f0ede4; padding: 6px 20px; border-radius: 30px; border: 2px solid var(--rule); }
+  .button-group { display: flex; gap: 16px; }
+  .btn-action { font-family: 'Baloo 2', sans-serif; font-size: 15px; font-weight: 700; padding: 12px 32px; border: none; border-radius: 6px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.12); transition: all 0.2s; }
+  .btn-check { background: #2a9d8f; color: white; }
+  .btn-check:hover { background: #228074; transform: translateY(-1px); }
+  .btn-reset { background: #e7e5e0; color: var(--ink); }
+  .btn-reset:hover { background: #dcd9d2; transform: translateY(-1px); }
+  
+  .section-divider { height: 2px; background: repeating-linear-gradient(90deg, var(--rule) 0, var(--rule) 8px, transparent 8px, transparent 16px); margin: 44px 0; }
+
+  /* ANSWER KEY */
+  .answer-key-wrapper { margin-top: 48px; border-top: 3px solid var(--ink); padding-top: 20px; }
+  .btn-toggle-key { background: var(--ink); color: #fff; font-family: 'Baloo 2', sans-serif; font-size: 13px; font-weight: 700; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; letter-spacing: 0.5px; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+  .btn-toggle-key:hover { background: #2e2e4e; transform: translateY(-1px); }
+  .answer-key-content { display: none; margin-top: 24px; }
+  .answer-key h2 { font-family: 'Baloo 2', sans-serif; font-size: 20px; font-weight: 800; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+  .answer-key h2::after { content: '(Teacher Copy)'; font-size: 12px; background: var(--ink); color: #fff; padding: 3px 10px; border-radius: 20px; letter-spacing: 1px; font-weight: 700; }
+  .key-section { margin-bottom: 20px; }
+  .key-section h3 { font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; opacity: 0.5; }
+  .key-list { font-size: 14px; font-weight: 600; line-height: 2; column-count: 2; column-gap: 32px; }
+  .key-list span { font-weight: 900; }
+  .pts-badge { display: inline-block; font-family: 'Baloo 2', sans-serif; font-size: 10px; font-weight: 800; letter-spacing: 0.5px; padding: 2px 8px; border-radius: 10px; margin-left: 6px; background: rgba(0,0,0,0.08); color: var(--ink); }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; }
+    .action-bar, .btn-hint, .answer-key-wrapper { display: none !important; }
+    .blank { border-bottom-color: #000; }
+  }
+
+  @media (max-width: 600px) {
+    .content { padding: 0 20px 36px; }
+    header { padding: 28px 20px 22px; }
+    header h1 { font-size: 34px; }
+    .key-list { column-count: 1; }
+    .blank-lg, .blank-xl { width: 100%; min-width: 100%; }
+    .button-group { flex-direction: column; align-items: stretch; width: 100%; }
+    .btn-action { text-align: center; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="header-badge">ESL Worksheet &middot; Conditionals</div>
+    <h1>Likely & Unlikely <span>Consequences</span></h1>
+    <p>Adverbs of Likelihood &middot; Zero, First, and Second Conditionals</p>
+  </header>
+
+  <div class="content">
+
+    <div class="logistics-box">
+      <h3>&#128203; Worksheet Guide</h3>
+      <p>Welcome! Today we are practicing how to discuss more likely and less likely consequences. If you get stuck, click the <strong>&#127760;</strong> button for translated instructions and a 💡 class note hint. Make sure to complete all 40 auto-grading questions before proceeding to the final challenge!</p>
+    </div>
+
+    <div class="grammar-box purple">
+      <h3>&#128204; Grammar Notes: Likelihood & Consequences</h3>
+      <p>According to our class notes:</p>
+      <ul style="margin-left: 20px; font-size: 14px; font-weight: 600; line-height: 1.7; margin-top: 8px;">
+        <li><strong>The most probable (#0):</strong> IF PRESENT - THEN PRESENT. Something that always happens the same way.<br><em>"If you heat water in a stove, the water definitely boils."</em></li>
+        <li><strong>The 75% probability (#1):</strong> IF PRESENT - THEN FUTURE. We use it to anticipate consequences.<br><em>"If my dog eats a bar of chocolate, he'll probably get very sick."</em></li>
+        <li><strong>The 50/50 probability (#2):</strong> IF SUBJUNCTIVE PRESENT (SIMPLE PAST) - THEN IMAGINARY CONSEQUENCE (WOULD).<br><em>"If I won the lottery, I would travel around the world."</em></li>
+      </ul>
+      <p style="margin-top: 10px;"><strong>💡 TIP:</strong> Adverbs of likelihood usually come <strong>before</strong> the main verb. <em>She will probably call you. (NOT: She will call you probably.)</em></p>
+    </div>
+
+    <div class="section-header">
+      <span>Part 1</span> Concept Recognition
+    </div>
+
+    <!-- EXERCISE 1: MULTIPLE CHOICE (8 items) -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">1</span>
+        <div class="title-content">
+          <div class="title-main">
+            Choose the correct concept or structure based on likelihood.
+            <span class="pts-badge">1 pt each &middot; 8 pts</span>
+            <button class="btn-hint" onclick="toggleT('t-ex1')" title="Translation & Hint">&#127760;</button>
+          </div>
+          <div id="t-ex1" class="hint-box">
+            <strong>Traducción:</strong> Elige el concepto o estructura correcta basándote en la probabilidad.<br>
+            <strong>💡 Hint:</strong> Recuerda el porcentaje de probabilidad de tus apuntes (100% = certainly, 75% = will probably, 50% = would).
+          </div>
+        </div>
+      </div>
+      
+      <ol class="q-list">
+        <li><span class="q-num">1.</span> The 100% probable conditional (Zero) uses: 
+          <select data-ans="present-present" class="blank blank-md">
+            <option value="">--select--</option>
+            <option value="present-present">Present - Present</option>
+            <option value="present-future">Present - Future</option>
+            <option value="past-would">Past - Would</option>
+          </select>
+        </li>
+        <li><span class="q-num">2.</span> Adverbs of likelihood usually come ________ the main verb. 
+          <select data-ans="before" class="blank blank-md">
+            <option value="">--select--</option>
+            <option value="before">before</option>
+            <option value="after">after</option>
+            <option value="at the end of">at the end of</option>
+          </select>
+        </li>
+        <li><span class="q-num">3.</span> If I go to Cine Colombia, I ________ buy popcorn. 
+          <select data-ans="totally" class="blank blank-md">
+            <option value="">--select--</option>
+            <option value="totally">totally</option>
+            <option value="unlikely">unlikely</option>
+            <option value="probably not">probably not</option>
+          </select>
+        </li>
+        <li><span class="q-num">4.</span> If I drink whiskey and vodka in the same night, I ________ forget everything. 
+          <select data-ans="will surely" class="blank blank-md">
+            <option value="">--select--</option>
+            <option value="will surely">will surely</option>
+            <option value="surely will">surely will</option>
+            <option value="would surely">would surely</option>
+          </select>
+        </li>
+        <li><span class="q-num">5.</span> If my dog eats a bar of chocolate, he ________ get very sick. 
+          <select data-ans="will probably" class="blank blank-md">
+            <option value="">--select--</option>
+            <option value="will probably">will probably</option>
+            <option value="would possibly">would possibly</option>
+          </select>
+        </li>
+        <li><span class="q-num">6.</span> Which adverb means "almost certainly not" (10% probability)? 
+          <select data-ans="not really" class="blank blank-md">
+            <option value="">--select--</option>
+            <option value="not really">Not really</option>
+            <option value="possibly">Possibly</option>
+            <option value="unlikely">Unlikely</option>
+          </select>
+        </li>
+        <li><span class="q-num">7.</span> If I won the lottery, I ________ travel around the world. 
+          <select data-ans="would" class="blank blank-md">
+            <option value="">--select--</option>
+            <option value="will">will</option>
+            <option value="would">would</option>
+            <option value="definitely">definitely</option>
+          </select>
+        </li>
+        <li><span class="q-num">8.</span> "She will certainly be at the meeting" is an example of which likelihood? 
+          <select data-ans="100%" class="blank blank-md">
+            <option value="">--select--</option>
+            <option value="100%">100% - Certainly</option>
+            <option value="70%">70% - Likely</option>
+            <option value="50%">50% - Possibly</option>
+          </select>
+        </li>
+      </ol>
+    </div>
+
+    <!-- EXERCISE 2: FILL IN THE BLANKS (VERBS) (10 items) -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">2</span>
+        <div class="title-content">
+          <div class="title-main">
+            Type the correct form of the verb in parentheses to complete the conditional.
+            <span class="pts-badge">1 pt each &middot; 10 pts</span>
+            <button class="btn-hint" onclick="toggleT('t-ex2')" title="Translation & Hint">&#127760;</button>
+          </div>
+          <div id="t-ex2" class="hint-box">
+            <strong>Traducción:</strong> Escribe la forma correcta del verbo entre paréntesis.<br>
+            <strong>💡 Hint:</strong> Fíjate en la otra mitad de la oración. Si ves "would", el verbo debe estar en pasado. Si ves "will" o un hecho, debe estar en presente.
+          </div>
+        </div>
+      </div>
+
+      <ol class="q-list">
+        <li><span class="q-num">1.</span> If you heat water in a stove, the water definitely <input type="text" data-ans="boils" class="blank blank-md"> (boil).</li>
+        <li><span class="q-num">2.</span> If I wash my hair, my hair certainly <input type="text" data-ans="gets" class="blank blank-md"> (get) big volume.</li>
+        <li><span class="q-num">3.</span> If I get sick and go to the emergency room, the doctor will likely <input type="text" data-ans="give" class="blank blank-md"> (give) me a sick leave.</li>
+        <li><span class="q-num">4.</span> If I <input type="text" data-ans="spend" class="blank blank-md"> (spend) $1M in clothing, my bank account will possibly be empty.</li>
+        <li><span class="q-num">5.</span> If I <input type="text" data-ans="won" class="blank blank-md"> (win) the lottery, I would travel around the world.</li>
+        <li><span class="q-num">6.</span> If I spoke German, I would <input type="text" data-ans="apply" class="blank blank-md"> (apply) for a job in Germany.</li>
+        <li><span class="q-num">7.</span> If I <input type="text" data-ans="had" class="blank blank-md"> (have) a Superpower, I would be invisible.</li>
+        <li><span class="q-num">8.</span> If I <input type="text" data-ans="were|was" class="blank blank-md"> (be) a boy, I would buy a PS5 to play FIFA.</li>
+        <li><span class="q-num">9.</span> If the transit authority <input type="text" data-ans="asks" class="blank blank-md"> (ask) for my driver's license, I surely give it to them.</li>
+        <li><span class="q-num">10.</span> We might possibly <input type="text" data-ans="see" class="blank blank-md"> (see) them tonight.</li>
+      </ol>
+    </div>
+
+    <div class="section-divider"></div>
+    <div class="section-header">
+      <span>Part 2</span> Advanced Structures
+    </div>
+
+    <!-- EXERCISE 3: COMBINING VERBS AND ADVERBS (10 items) -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">3</span>
+        <div class="title-content">
+          <div class="title-main">
+            Combine the words in parentheses in the correct order (Auxiliary + Adverb + Verb).
+            <span class="pts-badge">1 pt each &middot; 10 pts</span>
+            <button class="btn-hint" onclick="toggleT('t-ex3')" title="Translation & Hint">&#127760;</button>
+          </div>
+          <div id="t-ex3" class="hint-box">
+            <strong>Traducción:</strong> Combina las palabras entre paréntesis en el orden correcto.<br>
+            <strong>💡 Hint:</strong> Sigue el consejo de la clase: El adverbio va ANTES del verbo principal. Ejemplo: (will / stay / probably) ➔ "will probably stay".
+          </div>
+        </div>
+      </div>
+
+      <ol class="q-list">
+        <li><span class="q-num">1.</span> If it rains tomorrow, I <input type="text" data-ans="will probably stay|'ll probably stay" class="blank blank-lg"> (will / stay / probably) home.</li>
+        <li><span class="q-num">2.</span> If I lived in California, I <input type="text" data-ans="would certainly surf|'d certainly surf" class="blank blank-lg"> (would / certainly / surf).</li>
+        <li><span class="q-num">3.</span> If she goes to Smart Fit, she <input type="text" data-ans="will definitely sweat|'ll definitely sweat" class="blank blank-lg"> (will / definitely / sweat).</li>
+        <li><span class="q-num">4.</span> If he were a cat, he <input type="text" data-ans="would possibly sleep|'d possibly sleep" class="blank blank-lg"> (would / possibly / sleep) all day.</li>
+        <li><span class="q-num">5.</span> If I get the Kali Uchis tickets, I <input type="text" data-ans="will surely invite|'ll surely invite" class="blank blank-lg"> (will / surely / invite) you.</li>
+        <li><span class="q-num">6.</span> If I had a Kindle, I <input type="text" data-ans="would probably read|'d probably read" class="blank blank-lg"> (would / probably / read) more.</li>
+        <li><span class="q-num">7.</span> If you use Spotify, you <input type="text" data-ans="will likely find|'ll likely find" class="blank blank-lg"> (will / likely / find) good playlists.</li>
+        <li><span class="q-num">8.</span> If I drank less coffee, I <input type="text" data-ans="would definitely sleep|'d definitely sleep" class="blank blank-lg"> (would / definitely / sleep) better.</li>
+        <li><span class="q-num">9.</span> If we order from McDonald's, we <input type="text" data-ans="will certainly eat|'ll certainly eat" class="blank blank-lg"> (will / certainly / eat) fries.</li>
+        <li><span class="q-num">10.</span> If she lost her Apple Pencil, she <input type="text" data-ans="would probably cry|'d probably cry" class="blank blank-lg"> (would / probably / cry).</li>
+      </ol>
+    </div>
+
+    <!-- EXERCISE 4: UNSCRAMBLE (12 items) -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">4</span>
+        <div class="title-content">
+          <div class="title-main">
+            Unscramble the words to formulate correct sentences.
+            <span class="pts-badge">1 pt each &middot; 12 pts</span>
+            <button class="btn-hint" onclick="toggleT('t-ex4')" title="Translation & Hint">&#127760;</button>
+          </div>
+          <div id="t-ex4" class="hint-box">
+            <strong>Traducción:</strong> Ordena las palabras para formular oraciones correctas.<br>
+            <strong>💡 Hint:</strong> Recuerda el orden del condicional y la posición del adverbio. La plataforma aceptará el "If" al principio o en la mitad.
+          </div>
+        </div>
+      </div>
+      
+      <ol class="q-list">
+        <li>
+          <span class="q-num">1.</span> <span class="scrambled-box">(If / I / have / money / I / will / definitely / buy / the / album)</span>
+          <input type="text" data-ans="If I have money I will definitely buy the album|I will definitely buy the album if I have money" class="blank blank-xl" placeholder="Type here...">
+        </li>
+        <li>
+          <span class="q-num">2.</span> <span class="scrambled-box">(If / I / could / I / would / probably / move / to / California)</span>
+          <input type="text" data-ans="If I could I would probably move to California|I would probably move to California if I could" class="blank blank-xl" placeholder="Type here...">
+        </li>
+        <li>
+          <span class="q-num">3.</span> <span class="scrambled-box">(If / he / plays / Call of Duty / he / will / probably / win)</span>
+          <input type="text" data-ans="If he plays Call of Duty he will probably win|He will probably win if he plays Call of Duty" class="blank blank-xl" placeholder="Type here...">
+        </li>
+        <li>
+          <span class="q-num">4.</span> <span class="scrambled-box">(If / I / spoke / French / I / would / apply / for / a / job)</span>
+          <input type="text" data-ans="If I spoke French I would apply for a job|I would apply for a job if I spoke French" class="blank blank-xl" placeholder="Type here...">
+        </li>
+        <li>
+          <span class="q-num">5.</span> <span class="scrambled-box">(I / will / certainly / finish / my / thesis / this / year)</span>
+          <input type="text" data-ans="I will certainly finish my thesis this year" class="blank blank-xl" placeholder="Type here...">
+        </li>
+        <li>
+          <span class="q-num">6.</span> <span class="scrambled-box">(If / it / rains / I / will / definitely / take / an / Uber)</span>
+          <input type="text" data-ans="If it rains I will definitely take an Uber|I will definitely take an Uber if it rains" class="blank blank-xl" placeholder="Type here...">
+        </li>
+        <li>
+          <span class="q-num">7.</span> <span class="scrambled-box">(If / you / watched / Bones / you / would / probably / like / it)</span>
+          <input type="text" data-ans="If you watched Bones you would probably like it|You would probably like it if you watched Bones" class="blank blank-xl" placeholder="Type here...">
+        </li>
+        <li>
+          <span class="q-num">8.</span> <span class="scrambled-box">(He / is / not / at / all / interested / in / football)</span>
+          <input type="text" data-ans="He is not at all interested in football" class="blank blank-xl" placeholder="Type here...">
+        </li>
+        <li>
+          <span class="q-num">9.</span> <span class="scrambled-box">(If / you / heat / water / it / definitely / boils)</span>
+          <input type="text" data-ans="If you heat water it definitely boils|Water definitely boils if you heat it|It definitely boils if you heat water" class="blank blank-xl" placeholder="Type here...">
+        </li>
+        <li>
+          <span class="q-num">10.</span> <span class="scrambled-box">(We / might / possibly / see / them / tonight)</span>
+          <input type="text" data-ans="We might possibly see them tonight|Possibly we might see them tonight" class="blank blank-xl" placeholder="Type here...">
+        </li>
+        <li>
+          <span class="q-num">11.</span> <span class="scrambled-box">(If / I / order / Wok / I / certainly / get / sushi)</span>
+          <input type="text" data-ans="If I order Wok I certainly get sushi|I certainly get sushi if I order Wok" class="blank blank-xl" placeholder="Type here...">
+        </li>
+        <li>
+          <span class="q-num">12.</span> <span class="scrambled-box">(She / will / certainly / be / at / the / meeting)</span>
+          <input type="text" data-ans="She will certainly be at the meeting" class="blank blank-xl" placeholder="Type here...">
+        </li>
+      </ol>
+    </div>
+
+    <!-- EXERCISE 5: FINAL CHALLENGE (VOICE NOTE) -->
+    <div class="exercise">
+      <div class="exercise-title" style="border-bottom-color: #f1c40f;">
+        <span class="ex-num" style="background: #f1c40f;">5</span>
+        <div class="title-content">
+          <div class="title-main">
+            Final Challenge &ndash; Voice Note! <em style="font-weight:400; opacity:0.7;">(Teacher evaluated)</em>
+            <button class="btn-hint" onclick="toggleT('t-ex5')" title="Translation & Hint">&#127760;</button>
+          </div>
+          <div id="t-ex5" class="hint-box">
+            <strong>Traducción:</strong> Reto Final: ¡Nota de Voz! Piensa en tu vida diaria y tus sueños.<br>
+            <strong>💡 Hint:</strong> Prepara tu guion en la caja de texto. Luego graba el audio en WhatsApp.
+          </div>
+        </div>
+      </div>
+      
+      <div style="background: #fcf3cf; border-left: 5px solid #f1c40f; padding: 18px; border-radius: 6px; margin-bottom: 16px;">
+        <p style="font-size:14px;font-weight:700;margin-bottom:8px;">It is time to apply what you've learned. You must record a voice note responding to these three questions using adverbs of likelihood:</p>
+        <ol style="margin-left: 20px; font-size: 14px; font-weight: 600; line-height: 1.6;">
+          <li>What definitely happens when you study very late at night? (Zero Conditional)</li>
+          <li>What will likely happen if you finish all your university requirements early? (First Conditional)</li>
+          <li>Where would you possibly move if you had unlimited money? (Second Conditional)</li>
+        </ol>
+      </div>
+
+      <textarea
+        data-ans="OPEN"
+        rows="5"
+        placeholder="Draft your script here before recording...&#10;1. If I study late, I..."
+        style="width:100%;border:2px dashed #ccc;border-radius:8px;padding:14px;font-family:'Nunito',sans-serif;font-size:15px;font-weight:600;color:#2b2b2b;outline:none;resize:vertical;background:#fafafa;transition:border-color 0.2s;"
+        onfocus="this.style.borderColor='#f1c40f'"
+        onblur="this.style.borderColor='#ccc'"
+      ></textarea>
+      
+      <p style="font-size:14px; font-weight:800; color:#e63946; margin-top:12px; background: var(--A-light); padding: 10px; border-radius: 6px; border: 1px solid var(--A); display: inline-block;">
+        &#128242; Reminder: Send your AUDIO file to your teacher via WhatsApp!
+      </p>
+    </div>
+
+    <!-- ACTION BAR -->
+    <div class="action-bar">
+      <p class="friendly-reminder">&#128161; Double-check your spelling and adverb placement before clicking check! &#128522;</p>
+      <div class="score-display" id="gradeScoreBox">Score: 0</div>
+      <div class="button-group">
+        <button class="btn-action btn-check" onclick="checkStudentAnswers()">&#10004;&#65039; Check Answers</button>
+        <button class="btn-action btn-reset" onclick="resetWorksheet()">&#128260; Clear Sheet</button>
+      </div>
+    </div>
+
+    <!-- ANSWER KEY -->
+    <div class="answer-key-wrapper">
+      <button class="btn-toggle-key" id="toggleKeyBtn" onclick="toggleAnswerKey()">
+        &#128065;&#65039; Show Answer Key
+      </button>
+
+      <div class="answer-key-content" id="answerKeyContent">
+        <div class="answer-key">
+          <h2>Answer Key</h2>
+
+          <div class="key-section">
+            <h3>1. Multiple Choice</h3>
+            <div class="key-list">
+              <div>1. <span>Present - Present</span></div>
+              <div>2. <span>before</span></div>
+              <div>3. <span>totally</span></div>
+              <div>4. <span>will surely</span></div>
+              <div>5. <span>will probably</span></div>
+              <div>6. <span>Not really</span></div>
+              <div>7. <span>would</span></div>
+              <div>8. <span>100% - Certainly</span></div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>2. Fill in the Blanks</h3>
+            <div class="key-list">
+              <div>1. <span>boils</span></div>
+              <div>2. <span>gets</span></div>
+              <div>3. <span>give</span></div>
+              <div>4. <span>spend</span></div>
+              <div>5. <span>won</span></div>
+              <div>6. <span>apply</span></div>
+              <div>7. <span>had</span></div>
+              <div>8. <span>were / was</span></div>
+              <div>9. <span>asks</span></div>
+              <div>10. <span>see</span></div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>3. Verbs and Adverbs</h3>
+            <div class="key-list" style="column-count: 1;">
+              <div>1. <span>will probably stay</span></div>
+              <div>2. <span>would certainly surf</span></div>
+              <div>3. <span>will definitely sweat</span></div>
+              <div>4. <span>would possibly sleep</span></div>
+              <div>5. <span>will surely invite</span></div>
+              <div>6. <span>would probably read</span></div>
+              <div>7. <span>will likely find</span></div>
+              <div>8. <span>would definitely sleep</span></div>
+              <div>9. <span>will certainly eat</span></div>
+              <div>10. <span>would probably cry</span></div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>4. Unscramble</h3>
+            <div class="key-list" style="column-count: 1;">
+              <div>1. <span>If I have money I will definitely buy the album.</span> (or vice versa)</div>
+              <div>2. <span>If I could I would probably move to California.</span> (or vice versa)</div>
+              <div>3. <span>If he plays Call of Duty he will probably win.</span> (or vice versa)</div>
+              <div>4. <span>If I spoke French I would apply for a job.</span> (or vice versa)</div>
+              <div>5. <span>I will certainly finish my thesis this year.</span></div>
+              <div>6. <span>If it rains I will definitely take an Uber.</span> (or vice versa)</div>
+              <div>7. <span>If you watched Bones you would probably like it.</span> (or vice versa)</div>
+              <div>8. <span>He is not at all interested in football.</span></div>
+              <div>9. <span>If you heat water it definitely boils.</span> (or vice versa)</div>
+              <div>10. <span>We might possibly see them tonight.</span></div>
+              <div>11. <span>If I order Wok I certainly get sushi.</span> (or vice versa)</div>
+              <div>12. <span>She will certainly be at the meeting.</span></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  function toggleT(id) {
+    const el = document.getElementById(id);
+    if (el.style.display === "block") {
+      el.style.display = "none";
+    } else {
+      el.style.display = "block";
+    }
+  }
+
+  function checkStudentAnswers() {
+    let score = 0;
+    let autoTotal = 0;
+
+    const inputs = document.querySelectorAll('input[type="text"][data-ans], select[data-ans]');
+    inputs.forEach(input => {
+      let rawStudent = input.value;
+      let isSelect = input.tagName.toLowerCase() === 'select';
+      
+      // Super-forgiving normalization for text fields
+      let studentAns = rawStudent.toLowerCase().replace(/[.,?!'’´`]/g, "");
+      if (!isSelect) {
+          studentAns = studentAns.replace(/\s+/g, ""); // completely strip spaces for text inputs
+      } else {
+          studentAns = studentAns.replace(/\s+/g, " ").trim(); // keep single spaces for select matching
+      }
+
+      let rawTarget = input.getAttribute('data-ans').toLowerCase();
+      let targetAnsArray = rawTarget.split('|').map(s => {
+          let normalized = s.replace(/[.,?!'’´`]/g, "");
+          if (!isSelect) {
+              return normalized.replace(/\s+/g, "");
+          } else {
+              return normalized.replace(/\s+/g, " ").trim();
+          }
+      });
+
+      input.classList.remove('is-correct', 'is-incorrect', 'is-open');
+
+      if (targetAnsArray.includes("open")) {
+        if (rawStudent.trim() !== "") {
+          input.classList.add('is-open');
+        }
+      } else {
+        autoTotal++;
+        if (studentAns !== "" && targetAnsArray.includes(studentAns)) {
+          input.classList.add('is-correct');
+          score++;
+        } else {
+          input.classList.add('is-incorrect');
+        }
+      }
+    });
+
+    document.querySelectorAll('textarea[data-ans]').forEach(ta => {
+      ta.style.borderColor = ta.value.trim() !== "" ? "#457b9d" : "#ccc";
+    });
+
+    const scoreBox = document.getElementById('gradeScoreBox');
+    scoreBox.innerText = "Auto-graded Score: " + score + " / " + autoTotal;
+    scoreBox.style.display = "block";
+  }
+
+  function resetWorksheet() {
+    if (confirm("Are you sure you want to clear all your answers?")) {
+      document.querySelectorAll('input[type="text"]').forEach(input => {
+        input.value = "";
+        input.classList.remove('is-correct', 'is-incorrect', 'is-open');
+      });
+      document.querySelectorAll('select').forEach(sel => {
+        sel.value = "";
+        sel.classList.remove('is-correct', 'is-incorrect', 'is-open');
+      });
+      document.querySelectorAll('textarea').forEach(ta => {
+        ta.value = "";
+        ta.style.borderColor = "#ccc";
+      });
+
+      document.getElementById('gradeScoreBox').style.display = "none";
+    }
+  }
+
+  function toggleAnswerKey() {
+    const content = document.getElementById("answerKeyContent");
+    const btn = document.getElementById("toggleKeyBtn");
+    if (content.style.display === "block") {
+      content.style.display = "none";
+      btn.innerHTML = "&#128065;&#65039; Show Answer Key";
+    } else {
+      content.style.display = "block";
+      btn.innerHTML = "&#128584; Hide Answer Key";
+    }
+  }
+</script>
+</body>
+</html>
