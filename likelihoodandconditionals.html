@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced Conditionals & Likelihood - B2 Worksheet</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Baloo+2:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a2e;
+    --paper: #fffef7;
+    --A: #e63946;
+    --A-light: #fde8ea;
+    --B: #2a9d8f;
+    --B-light: #d6f5f2;
+    --C: #e07b00;
+    --C-light: #fff0d6;
+    --D: #5c4fcf;
+    --D-light: #ebe8ff;
+    --E: #c77dff;
+    --E-light: #f5e6ff;
+    --rule: #d4cfc0;
+
+    /* Feedback Colors */
+    --correct: #2a9d8f;
+    --incorrect: #e63946;
+    --open-ans: #457b9d;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: #e8e4d9;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 32px 16px 60px;
+  }
+
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    background: var(--paper);
+    border-radius: 4px;
+    box-shadow: 0 4px 40px rgba(0,0,0,0.18);
+    overflow: hidden;
+  }
+
+  /* LOGISTICS BOX */
+  .logistics-box {
+    background: #e3f2fd;
+    border-left: 5px solid #1e88e5;
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 32px;
+  }
+  .logistics-box h3 {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-bottom: 10px;
+    color: #1e88e5;
+  }
+  .logistics-box p {
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 600;
+  }
+
+  /* HEADER */
+  header {
+    background: var(--ink);
+    color: #fff;
+    padding: 40px 48px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent, transparent 18px,
+      rgba(255,255,255,0.03) 18px, rgba(255,255,255,0.03) 36px
+    );
+  }
+  .header-badge {
+    display: inline-block;
+    background: #fff;
+    color: var(--ink);
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+  }
+  header h1 {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1.05;
+    margin-bottom: 8px;
+  }
+  header h1 span { color: #e63946; }
+  header p {
+    font-size: 15px;
+    opacity: 0.7;
+    font-weight: 600;
+  }
+
+  .content { padding: 0 44px 44px; margin-top: 20px;}
+
+  /* SECTION DIVIDERS */
+  .section-header {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--ink);
+    margin: 40px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--rule);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-header span {
+    background: var(--ink);
+    color: white;
+    font-size: 14px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+  }
+
+  /* GRAMMAR BOX */
+  .grammar-box {
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 22px;
+    border-left: 5px solid;
+  }
+  .grammar-box.purple { background: var(--E-light); border-color: var(--E); }
+  .grammar-box h3 {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 10px;
+    opacity: 0.6;
+  }
+  .grammar-box p { font-size: 14px; line-height: 1.7; font-weight: 600; margin-bottom: 8px; }
+  .grammar-box ul { margin-left: 20px; font-size: 14px; font-weight: 600; line-height: 1.7; }
+  .grammar-box strong { font-weight: 900; }
+
+  /* EXERCISE BLOCK & INSTRUCTIONS */
+  .exercise { margin-bottom: 36px; }
+  .exercise-title {
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    border-bottom: 2px solid var(--rule);
+    padding-bottom: 8px;
+  }
+  .title-content { display: flex; flex-direction: column; gap: 4px; }
+  .title-main { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
+  .ex-num {
+    width: 26px; height: 26px;
+    background: var(--ink);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 900;
+    color: #fff;
+    flex-shrink: 0;
+    margin-top: -2px;
+  }
+
+  .btn-hint {
+    background: none; border: none; cursor: pointer; font-size: 18px; padding: 0 4px; transition: transform 0.2s;
+  }
+  .btn-hint:hover { transform: scale(1.1); }
+  .hint-box {
+    display: none; font-size: 13px; color: #1e88e5; font-weight: 600; background: #e3f2fd;
+    padding: 12px 16px; border-radius: 6px; border-left: 4px solid #1e88e5; margin-top: 8px; line-height: 1.6;
+  }
+  .hint-box strong { color: #1565c0; font-weight: 800; }
+
+  .q-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+  .q-list li { font-size: 15px; font-weight: 600; display: block; line-height: 1.6; }
+  .q-num { font-weight: 900; opacity: 0.4; min-width: 20px; font-size: 13px; margin-right: 6px; }
+  .scrambled-box { color: #666; font-style: italic; margin-bottom: 6px; display: inline-block; }
+
+  .blank {
+    border: none; border-bottom: 2px solid #aaa; background: transparent; min-width: 100px;
+    font-family: 'Nunito', sans-serif; font-size: 15px; font-weight: 700; color: #2b2b2b;
+    padding: 0 4px; outline: none; text-align: center; transition: all 0.2s;
+  }
+  select.blank { text-align: center; cursor: pointer; border-radius: 4px; appearance: none; -webkit-appearance: none; -moz-appearance: none; background: rgba(0,0,0,0.02); }
+  .blank:focus { border-bottom-color: var(--ink); background: rgba(0,0,0,0.04); }
+  .blank-sm  { min-width: 60px; }
+  .blank-md  { min-width: 140px; }
+  .blank-lg  { min-width: 220px; }
+  .blank-xl  { display: block; width: 100%; text-align: left; padding: 4px 8px; margin-top: 6px; }
+
+  .is-correct { border-bottom: 2px solid var(--correct) !important; color: var(--correct) !important; background-color: rgba(42,157,143,0.06) !important; }
+  .is-incorrect { border-bottom: 2px solid var(--incorrect) !important; color: var(--incorrect) !important; background-color: rgba(230,57,70,0.06) !important; }
+  .is-open { border-bottom: 2px solid var(--open-ans) !important; color: var(--open-ans) !important; background-color: rgba(69,123,157,0.06) !important; }
+
+  /* MULTIPLE CHOICE OPTIONS */
+  .mcq-options { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; margin-left: 26px; }
+  .mcq-option { display: flex; align-items: flex-start; gap: 8px; font-size: 14px; font-weight: 600; color: #444; }
+  .mcq-letter { font-weight: 900; color: var(--ink); background: #eee; border-radius: 4px; padding: 0 6px; font-size: 12px; }
+
+  /* ACTIONS */
+  .action-bar { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 36px; }
+  .friendly-reminder { font-size: 14px; font-weight: 700; color: var(--D); text-align: center; margin-bottom: 4px; padding: 10px 20px; background: var(--D-light); border-radius: 8px; border: 1px dashed var(--D); max-width: 600px; }
+  .score-display { font-family: 'Baloo 2', sans-serif; font-size: 20px; font-weight: 800; color: var(--ink); display: none; background: #f0ede4; padding: 6px 20px; border-radius: 30px; border: 2px solid var(--rule); }
+  .button-group { display: flex; gap: 16px; }
+  .btn-action { font-family: 'Baloo 2', sans-serif; font-size: 15px; font-weight: 700; padding: 12px 32px; border: none; border-radius: 6px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.12); transition: all 0.2s; }
+  .btn-check { background: #2a9d8f; color: white; }
+  .btn-check:hover { background: #228074; transform: translateY(-1px); }
+  .btn-reset { background: #e7e5e0; color: var(--ink); }
+  .btn-reset:hover { background: #dcd9d2; transform: translateY(-1px); }
+  
+  .section-divider { height: 2px; background: repeating-linear-gradient(90deg, var(--rule) 0, var(--rule) 8px, transparent 8px, transparent 16px); margin: 44px 0; }
+
+  /* ANSWER KEY */
+  .answer-key-wrapper { margin-top: 48px; border-top: 3px solid var(--ink); padding-top: 20px; }
+  .btn-toggle-key { background: var(--ink); color: #fff; font-family: 'Baloo 2', sans-serif; font-size: 13px; font-weight: 700; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; letter-spacing: 0.5px; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+  .btn-toggle-key:hover { background: #2e2e4e; transform: translateY(-1px); }
+  .answer-key-content { display: none; margin-top: 24px; }
+  .answer-key h2 { font-family: 'Baloo 2', sans-serif; font-size: 20px; font-weight: 800; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+  .answer-key h2::after { content: '(Teacher Copy)'; font-size: 12px; background: var(--ink); color: #fff; padding: 3px 10px; border-radius: 20px; letter-spacing: 1px; font-weight: 700; }
+  .key-section { margin-bottom: 20px; }
+  .key-section h3 { font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; opacity: 0.5; }
+  .key-list { font-size: 14px; font-weight: 600; line-height: 2; column-count: 2; column-gap: 32px; }
+  .key-list span { font-weight: 900; }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; }
+    .action-bar, .btn-hint, .answer-key-wrapper { display: none !important; }
+    .blank { border-bottom-color: #000; }
+  }
+
+  @media (max-width: 600px) {
+    .content { padding: 0 20px 36px; }
+    header { padding: 28px 20px 22px; }
+    header h1 { font-size: 34px; }
+    .key-list { column-count: 1; }
+    .blank-lg, .blank-xl { width: 100%; min-width: 100%; }
+    .button-group { flex-direction: column; align-items: stretch; width: 100%; }
+    .btn-action { text-align: center; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="header-badge">B2 Business English &middot; Procurement & Wholesale</div>
+    <h1>Alternative Pasts & <span>Possible Futures</span></h1>
+    <p>Conditionals (0-3) & Adverbs of Likelihood in Commercial Purchasing</p>
+  </header>
+
+  <div class="content">
+
+    <div class="logistics-box">
+      <h3>&#128203; Instructions</h3>
+      <p>Welcome to your advanced grammar session! As a wholesale buyer, evaluating market conditions, negotiating contracts, and analyzing past supply chain decisions are key responsibilities. These 10 exercises will transition from controlled recognition to open application.</p>
+      <p style="margin-top:8px">Click the <strong>&#127760;</strong> icon on any exercise for a quick grammar reminder. Complete exercises 1 through 9 before recording your final voice note challenge!</p>
+    </div>
+
+    <div class="grammar-box purple">
+      <h3>&#128204; Grammar Notes: Conditionals & Certainty</h3>
+      <p><strong>Conditionals Summary:</strong></p>
+      <ul>
+        <li><strong>Zero (Natural/General Truths):</strong> <em>If + Present Simple, Present Simple.</em> (If we order in bulk, suppliers give us a discount.)</li>
+        <li><strong>First (Real Future Possibility):</strong> <em>If + Present Simple, Will + Base Verb.</em> (If prices rise next month, we will freeze our purchase order.)</li>
+        <li><strong>Second (Unreal Present/Future):</strong> <em>If + Past Simple, Would + Base Verb.</em> (If I had full autonomy, I would change our primary distributor.)</li>
+        <li><strong>Third (Unreal Past/Regrets):</strong> <em>If + Past Perfect, Would Have + Participle.</em> (If we had signed the agreement in January, we would have saved $50,000.)</li>
+      </ul>
+      <p style="margin-top: 10px;"><strong>Adverbs of Likelihood:</strong> <em>certainly (100%), definitely (90%), probably (80%), likely (70%), possibly (50%), unlikely (30%), not really (10%), not at all (0%)</em>. Placement rule: place the adverb <strong>before</strong> the main verb (e.g., <em>They will <strong>probably</strong> accept the deal</em>).</p>
+    </div>
+
+    <div class="section-header">
+      <span>Part 1</span> Controlled Practice (Exercises 1 - 3)
+    </div>
+
+    <!-- EXERCISE 1 -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">1</span>
+        <div class="title-content">
+          <div class="title-main">
+            Likelihood Assessment: Select the adverb that best fits the degree of certainty in each scenario.
+            <button class="btn-hint" onclick="toggleT('t-ex1')" title="Hint">&#127760;</button>
+          </div>
+          <div id="t-ex1" class="hint-box">
+            <strong>💡 Hint:</strong> Match the context clues to certainty: 100% = certainly/definitely; 50% = possibly; 0-10% = not really / not at all.
+          </div>
+        </div>
+      </div>
+      <ol class="q-list">
+        <li><span class="q-num">1.</span> We have a binding legal contract with fixed prices. If the supplier requests a price increase, we will 
+          <select data-ans="certainly" class="blank blank-md">
+            <option value="">--select--</option>
+            <option value="certainly">certainly</option>
+            <option value="possibly">possibly</option>
+            <option value="unlikely">unlikely</option>
+          </select> reject it.
+        </li>
+        <li><span class="q-num">2.</span> The vendor has had three factory shutdowns this month. They are 
+          <select data-ans="unlikely" class="blank blank-md">
+            <option value="">--select--</option>
+            <option value="definitely">definitely</option>
+            <option value="unlikely">unlikely</option>
+            <option value="certainly">certainly</option>
+          </select> to meet our delivery deadline.
+        </li>
+        <li><span class="q-num">3.</span> Negotiations are progressing, but nothing is finalized. We might 
+          <select data-ans="possibly" class="blank blank-md">
+            <option value="">--select--</option>
+            <option value="possibly">possibly</option>
+            <option value="definitely">definitely</option>
+            <option value="not at all">not at all</option>
+          </select> close the contract by Friday.
+        </li>
+      </ol>
+    </div>
+
+    <!-- EXERCISE 2 -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">2</span>
+        <div class="title-content">
+          <div class="title-main">
+            Adverb Placement in Sentences: Choose the option with the correct word order.
+            <button class="btn-hint" onclick="toggleT('t-ex2')" title="Hint">&#127760;</button>
+          </div>
+          <div id="t-ex2" class="hint-box">
+            <strong>💡 Hint:</strong> Place adverbs after modal verbs (will/would) and before the main action verb.
+          </div>
+        </div>
+      </div>
+      <ol class="q-list">
+        <li><span class="q-num">1.</span> If the shipment arrives late, 
+          <select data-ans="we will probably delay" class="blank blank-lg">
+            <option value="">-- select correct phrasing --</option>
+            <option value="we probably will delay">we probably will delay the store rollout</option>
+            <option value="we will probably delay">we will probably delay the store rollout</option>
+            <option value="we will delay probably">we will delay probably the store rollout</option>
+          </select>.
+        </li>
+        <li><span class="q-num">2.</span> If I were managing international logistics, 
+          <select data-ans="I would definitely switch" class="blank blank-lg">
+            <option value="">-- select correct phrasing --</option>
+            <option value="I would definitely switch">I would definitely switch to air freight</option>
+            <option value="I definitely would switch">I definitely would switch to air freight</option>
+            <option value="I would switch definitely">I would switch definitely to air freight</option>
+          </select>.
+        </li>
+        <li><span class="q-num">3.</span> If customs clearance takes longer than expected, 
+          <select data-ans="the warehouse will likely receive" class="blank blank-lg">
+            <option value="">-- select correct phrasing --</option>
+            <option value="the warehouse likely will receive">the warehouse likely will receive the cargo on Monday</option>
+            <option value="the warehouse will likely receive">the warehouse will likely receive the cargo on Monday</option>
+          </select>.
+        </li>
+      </ol>
+    </div>
+
+    <!-- EXERCISE 3 -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">3</span>
+        <div class="title-content">
+          <div class="title-main">
+            Real Conditionals (Zero & 1st): Complete the sentences with the correct verb form.
+            <button class="btn-hint" onclick="toggleT('t-ex3')" title="Hint">&#127760;</button>
+          </div>
+          <div id="t-ex3" class="hint-box">
+            <strong>💡 Hint:</strong> Zero = general business facts (present + present). First = specific future plans (present + will + verb).
+          </div>
+        </div>
+      </div>
+      <ol class="q-list">
+        <li><span class="q-num">1.</span> When we <input type="text" data-ans="purchase" class="blank blank-sm"> (purchase) inventory in container-load quantities, shipping costs decrease per unit.</li>
+        <li><span class="q-num">2.</span> If the manufacturer <input type="text" data-ans="increases" class="blank blank-md"> (increase) their raw material cost, we will adjust our retail prices.</li>
+        <li><span class="q-num">3.</span> Unless the supplier <input type="text" data-ans="provides" class="blank blank-md"> (provide) a certificate of origin, our company <input type="text" data-ans="will not accept|won't accept" class="blank blank-md"> (not / accept) the shipment.</li>
+      </ol>
+    </div>
+
+    <div class="section-divider"></div>
+    <div class="section-header">
+      <span>Part 2</span> Intermediate Application (Exercises 4 - 6)
+    </div>
+
+    <!-- EXERCISE 4 -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">4</span>
+        <div class="title-content">
+          <div class="title-main">
+            Unreal Present (2nd Conditional): Complete the hypothetical statements.
+            <button class="btn-hint" onclick="toggleT('t-ex4')" title="Hint">&#127760;</button>
+          </div>
+          <div id="t-ex4" class="hint-box">
+            <strong>💡 Hint:</strong> Use Past Simple in the "if" clause and "would + base verb" in the main clause. Remember to use "were" for all subjects in formal contexts!
+          </div>
+        </div>
+      </div>
+      <ol class="q-list">
+        <li><span class="q-num">1.</span> If our company <input type="text" data-ans="had" class="blank blank-sm"> (have) unlimited warehouse capacity, we <input type="text" data-ans="would store|'d store" class="blank blank-md"> (store) six months of safety stock.</li>
+        <li><span class="q-num">2.</span> If I <input type="text" data-ans="were|was" class="blank blank-sm"> (be) in charge of global procurement, I would diversify our vendor base across Europe.</li>
+        <li><span class="q-num">3.</span> What <input type="text" data-ans="would you do" class="blank blank-md"> (you / do) if a primary wholesale client suddenly canceled their annual order?</li>
+      </ol>
+    </div>
+
+    <!-- EXERCISE 5 -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">5</span>
+        <div class="title-content">
+          <div class="title-main">
+            Unreal Past (3rd Conditional): Analyzing past purchasing decisions.
+            <button class="btn-hint" onclick="toggleT('t-ex5')" title="Hint">&#127760;</button>
+          </div>
+          <div id="t-ex5" class="hint-box">
+            <strong>💡 Hint:</strong> If + Past Perfect (had + past participle), would have + past participle.
+          </div>
+        </div>
+      </div>
+      <ol class="q-list">
+        <li><span class="q-num">1.</span> If we <input type="text" data-ans="had forecasted|'d forecasted" class="blank blank-md"> (forecast) the peak demand correctly last quarter, we <input type="text" data-ans="would have avoided|'d have avoided" class="blank blank-lg"> (avoid) stockouts.</li>
+        <li><span class="q-num">2.</span> We would possibly have secured better payment terms if we <input type="text" data-ans="had negotiated|'d negotiated" class="blank blank-md"> (negotiate) directly with the factory owner.</li>
+        <li><span class="q-num">3.</span> If I <input type="text" data-ans="had known|'d known" class="blank blank-md"> (know) about the tariff changes earlier, I <input type="text" data-ans="would not have placed|wouldn't have placed" class="blank blank-lg"> (not / place) that import order.</li>
+      </ol>
+    </div>
+
+    <!-- EXERCISE 6 -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">6</span>
+        <div class="title-content">
+          <div class="title-main">
+            Matching Halves: Pair the conditional clause with its logical continuation.
+            <button class="btn-hint" onclick="toggleT('t-ex6')" title="Hint">&#127760;</button>
+          </div>
+          <div id="t-ex6" class="hint-box">
+            <strong>💡 Hint:</strong> Match the tense structure: Present -> Present/Will, Past Simple -> Would, Past Perfect -> Would Have.
+          </div>
+        </div>
+      </div>
+      <div style="background: #f9f9f9; padding: 14px; border: 1px dashed #bbb; border-radius: 6px; margin-bottom: 16px; font-size: 14px;">
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px;">
+          <li><strong>A)</strong> ...our profit margins would increase by 12%.</li>
+          <li><strong>B)</strong> ...we usually issue a purchase order within 24 hours.</li>
+          <li><strong>C)</strong> ...we would have prevented the distribution delay.</li>
+          <li><strong>D)</strong> ...the buyer will definitely request a credit note.</li>
+        </ul>
+      </div>
+      <ol class="q-list">
+        <li><span class="q-num">1.</span> If a vendor delivers damaged goods, <select data-ans="d" class="blank blank-sm"><option value="">-</option><option value="a">A</option><option value="b">B</option><option value="c">C</option><option value="d">D</option></select></li>
+        <li><span class="q-num">2.</span> If we approve a supplier requisition, <select data-ans="b" class="blank blank-sm"><option value="">-</option><option value="a">A</option><option value="b">B</option><option value="c">C</option><option value="d">D</option></select></li>
+        <li><span class="q-num">3.</span> If we bypassed intermediaries and bought directly, <select data-ans="a" class="blank blank-sm"><option value="">-</option><option value="a">A</option><option value="b">B</option><option value="c">C</option><option value="d">D</option></select></li>
+        <li><span class="q-num">4.</span> If logistics had dispatched the fleet on time, <select data-ans="c" class="blank blank-sm"><option value="">-</option><option value="a">A</option><option value="b">B</option><option value="c">C</option><option value="d">D</option></select></li>
+      </ol>
+    </div>
+
+    <div class="section-divider"></div>
+    <div class="section-header">
+      <span>Part 3</span> Advanced Synthesis (Exercises 7 - 9)
+    </div>
+
+    <!-- EXERCISE 7 -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">7</span>
+        <div class="title-content">
+          <div class="title-main">
+            Error Correction: Identify the grammatical error in each sentence and type the correction.
+            <button class="btn-hint" onclick="toggleT('t-ex7')" title="Hint">&#127760;</button>
+          </div>
+          <div id="t-ex7" class="hint-box">
+            <strong>💡 Hint:</strong> Correct inappropriate use of "will" in "if" clauses, incorrect past modal forms, or misplaced adverbs.
+          </div>
+        </div>
+      </div>
+      <ol class="q-list">
+        <li><span class="q-num">1.</span> <em>If the supplier will confirm the price quote, we will sign the contract immediately.</em><br>
+          Correction: If the supplier <input type="text" data-ans="confirms" class="blank blank-md"> the price quote, we will sign the contract immediately.
+        </li>
+        <li><span class="q-num">2.</span> <em>If we had hired an inspector, we would spot the quality defects before shipping.</em><br>
+          Correction: If we had hired an inspector, we <input type="text" data-ans="would have spotted|'d have spotted" class="blank blank-lg"> the quality defects before shipping.
+        </li>
+        <li><span class="q-num">3.</span> <em>If I was the procurement lead, I would renegotiate probably the payment terms.</em><br>
+          Correction: If I were the procurement lead, I <input type="text" data-ans="would probably renegotiate" class="blank blank-xl"> the payment terms.
+        </li>
+      </ol>
+    </div>
+
+    <!-- EXERCISE 8 -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">8</span>
+        <div class="title-content">
+          <div class="title-main">
+            Sentence Unscramble: Reorder the words to build clear, advanced conditional statements.
+            <button class="btn-hint" onclick="toggleT('t-ex8')" title="Hint">&#127760;</button>
+          </div>
+          <div id="t-ex8" class="hint-box">
+            <strong>💡 Hint:</strong> Structure: [If clause], [Subject + auxiliary + adverb + main verb + object].
+          </div>
+        </div>
+      </div>
+      <ol class="q-list">
+        <li>
+          <span class="q-num">1.</span> <span class="scrambled-box">(If / we / order / 1000 units / the vendor / will / definitely / offer / a discount)</span><br>
+          <input type="text" data-ans="If we order 1000 units the vendor will definitely offer a discount|The vendor will definitely offer a discount if we order 1000 units" class="blank blank-xl" placeholder="Type sentence here...">
+        </li>
+        <li>
+          <span class="q-num">2.</span> <span class="scrambled-box">(If / I / had known / about the deficit / I / would / certainly / have adjusted / the purchase order)</span><br>
+          <input type="text" data-ans="If I had known about the deficit I would certainly have adjusted the purchase order|I would certainly have adjusted the purchase order if I had known about the deficit" class="blank blank-xl" placeholder="Type sentence here...">
+        </li>
+      </ol>
+    </div>
+
+    <!-- EXERCISE 9 -->
+    <div class="exercise">
+      <div class="exercise-title">
+        <span class="ex-num">9</span>
+        <div class="title-content">
+          <div class="title-main">
+            Reading Comprehension: Analyze the procurement case study and select the best answer for each question.
+            <button class="btn-hint" onclick="toggleT('t-ex9')" title="Hint">&#127760;</button>
+          </div>
+          <div id="t-ex9" class="hint-box">
+            <strong>💡 Hint:</strong> Read the scenario carefully. Note what actually happened in the past versus what would happen hypothetically in the future.
+          </div>
+        </div>
+      </div>
+      <div style="background: white; padding: 20px; border: 1px solid #ccc; border-radius: 6px; line-height: 1.8; font-size: 15px; margin-bottom: 20px;">
+        <strong>Case Study: Global Wholesale Supply Chain Decision</strong><br>
+        Last quarter, Apex Wholesale faced a major logistics crisis. If the procurement team had conducted a risk assessment in January, they would have noticed that their primary overseas manufacturer was struggling with raw material shortages. Because they didn't, the shipment was delayed by six weeks, resulting in a 15% loss in regional sales.<br><br>
+        Now, the head buyer is revising the procurement strategy: <em>"If we diversify our suppliers across South America this month, we will definitely reduce lead times by 20%. Furthermore, if I were to choose a new primary distributor, I would probably prioritize reliability over the absolute lowest price."</em>
+      </div>
+
+      <ol class="q-list">
+        <li>
+          <span class="q-num">1.</span> Why did Apex Wholesale experience a six-week delay last quarter?
+          <select data-ans="b" class="blank blank-sm">
+            <option value="">--</option><option value="a">A</option><option value="b">B</option><option value="c">C</option>
+          </select>
+          <div class="mcq-options">
+            <div class="mcq-option"><span class="mcq-letter">A</span> They chose air freight instead of sea shipping.</div>
+            <div class="mcq-option"><span class="mcq-letter">B</span> They didn't conduct a risk assessment early, missing the manufacturer's supply issue.</div>
+            <div class="mcq-option"><span class="mcq-letter">C</span> South American suppliers canceled their contracts without notice.</div>
+          </div>
+        </li>
+        <li>
+          <span class="q-num">2.</span> What is the predicted consequence of supplier diversification this month?
+          <select data-ans="a" class="blank blank-sm">
+            <option value="">--</option><option value="a">A</option><option value="b">B</option><option value="c">C</option>
+          </select>
+          <div class="mcq-options">
+            <div class="mcq-option"><span class="mcq-letter">A</span> Lead times will definitely decrease by 20%.</div>
+            <div class="mcq-option"><span class="mcq-letter">B</span> Regional sales will probably fall another 15%.</div>
+            <div class="mcq-option"><span class="mcq-letter">C</span> Wholesale prices will unlikely stay stable.</div>
+          </div>
+        </li>
+        <li>
+          <span class="q-num">3.</span> What would the head buyer do if selecting a new distributor now?
+          <select data-ans="c" class="blank blank-sm">
+            <option value="">--</option><option value="a">A</option><option value="b">B</option><option value="c">C</option>
+          </select>
+          <div class="mcq-options">
+            <div class="mcq-option"><span class="mcq-letter">A</span> Always select the absolute cheapest price available.</div>
+            <div class="mcq-option"><span class="mcq-letter">B</span> Stop buying from overseas manufacturers altogether.</div>
+            <div class="mcq-option"><span class="mcq-letter">C</span> Probably place a higher priority on vendor reliability than cost alone.</div>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    <div class="section-divider"></div>
+    <div class="section-header">
+      <span>Part 4</span> Production & Oral Challenge
+    </div>
+
+    <!-- EXERCISE 10 -->
+    <div class="exercise">
+      <div class="exercise-title" style="border-bottom-color: #f1c40f;">
+        <span class="ex-num" style="background: #f1c40f;">10</span>
+        <div class="title-content">
+          <div class="title-main">
+            Final Challenge: Professional Reflection (Voice Note) <em style="font-weight:400; opacity:0.7;">(Teacher evaluated)</em>
+            <button class="btn-hint" onclick="toggleT('t-ex10')" title="Hint">&#127760;</button>
+          </div>
+          <div id="t-ex10" class="hint-box">
+            <strong>💡 Hint:</strong> Use the text area below to outline your thoughts. Incorporate target grammar: 3rd conditional (past regrets/lessons) and 2nd conditional (hypothetical future plans). Use adverbs of likelihood (definitely, likely, probably) to sound fluent.
+          </div>
+        </div>
+      </div>
+      
+      <div style="background: #fcf3cf; border-left: 5px solid #f1c40f; padding: 18px; border-radius: 6px; margin-bottom: 16px;">
+        <p style="font-size:14px;font-weight:700;margin-bottom:8px;">Oral Assignment: Record a voice note (1 - 2 minutes) answering both prompts based on your professional experience in purchasing and procurement:</p>
+        <ol style="margin-left: 20px; font-size: 14px; font-weight: 600; line-height: 1.6;">
+          <li><strong>Alternative Past (3rd Conditional):</strong> Reflect on a past challenge in purchasing or work. <em>"If we had / had not..."</em> What would possibly have happened differently?</li>
+          <li><strong>Hypothetical Future (2nd Conditional):</strong> If you were appointed Chief Procurement Officer tomorrow, what changes would you definitely implement in your supply chain strategy?</li>
+        </ol>
+      </div>
+
+      <textarea
+        data-ans="OPEN"
+        rows="6"
+        placeholder="Draft your outline or notes here before recording...&#10;Example: If we had negotiated directly with the manufacturer last year, we would possibly have..."
+        style="width:100%;border:2px dashed #ccc;border-radius:8px;padding:14px;font-family:'Nunito',sans-serif;font-size:15px;font-weight:600;color:#2b2b2b;outline:none;resize:vertical;background:#fafafa;transition:border-color 0.2s;"
+        onfocus="this.style.borderColor='#f1c40f'"
+        onblur="this.style.borderColor='#ccc'"
+      ></textarea>
+      
+      <p style="font-size:14px; font-weight:800; color:#e63946; margin-top:12px; background: var(--A-light); padding: 10px; border-radius: 6px; border: 1px solid var(--A); display: inline-block;">
+        &#128242; Reminder: Send your WhatsApp Voice Note to your teacher for manual evaluation!
+      </p>
+    </div>
+
+    <!-- ACTION BAR -->
+    <div class="action-bar">
+      <p class="friendly-reminder">&#128161; Double-check your answers and verb tenses before grading your worksheet!</p>
+      <div class="score-display" id="gradeScoreBox">Score: 0</div>
+      <div class="button-group">
+        <button class="btn-action btn-check" onclick="checkStudentAnswers()">&#10004;&#65039; Check Answers</button>
+        <button class="btn-action btn-reset" onclick="resetWorksheet()">&#128260; Clear Sheet</button>
+      </div>
+    </div>
+
+    <!-- ANSWER KEY -->
+    <div class="answer-key-wrapper">
+      <button class="btn-toggle-key" id="toggleKeyBtn" onclick="toggleAnswerKey()">
+        &#128065;&#65039; Show Answer Key
+      </button>
+
+      <div class="answer-key-content" id="answerKeyContent">
+        <div class="answer-key">
+          <h2>Answer Key</h2>
+
+          <div class="key-section">
+            <h3>Ex 1: Likelihood Assessment</h3>
+            <div class="key-list">
+              <div>1. <span>certainly</span></div>
+              <div>2. <span>unlikely</span></div>
+              <div>3. <span>possibly</span></div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>Ex 2: Adverb Placement</h3>
+            <div class="key-list" style="column-count: 1;">
+              <div>1. <span>we will probably delay</span></div>
+              <div>2. <span>I would definitely switch</span></div>
+              <div>3. <span>the warehouse will likely receive</span></div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>Ex 3: Real Conditionals</h3>
+            <div class="key-list">
+              <div>1. <span>purchase</span></div>
+              <div>2. <span>increases</span></div>
+              <div>3. <span>provides / will not accept (won't accept)</span></div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>Ex 4: Unreal Present</h3>
+            <div class="key-list">
+              <div>1. <span>had / would store ('d store)</span></div>
+              <div>2. <span>were (was)</span></div>
+              <div>3. <span>would you do</span></div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>Ex 5: Unreal Past</h3>
+            <div class="key-list">
+              <div>1. <span>had forecasted / would have avoided</span></div>
+              <div>2. <span>had negotiated</span></div>
+              <div>3. <span>had known / would not have placed (wouldn't have placed)</span></div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>Ex 6: Matching Halves</h3>
+            <div class="key-list">
+              <div>1. <span>D</span></div>
+              <div>2. <span>B</span></div>
+              <div>3. <span>A</span></div>
+              <div>4. <span>C</span></div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>Ex 7: Error Correction</h3>
+            <div class="key-list" style="column-count: 1;">
+              <div>1. <span>confirms</span> (No 'will' in conditional clause)</div>
+              <div>2. <span>would have spotted</span> (Third conditional result clause)</div>
+              <div>3. <span>would probably renegotiate</span> (Adverb position after modal verb)</div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>Ex 8: Sentence Unscramble</h3>
+            <div class="key-list" style="column-count: 1;">
+              <div>1. <span>If we order 1000 units the vendor will definitely offer a discount.</span></div>
+              <div>2. <span>If I had known about the deficit I would certainly have adjusted the purchase order.</span></div>
+            </div>
+          </div>
+
+          <div class="key-section">
+            <h3>Ex 9: Reading Comprehension</h3>
+            <div class="key-list">
+              <div>1. <span>B</span></div>
+              <div>2. <span>A</span></div>
+              <div>3. <span>C</span></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  function toggleT(id) {
+    const el = document.getElementById(id);
+    if (el.style.display === "block") {
+      el.style.display = "none";
+    } else {
+      el.style.display = "block";
+    }
+  }
+
+  function checkStudentAnswers() {
+    let score = 0;
+    let autoTotal = 0;
+
+    const inputs = document.querySelectorAll('input[type="text"][data-ans], select[data-ans]');
+    inputs.forEach(input => {
+      let rawStudent = input.value;
+      let isSelect = input.tagName.toLowerCase() === 'select';
+      
+      // Super-forgiving normalization
+      let studentAns = rawStudent.toLowerCase().replace(/[.,?!'’´`]/g, "");
+      if (!isSelect) {
+          studentAns = studentAns.replace(/\s+/g, ""); 
+      } else {
+          studentAns = studentAns.replace(/\s+/g, " ").trim(); 
+      }
+
+      let rawTarget = input.getAttribute('data-ans').toLowerCase();
+      let targetAnsArray = rawTarget.split('|').map(s => {
+          let normalized = s.replace(/[.,?!'’´`]/g, "");
+          if (!isSelect) {
+              return normalized.replace(/\s+/g, "");
+          } else {
+              return normalized.replace(/\s+/g, " ").trim();
+          }
+      });
+
+      input.classList.remove('is-correct', 'is-incorrect', 'is-open');
+
+      if (targetAnsArray.includes("open")) {
+        if (rawStudent.trim() !== "") {
+          input.classList.add('is-open');
+        }
+      } else {
+        autoTotal++;
+        if (studentAns !== "" && targetAnsArray.includes(studentAns)) {
+          input.classList.add('is-correct');
+          score++;
+        } else {
+          input.classList.add('is-incorrect');
+        }
+      }
+    });
+
+    document.querySelectorAll('textarea[data-ans]').forEach(ta => {
+      ta.style.borderColor = ta.value.trim() !== "" ? "#457b9d" : "#ccc";
+    });
+
+    const scoreBox = document.getElementById('gradeScoreBox');
+    scoreBox.innerText = "Auto-graded Score: " + score + " / " + autoTotal;
+    scoreBox.style.display = "block";
+  }
+
+  function resetWorksheet() {
+    if (confirm("Are you sure you want to clear all your answers?")) {
+      document.querySelectorAll('input[type="text"]').forEach(input => {
+        input.value = "";
+        input.classList.remove('is-correct', 'is-incorrect', 'is-open');
+      });
+      document.querySelectorAll('select').forEach(sel => {
+        sel.value = "";
+        sel.classList.remove('is-correct', 'is-incorrect', 'is-open');
+      });
+      document.querySelectorAll('textarea').forEach(ta => {
+        ta.value = "";
+        ta.style.borderColor = "#ccc";
+      });
+
+      document.getElementById('gradeScoreBox').style.display = "none";
+    }
+  }
+
+  function toggleAnswerKey() {
+    const content = document.getElementById("answerKeyContent");
+    const btn = document.getElementById("toggleKeyBtn");
+    if (content.style.display === "block") {
+      content.style.display = "none";
+      btn.innerHTML = "&#128065;&#65039; Show Answer Key";
+    } else {
+      content.style.display = "block";
+      btn.innerHTML = "&#128584; Hide Answer Key";
+    }
+  }
+</script>
+</body>
+</html>
