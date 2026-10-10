@@ -371,7 +371,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 30px;
+            flex-wrap: wrap; /* Allows wrapping on smaller screens */
+            gap: 20px;
             box-sizing: border-box;
             z-index: 100;
         }
@@ -394,8 +395,8 @@
             background-color: var(--bg-color);
             color: white;
             border: none;
-            padding: 14px 28px;
-            font-size: 1.1em;
+            padding: 14px 24px;
+            font-size: 1.05em;
             font-weight: 700;
             border-radius: 30px;
             cursor: pointer;
@@ -415,8 +416,8 @@
         
         .btn-secondary:hover { background-color: #d1c4bc; }
 
-        /* Answer Key Section */
-        .answer-key-section {
+        /* Hidden Sections (Answer Key & Transcript) */
+        .hidden-section {
             display: none;
             background: #fff;
             border-radius: 16px;
@@ -425,15 +426,18 @@
             border: 2px solid var(--text-color);
         }
 
-        .answer-key-section h3 {
+        .hidden-section h3 {
             color: var(--bg-color);
             margin-top: 0;
             border-bottom: 2px solid var(--subtle-gray);
             padding-bottom: 10px;
         }
 
-        .answer-key-section ul { margin-bottom: 20px; }
-        .answer-key-section li { margin-bottom: 8px; }
+        .hidden-section ul { margin-bottom: 20px; }
+        .hidden-section li { margin-bottom: 8px; }
+        
+        .hidden-section p { margin-bottom: 15px; }
+        .hidden-section strong { color: var(--accent-color); }
 
     </style>
 </head>
@@ -650,8 +654,21 @@
         <p style="color: #666; font-size: 0.9em; text-align: right;">⚠️ Send the audio file or voice note directly to your teacher's inbox/chat.</p>
     </div>
 
+    <!-- Hidden Transcript Container -->
+    <div id="transcriptContainer" class="hidden-section">
+        <h3>📜 Audio Transcript</h3>
+        <p><strong>Emma:</strong> Did you see the family group chat? Our cousin Mark wants to stay with us next weekend.</p>
+        <p><strong>Chloe:</strong> Oh, wow. To be honest, he is <strong>not the easiest</strong> person to host.</p>
+        <p><strong>Emma:</strong> That is an understatement. I love him, but he can be so <strong>bossy</strong>. Last time he stayed here, he tried to dictate exactly what time we should all eat and go to sleep!</p>
+        <p><strong>Chloe:</strong> I remember that. And he is <strong>not as helpful as he could be</strong> around the apartment. Leaving his wet towels on the living room floor for two days was incredibly <strong>inconsiderate</strong>.</p>
+        <p><strong>Emma:</strong> Exactly. He expects everyone to cater to him, which feels a bit <strong>selfish</strong>. I tried telling him to clean up his mess once, but he is as <strong>stubborn as a mule</strong>. He just pretended he didn't hear me.</p>
+        <p><strong>Chloe:</strong> Oh, I know. He is <strong>not too patient</strong> either. If things don't go exactly his way, he gets really <strong>short-tempered</strong>.</p>
+        <p><strong>Emma:</strong> He <strong>could definitely be more responsible</strong> when he visits other people's homes. It feels like we are babysitting a teenager instead of hanging out with our cousin.</p>
+        <p><strong>Chloe:</strong> Agreed. So, how do we politely tell him the guest room is magically unavailable this weekend?</p>
+    </div>
+
     <!-- Hidden Answer Key Container -->
-    <div id="answerKeyContainer" class="answer-key-section">
+    <div id="answerKeyContainer" class="hidden-section">
         <h3>🗝️ Answer Key</h3>
         
         <p><strong>1. Match the Simile</strong></p>
@@ -679,6 +696,7 @@
 <div class="sticky-footer">
     <button class="btn" id="gradeBtn" onclick="gradeExercises()">✔️ Auto-Grade Worksheet</button>
     <div class="score-display" id="finalScoreDisplay">Score: <span id="scoreNumber">0/100</span></div>
+    <button class="btn btn-secondary" id="showTranscriptBtn" onclick="toggleTranscript()">📜 View Transcript</button>
     <button class="btn btn-secondary" id="showAnswersBtn" onclick="toggleAnswerKey()">📖 View Answer Key</button>
 </div>
 
@@ -885,15 +903,48 @@
         
         if (!graded) {
             document.getElementById('showAnswersBtn').style.display = 'flex';
+            document.getElementById('showTranscriptBtn').style.display = 'flex';
             document.getElementById('gradeBtn').innerText = "🔄 Update Score";
             graded = true;
         }
     }
 
+    // Toggle logic for Transcript
+    function toggleTranscript() {
+        let transcript = document.getElementById('transcriptContainer');
+        let btn = document.getElementById('showTranscriptBtn');
+        let answerKey = document.getElementById('answerKeyContainer');
+        let ansBtn = document.getElementById('showAnswersBtn');
+        
+        // If Answer Key is open, close it first
+        if (answerKey.style.display === 'block') {
+            answerKey.style.display = 'none';
+            ansBtn.innerText = "📖 View Answer Key";
+        }
+
+        if (transcript.style.display === 'none' || transcript.style.display === '') {
+            transcript.style.display = 'block';
+            btn.innerText = "📜 Hide Transcript";
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        } else {
+            transcript.style.display = 'none';
+            btn.innerText = "📜 View Transcript";
+        }
+    }
+
+    // Toggle logic for Answer Key
     function toggleAnswerKey() {
         let answerKey = document.getElementById('answerKeyContainer');
         let btn = document.getElementById('showAnswersBtn');
+        let transcript = document.getElementById('transcriptContainer');
+        let transBtn = document.getElementById('showTranscriptBtn');
         
+        // If Transcript is open, close it first
+        if (transcript.style.display === 'block') {
+            transcript.style.display = 'none';
+            transBtn.innerText = "📜 View Transcript";
+        }
+
         if (answerKey.style.display === 'none' || answerKey.style.display === '') {
             answerKey.style.display = 'block';
             btn.innerText = "📖 Hide Answer Key";
