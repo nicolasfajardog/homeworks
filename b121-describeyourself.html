@@ -4,141 +4,210 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>B1.2: Giving a short description of myself</title>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-dark: #78025B;
-            --bg-sheet: #FFF1EB;
-            --text-main: #0B0A09;
-            --error: #E54B4B;
-            --success: #44CF6C;
-            --accent: #E89B35; /* Added a complementary warm accent color */
-            --card-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --bg-color: #78025B;
+            --sheet-color: #FFF1EB;
+            --text-color: #0B0A09;
+            --error-color: #E54B4B;
+            --correct-color: #44CF6C;
+            --accent-color: #A91D7A; /* A slightly lighter shade of the main purple for accents */
+            --subtle-gray: #E8DCD6;
+            --card-shadow: 0 8px 24px rgba(120, 2, 91, 0.15);
         }
 
         body {
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            font-family: 'Nunito', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Inter', sans-serif;
             margin: 0;
-            padding: 40px 20px;
+            padding: 40px 20px 120px 20px; /* Extra bottom padding for sticky bar */
             display: flex;
             justify-content: center;
+            line-height: 1.6;
         }
 
-        .workable-sheet {
-            background-color: var(--bg-sheet);
-            max-width: 900px;
+        .worksheet-container {
+            background-color: var(--sheet-color);
+            max-width: 950px;
             width: 100%;
-            border-radius: 16px;
-            padding: 40px;
-            box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            position: relative;
         }
 
         header {
-            text-align: center;
             margin-bottom: 40px;
-            border-bottom: 3px solid var(--accent);
-            padding-bottom: 20px;
+            padding-bottom: 25px;
+            border-bottom: 2px solid var(--subtle-gray);
+        }
+
+        .level-tag {
+            background-color: var(--text-color);
+            color: var(--sheet-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         h1 {
-            color: var(--bg-dark);
+            color: var(--bg-color);
             font-weight: 800;
-            font-size: 2.2em;
-            margin-bottom: 5px;
+            font-size: 2.8em;
+            margin: 15px 0 5px 0;
+            line-height: 1.1;
         }
 
-        h2 {
-            font-size: 1.2em;
-            font-weight: 600;
+        header p {
+            font-size: 1.1em;
             color: #555;
-            margin-top: 0;
+            margin: 0;
+            font-weight: 500;
         }
 
-        /* Information Cards */
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+        /* Knowledge Base Section */
+        .knowledge-section {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 30px;
             margin-bottom: 40px;
-        }
-
-        .info-card {
-            background: #fff;
-            border-radius: 12px;
-            padding: 20px;
             box-shadow: var(--card-shadow);
-            border-top: 5px solid var(--bg-dark);
+            border-left: 6px solid var(--bg-color);
         }
 
-        .info-card h3 {
+        .knowledge-section h2 {
+            color: var(--bg-color);
             margin-top: 0;
-            color: var(--bg-dark);
-            font-size: 1.3em;
+            font-size: 1.4em;
             display: flex;
             align-items: center;
-            gap: 8px;
-        }
-
-        .vocab-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .vocab-tag {
-            background: var(--bg-sheet);
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            font-weight: 600;
-            border: 1px solid #ddd;
-        }
-
-        /* Exercise Sections */
-        .exercise-section {
-            background: #ffffff;
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 25px;
-            box-shadow: var(--card-shadow);
-        }
-
-        .exercise-section h3 {
-            color: var(--bg-dark);
-            border-bottom: 2px solid var(--bg-sheet);
+            gap: 10px;
+            border-bottom: 1px solid var(--subtle-gray);
             padding-bottom: 10px;
         }
 
-        .question-block {
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .vocab-item {
+            background: var(--sheet-color);
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 0.95em;
+        }
+
+        .vocab-item strong { color: var(--bg-color); }
+
+        .example-box {
+            background-color: rgba(120, 2, 91, 0.05);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-style: italic;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        /* Exercise Sections */
+        .exercise-block {
+            margin-bottom: 50px;
+        }
+
+        .exercise-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .exercise-number {
+            background-color: var(--bg-color);
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+            font-weight: 700;
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
+
+        .exercise-title h3 {
+            margin: 0 0 5px 0;
+            color: var(--text-color);
+            font-size: 1.3em;
+        }
+
+        .exercise-title p {
+            margin: 0;
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        /* Question Layouts */
+        .question {
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border: 1px solid var(--subtle-gray);
+        }
+
+        .scrambled {
+            font-family: monospace;
+            font-size: 1.1em;
+            background: var(--sheet-color);
+            padding: 10px 15px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            color: var(--bg-color);
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .word-bank {
+            text-align: center;
+            font-weight: 600;
+            color: var(--bg-color);
+            background: #fff;
+            padding: 15px;
+            border-radius: 12px;
+            border: 2px dashed var(--subtle-gray);
             margin-bottom: 20px;
         }
 
-        .scrambled-words {
-            background: #f4f4f4;
-            padding: 10px;
-            border-radius: 8px;
-            font-family: monospace;
-            font-size: 1.1em;
-            margin-bottom: 10px;
-            color: var(--bg-dark);
-            font-weight: bold;
-        }
-
+        /* Inputs */
         input[type="text"], select, textarea {
             width: 100%;
-            padding: 10px;
-            border: 2px solid #ccc;
+            padding: 12px 15px;
+            border: 2px solid var(--subtle-gray);
             border-radius: 8px;
-            font-family: 'Nunito', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 1em;
             box-sizing: border-box;
-            transition: all 0.3s;
+            transition: all 0.2s;
+            background-color: #fafafa;
+        }
+
+        input[type="text"]:focus, select:focus, textarea:focus {
+            border-color: var(--accent-color);
+            outline: none;
+            background-color: #fff;
         }
 
         input.inline-input {
-            width: 120px;
+            width: 140px;
             display: inline-block;
             margin: 0 5px;
             text-align: center;
@@ -149,149 +218,204 @@
             min-height: 120px;
         }
 
-        /* Autograde coloring */
+        /* Auto-grading colors */
         input.correct, select.correct {
-            border-color: var(--success);
+            border-color: var(--correct-color);
             background-color: rgba(68, 207, 108, 0.1);
+            color: #0B0A09;
         }
         input.incorrect, select.incorrect {
-            border-color: var(--error);
+            border-color: var(--error-color);
             background-color: rgba(229, 75, 75, 0.1);
+            color: #0B0A09;
         }
 
-        .radio-group {
-            margin: 10px 0;
-        }
-
+        /* Radio Buttons */
         .radio-group label {
             display: block;
-            margin: 8px 0;
+            margin: 10px 0;
+            padding: 10px 15px;
+            border: 1px solid var(--subtle-gray);
+            border-radius: 8px;
             cursor: pointer;
+            transition: background 0.2s;
         }
 
-        .radio-option.correct { color: var(--success); font-weight: bold; }
-        .radio-option.incorrect { color: var(--error); }
+        .radio-group label:hover { background: #f9f9f9; }
+        .radio-group input[type="radio"] { margin-right: 10px; }
+        
+        .radio-label.correct { 
+            border-color: var(--correct-color); 
+            background-color: rgba(68, 207, 108, 0.1); 
+            font-weight: 600; 
+        }
+        .radio-label.incorrect { 
+            border-color: var(--error-color); 
+            background-color: rgba(229, 75, 75, 0.1); 
+        }
+
+        /* Final Challenge */
+        .challenge-box {
+            border: 3px dashed var(--accent-color);
+            background: #fff;
+        }
+
+        /* Sticky Footer Grading Bar */
+        .sticky-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #ffffff;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+            padding: 20px 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            box-sizing: border-box;
+            z-index: 100;
+        }
+
+        .score-display {
+            font-size: 1.5em;
+            font-weight: 800;
+            color: var(--text-color);
+            display: none; /* Hidden until graded */
+            align-items: center;
+            gap: 10px;
+        }
+
+        .score-display span {
+            color: var(--bg-color);
+            font-size: 1.2em;
+        }
 
         .btn {
-            background-color: var(--bg-dark);
+            background-color: var(--bg-color);
             color: white;
             border: none;
-            padding: 15px 30px;
-            font-size: 1.2em;
-            font-weight: bold;
+            padding: 14px 28px;
+            font-size: 1.1em;
+            font-weight: 700;
             border-radius: 30px;
             cursor: pointer;
-            display: block;
-            margin: 30px auto;
-            transition: transform 0.2s, background-color 0.2s;
-            box-shadow: var(--card-shadow);
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        .btn:hover {
-            transform: translateY(-2px);
-            background-color: #5c0146;
-        }
-
-        /* Final Challenge Note */
-        .challenge-note {
-            background: #fff3cd;
-            border-left: 5px solid var(--accent);
-            padding: 15px;
-            margin-top: 15px;
-            border-radius: 4px;
-            font-weight: 600;
-        }
-
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(11, 10, 9, 0.7);
-        }
-
-        .modal-content {
-            background-color: var(--bg-sheet);
-            margin: 10% auto;
-            padding: 30px;
-            border-radius: 16px;
-            max-width: 600px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            max-height: 80vh;
-            overflow-y: auto;
-        }
-
-        .close-btn {
-            color: var(--bg-dark);
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
+        .btn:hover { background-color: var(--accent-color); transform: translateY(-2px); }
+        
+        .btn-secondary {
+            background-color: var(--subtle-gray);
+            color: var(--text-color);
+            display: none; /* Hidden until graded */
         }
         
-        .close-btn:hover { color: var(--error); }
+        .btn-secondary:hover { background-color: #d1c4bc; }
+
+        /* Answer Key Section */
+        .answer-key-section {
+            display: none;
+            background: #fff;
+            border-radius: 16px;
+            padding: 30px;
+            margin-top: 40px;
+            border: 2px solid var(--text-color);
+        }
+
+        .answer-key-section h3 {
+            color: var(--bg-color);
+            margin-top: 0;
+            border-bottom: 2px solid var(--subtle-gray);
+            padding-bottom: 10px;
+        }
+
+        .answer-key-section ul { margin-bottom: 20px; }
+        .answer-key-section li { margin-bottom: 8px; }
+
     </style>
 </head>
 <body>
 
-<div class="workable-sheet">
+<div class="worksheet-container">
     <header>
-        <h1>Giving a short description of myself in an interview 🗣️</h1>
-        <h2>Vocabulary: Personality Traits &nbsp;|&nbsp; Language Focus: Adjective & Adverb Intensifiers</h2>
+        <span class="level-tag">ESL Worksheet · B1.2</span>
+        <h1>Describing Myself</h1>
+        <p>Personality Traits · Adjective & Adverb Intensifiers · Interview English</p>
     </header>
 
-    <!-- Knowledge Base Grid -->
-    <div class="info-grid">
-        <div class="info-card">
-            <h3>🧩 Vocabulary</h3>
-            <div class="vocab-list">
-                <span class="vocab-tag">reserved</span> <span class="vocab-tag">sociable</span> 
-                <span class="vocab-tag">outgoing</span> <span class="vocab-tag">shy</span> 
-                <span class="vocab-tag">easygoing</span> <span class="vocab-tag">strict</span> 
-                <span class="vocab-tag">friendly</span> <span class="vocab-tag">assertive</span> 
-                <span class="vocab-tag">talkative</span> <span class="vocab-tag">quiet</span> 
-                <span class="vocab-tag">fun-loving</span> <span class="vocab-tag">serious</span> 
-                <span class="vocab-tag">optimistic</span> <span class="vocab-tag">pessimistic</span> 
-                <span class="vocab-tag">extroverted</span> <span class="vocab-tag">introverted</span>
-            </div>
-        </div>
-
-        <div class="info-card">
-            <h3>📈 Language Focus</h3>
-            <p><strong>Intensifiers</strong> are placed before adjectives to modify their strength.</p>
-            <ul>
-                <li><strong>Strong:</strong> very, so, really</li>
-                <li><strong>Moderate:</strong> pretty, quite, rather, fairly</li>
-            </ul>
-            <p><em>Example:</em> "I am <strong>quite</strong> shy, but <strong>very</strong> friendly."</p>
-        </div>
-
-        <div class="info-card">
-            <h3>💬 Communication</h3>
-            <p>Useful structures for interviews:</p>
-            <ul style="padding-left: 15px; font-size: 0.9em;">
-                <li>"I’m a [adjective] person..."</li>
-                <li>"He/She tends to be..."</li>
-                <li>"One thing you should know about them is that they are..."</li>
-                <li>"If I had to describe them in one or two words, that would be..."</li>
-                <li>"What stands out most about him is that he is..."</li>
-                <li>"I consider myself to be..."</li>
-            </ul>
+    <!-- KNOWLEDGE BASE -->
+    <div class="knowledge-section">
+        <h2>📋 Vocabulary: Personality Traits</h2>
+        <p>When describing yourself in a professional setting, choose words that accurately reflect your working style and social interactions.</p>
+        <div class="vocab-grid">
+            <div class="vocab-item"><strong>Reserved:</strong> Keeps feelings hidden; thinks before speaking.</div>
+            <div class="vocab-item"><strong>Sociable:</strong> Enjoys being with others; friendly.</div>
+            <div class="vocab-item"><strong>Assertive:</strong> Confident and direct in expressing ideas.</div>
+            <div class="vocab-item"><strong>Easygoing:</strong> Relaxed and tolerant; easy to work with.</div>
+            <div class="vocab-item"><strong>Strict:</strong> Demands that rules concerning behavior are obeyed.</div>
+            <div class="vocab-item"><strong>Outgoing:</strong> Socially confident and highly interactive.</div>
+            <div class="vocab-item"><strong>Optimistic:</strong> Hopeful and confident about the future.</div>
+            <div class="vocab-item"><strong>Pessimistic:</strong> Tending to see the worst aspect of things.</div>
         </div>
     </div>
 
-    <!-- Exercises -->
-    <div class="exercise-section" id="ex-a">
-        <h3>Exercise A: Match the Description 🔗</h3>
-        <p>Read the description of the person and select the phrase that best matches their personality.</p>
+    <div class="knowledge-section">
+        <h2>📈 Language Focus: Intensifiers</h2>
+        <p>Intensifiers are words placed before adjectives or adverbs to modify their strength. In an interview, using them makes your descriptions sound much more natural and precise.</p>
         
-        <div class="question-block">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 15px;">
+            <div>
+                <strong>Strong Intensifiers</strong> (very, so, really)
+                <p style="font-size: 0.9em; color: #555;">Used to emphasize a strong characteristic.</p>
+                <ul>
+                    <li>"I am a <strong>very</strong> outgoing person."</li>
+                    <li>"She works <strong>really</strong> hard under pressure."</li>
+                </ul>
+            </div>
+            <div>
+                <strong>Moderate Intensifiers</strong> (pretty, quite, rather, fairly)
+                <p style="font-size: 0.9em; color: #555;">Used to soften a characteristic, often used with negative traits to sound more professional.</p>
+                <ul>
+                    <li>"I can be <strong>quite</strong> shy at first."</li>
+                    <li>"He is a <strong>rather</strong> reserved manager."</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="knowledge-section">
+        <h2>💬 Communication: Useful Interview Structures</h2>
+        <p>Avoid simply saying "I am happy" or "I am strict." Use full conversational structures to sound professional.</p>
+        <ul>
+            <li><strong>Describing yourself:</strong> "I consider myself to be quite sociable."</li>
+            <li><strong>Describing a colleague:</strong> "What stands out most about him is that he is very easygoing."</li>
+            <li><strong>Adding important details:</strong> "One thing you should know about me is that I am highly organized."</li>
+            <li><strong>Summarizing:</strong> "If I had to describe myself in one word, that would be assertive."</li>
+        </ul>
+        <div class="example-box">
+            "Interviewer: How would your previous team describe you?<br>
+            Candidate: If I had to describe myself in one word, that would be <strong>assertive</strong>. However, one thing you should know about me is that I am also <strong>rather easygoing</strong> when we face sudden changes."
+        </div>
+    </div>
+
+    <!-- EXERCISES -->
+    
+    <div class="exercise-block" id="ex-a">
+        <div class="exercise-header">
+            <div class="exercise-number">1</div>
+            <div class="exercise-title">
+                <h3>Match the Description</h3>
+                <p>Read the description of the person and select the phrase that best matches their personality.</p>
+            </div>
+        </div>
+
+        <div class="question">
             <p>1. Mark loves going to networking events, talking to new clients, and never runs out of energy in crowds.</p>
-            <select id="match1">
+            <select id="match1" class="eval-select">
                 <option value="">-- Select an option --</option>
                 <option value="correct">He is a very outgoing person.</option>
                 <option value="wrong1">He is a rather quiet person.</option>
@@ -299,9 +423,9 @@
             </select>
         </div>
 
-        <div class="question-block">
+        <div class="question">
             <p>2. Sarah always expects the worst out of business deals and rarely smiles when facing a new project.</p>
-            <select id="match2">
+            <select id="match2" class="eval-select">
                 <option value="">-- Select an option --</option>
                 <option value="wrong1">She is a very optimistic person.</option>
                 <option value="correct">She is a rather pessimistic person.</option>
@@ -309,9 +433,9 @@
             </select>
         </div>
 
-        <div class="question-block">
+        <div class="question">
             <p>3. David is relaxed, doesn't mind when meeting times change, and gets along smoothly with the whole team.</p>
-            <select id="match3">
+            <select id="match3" class="eval-select">
                 <option value="">-- Select an option --</option>
                 <option value="wrong1">He is a so assertive person.</option>
                 <option value="wrong2">He is a fairly shy person.</option>
@@ -320,106 +444,116 @@
         </div>
     </div>
 
-    <div class="exercise-section" id="ex-b">
-        <h3>Exercise B: Unscramble the Sentences ✍️</h3>
-        <p>Organize the words to create correct personality descriptions. <em>(Don't use capital letters or periods unless you want to!)</em></p>
+    <div class="exercise-block" id="ex-b">
+        <div class="exercise-header">
+            <div class="exercise-number">2</div>
+            <div class="exercise-title">
+                <h3>Unscramble the Sentences</h3>
+                <p>Organize the words to create correct personality descriptions. <em>(Capital letters and punctuation are not strictly graded)</em></p>
+            </div>
+        </div>
 
-        <div class="question-block">
-            <div class="scrambled-words">tends / be / rather / she / to / shy</div>
-            <input type="text" id="unscramble1" placeholder="Type the sentence here...">
+        <div class="question">
+            <div class="scrambled">tends / be / rather / she / to / shy</div>
+            <input type="text" id="unscramble1" class="eval-text" placeholder="Type here...">
         </div>
-        <div class="question-block">
-            <div class="scrambled-words">myself / be / consider / sociable / very / I / to</div>
-            <input type="text" id="unscramble2" placeholder="Type the sentence here...">
+        <div class="question">
+            <div class="scrambled">myself / be / consider / sociable / very / I / to</div>
+            <input type="text" id="unscramble2" class="eval-text" placeholder="Type here...">
         </div>
-        <div class="question-block">
-            <div class="scrambled-words">about / is / what / out / stands / him / most / he / easygoing / is / very / that</div>
-            <input type="text" id="unscramble3" placeholder="Type the sentence here...">
+        <div class="question">
+            <div class="scrambled">about / is / what / out / stands / him / most / he / easygoing / is / very / that</div>
+            <input type="text" id="unscramble3" class="eval-text" placeholder="Type here...">
         </div>
-        <div class="question-block">
-            <div class="scrambled-words">person / am / quite / a / I / reserved</div>
-            <input type="text" id="unscramble4" placeholder="Type the sentence here...">
+        <div class="question">
+            <div class="scrambled">person / am / quite / a / I / reserved</div>
+            <input type="text" id="unscramble4" class="eval-text" placeholder="Type here...">
         </div>
-        <div class="question-block">
-            <div class="scrambled-words">know / thing / you / should / one / is / serious / I / am / pretty / that</div>
-            <input type="text" id="unscramble5" placeholder="Type the sentence here...">
+        <div class="question">
+            <div class="scrambled">know / thing / you / should / one / is / serious / I / am / pretty / that</div>
+            <input type="text" id="unscramble5" class="eval-text" placeholder="Type here...">
         </div>
     </div>
 
-    <div class="exercise-section" id="ex-c">
-        <h3>Exercise C: Fill in the Blanks 📝</h3>
-        <p>Complete the professional description. Use the words from the word bank:</p>
-        <p style="font-weight:bold; color:var(--bg-dark);">[ highly | assertive | quite | sociable | rather | quiet ]</p>
-        
-        <p style="line-height: 2.2;">
-            "In my previous roles, my colleagues often mentioned that I am a <input type="text" class="inline-input" id="blank1"> 
-            <input type="text" class="inline-input" id="blank2"> professional when leading a team and making decisions. I consider myself to be 
-            <input type="text" class="inline-input" id="blank3"> <input type="text" class="inline-input" id="blank4">, which helps me build strong relationships with our clients and stakeholders. However, when working alone on complex data analysis, I can be 
-            <input type="text" class="inline-input" id="blank5"> <input type="text" class="inline-input" id="blank6"> and deeply focused."
-        </p>
+    <div class="exercise-block" id="ex-c">
+        <div class="exercise-header">
+            <div class="exercise-number">3</div>
+            <div class="exercise-title">
+                <h3>Fill in the Blanks</h3>
+                <p>Complete the professional description using words from the box. Read the context carefully.</p>
+            </div>
+        </div>
+
+        <div class="word-bank">
+            [ highly &nbsp;|&nbsp; assertive &nbsp;|&nbsp; very &nbsp;|&nbsp; quiet &nbsp;|&nbsp; strict &nbsp;|&nbsp; fun-loving ]
+        </div>
+
+        <div class="question" style="line-height: 2.4; font-size: 1.1em;">
+            "In my previous roles, my colleagues often mentioned that I am a <input type="text" class="inline-input eval-text" id="blank1"> organized professional. When leading a team, I consider myself to be quite <input type="text" class="inline-input eval-text" id="blank2"> in my decision-making, ensuring tasks are completed efficiently. On a social level, I am naturally a <input type="text" class="inline-input eval-text" id="blank3"> sociable person, which helps me build strong relationships with clients during meetings. However, when working alone on complex data analysis, I prefer a completely <input type="text" class="inline-input eval-text" id="blank4"> environment to stay deeply focused."
+        </div>
     </div>
 
-    <div class="exercise-section" id="ex-d">
-        <h3>Exercise D: Reading Comprehension 📖</h3>
-        <p>Based on the text in Exercise C, answer the following questions:</p>
-        
-        <div class="question-block">
+    <div class="exercise-block" id="ex-d">
+        <div class="exercise-header">
+            <div class="exercise-number">4</div>
+            <div class="exercise-title">
+                <h3>Reading Comprehension</h3>
+                <p>Based on the text in Exercise 3, answer the following questions.</p>
+            </div>
+        </div>
+
+        <div class="question">
             <p><strong>1. How does the candidate act when analyzing complex data?</strong></p>
             <div class="radio-group" id="rc1">
-                <label><input type="radio" name="q1" value="wrong"> a) They become talkative and outgoing.</label>
-                <label><input type="radio" name="q1" value="correct"> b) They become quiet and focused.</label>
-                <label><input type="radio" name="q1" value="wrong"> c) They become strict and pessimistic.</label>
+                <label class="radio-label"><input type="radio" name="q1" value="wrong"> a) They become highly sociable and outgoing.</label>
+                <label class="radio-label"><input type="radio" name="q1" value="correct"> b) They prefer silence and deep focus.</label>
+                <label class="radio-label"><input type="radio" name="q1" value="wrong"> c) They become strict with their coworkers.</label>
             </div>
         </div>
 
-        <div class="question-block">
-            <p><strong>2. What personality trait helps the candidate build relationships with clients?</strong></p>
+        <div class="question">
+            <p><strong>2. What helps the candidate build relationships with clients?</strong></p>
             <div class="radio-group" id="rc2">
-                <label><input type="radio" name="q2" value="wrong"> a) Being reserved.</label>
-                <label><input type="radio" name="q2" value="correct"> b) Being sociable.</label>
-                <label><input type="radio" name="q2" value="wrong"> c) Being strict.</label>
+                <label class="radio-label"><input type="radio" name="q2" value="wrong"> a) Being reserved and quiet.</label>
+                <label class="radio-label"><input type="radio" name="q2" value="correct"> b) Being a very sociable person.</label>
+                <label class="radio-label"><input type="radio" name="q2" value="wrong"> c) Being highly assertive in decision-making.</label>
             </div>
         </div>
 
-        <div class="question-block">
+        <div class="question">
             <p><strong>3. Where could the phrase <em>"I always make sure everyone's voice is heard"</em> be best added to improve the text?</strong></p>
             <div class="radio-group" id="rc3">
-                <label><input type="radio" name="q3" value="correct"> a) Right after describing themselves as assertive when leading a team.</label>
-                <label><input type="radio" name="q3" value="wrong"> b) At the very end of the paragraph.</label>
-                <label><input type="radio" name="q3" value="wrong"> c) Before mentioning data analysis.</label>
+                <label class="radio-label"><input type="radio" name="q3" value="correct"> a) Right after discussing being assertive in decision-making.</label>
+                <label class="radio-label"><input type="radio" name="q3" value="wrong"> b) At the very end of the paragraph.</label>
+                <label class="radio-label"><input type="radio" name="q3" value="wrong"> c) Before mentioning data analysis.</label>
             </div>
         </div>
     </div>
 
-    <button class="btn" onclick="gradeExercises()">✔️ Auto-Grade Exercises A-D</button>
-
-    <div class="exercise-section" style="border: 3px dashed var(--accent);">
-        <h3>Exercise E: Final Challenge 🚀</h3>
-        <p>Now it's your turn! Write a short description of yourself in a professional tone, as if you were in a job interview. Use at least <strong>3 vocabulary words</strong> and <strong>2 intensifiers</strong> from the lesson.</p>
-        <textarea placeholder="I consider myself to be..."></textarea>
-        
-        <div class="challenge-note">
-            ⚠️ <strong>Don't forget!</strong> Save your work and send this final text to your teacher for personalized feedback.
+    <div class="exercise-block challenge-box question">
+        <div class="exercise-header" style="margin-bottom: 10px;">
+            <div class="exercise-number" style="background-color: var(--accent-color);">5</div>
+            <div class="exercise-title">
+                <h3>Final Challenge <em>(Teacher Evaluated)</em></h3>
+                <p>Write a short description of yourself in a professional tone, as if you were in a job interview. Use at least <strong>3 vocabulary words</strong> and <strong>2 intensifiers</strong> from the lesson.</p>
+            </div>
         </div>
+        <textarea placeholder="I consider myself to be..."></textarea>
+        <p style="color: #666; font-size: 0.9em; text-align: right;">⚠️ Take a screenshot of this text and send it to your teacher.</p>
     </div>
 
-</div>
-
-<!-- Answer Key Modal -->
-<div id="answerModal" class="modal">
-    <div class="modal-content">
-        <span class="close-btn" onclick="closeModal()">&times;</span>
-        <h2 style="color: var(--bg-dark);">Answer Key 🗝️</h2>
-        <p>Here are the correct answers to review your mistakes:</p>
+    <!-- Hidden Answer Key Container -->
+    <div id="answerKeyContainer" class="answer-key-section">
+        <h3>🗝️ Answer Key</h3>
         
-        <h3>Exercise A</h3>
+        <p><strong>1. Match the Description</strong></p>
         <ul>
             <li>1. He is a very outgoing person.</li>
             <li>2. She is a rather pessimistic person.</li>
             <li>3. He is a pretty easygoing person.</li>
         </ul>
 
-        <h3>Exercise B</h3>
+        <p><strong>2. Unscramble the Sentences</strong></p>
         <ul>
             <li>1. She tends to be rather shy.</li>
             <li>2. I consider myself to be very sociable.</li>
@@ -428,40 +562,55 @@
             <li>5. One thing you should know is that I am pretty serious.</li>
         </ul>
 
-        <h3>Exercise C</h3>
-        <p>...I am a <strong>highly assertive</strong> professional... I consider myself to be <strong>quite sociable</strong>... I can be <strong>rather quiet</strong>...</p>
+        <p><strong>3. Fill in the Blanks</strong></p>
+        <p>...I am a <strong>highly</strong> organized... quite <strong>assertive</strong> in my decision-making... naturally a <strong>very</strong> sociable person... prefer a completely <strong>quiet</strong> environment...</p>
         
-        <h3>Exercise D</h3>
+        <p><strong>4. Reading Comprehension</strong></p>
         <ul>
-            <li>1. b) They become quiet and focused.</li>
-            <li>2. b) Being sociable.</li>
-            <li>3. a) Right after describing themselves as assertive...</li>
+            <li>1. b) They prefer silence and deep focus.</li>
+            <li>2. b) Being a very sociable person.</li>
+            <li>3. a) Right after discussing being assertive in decision-making.</li>
         </ul>
     </div>
+
+</div>
+
+<!-- Sticky Grading Footer -->
+<div class="sticky-footer">
+    <button class="btn" id="gradeBtn" onclick="gradeExercises()">✔️ Auto-Grade Worksheet</button>
+    <div class="score-display" id="finalScoreDisplay">Score: <span id="scoreNumber">0/100</span></div>
+    <button class="btn btn-secondary" id="showAnswersBtn" onclick="toggleAnswerKey()">📖 View Answer Key</button>
 </div>
 
 <script>
-    let attemptMade = false;
+    let graded = false;
 
     // Utility function to clean text for forgiving grading
     function cleanText(text) {
-        return text.replace(/[.,!?]/g, "") // Remove punctuation
-                   .replace(/['’]/g, "")    // Remove apostrophes (allows Im = I am)
-                   .replace(/\s+/g, " ")    // Normalize spaces
+        return text.replace(/[.,!?]/g, "") 
+                   .replace(/['’]/g, "")    
+                   .replace(/\s+/g, " ")    
                    .trim()
                    .toLowerCase();
     }
 
     function gradeExercises() {
-        // Exercise A
+        let totalPoints = 15;
+        let earnedPoints = 0;
+
+        // Exercise 1: Selects (3 pts)
         for (let i = 1; i <= 3; i++) {
             let select = document.getElementById('match' + i);
             select.classList.remove('correct', 'incorrect');
-            if (select.value === 'correct') select.classList.add('correct');
-            else if (select.value !== '') select.classList.add('incorrect');
+            if (select.value === 'correct') {
+                select.classList.add('correct');
+                earnedPoints++;
+            } else if (select.value !== '') {
+                select.classList.add('incorrect');
+            }
         }
 
-        // Exercise B (Unscramble)
+        // Exercise 2: Unscramble (5 pts)
         const unscrambleAnswers = [
             ["she tends to be rather shy"],
             ["i consider myself to be very sociable"],
@@ -478,23 +627,22 @@
             if (cleanedInput !== "") {
                 if (unscrambleAnswers[i-1].includes(cleanedInput)) {
                     input.classList.add('correct');
+                    earnedPoints++;
                 } else {
                     input.classList.add('incorrect');
                 }
             }
         }
 
-        // Exercise C (Fill in blanks)
+        // Exercise 3: Fill in blanks (4 pts)
         const blankAnswers = [
-            ["highly", "very", "really"], // blank 1
+            ["highly"], // blank 1
             ["assertive"], // blank 2
-            ["quite", "pretty", "very"], // blank 3
-            ["sociable", "outgoing", "friendly"], // blank 4
-            ["rather", "pretty", "quite"], // blank 5
-            ["quiet", "reserved"] // blank 6
+            ["very"], // blank 3
+            ["quiet"] // blank 4
         ];
 
-        for (let i = 1; i <= 6; i++) {
+        for (let i = 1; i <= 4; i++) {
             let input = document.getElementById('blank' + i);
             input.classList.remove('correct', 'incorrect');
             let cleanedInput = cleanText(input.value);
@@ -502,46 +650,61 @@
             if (cleanedInput !== "") {
                 if (blankAnswers[i-1].includes(cleanedInput)) {
                     input.classList.add('correct');
+                    earnedPoints++;
                 } else {
                     input.classList.add('incorrect');
                 }
             }
         }
 
-        // Exercise D (Radio buttons)
+        // Exercise 4: Radio Buttons (3 pts)
         for (let i = 1; i <= 3; i++) {
             let radios = document.getElementsByName('q' + i);
             let labels = document.querySelectorAll(`#rc${i} label`);
             
             labels.forEach(label => label.classList.remove('correct', 'incorrect'));
+            let answeredCorrectly = false;
 
             for (let j = 0; j < radios.length; j++) {
                 if (radios[j].checked) {
                     if (radios[j].value === 'correct') {
                         labels[j].classList.add('correct');
+                        answeredCorrectly = true;
                     } else {
                         labels[j].classList.add('incorrect');
                     }
                 }
             }
+            if(answeredCorrectly) earnedPoints++;
         }
 
-        // Show Modal only after the FIRST attempt
-        if (!attemptMade) {
-            document.getElementById('answerModal').style.display = 'block';
-            attemptMade = true;
+        // Calculate Score out of 100
+        let percentage = Math.round((earnedPoints / totalPoints) * 100);
+        
+        // Update UI
+        document.getElementById('scoreNumber').innerText = percentage + "/100";
+        document.getElementById('finalScoreDisplay').style.display = 'flex';
+        
+        // Only show Answer Key button after first attempt
+        if (!graded) {
+            document.getElementById('showAnswersBtn').style.display = 'flex';
+            document.getElementById('gradeBtn').innerText = "🔄 Update Score";
+            graded = true;
         }
     }
 
-    function closeModal() {
-        document.getElementById('answerModal').style.display = 'none';
-    }
-
-    // Close modal when clicking outside of it
-    window.onclick = function(event) {
-        let modal = document.getElementById('answerModal');
-        if (event.target == modal) {
-            modal.style.display = "none";
+    function toggleAnswerKey() {
+        let answerKey = document.getElementById('answerKeyContainer');
+        let btn = document.getElementById('showAnswersBtn');
+        
+        if (answerKey.style.display === 'none' || answerKey.style.display === '') {
+            answerKey.style.display = 'block';
+            btn.innerText = "📖 Hide Answer Key";
+            // Scroll down slightly so student sees it opened
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        } else {
+            answerKey.style.display = 'none';
+            btn.innerText = "📖 View Answer Key";
         }
     }
 </script>
