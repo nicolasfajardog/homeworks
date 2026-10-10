@@ -12,7 +12,7 @@
             --text-color: #0B0A09;
             --error-color: #E54B4B;
             --correct-color: #44CF6C;
-            --accent-color: #A91D7A; /* A slightly lighter shade of the main purple for accents */
+            --accent-color: #A91D7A;
             --subtle-gray: #E8DCD6;
             --card-shadow: 0 8px 24px rgba(120, 2, 91, 0.15);
         }
@@ -22,7 +22,7 @@
             color: var(--text-color);
             font-family: 'Inter', sans-serif;
             margin: 0;
-            padding: 40px 20px 120px 20px; /* Extra bottom padding for sticky bar */
+            padding: 40px 20px 120px 20px;
             display: flex;
             justify-content: center;
             line-height: 1.6;
@@ -281,7 +281,7 @@
             font-size: 1.5em;
             font-weight: 800;
             color: var(--text-color);
-            display: none; /* Hidden until graded */
+            display: none; 
             align-items: center;
             gap: 10px;
         }
@@ -311,7 +311,7 @@
         .btn-secondary {
             background-color: var(--subtle-gray);
             color: var(--text-color);
-            display: none; /* Hidden until graded */
+            display: none; 
         }
         
         .btn-secondary:hover { background-color: #d1c4bc; }
@@ -485,11 +485,11 @@
         </div>
 
         <div class="word-bank">
-            [ highly &nbsp;|&nbsp; assertive &nbsp;|&nbsp; very &nbsp;|&nbsp; quiet &nbsp;|&nbsp; strict &nbsp;|&nbsp; fun-loving ]
+            [ highly &nbsp;|&nbsp; assertive &nbsp;|&nbsp; outgoing &nbsp;|&nbsp; quiet &nbsp;|&nbsp; pessimistic &nbsp;|&nbsp; reserved ]
         </div>
 
         <div class="question" style="line-height: 2.4; font-size: 1.1em;">
-            "In my previous roles, my colleagues often mentioned that I am a <input type="text" class="inline-input eval-text" id="blank1"> organized professional. When leading a team, I consider myself to be quite <input type="text" class="inline-input eval-text" id="blank2"> in my decision-making, ensuring tasks are completed efficiently. On a social level, I am naturally a <input type="text" class="inline-input eval-text" id="blank3"> sociable person, which helps me build strong relationships with clients during meetings. However, when working alone on complex data analysis, I prefer a completely <input type="text" class="inline-input eval-text" id="blank4"> environment to stay deeply focused."
+            "In my previous roles, my colleagues often mentioned that I am a <input type="text" class="inline-input eval-text" id="blank1"> organized professional. When leading a team, I consider myself to be quite <input type="text" class="inline-input eval-text" id="blank2"> in my decision-making, ensuring tasks are completed efficiently without hesitation. On a social level, I am naturally an <input type="text" class="inline-input eval-text" id="blank3"> person, which helps me start conversations with new clients easily. However, when working alone on complex data analysis, I prefer a completely <input type="text" class="inline-input eval-text" id="blank4"> environment to stay deeply focused."
         </div>
     </div>
 
@@ -515,7 +515,7 @@
             <p><strong>2. What helps the candidate build relationships with clients?</strong></p>
             <div class="radio-group" id="rc2">
                 <label class="radio-label"><input type="radio" name="q2" value="wrong"> a) Being reserved and quiet.</label>
-                <label class="radio-label"><input type="radio" name="q2" value="correct"> b) Being a very sociable person.</label>
+                <label class="radio-label"><input type="radio" name="q2" value="correct"> b) Being an outgoing person.</label>
                 <label class="radio-label"><input type="radio" name="q2" value="wrong"> c) Being highly assertive in decision-making.</label>
             </div>
         </div>
@@ -563,12 +563,12 @@
         </ul>
 
         <p><strong>3. Fill in the Blanks</strong></p>
-        <p>...I am a <strong>highly</strong> organized... quite <strong>assertive</strong> in my decision-making... naturally a <strong>very</strong> sociable person... prefer a completely <strong>quiet</strong> environment...</p>
+        <p>...I am a <strong>highly</strong> organized... quite <strong>assertive</strong> in my decision-making... naturally an <strong>outgoing</strong> person... prefer a completely <strong>quiet</strong> environment...</p>
         
         <p><strong>4. Reading Comprehension</strong></p>
         <ul>
             <li>1. b) They prefer silence and deep focus.</li>
-            <li>2. b) Being a very sociable person.</li>
+            <li>2. b) Being an outgoing person.</li>
             <li>3. a) Right after discussing being assertive in decision-making.</li>
         </ul>
     </div>
@@ -638,7 +638,7 @@
         const blankAnswers = [
             ["highly"], // blank 1
             ["assertive"], // blank 2
-            ["very"], // blank 3
+            ["outgoing"], // blank 3
             ["quiet"] // blank 4
         ];
 
@@ -700,7 +700,6 @@
         if (answerKey.style.display === 'none' || answerKey.style.display === '') {
             answerKey.style.display = 'block';
             btn.innerText = "📖 Hide Answer Key";
-            // Scroll down slightly so student sees it opened
             window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
         } else {
             answerKey.style.display = 'none';
