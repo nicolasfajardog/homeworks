@@ -187,51 +187,81 @@
             margin-bottom: 20px;
         }
 
-        /* Match Exercise Styles */
+        /* Match Lines Exercise Styles */
         .match-container {
+            position: relative;
+            width: 100%;
             display: flex;
             justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 20px;
+            align-items: stretch;
+            min-height: 450px;
+            padding: 20px 0;
+            box-sizing: border-box;
+            background: #fff;
+            border-radius: 12px;
+            border: 1px solid var(--subtle-gray);
+        }
+
+        #lines-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
         }
 
         .match-col {
-            flex: 1;
-            min-width: 200px;
-        }
-
-        .match-row {
             display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-            font-size: 1.1em;
+            flex-direction: column;
+            gap: 20px;
+            z-index: 2;
+            width: 40%;
         }
 
-        .match-input {
-            width: 40px !important;
-            height: 40px;
-            text-align: center;
-            margin-left: 15px;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-
-        .letter-item {
-            background: var(--sheet-color);
-            padding: 10px 15px;
-            margin-bottom: 10px;
+        .match-item {
+            background: #fff;
+            border: 2px solid var(--subtle-gray);
+            padding: 12px 20px;
             border-radius: 8px;
-            font-weight: 500;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s;
+            user-select: none;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
+
+        .match-item:hover { border-color: var(--accent-color); }
+        .match-item.selected {
+            background: var(--accent-color);
+            color: white;
+            border-color: var(--accent-color);
+        }
+        .match-item.connected {
+            border-color: var(--bg-color);
+            background: #f9f9f9;
+        }
+        .match-item.correct {
+            border-color: var(--correct-color);
+            background: rgba(68, 207, 108, 0.1);
+        }
+        .match-item.incorrect {
+            border-color: var(--error-color);
+            background: rgba(229, 75, 75, 0.1);
+        }
+
+        .match-line { transition: stroke 0.3s; }
 
         /* Inputs */
         input[type="text"], textarea {
             width: 100%;
-            padding: 12px 15px;
+            padding: 14px 18px; 
             border: 2px solid var(--subtle-gray);
             border-radius: 8px;
             font-family: 'Inter', sans-serif;
-            font-size: 1em;
+            font-size: 1.05em; 
             box-sizing: border-box;
             transition: all 0.2s;
             background-color: #fafafa;
@@ -244,7 +274,7 @@
         }
 
         input.inline-input {
-            width: 140px;
+            width: 180px; 
             display: inline-block;
             margin: 0 5px;
             text-align: center;
@@ -267,34 +297,25 @@
             color: #0B0A09;
         }
 
-        /* Video Embed */
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            height: 0;
-            overflow: hidden;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            border: 2px solid var(--subtle-gray);
-        }
-        
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
+        /* Audio Player Styling */
+        audio {
             width: 100%;
-            height: 100%;
+            height: 50px;
+            border-radius: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
         /* Radio Buttons */
         .radio-group label {
             display: block;
             margin: 10px 0;
-            padding: 10px 15px;
+            padding: 12px 15px;
             border: 1px solid var(--subtle-gray);
             border-radius: 8px;
             cursor: pointer;
             transition: background 0.2s;
+            font-size: 1.05em;
         }
 
         .radio-group label:hover { background: #f9f9f9; }
@@ -444,7 +465,7 @@
         <h2>📈 Language Focus: Softening Expressions</h2>
         <p>In English, it is often considered rude to use direct negative adjectives (e.g., "He is selfish"). Instead, we use <strong>softening expressions</strong> to make criticism sound more polite.</p>
         
-        <ul>
+        <ul style="font-size: 1.05em; line-height: 1.8;">
             <li><strong>not the + -est</strong>: <em>"He's not the most generous person." / "She's not the cleanest roommate."</em></li>
             <li><strong>not as ... as</strong>: <em>"She is not as organized as she could be."</em></li>
             <li><strong>could be more ...</strong>: <em>"They could be more punctual."</em></li>
@@ -477,28 +498,31 @@
             <div class="exercise-number">1</div>
             <div class="exercise-title">
                 <h3>Match the Simile</h3>
-                <p>Type the correct <strong>Letter (A-G)</strong> into the box next to the matching quality to complete the animal simile.</p>
+                <p><strong>Click</strong> a trait on the left, then <strong>click</strong> the matching animal on the right to draw a connecting line.</p>
             </div>
         </div>
 
-        <div class="question match-container">
-            <div class="match-col">
-                <div class="match-row">1. Wise <input type="text" maxlength="1" class="match-input eval-text" id="match1"></div>
-                <div class="match-row">2. Sly <input type="text" maxlength="1" class="match-input eval-text" id="match2"></div>
-                <div class="match-row">3. Quiet <input type="text" maxlength="1" class="match-input eval-text" id="match3"></div>
-                <div class="match-row">4. Slow <input type="text" maxlength="1" class="match-input eval-text" id="match4"></div>
-                <div class="match-row">5. Stubborn <input type="text" maxlength="1" class="match-input eval-text" id="match5"></div>
-                <div class="match-row">6. Strong <input type="text" maxlength="1" class="match-input eval-text" id="match6"></div>
-                <div class="match-row">7. Busy <input type="text" maxlength="1" class="match-input eval-text" id="match7"></div>
+        <div class="match-container" id="match-container">
+            <svg id="lines-svg"></svg>
+            
+            <div class="match-col left-col">
+                <div class="match-item left-item" data-id="1" onclick="selectLeft(this)">Stubborn</div>
+                <div class="match-item left-item" data-id="2" onclick="selectLeft(this)">Quiet</div>
+                <div class="match-item left-item" data-id="3" onclick="selectLeft(this)">Wise</div>
+                <div class="match-item left-item" data-id="4" onclick="selectLeft(this)">Busy</div>
+                <div class="match-item left-item" data-id="5" onclick="selectLeft(this)">Slow</div>
+                <div class="match-item left-item" data-id="6" onclick="selectLeft(this)">Sly</div>
+                <div class="match-item left-item" data-id="7" onclick="selectLeft(this)">Strong</div>
             </div>
-            <div class="match-col">
-                <div class="letter-item"><strong>A.</strong> as a mouse</div>
-                <div class="letter-item"><strong>B.</strong> as an ox</div>
-                <div class="letter-item"><strong>C.</strong> as an owl</div>
-                <div class="letter-item"><strong>D.</strong> as a bee</div>
-                <div class="letter-item"><strong>E.</strong> as a fox</div>
-                <div class="letter-item"><strong>F.</strong> as a mule</div>
-                <div class="letter-item"><strong>G.</strong> as a snail</div>
+            
+            <div class="match-col right-col">
+                <div class="match-item right-item" data-match="7" onclick="selectRight(this)">as an ox</div>
+                <div class="match-item right-item" data-match="5" onclick="selectRight(this)">as a snail</div>
+                <div class="match-item right-item" data-match="3" onclick="selectRight(this)">as an owl</div>
+                <div class="match-item right-item" data-match="4" onclick="selectRight(this)">as a bee</div>
+                <div class="match-item right-item" data-match="6" onclick="selectRight(this)">as a fox</div>
+                <div class="match-item right-item" data-match="1" onclick="selectRight(this)">as a mule</div>
+                <div class="match-item right-item" data-match="2" onclick="selectRight(this)">as a mouse</div>
             </div>
         </div>
     </div>
@@ -516,13 +540,13 @@
             [ bossy &nbsp;|&nbsp; most &nbsp;|&nbsp; selfish &nbsp;|&nbsp; as &nbsp;|&nbsp; irresponsible &nbsp;|&nbsp; more ]
         </div>
 
-        <div class="question" style="line-height: 2.2;">
+        <div class="question" style="line-height: 2.4; font-size: 1.05em;">
             <p><strong>Complaint 1:</strong> "My roommate is always telling me exactly how to clean the kitchen. She is so <input type="text" class="inline-input eval-text" id="blank1">! Honestly, she's not the <input type="text" class="inline-input eval-text" id="blank2"> relaxed person to live with."</p>
         </div>
-        <div class="question" style="line-height: 2.2;">
-            <p><strong>Complaint 2:</strong> "He never pays his share of the internet bill on time. He can be quite <input type="text" class="inline-input eval-text" id="blank3"> when it comes to money. I really think he could be <input type="text" class="inline-input eval-text" id="blank4"> mindful of our budget."</p>
+        <div class="question" style="line-height: 2.4; font-size: 1.05em;">
+            <p><strong>Complaint 2:</strong> "He never pays his share of the internet bill on time. He is extremely <input type="text" class="inline-input eval-text" id="blank3"> with his finances. I really think he could be <input type="text" class="inline-input eval-text" id="blank4"> mindful of our shared budget."</p>
         </div>
-        <div class="question" style="line-height: 2.2;">
+        <div class="question" style="line-height: 2.4; font-size: 1.05em;">
             <p><strong>Complaint 3:</strong> "She eats my groceries without asking, which is incredibly <input type="text" class="inline-input eval-text" id="blank5">. She is definitely not <input type="text" class="inline-input eval-text" id="blank6"> considerate as she could be."</p>
         </div>
     </div>
@@ -562,50 +586,50 @@
         <div class="exercise-header">
             <div class="exercise-number">4</div>
             <div class="exercise-title">
-                <h3>Video Comprehension <span class="double-points-badge">Double Points</span></h3>
-                <p>Watch the video below where someone discusses a difficult coworker. Then, answer the multiple-choice questions.</p>
+                <h3>Listening Comprehension <span class="double-points-badge">Double Points</span></h3>
+                <p>Listen to Emma and Chloe complaining about their cousin Mark. Then, answer the multiple-choice questions.</p>
             </div>
         </div>
 
         <div class="question">
-            <!-- INSTRUCTOR NOTE: Replace "YOUR_YOUTUBE_ID_HERE" with the actual YouTube video ID (e.g. "dQw4w9WgXcQ") -->
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/YOUR_YOUTUBE_ID_HERE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
+            <!-- Google Drive Audio Embed -->
+            <audio controls src="https://drive.google.com/uc?export=download&id=1mIdXNTi9ihdCFI4XEQiFlo0cjFfejsYV">
+                Your browser does not support the audio element.
+            </audio>
 
-            <p><strong>1. What is the main problem the speaker has with their coworker?</strong></p>
+            <p><strong>1. What did Mark do that Chloe found incredibly inconsiderate?</strong></p>
             <div class="radio-group" id="rc1">
-                <label class="radio-label"><input type="radio" name="q1" value="correct"> a) They are unhelpful and ignore requests.</label>
-                <label class="radio-label"><input type="radio" name="q1" value="wrong"> b) They are too quiet during meetings.</label>
-                <label class="radio-label"><input type="radio" name="q1" value="wrong"> c) They are too strong and intimidating.</label>
+                <label class="radio-label"><input type="radio" name="q1" value="wrong"> a) He dictated their sleeping schedule.</label>
+                <label class="radio-label"><input type="radio" name="q1" value="correct"> b) He left wet towels on the living room floor.</label>
+                <label class="radio-label"><input type="radio" name="q1" value="wrong"> c) He refused to pay for his groceries.</label>
             </div>
             
-            <p><strong>2. How does the speaker politely soften their complaint about the coworker's effort?</strong></p>
+            <p><strong>2. How does Chloe politely describe Mark's inability to wait calmly?</strong></p>
             <div class="radio-group" id="rc2">
-                <label class="radio-label"><input type="radio" name="q2" value="wrong"> a) "He's the absolute worst worker."</label>
-                <label class="radio-label"><input type="radio" name="q2" value="correct"> b) "He's not the most proactive person."</label>
-                <label class="radio-label"><input type="radio" name="q2" value="wrong"> c) "He is as slow as a snail."</label>
+                <label class="radio-label"><input type="radio" name="q2" value="wrong"> a) She says he is short-tempered.</label>
+                <label class="radio-label"><input type="radio" name="q2" value="correct"> b) She says he is not too patient.</label>
+                <label class="radio-label"><input type="radio" name="q2" value="wrong"> c) She says he is as slow as a snail.</label>
             </div>
 
-            <p><strong>3. Which animal simile best describes the coworker's refusal to use the new software?</strong></p>
+            <p><strong>3. Which animal simile is used to describe Mark when he pretends not to hear them?</strong></p>
             <div class="radio-group" id="rc3">
                 <label class="radio-label"><input type="radio" name="q3" value="correct"> a) Stubborn as a mule.</label>
-                <label class="radio-label"><input type="radio" name="q3" value="wrong"> b) Sly as a fox.</label>
-                <label class="radio-label"><input type="radio" name="q3" value="wrong"> c) Wise as an owl.</label>
+                <label class="radio-label"><input type="radio" name="q3" value="wrong"> b) Quiet as a mouse.</label>
+                <label class="radio-label"><input type="radio" name="q3" value="wrong"> c) Sly as a fox.</label>
             </div>
 
-            <p><strong>4. What does the speaker mean when they say the coworker is "not too considerate"?</strong></p>
+            <p><strong>4. What softening expression does Chloe use to say Mark is difficult to host?</strong></p>
             <div class="radio-group" id="rc4">
-                <label class="radio-label"><input type="radio" name="q4" value="wrong"> a) They are highly polite and thoughtful.</label>
-                <label class="radio-label"><input type="radio" name="q4" value="correct"> b) They are somewhat selfish with shared resources.</label>
-                <label class="radio-label"><input type="radio" name="q4" value="wrong"> c) They are too busy like a bee.</label>
+                <label class="radio-label"><input type="radio" name="q4" value="correct"> a) "He's not the easiest person to host."</label>
+                <label class="radio-label"><input type="radio" name="q4" value="wrong"> b) "He could be more helpful."</label>
+                <label class="radio-label"><input type="radio" name="q4" value="wrong"> c) "He's not as polite as he could be."</label>
             </div>
 
-            <p><strong>5. How does the speaker suggest the coworker could improve?</strong></p>
+            <p><strong>5. Why do the girls feel like they are babysitting a teenager instead of their cousin?</strong></p>
             <div class="radio-group" id="rc5">
-                <label class="radio-label"><input type="radio" name="q5" value="wrong"> a) They could be more short-tempered.</label>
-                <label class="radio-label"><input type="radio" name="q5" value="correct"> b) They could be more helpful to the team.</label>
-                <label class="radio-label"><input type="radio" name="q5" value="wrong"> c) They could be bossy and take charge.</label>
+                <label class="radio-label"><input type="radio" name="q5" value="wrong"> a) Because he is too bossy around the apartment.</label>
+                <label class="radio-label"><input type="radio" name="q5" value="correct"> b) Because he could definitely be more responsible.</label>
+                <label class="radio-label"><input type="radio" name="q5" value="wrong"> c) Because he is very selfish with his money.</label>
             </div>
         </div>
     </div>
@@ -631,7 +655,7 @@
         <h3>🗝️ Answer Key</h3>
         
         <p><strong>1. Match the Simile</strong></p>
-        <p>1. C (owl) | 2. E (fox) | 3. A (mouse) | 4. G (snail) | 5. F (mule) | 6. B (ox) | 7. D (bee)</p>
+        <p>Stubborn = mule | Quiet = mouse | Wise = owl | Busy = bee | Slow = snail | Sly = fox | Strong = ox</p>
 
         <p><strong>2. Roomie Forum Complaints</strong></p>
         <p>1. bossy / most <br> 2. irresponsible / more <br> 3. selfish / as</p>
@@ -645,8 +669,8 @@
             <li>5. She could be more hardworking.</li>
         </ul>
         
-        <p><strong>4. Video Comprehension</strong></p>
-        <p>1. a | 2. b | 3. a | 4. b | 5. b</p>
+        <p><strong>4. Listening Comprehension</strong></p>
+        <p>1. b | 2. b | 3. a | 4. a | 5. b</p>
     </div>
 
 </div>
@@ -661,7 +685,98 @@
 <script>
     let graded = false;
 
-    // Utility function to clean text for forgiving grading
+    // ----- SVG LINE DRAWING LOGIC (Exercise 1) -----
+    let selectedLeft = null;
+    let connections = {}; // leftId -> rightItemElement
+    let svglines = {}; // leftId -> SVGLineElement
+
+    function selectLeft(elem) {
+        if(graded) return;
+        document.querySelectorAll('.left-item').forEach(el => el.classList.remove('selected'));
+        elem.classList.add('selected');
+        selectedLeft = elem;
+    }
+
+    function selectRight(elem) {
+        if(graded) return;
+        if(!selectedLeft) return;
+        
+        let leftId = selectedLeft.dataset.id;
+        
+        // Remove existing connection for this left item if any
+        if(connections[leftId]) {
+            connections[leftId].classList.remove('connected');
+            if(svglines[leftId]) svglines[leftId].remove();
+        }
+
+        // Remove existing connection for this right item if connected elsewhere
+        for(let key in connections) {
+            if(connections[key] === elem) {
+                delete connections[key];
+                if(svglines[key]) svglines[key].remove();
+                break;
+            }
+        }
+
+        connections[leftId] = elem;
+        elem.classList.add('connected');
+        
+        drawLine(selectedLeft, elem, leftId);
+        
+        selectedLeft.classList.remove('selected');
+        selectedLeft.classList.add('connected');
+        selectedLeft = null;
+    }
+
+    function drawLine(leftElem, rightElem, id) {
+        let container = document.getElementById('match-container');
+        let svg = document.getElementById('lines-svg');
+        let containerRect = container.getBoundingClientRect();
+        
+        let leftRect = leftElem.getBoundingClientRect();
+        let rightRect = rightElem.getBoundingClientRect();
+        
+        // Calculate centers of the edges
+        let startX = leftRect.right - containerRect.left;
+        let startY = leftRect.top + (leftRect.height / 2) - containerRect.top;
+        
+        let endX = rightRect.left - containerRect.left;
+        let endY = rightRect.top + (rightRect.height / 2) - containerRect.top;
+        
+        let line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        line.setAttribute('x1', startX);
+        line.setAttribute('y1', startY);
+        line.setAttribute('x2', endX);
+        line.setAttribute('y2', endY);
+        line.setAttribute('stroke', '#A91D7A'); // Accent color initially
+        line.setAttribute('stroke-width', '4');
+        line.setAttribute('class', 'match-line');
+        
+        svglines[id] = line;
+        svg.appendChild(line);
+    }
+
+    // Redraw lines if window resizes
+    window.addEventListener('resize', () => {
+        let svg = document.getElementById('lines-svg');
+        svg.innerHTML = '';
+        for(let key in connections) {
+            let leftElem = document.querySelector(`.left-item[data-id="${key}"]`);
+            drawLine(leftElem, connections[key], key);
+            
+            // Reapply graded colors on resize if already graded
+            if(graded) {
+                let rightElem = connections[key];
+                if(rightElem.dataset.match === key) {
+                    svglines[key].setAttribute('stroke', '#44CF6C');
+                } else {
+                    svglines[key].setAttribute('stroke', '#E54B4B');
+                }
+            }
+        }
+    });
+
+    // ----- AUTOGRADING LOGIC -----
     function cleanText(text) {
         return text.replace(/[.,!?]/g, "") 
                    .replace(/['’]/g, "")    
@@ -674,19 +789,22 @@
         let totalPoints = 33; // 7 (A) + 6 (B) + 10 (C: 5x2) + 10 (D: 5x2)
         let earnedPoints = 0;
 
-        // Exercise 1: Letters (7 pts)
-        const matchAnswers = ["c", "e", "a", "g", "f", "b", "d"];
-        for (let i = 1; i <= 7; i++) {
-            let input = document.getElementById('match' + i);
-            input.classList.remove('correct', 'incorrect');
-            let cleaned = cleanText(input.value);
+        // Exercise 1: Lines Matching (7 pts)
+        document.querySelectorAll('.match-item').forEach(el => el.classList.remove('correct', 'incorrect'));
+        for(let leftId = 1; leftId <= 7; leftId++) {
+            let leftElem = document.querySelector(`.left-item[data-id="${leftId}"]`);
+            let rightElem = connections[leftId];
             
-            if (cleaned !== "") {
-                if (cleaned === matchAnswers[i-1]) {
-                    input.classList.add('correct');
+            if(rightElem) {
+                if(rightElem.dataset.match == leftId) {
+                    leftElem.classList.add('correct');
+                    rightElem.classList.add('correct');
+                    if(svglines[leftId]) svglines[leftId].setAttribute('stroke', '#44CF6C');
                     earnedPoints++;
                 } else {
-                    input.classList.add('incorrect');
+                    leftElem.classList.add('incorrect');
+                    rightElem.classList.add('incorrect');
+                    if(svglines[leftId]) svglines[leftId].setAttribute('stroke', '#E54B4B');
                 }
             }
         }
@@ -715,11 +833,11 @@
 
         // Exercise 3: Transform (5 questions, Double Points = 10 pts)
         const transformAnswers = [
-            ["he could be more organized"],
-            ["she is not as quiet as she could be", "she isnt as quiet as she could be", "shes not as quiet as she could be"],
-            ["he is not the most polite person", "he is not the most polite", "hes not the most polite person", "hes not the most polite", "he isnt the most polite person"],
-            ["they are not too patient", "theyre not too patient", "they arent too patient"],
-            ["she could be more hardworking"]
+            ["he could be more organized", "he could be more organised"],
+            ["she is not as quiet as she could be", "she isnt as quiet as she could be", "shes not as quiet as she could be", "she could be more quiet", "she could be quieter"],
+            ["he is not the most polite person", "he is not the most polite", "hes not the most polite person", "hes not the most polite", "he isnt the most polite person", "he is not too polite", "hes not too polite"],
+            ["they are not too patient", "theyre not too patient", "they arent too patient", "they are not the most patient", "theyre not the most patient"],
+            ["she could be more hardworking", "she is not the most hardworking", "shes not the most hardworking", "she is not too hardworking", "shes not too hardworking"]
         ];
 
         for (let i = 1; i <= 5; i++) {
@@ -765,7 +883,6 @@
         document.getElementById('scoreNumber').innerText = percentage + "/100";
         document.getElementById('finalScoreDisplay').style.display = 'flex';
         
-        // Only show Answer Key button after first attempt
         if (!graded) {
             document.getElementById('showAnswersBtn').style.display = 'flex';
             document.getElementById('gradeBtn').innerText = "🔄 Update Score";
