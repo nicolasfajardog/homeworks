@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B1.2: Discussing Ways to Learn Something New</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #78025B;
+            --sheet-color: #FFF1EB;
+            --text-color: #0B0A09;
+            --error-color: #E54B4B;
+            --correct-color: #44CF6C;
+            --accent-color: #A91D7A;
+            --subtle-gray: #E8DCD6;
+            --card-shadow: 0 8px 24px rgba(120, 2, 91, 0.15);
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 40px 20px 120px 20px;
+            display: flex;
+            justify-content: center;
+            line-height: 1.6;
+        }
+
+        .worksheet-container {
+            background-color: var(--sheet-color);
+            max-width: 950px;
+            width: 100%;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            position: relative;
+        }
+
+        header {
+            margin-bottom: 40px;
+            padding-bottom: 25px;
+            border-bottom: 2px solid var(--subtle-gray);
+        }
+
+        .level-tag {
+            background-color: var(--text-color);
+            color: var(--sheet-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            color: var(--bg-color);
+            font-weight: 800;
+            font-size: 2.8em;
+            margin: 15px 0 5px 0;
+            line-height: 1.1;
+        }
+
+        header p {
+            font-size: 1.1em;
+            color: #555;
+            margin: 0;
+            font-weight: 500;
+        }
+
+        /* Knowledge Base Section */
+        .knowledge-section {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: var(--card-shadow);
+            border-left: 6px solid var(--bg-color);
+        }
+
+        .knowledge-section h2 {
+            color: var(--bg-color);
+            margin-top: 0;
+            font-size: 1.4em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid var(--subtle-gray);
+            padding-bottom: 10px;
+        }
+
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .vocab-item {
+            background: var(--sheet-color);
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 0.95em;
+        }
+
+        .vocab-item strong { color: var(--bg-color); }
+
+        .example-box {
+            background-color: rgba(120, 2, 91, 0.05);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-style: italic;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        /* Exercise Sections */
+        .exercise-block {
+            margin-bottom: 50px;
+        }
+
+        .exercise-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .exercise-number {
+            background-color: var(--bg-color);
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+            font-weight: 700;
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
+
+        .exercise-title h3 {
+            margin: 0 0 5px 0;
+            color: var(--text-color);
+            font-size: 1.3em;
+        }
+
+        .exercise-title p {
+            margin: 0;
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        /* Question Layouts */
+        .question {
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border: 1px solid var(--subtle-gray);
+        }
+
+        .word-bank {
+            text-align: center;
+            font-weight: 600;
+            color: var(--bg-color);
+            background: #fff;
+            padding: 15px;
+            border-radius: 12px;
+            border: 2px dashed var(--subtle-gray);
+            margin-bottom: 20px;
+        }
+        
+        .article-paragraph {
+            background: #fafafa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--accent-color);
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+
+        /* Match Lines Exercise Styles */
+        .match-container {
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: stretch;
+            min-height: 550px;
+            padding: 20px 0;
+            box-sizing: border-box;
+            background: #fff;
+            border-radius: 12px;
+            border: 1px solid var(--subtle-gray);
+        }
+
+        #lines-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .match-col {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 2;
+            width: 42%;
+        }
+
+        .match-item {
+            background: #fff;
+            border: 2px solid var(--subtle-gray);
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s;
+            user-select: none;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .match-item:hover { border-color: var(--accent-color); }
+        .match-item.selected {
+            background: var(--accent-color);
+            color: white;
+            border-color: var(--accent-color);
+        }
+        .match-item.connected {
+            border-color: var(--bg-color);
+            background: #f9f9f9;
+        }
+        .match-item.correct {
+            border-color: var(--correct-color);
+            background: rgba(68, 207, 108, 0.1);
+        }
+        .match-item.incorrect {
+            border-color: var(--error-color);
+            background: rgba(229, 75, 75, 0.1);
+        }
+
+        .match-line { transition: stroke 0.3s; }
+
+        /* Inputs */
+        input[type="text"], select, textarea {
+            width: 100%;
+            padding: 14px 18px; 
+            border: 2px solid var(--subtle-gray);
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05em; 
+            box-sizing: border-box;
+            transition: all 0.2s;
+            background-color: #fafafa;
+        }
+
+        input[type="text"]:focus, select:focus, textarea:focus {
+            border-color: var(--accent-color);
+            outline: none;
+            background-color: #fff;
+        }
+
+        input.inline-input {
+            display: inline-block;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        select.eval-select {
+            margin-bottom: 15px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--bg-color);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 140px;
+        }
+
+        /* Auto-grading colors */
+        input.correct, select.correct {
+            border-color: var(--correct-color);
+            background-color: rgba(68, 207, 108, 0.1);
+            color: #0B0A09;
+        }
+        input.incorrect, select.incorrect {
+            border-color: var(--error-color);
+            background-color: rgba(229, 75, 75, 0.1);
+            color: #0B0A09;
+        }
+
+        /* Radio Buttons */
+        .radio-group label {
+            display: block;
+            margin: 10px 0;
+            padding: 12px 15px;
+            border: 1px solid var(--subtle-gray);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-size: 1.05em;
+        }
+
+        .radio-group label:hover { background: #f9f9f9; }
+        .radio-group input[type="radio"] { margin-right: 10px; }
+        
+        .radio-label.correct { 
+            border-color: var(--correct-color); 
+            background-color: rgba(68, 207, 108, 0.1); 
+            font-weight: 600; 
+        }
+        .radio-label.incorrect { 
+            border-color: var(--error-color); 
+            background-color: rgba(229, 75, 75, 0.1); 
+        }
+
+        /* Final Challenge */
+        .challenge-box {
+            border: 3px dashed var(--accent-color);
+            background: #fff;
+        }
+
+        /* Sticky Footer Grading Bar */
+        .sticky-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #ffffff;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+            padding: 20px 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap; 
+            gap: 20px;
+            box-sizing: border-box;
+            z-index: 100;
+        }
+
+        .score-display {
+            font-size: 1.5em;
+            font-weight: 800;
+            color: var(--text-color);
+            display: none; 
+            align-items: center;
+            gap: 10px;
+        }
+
+        .score-display span {
+            color: var(--bg-color);
+            font-size: 1.2em;
+        }
+
+        .btn {
+            background-color: var(--bg-color);
+            color: white;
+            border: none;
+            padding: 14px 24px;
+            font-size: 1.05em;
+            font-weight: 700;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn:hover { background-color: var(--accent-color); transform: translateY(-2px); }
+        
+        .btn-secondary {
+            background-color: var(--subtle-gray);
+            color: var(--text-color);
+            display: none; 
+        }
+        
+        .btn-secondary:hover { background-color: #d1c4bc; }
+
+        /* Answer Key Section */
+        .answer-key-section {
+            display: none;
+            background: #fff;
+            border-radius: 16px;
+            padding: 30px;
+            margin-top: 40px;
+            border: 2px solid var(--text-color);
+        }
+
+        .answer-key-section h3 {
+            color: var(--bg-color);
+            margin-top: 0;
+            border-bottom: 2px solid var(--subtle-gray);
+            padding-bottom: 10px;
+        }
+
+        .answer-key-section ul { margin-bottom: 20px; }
+        .answer-key-section li { margin-bottom: 8px; }
+
+    </style>
+</head>
+<body>
+
+<div class="worksheet-container">
+    <header>
+        <span class="level-tag">ESL Worksheet · B1.2</span>
+        <h1>Discussing Ways to Learn</h1>
+        <p>Learning Styles · Reacting to Ideas · The Sandwich Technique</p>
+    </header>
+
+    <!-- KNOWLEDGE BASE -->
+    <div class="knowledge-section">
+        <h2>📋 Vocabulary: Learning Styles</h2>
+        <p>Everyone absorbs information differently. Here are the 8 primary styles in the context of learning:</p>
+        <div class="vocab-grid">
+            <div class="vocab-item"><strong>Hands-on:</strong> Learning by touching and manipulating objects directly.</div>
+            <div class="vocab-item"><strong>Visual:</strong> Learning through images, charts, and spatial understanding.</div>
+            <div class="vocab-item"><strong>Aural:</strong> Learning by listening to spoken information and sounds.</div>
+            <div class="vocab-item"><strong>Physical:</strong> Learning through full body movement and kinesthetic actions.</div>
+            <div class="vocab-item"><strong>Verbal:</strong> Learning through written and spoken words.</div>
+            <div class="vocab-item"><strong>Logical:</strong> Learning through reasoning, systems, and problem-solving.</div>
+            <div class="vocab-item"><strong>Social:</strong> Learning by interacting and cooperating with others.</div>
+            <div class="vocab-item"><strong>Solitary:</strong> Learning by studying alone and independently.</div>
+        </div>
+    </div>
+
+    <div class="knowledge-section">
+        <h2>📈 Language Focus: Reacting to Ideas</h2>
+        <p>When discussing plans or methods, use these targeted structures to express your thoughts professionally and clearly:</p>
+        <ul style="font-size: 1.05em; line-height: 1.8;">
+            <li><strong>Expressing approval:</strong> <em>"What I like about your idea is that it is creative."</em></li>
+            <li><strong>Expressing hesitation:</strong> <em>"What concerns me is the budget it will need."</em></li>
+            <li><strong>Offering solutions:</strong> <em>"What I suggest is rethinking the budget."</em></li>
+        </ul>
+    </div>
+
+    <div class="knowledge-section">
+        <h2>💬 Communication: The Sandwich Technique</h2>
+        <p>Giving feedback can be difficult. To ensure the other person stays open and motivated, use the <strong>Sandwich Technique</strong>. It involves 3 simple steps:</p>
+        <ol style="font-size: 1.05em; line-height: 1.8;">
+            <li><strong>Say something you like</strong> (Positive reinforcement)</li>
+            <li><strong>Point out your concerns</strong> (Constructive criticism)</li>
+            <li><strong>Recommend adjustments</strong> (Actionable solution)</li>
+        </ol>
+        <div class="example-box">
+            <strong>Example Feedback to a Coworker:</strong><br>
+            "<strong>What I like about your idea is that</strong> it is very creative and engaging. However, <strong>what concerns me is</strong> the budget it will need to run for a full month. <strong>What I suggest is</strong> rethinking the timeline to fit our current financial limits."
+        </div>
+    </div>
+
+    <!-- EXERCISES -->
+    
+    <div class="exercise-block" id="ex-a">
+        <div class="exercise-header">
+            <div class="exercise-number">1</div>
+            <div class="exercise-title">
+                <h3>Read and Organize</h3>
+                <p>Read the article below about combining learning styles. Sort the correct title for each paragraph using the dropdown menus.</p>
+            </div>
+        </div>
+
+        <div class="word-bank">
+            [ Possible Titles: The Power of Mixing Methods &nbsp;|&nbsp; Real Results of Combined Learning &nbsp;|&nbsp; Why Sticking to One Style Fails ]
+        </div>
+
+        <div class="question">
+            <select id="match1" class="eval-select">
+                <option value="">-- Select a Title --</option>
+                <option value="correct">Why Sticking to One Style Fails</option>
+                <option value="wrong1">The Power of Mixing Methods</option>
+                <option value="wrong2">Real Results of Combined Learning</option>
+            </select>
+            <div class="article-paragraph">
+                For years, students have been told to find their "perfect" learning style. If you like reading, you are <strong>verbal</strong>. If you enjoy studying alone, you are <strong>solitary</strong>. However, educational psychologists now warn that sticking strictly to just one method can actually slow down your progress. Relying only on a single approach limits your brain's ability to process new information deeply, often making complex topics harder to grasp than they need to be.
+            </div>
+
+            <select id="match2" class="eval-select">
+                <option value="">-- Select a Title --</option>
+                <option value="wrong1">Why Sticking to One Style Fails</option>
+                <option value="correct">The Power of Mixing Methods</option>
+                <option value="wrong2">Real Results of Combined Learning</option>
+            </select>
+            <div class="article-paragraph">
+                Instead, experts encourage "multimodal learning," which means actively combining different styles. As education researchers note, <em>"Students need to engage with multiple modes of communication and content, paired thoughtfully together, for learning to truly stick."</em> For example, if you are studying science, reading a textbook is great, but pairing it with <strong>hands-on</strong> lab experiments or <strong>visual</strong> diagrams creates a much stronger memory. A <strong>logical</strong> thinker might enjoy analyzing data alone, but discussing it in a <strong>social</strong> study group brings entirely new perspectives.
+            </div>
+
+            <select id="match3" class="eval-select">
+                <option value="">-- Select a Title --</option>
+                <option value="wrong1">Why Sticking to One Style Fails</option>
+                <option value="wrong2">The Power of Mixing Methods</option>
+                <option value="correct">Real Results of Combined Learning</option>
+            </select>
+            <div class="article-paragraph">
+                The proof of this method is in the numbers. Recent studies show that multimodal learning is significantly more effective than single-mode learning, with some educators reporting up to a 58% increase in knowledge retention when <strong>aural</strong>, visual, and <strong>physical</strong> methods are blended together. Ultimately, diversifying your habits ensures that your brain stays active, engaged, and ready to tackle any new challenge.
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise-block" id="ex-b">
+        <div class="exercise-header">
+            <div class="exercise-number">2</div>
+            <div class="exercise-title">
+                <h3>Reading Comprehension</h3>
+                <p>Based on the article above, answer the following multiple-choice questions.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><strong>1. Main Idea: What is the primary message of the article?</strong></p>
+            <div class="radio-group" id="rc1">
+                <label class="radio-label"><input type="radio" name="q1" value="wrong"> a) Finding one perfect learning style is the key to success.</label>
+                <label class="radio-label"><input type="radio" name="q1" value="correct"> b) Combining different learning styles leads to better outcomes.</label>
+                <label class="radio-label"><input type="radio" name="q1" value="wrong"> c) Social learning is much more important than solitary learning.</label>
+            </div>
+            
+            <p><strong>2. Vocabulary: What does the term "multimodal learning" mean in this text?</strong></p>
+            <div class="radio-group" id="rc2">
+                <label class="radio-label"><input type="radio" name="q2" value="wrong"> a) Using modern technology to read articles online.</label>
+                <label class="radio-label"><input type="radio" name="q2" value="wrong"> b) Studying multiple different subjects on the same day.</label>
+                <label class="radio-label"><input type="radio" name="q2" value="correct"> c) Engaging with multiple modes of communication and learning styles.</label>
+            </div>
+
+            <p><strong>3. Detail: According to the text, what might happen if a student relies strictly on a single learning approach?</strong></p>
+            <div class="radio-group" id="rc3">
+                <label class="radio-label"><input type="radio" name="q3" value="wrong"> a) Their brain will process information too quickly.</label>
+                <label class="radio-label"><input type="radio" name="q3" value="correct"> b) It limits their brain's ability to process new information deeply.</label>
+                <label class="radio-label"><input type="radio" name="q3" value="wrong"> c) They will automatically become a highly solitary learner.</label>
+            </div>
+
+            <p><strong>4. Detail: How much can knowledge retention increase when visual, aural, and physical methods are combined?</strong></p>
+            <div class="radio-group" id="rc4">
+                <label class="radio-label"><input type="radio" name="q4" value="correct"> a) Up to 58%</label>
+                <label class="radio-label"><input type="radio" name="q4" value="wrong"> b) Exactly 100%</label>
+                <label class="radio-label"><input type="radio" name="q4" value="wrong"> c) Around 25%</label>
+            </div>
+
+            <p><strong>5. Inference: What can we infer about a "logical" thinker based on the article?</strong></p>
+            <div class="radio-group" id="rc5">
+                <label class="radio-label"><input type="radio" name="q5" value="wrong"> a) They are entirely unable to learn through visual diagrams.</label>
+                <label class="radio-label"><input type="radio" name="q5" value="correct"> b) They can benefit greatly from hearing new perspectives in a social setting.</label>
+                <label class="radio-label"><input type="radio" name="q5" value="wrong"> c) They strictly prefer to study alone without talking to anyone.</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise-block" id="ex-c">
+        <div class="exercise-header">
+            <div class="exercise-number">3</div>
+            <div class="exercise-title">
+                <h3>Match the Tools</h3>
+                <p><strong>Click</strong> a learning style on the left, then <strong>click</strong> the learning tool that best matches it on the right to draw a line.</p>
+            </div>
+        </div>
+
+        <div class="match-container" id="match-container">
+            <svg id="lines-svg"></svg>
+            
+            <div class="match-col left-col">
+                <div class="match-item left-item" data-id="1" onclick="selectLeft(this)">Hands-on</div>
+                <div class="match-item left-item" data-id="2" onclick="selectLeft(this)">Visual</div>
+                <div class="match-item left-item" data-id="3" onclick="selectLeft(this)">Aural</div>
+                <div class="match-item left-item" data-id="4" onclick="selectLeft(this)">Physical</div>
+                <div class="match-item left-item" data-id="5" onclick="selectLeft(this)">Verbal</div>
+                <div class="match-item left-item" data-id="6" onclick="selectLeft(this)">Logical</div>
+                <div class="match-item left-item" data-id="7" onclick="selectLeft(this)">Social</div>
+                <div class="match-item left-item" data-id="8" onclick="selectLeft(this)">Solitary</div>
+            </div>
+            
+            <div class="match-col right-col">
+                <div class="match-item right-item" data-match="6" onclick="selectRight(this)">Coding & strategy puzzles</div>
+                <div class="match-item right-item" data-match="2" onclick="selectRight(this)">Diagrams & infographics</div>
+                <div class="match-item right-item" data-match="5" onclick="selectRight(this)">Textbooks & essays</div>
+                <div class="match-item right-item" data-match="1" onclick="selectRight(this)">Lab kits & building models</div>
+                <div class="match-item right-item" data-match="8" onclick="selectRight(this)">Self-study journals</div>
+                <div class="match-item right-item" data-match="3" onclick="selectRight(this)">Podcasts & audiobooks</div>
+                <div class="match-item right-item" data-match="7" onclick="selectRight(this)">Group debates</div>
+                <div class="match-item right-item" data-match="4" onclick="selectRight(this)">Body movement games</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="exercise-block" id="ex-d">
+        <div class="exercise-header">
+            <div class="exercise-number">4</div>
+            <div class="exercise-title">
+                <h3>Order the Feedback</h3>
+                <p>A teacher is giving feedback to a student about their learning methods. Read the three sentences below and number them <strong>1, 2, and 3</strong> to form a correct "Sandwich Technique" response.</p>
+            </div>
+        </div>
+
+        <div class="question" style="display: flex; flex-direction: column; gap: 15px;">
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <input type="text" id="order1" class="inline-input eval-text" style="width: 70px;" placeholder="#">
+                <span style="font-size: 1.05em;">"What concerns me is that relying only on solitary reading might slow down your speaking fluency."</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <input type="text" id="order2" class="inline-input eval-text" style="width: 70px;" placeholder="#">
+                <span style="font-size: 1.05em;">"What I suggest is joining a social study group twice a week to practice real conversations."</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <input type="text" id="order3" class="inline-input eval-text" style="width: 70px;" placeholder="#">
+                <span style="font-size: 1.05em;">"What I like about your current routine is that your grammar and vocabulary are highly accurate."</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise-block challenge-box question">
+        <div class="exercise-header" style="margin-bottom: 10px;">
+            <div class="exercise-number" style="background-color: var(--accent-color);">5</div>
+            <div class="exercise-title">
+                <h3>Final Challenge <em>(Teacher Evaluated)</em></h3>
+                <p>Read the fictional testimony of an A1 Spanish student learning English below. Write a response giving them feedback on their methodology and lack of diversification. <strong>You must use the Sandwich Technique (3 steps) and include at least 2 Language Focus structures.</strong></p>
+            </div>
+        </div>
+        
+        <div style="background: var(--sheet-color); padding: 15px; border-left: 4px solid var(--text-color); margin-bottom: 20px; font-style: italic;">
+            "Hola! I want to learn English faster. Right now, my only method is to sit alone in my room and read a grammar book for 3 hours a day. I don't like listening to music or speaking to others because it feels confusing. I just memorize vocabulary lists by myself."
+        </div>
+        
+        <textarea placeholder="Write your feedback here..."></textarea>
+        <p style="color: #666; font-size: 0.9em; text-align: right;">⚠️ Take a screenshot of this text and send it to your teacher.</p>
+    </div>
+
+    <!-- Hidden Answer Key Container -->
+    <div id="answerKeyContainer" class="answer-key-section">
+        <h3>🗝️ Answer Key</h3>
+        
+        <p><strong>1. Read and Organize</strong></p>
+        <p>Paragraph 1: Why Sticking to One Style Fails <br> Paragraph 2: The Power of Mixing Methods <br> Paragraph 3: Real Results of Combined Learning</p>
+        
+        <p><strong>2. Reading Comprehension</strong></p>
+        <p>1. b | 2. c | 3. b | 4. a | 5. b</p>
+
+        <p><strong>3. Match the Tools</strong></p>
+        <p>Hands-on = Lab kits | Visual = Diagrams | Aural = Podcasts | Physical = Body games | Verbal = Textbooks | Logical = Coding puzzles | Social = Group debates | Solitary = Journals</p>
+
+        <p><strong>4. Order the Feedback</strong></p>
+        <ul>
+            <li><strong>2</strong> (Constructive criticism/Concern)</li>
+            <li><strong>3</strong> (Actionable solution/Suggestion)</li>
+            <li><strong>1</strong> (Positive reinforcement/Like)</li>
+        </ul>
+    </div>
+
+</div>
+
+<!-- Sticky Grading Footer -->
+<div class="sticky-footer">
+    <button class="btn" id="gradeBtn" onclick="gradeExercises()">✔️ Auto-Grade Worksheet</button>
+    <div class="score-display" id="finalScoreDisplay">Score: <span id="scoreNumber">0/100</span></div>
+    <button class="btn btn-secondary" id="showAnswersBtn" onclick="toggleAnswerKey()">📖 View Answer Key</button>
+</div>
+
+<script>
+    let graded = false;
+
+    // ----- SVG LINE DRAWING LOGIC (Exercise 3) -----
+    let selectedLeft = null;
+    let connections = {}; // leftId -> rightItemElement
+    let svglines = {}; // leftId -> SVGLineElement
+
+    function selectLeft(elem) {
+        if(graded) return;
+        document.querySelectorAll('.left-item').forEach(el => el.classList.remove('selected'));
+        elem.classList.add('selected');
+        selectedLeft = elem;
+    }
+
+    function selectRight(elem) {
+        if(graded) return;
+        if(!selectedLeft) return;
+        
+        let leftId = selectedLeft.dataset.id;
+        
+        if(connections[leftId]) {
+            connections[leftId].classList.remove('connected');
+            if(svglines[leftId]) svglines[leftId].remove();
+        }
+
+        for(let key in connections) {
+            if(connections[key] === elem) {
+                delete connections[key];
+                if(svglines[key]) svglines[key].remove();
+                break;
+            }
+        }
+
+        connections[leftId] = elem;
+        elem.classList.add('connected');
+        
+        drawLine(selectedLeft, elem, leftId);
+        
+        selectedLeft.classList.remove('selected');
+        selectedLeft.classList.add('connected');
+        selectedLeft = null;
+    }
+
+    function drawLine(leftElem, rightElem, id) {
+        let container = document.getElementById('match-container');
+        let svg = document.getElementById('lines-svg');
+        let containerRect = container.getBoundingClientRect();
+        
+        let leftRect = leftElem.getBoundingClientRect();
+        let rightRect = rightElem.getBoundingClientRect();
+        
+        let startX = leftRect.right - containerRect.left;
+        let startY = leftRect.top + (leftRect.height / 2) - containerRect.top;
+        
+        let endX = rightRect.left - containerRect.left;
+        let endY = rightRect.top + (rightRect.height / 2) - containerRect.top;
+        
+        let line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        line.setAttribute('x1', startX);
+        line.setAttribute('y1', startY);
+        line.setAttribute('x2', endX);
+        line.setAttribute('y2', endY);
+        line.setAttribute('stroke', '#A91D7A');
+        line.setAttribute('stroke-width', '4');
+        line.setAttribute('class', 'match-line');
+        
+        svglines[id] = line;
+        svg.appendChild(line);
+    }
+
+    window.addEventListener('resize', () => {
+        let svg = document.getElementById('lines-svg');
+        svg.innerHTML = '';
+        for(let key in connections) {
+            let leftElem = document.querySelector(`.left-item[data-id="${key}"]`);
+            drawLine(leftElem, connections[key], key);
+            
+            if(graded) {
+                let rightElem = connections[key];
+                if(rightElem.dataset.match === key) {
+                    svglines[key].setAttribute('stroke', '#44CF6C');
+                } else {
+                    svglines[key].setAttribute('stroke', '#E54B4B');
+                }
+            }
+        }
+    });
+
+    // ----- AUTOGRADING LOGIC -----
+    function cleanText(text) {
+        return text.replace(/[.,!?]/g, "") 
+                   .replace(/['’]/g, "")    
+                   .replace(/\s+/g, " ")    
+                   .trim()
+                   .toLowerCase();
+    }
+
+    function gradeExercises() {
+        let totalPoints = 19; // 3 (A) + 5 (B) + 8 (C) + 3 (D)
+        let earnedPoints = 0;
+
+        // Exercise 1: Select Titles (3 pts)
+        for (let i = 1; i <= 3; i++) {
+            let select = document.getElementById('match' + i);
+            select.classList.remove('correct', 'incorrect');
+            if (select.value === 'correct') {
+                select.classList.add('correct');
+                earnedPoints++;
+            } else if (select.value !== '') {
+                select.classList.add('incorrect');
+            }
+        }
+
+        // Exercise 2: Radio Buttons (5 pts)
+        for (let i = 1; i <= 5; i++) {
+            let radios = document.getElementsByName('q' + i);
+            let labels = document.querySelectorAll(`#rc${i} label`);
+            
+            labels.forEach(label => label.classList.remove('correct', 'incorrect'));
+            let answeredCorrectly = false;
+
+            for (let j = 0; j < radios.length; j++) {
+                if (radios[j].checked) {
+                    if (radios[j].value === 'correct') {
+                        labels[j].classList.add('correct');
+                        answeredCorrectly = true;
+                    } else {
+                        labels[j].classList.add('incorrect');
+                    }
+                }
+            }
+            if(answeredCorrectly) earnedPoints++; 
+        }
+
+        // Exercise 3: Lines Matching (8 pts)
+        document.querySelectorAll('.match-item').forEach(el => el.classList.remove('correct', 'incorrect'));
+        for(let leftId = 1; leftId <= 8; leftId++) {
+            let leftElem = document.querySelector(`.left-item[data-id="${leftId}"]`);
+            let rightElem = connections[leftId];
+            
+            if(rightElem) {
+                if(rightElem.dataset.match == leftId) {
+                    leftElem.classList.add('correct');
+                    rightElem.classList.add('correct');
+                    if(svglines[leftId]) svglines[leftId].setAttribute('stroke', '#44CF6C');
+                    earnedPoints++;
+                } else {
+                    leftElem.classList.add('incorrect');
+                    rightElem.classList.add('incorrect');
+                    if(svglines[leftId]) svglines[leftId].setAttribute('stroke', '#E54B4B');
+                }
+            }
+        }
+
+        // Exercise 4: Number the Feedback (3 pts)
+        const orderAnswers = [
+            ["2", "two"], // Concern
+            ["3", "three"], // Suggestion
+            ["1", "one"] // Like
+        ];
+
+        for (let i = 1; i <= 3; i++) {
+            let input = document.getElementById('order' + i);
+            input.classList.remove('correct', 'incorrect');
+            let cleanedInput = cleanText(input.value);
+            
+            if (cleanedInput !== "") {
+                if (orderAnswers[i-1].includes(cleanedInput)) {
+                    input.classList.add('correct');
+                    earnedPoints++;
+                } else {
+                    input.classList.add('incorrect');
+                }
+            }
+        }
+
+        // Calculate Score out of 100
+        let percentage = Math.round((earnedPoints / totalPoints) * 100);
+        
+        // Update UI
+        document.getElementById('scoreNumber').innerText = percentage + "/100";
+        document.getElementById('finalScoreDisplay').style.display = 'flex';
+        
+        if (!graded) {
+            document.getElementById('showAnswersBtn').style.display = 'flex';
+            document.getElementById('gradeBtn').innerText = "🔄 Update Score";
+            graded = true;
+        }
+    }
+
+    // Toggle logic for Answer Key
+    function toggleAnswerKey() {
+        let answerKey = document.getElementById('answerKeyContainer');
+        let btn = document.getElementById('showAnswersBtn');
+
+        if (answerKey.style.display === 'none' || answerKey.style.display === '') {
+            answerKey.style.display = 'block';
+            btn.innerText = "📖 Hide Answer Key";
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        } else {
+            answerKey.style.display = 'none';
+            btn.innerText = "📖 View Answer Key";
+        }
+    }
+</script>
+
+</body>
+</html>
